@@ -13,6 +13,7 @@ namespace BetoAPP.Modelos
         public string Acesso { get; set; }
         public string Senha { get; set; }
         public string Tipo { get; set; }
+        public bool Bloqueado { get; set; }
         public string DataCriado { get; set; }
     }
 }

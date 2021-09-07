@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BetoAPP
+namespace BetoAPP.Visual
 {
-    public partial class Form1 : Form
+    public partial class Solicitante : Form
     {
-        public Form1()
+        public Solicitante()
         {
             InitializeComponent();
         }
-
     }
 }
