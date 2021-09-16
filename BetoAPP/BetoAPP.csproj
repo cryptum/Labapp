@@ -4,13 +4,15 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <PackageIcon>code-fill.png</PackageIcon>
+    <PackageIconUrl />
+    <ApplicationIcon>fire-fill.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DTO\" />
-    <Folder Include="Recursos\" />
-    <Folder Include="Servicos\" />
-    <Folder Include="Repositorio\" />
+    <Compile Remove="Recursos\**" />
+    <EmbeddedResource Remove="Recursos\**" />
+    <None Remove="Recursos\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,6 +41,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidade.csproj" />
+    <ProjectReference Include="..\Negocio\Negocio.csproj" />
   </ItemGroup>
 
 </Project>
