@@ -30,7 +30,6 @@ namespace BetoAPP.Visual
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalVisual));
-            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.solicitanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.analiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,16 +46,6 @@ namespace BetoAPP.Visual
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Location = new System.Drawing.Point(12, 55);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1205, 514);
-            this.panel1.TabIndex = 1;
             // 
             // menuStrip1
             // 
@@ -196,9 +185,9 @@ namespace BetoAPP.Visual
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1229, 594);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "PrincipalVisual";
             this.Text = "Principal";
@@ -214,7 +203,6 @@ namespace BetoAPP.Visual
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem analiseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem relatórioToolStripMenuItem;

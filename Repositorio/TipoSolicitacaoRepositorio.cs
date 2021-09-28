@@ -19,11 +19,10 @@ namespace Repositorio
 
         public List<TipoAnaliseDTO> ObterTodos()
         {
-            var query = _context.Alunos
+            var query = _context.TipoAnalises
                                 .Select(x => new TipoAnaliseDTO
                                 {
-                                    IdAnalise = x.IdAnalise,
-                                    DataEntrada = x.DataEntrada
+                                    IdAnalise = x.IdTipoAnalise
                                 })
                                 .ToList();
 

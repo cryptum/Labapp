@@ -19,6 +19,7 @@ namespace BetoAPP.Visual
                 components.Dispose();
             }
             base.Dispose(disposing);
+            aForm = null;
         }
 
         #region Windows Form Designer generated code
@@ -29,27 +30,27 @@ namespace BetoAPP.Visual
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btn_Adiciona = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Edita = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Exclui = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Recarrega = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridSolicitante = new System.Windows.Forms.DataGridView();
+            this.Id_Solicitante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome_Solicitante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_Solicitante = new System.Windows.Forms.Button();
             this.lbl1 = new System.Windows.Forms.Label();
             this.txt_Solicitante = new System.Windows.Forms.TextBox();
             this.dataGridFazenda = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Id_Solicitante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome_Solicitante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id_Fazenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome_Fazenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Municipio_Fazenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSolicitante)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -58,6 +59,7 @@ namespace BetoAPP.Visual
             // 
             // menuStrip1
             // 
+            this.menuStrip1.AllowMerge = false;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Adiciona,
             this.btn_Edita,
@@ -107,32 +109,43 @@ namespace BetoAPP.Visual
             // 
             // dataGridSolicitante
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridSolicitante.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridSolicitante.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridSolicitante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridSolicitante.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_Solicitante,
             this.Nome_Solicitante});
             this.dataGridSolicitante.Location = new System.Drawing.Point(13, 155);
             this.dataGridSolicitante.Name = "dataGridSolicitante";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridSolicitante.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridSolicitante.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridSolicitante.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dataGridSolicitante.RowTemplate.Height = 25;
             this.dataGridSolicitante.Size = new System.Drawing.Size(524, 428);
             this.dataGridSolicitante.TabIndex = 13;
+            // 
+            // Id_Solicitante
+            // 
+            this.Id_Solicitante.HeaderText = "Código";
+            this.Id_Solicitante.Name = "Id_Solicitante";
+            // 
+            // Nome_Solicitante
+            // 
+            this.Nome_Solicitante.HeaderText = "Nome";
+            this.Nome_Solicitante.Name = "Nome_Solicitante";
+            this.Nome_Solicitante.Width = 385;
             // 
             // groupBox1
             // 
@@ -174,14 +187,14 @@ namespace BetoAPP.Visual
             // 
             // dataGridFazenda
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridFazenda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridFazenda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridFazenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridFazenda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_Fazenda,
@@ -189,39 +202,18 @@ namespace BetoAPP.Visual
             this.Municipio_Fazenda});
             this.dataGridFazenda.Location = new System.Drawing.Point(563, 155);
             this.dataGridFazenda.Name = "dataGridFazenda";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridFazenda.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridFazenda.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridFazenda.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dataGridFazenda.RowTemplate.Height = 25;
             this.dataGridFazenda.Size = new System.Drawing.Size(522, 428);
             this.dataGridFazenda.TabIndex = 14;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(559, 123);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 29);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Fazenda:";
-            // 
-            // Id_Solicitante
-            // 
-            this.Id_Solicitante.HeaderText = "Código";
-            this.Id_Solicitante.Name = "Id_Solicitante";
-            // 
-            // Nome_Solicitante
-            // 
-            this.Nome_Solicitante.HeaderText = "Nome";
-            this.Nome_Solicitante.Name = "Nome_Solicitante";
-            this.Nome_Solicitante.Width = 385;
             // 
             // Id_Fazenda
             // 
@@ -240,6 +232,16 @@ namespace BetoAPP.Visual
             this.Municipio_Fazenda.Name = "Municipio_Fazenda";
             this.Municipio_Fazenda.Width = 250;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(559, 123);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 29);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Fazenda:";
+            // 
             // SolicitanteVisual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -254,7 +256,7 @@ namespace BetoAPP.Visual
             this.MinimizeBox = false;
             this.Name = "SolicitanteVisual";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Solicitante";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

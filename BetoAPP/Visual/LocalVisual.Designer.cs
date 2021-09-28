@@ -19,6 +19,7 @@ namespace BetoAPP.Visual
                 components.Dispose();
             }
             base.Dispose(disposing);
+            aForm = null;
         }
 
         #region Windows Form Designer generated code
@@ -131,6 +132,7 @@ namespace BetoAPP.Visual
             // 
             // menuStrip1
             // 
+            this.menuStrip1.AllowMerge = false;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Adiciona,
             this.btn_Edita,
@@ -190,7 +192,7 @@ namespace BetoAPP.Visual
             this.MinimizeBox = false;
             this.Name = "LocalVisual";
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Local";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -42,6 +42,14 @@ namespace BetoAPP
 
         private void btn_Acessar_Click(object sender, EventArgs e)
         {
+            Guid n = new Guid();
+            PrincipalVisual View = new PrincipalVisual(n, "");
+            this.Hide();
+            View.Show();
+
+
+            /*
+
             var resultado = new UsuarioNegocio().ValidarAcesso(txt_Usuario.Text, txt_Senha.Text);
 
             if (resultado.AcessoPermitido == true)
@@ -54,7 +62,7 @@ namespace BetoAPP
             {
                 MessageBox.Show(resultado.AcessoMessagem);
             }
-            
+            */
         }
 
         private void btn_Acessar_Paint(object sender, PaintEventArgs e)

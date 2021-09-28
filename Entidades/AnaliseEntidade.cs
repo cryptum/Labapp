@@ -10,7 +10,7 @@ namespace Entidade
     public class AnaliseEntidade
     {
         [Key]
-        public Guid IdAnalise { get; set; }
+        public int IdAnalise { get; set; }
         public DateTime DataEntrada { get; set; }
     }
 }

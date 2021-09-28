@@ -14,7 +14,6 @@ namespace Repositorio
         {
         }
 
-
         public List<TipoAnaliseDTO> ObterTodos()
         {
             using (var db = new ContextDB())

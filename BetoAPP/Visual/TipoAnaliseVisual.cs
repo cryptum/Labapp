@@ -6,7 +6,15 @@ namespace BetoAPP.Visual
 {
     public partial class TipoAnaliseVisual : Form
     {
-
+        private static TipoAnaliseVisual aForm = null;
+        public static TipoAnaliseVisual Instance()
+        {
+            if (aForm == null)
+            {
+                aForm = new TipoAnaliseVisual();
+            }
+            return aForm;
+        }
         public TipoAnaliseVisual()
         {
             InitializeComponent();

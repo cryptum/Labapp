@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -10,6 +11,10 @@ namespace BetoAPP.Visual
         {
             InitializeComponent();
             lbl_UsuarioLogado.Text = Usuariologado;
+            AnaliseVisual View = AnaliseVisual.Instance();
+            View.MdiParent = this;
+            View.Show();
+            View.Activate();
         }
 
         private void Principal_FormClosed(object sender, FormClosedEventArgs e)
@@ -17,91 +22,75 @@ namespace BetoAPP.Visual
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            //var frm = new TipoAnaliseVisual();
-            //frm.MdiParent = this;
-            //frm.Show();
-
-
-            TipoAnaliseVisual ViewLogin = new TipoAnaliseVisual();
-            ViewLogin.TopLevel = true;
-            panel1.Controls.Add(ViewLogin);
-            ViewLogin.Show();
-
-        }
-
         private void analiseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AnaliseVisual View = new AnaliseVisual();
-            
-
-                View.TopLevel = false;
-                panel1.Controls.Add(View);
-                View.Show();
+            AnaliseVisual View = AnaliseVisual.Instance();
+            View.MdiParent = this;
+            View.Show();
+            View.Activate();
         }
 
         private void solicitanteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SolicitanteVisual View = new SolicitanteVisual();
-
-                View.TopLevel = false;
-                panel1.Controls.Add(View);
-                View.Show();
+            SolicitanteVisual View = SolicitanteVisual.Instance();
+            View.MdiParent = this;
+            View.Show();
+            View.Activate();
         }
 
         private void relatórioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RelatorioVisual View = new RelatorioVisual();
-
-                View.TopLevel = false;
-                panel1.Controls.Add(View);
-                View.Show();
+            RelatorioVisual View = RelatorioVisual.Instance();
+            View.MdiParent = this;
+            View.Show();
+            View.Activate();
         }
 
         private void colaboradoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UsuarioView View = new UsuarioView();
-            View.TopLevel = false;
-            panel1.Controls.Add(View);
+            //UsuarioView View = new UsuarioView();
+
+            ////View.TopLevel = false;
+            ////View.Location = new Point((panel1.Size.Width / 2) - (View.Size.Width / 2), (panel1.Size.Height / 2) - (View.Size.Height / 2));
+            //panel1.Controls.Add(View);
+            //View.Show();
+
+            UsuarioView View = UsuarioView.Instance();
+            View.MdiParent = this;
             View.Show();
+            View.Activate();
         }
 
         private void culturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CulturaVisual View = new CulturaVisual();
-
-                View.TopLevel = false;
-                panel1.Controls.Add(View);
-                View.Show();
+            CulturaVisual View = CulturaVisual.Instance();
+            View.MdiParent = this;
+            View.Show();
+            View.Activate();
         }
 
         private void referenciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ReferenciaVisual View = new ReferenciaVisual();
-
-                View.TopLevel = false;
-                panel1.Controls.Add(View);
-                View.Show();
+            ReferenciaVisual View = ReferenciaVisual.Instance();
+            View.MdiParent = this;
+            View.Show();
+            View.Activate();
         }
 
         private void tipoAnaliseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TipoAnaliseVisual View = new TipoAnaliseVisual();
-
-                View.TopLevel = false;
-                panel1.Controls.Add(View);
-                View.Show();
+            TipoAnaliseVisual View = TipoAnaliseVisual.Instance();
+            View.MdiParent = this;
+            View.Show();
+            View.Activate();
         }
 
         private void tipoSolicitacaoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TipoSolicitacaoVisual View = new TipoSolicitacaoVisual();
-
-                View.TopLevel = false;
-                panel1.Controls.Add(View);
-                View.Show();
+            TipoSolicitacaoVisual View = TipoSolicitacaoVisual.Instance();
+            View.MdiParent = this;
+            View.Show();
+            View.Activate();
         }
     }
 }

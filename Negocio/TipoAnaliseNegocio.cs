@@ -10,7 +10,7 @@ namespace Negocio
 
         public TipoAnaliseNegocio(){}
 
-        public List<TipoAnaliseDTO> CarregamentoInicial()
+        public List<TipoAnaliseDTO> ObterTodos()
         {
             return new TipoAnaliseRepositorio().ObterTodos();
         }

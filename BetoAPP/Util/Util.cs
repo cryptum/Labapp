@@ -16,4 +16,14 @@ namespace BetoAPP.Util
             int nHeightEllipse // width of ellipse
         );
     }
+
+    public class Mensagem
+    {
+        private Mensagem(string value) { Value = value; }
+
+        public string Value { get; private set; }
+
+        public static Mensagem NDeuCerto { get { return new Mensagem("Algo não deu certo"); } }
+
+    }
 }

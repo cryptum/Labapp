@@ -19,6 +19,7 @@ namespace BetoAPP.Visual
                 components.Dispose();
             }
             base.Dispose(disposing);
+            aForm = null;
         }
 
         #region Windows Form Designer generated code
@@ -57,7 +58,7 @@ namespace BetoAPP.Visual
             this.groupBox1.Controls.Add(this.btn_Usuario);
             this.groupBox1.Controls.Add(this.lbl1);
             this.groupBox1.Controls.Add(this.txt_Usuario);
-            this.groupBox1.Location = new System.Drawing.Point(13, 43);
+            this.groupBox1.Location = new System.Drawing.Point(13, 37);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -117,7 +118,7 @@ namespace BetoAPP.Visual
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridAnalise.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridAnalise.Location = new System.Drawing.Point(14, 163);
+            this.dataGridAnalise.Location = new System.Drawing.Point(14, 157);
             this.dataGridAnalise.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridAnalise.Name = "dataGridAnalise";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -146,6 +147,7 @@ namespace BetoAPP.Visual
             // 
             // menuStrip1
             // 
+            this.menuStrip1.AllowMerge = false;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Adiciona,
             this.btn_Edita,
@@ -165,6 +167,7 @@ namespace BetoAPP.Visual
             this.btn_Adiciona.Name = "btn_Adiciona";
             this.btn_Adiciona.Size = new System.Drawing.Size(112, 28);
             this.btn_Adiciona.Text = "Adicionar";
+            this.btn_Adiciona.Click += new System.EventHandler(this.btn_Adiciona_Click);
             // 
             // btn_Edita
             // 
@@ -205,6 +208,7 @@ namespace BetoAPP.Visual
             this.MinimizeBox = false;
             this.Name = "UsuarioView";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuário";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

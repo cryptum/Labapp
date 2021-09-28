@@ -9,8 +9,9 @@ namespace Entidade.DTO
 {
     public class TipoAnaliseDTO
     {
-        [Display(Name = "ID")]
-        public Guid IdAnalise { get; set; }
+        [Display(Name = "Código")]
+        public int IdAnalise { get; set; }
+
         public DateTime DataEntrada { get; set; }
     }
 }

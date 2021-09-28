@@ -34,17 +34,33 @@ namespace Repositorio.Config
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<AnaliseEntidade>();
-            modelBuilder.Entity<CulturaEntidade>();
-            modelBuilder.Entity<EntradaEntidade>();
-            modelBuilder.Entity<LaudoEntidade>();
-            modelBuilder.Entity<LocalEntidade>();
-            modelBuilder.Entity<ReferenciaEntidade>();
-            modelBuilder.Entity<SolicitacaoEntidade>();
-            modelBuilder.Entity<SolicitanteEntidade>();
-            modelBuilder.Entity<TipoAnaliseEntidade>();
-            modelBuilder.Entity<TipoSolicitacaoEntidade>();
-            modelBuilder.Entity<UsuarioEntidade>();
+
+            //builder.Entity<Notification>().HasOne(e => e.Shipment).WithMany(c => c.Notification);
+            //builder.Entity<NotificationFile>().HasKey(u => u.Id);
+
+            modelBuilder.Entity<AnaliseEntidade>().HasKey(u => u.IdAnalise);
+
+            modelBuilder.Entity<CulturaEntidade>().HasKey(u => u.IdCultura);
+
+            modelBuilder.Entity<EntradaEntidade>().HasKey(u => u.IdEntrada);
+
+            modelBuilder.Entity<LaudoEntidade>().HasKey(u => u.IdLaudo);
+
+            modelBuilder.Entity<LocalEntidade>().HasKey(u => u.IdLocal);
+            //modelBuilder.Entity<LocalEntidade>().HasOne(e => e.Solicitante).WithOne(c => c.IdSolicitante);
+
+            modelBuilder.Entity<ReferenciaEntidade>().HasKey(u => u.IdReferencia);
+
+            modelBuilder.Entity<SolicitacaoEntidade>().HasKey(u => u.IdSolicitacao);
+
+            modelBuilder.Entity<SolicitanteEntidade>().HasKey(u => u.IdSolicitante);
+
+            modelBuilder.Entity<TipoAnaliseEntidade>().HasKey(u => u.IdTipoAnalise);
+
+            modelBuilder.Entity<TipoSolicitacaoEntidade>().HasKey(u => u.IdTipoSolicitacao);
+
+            modelBuilder.Entity<UsuarioEntidade>().HasKey(u => u.IdUsuario);
+
             base.OnModelCreating(modelBuilder);
         }
 

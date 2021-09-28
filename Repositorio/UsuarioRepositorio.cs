@@ -17,7 +17,7 @@ namespace Repositorio
             using (var db = new ContextDB())
             {
                 var query = db.Usuarios
-                                .Where(w => w.Acesso == Acesso || w.Senha == Senha)
+                                .Where(w => w.Acesso == Acesso && w.Senha == Senha)
                                 .Select(x => new UsuarioDTO
                                 {
                                     Nome = x.Nome,

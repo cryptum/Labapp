@@ -12,6 +12,15 @@ namespace BetoAPP.Visual
 {
     public partial class LocalVisual : Form
     {
+        private static LocalVisual aForm = null;
+        public static LocalVisual Instance()
+        {
+            if (aForm == null)
+            {
+                aForm = new LocalVisual();
+            }
+            return aForm;
+        }
         public LocalVisual()
         {
             InitializeComponent();

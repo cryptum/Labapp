@@ -83,6 +83,16 @@ namespace BetoAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_circle_fill {
+            get {
+                object obj = ResourceManager.GetObject("close-circle-fill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_line {
             get {
                 object obj = ResourceManager.GetObject("close-line", resourceCulture);
@@ -223,9 +233,29 @@ namespace BetoAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap printer24px {
+            get {
+                object obj = ResourceManager.GetObject("printer24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap refresh_line {
             get {
                 object obj = ResourceManager.GetObject("refresh-line", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save_3_fill {
+            get {
+                object obj = ResourceManager.GetObject("save-3-fill", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

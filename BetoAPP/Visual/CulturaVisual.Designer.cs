@@ -19,6 +19,7 @@ namespace BetoAPP.Visual
                 components.Dispose();
             }
             base.Dispose(disposing);
+            aForm = null;
         }
 
         #region Windows Form Designer generated code
@@ -37,9 +38,7 @@ namespace BetoAPP.Visual
             this.btn_Pesquisa = new System.Windows.Forms.Button();
             this.lbl1 = new System.Windows.Forms.Label();
             this.txt_Pesquisa = new System.Windows.Forms.TextBox();
-            this.dataGridAnalise = new System.Windows.Forms.DataGridView();
-            this.grid_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grid_Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridCultura = new System.Windows.Forms.DataGridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btn_Adiciona = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +46,7 @@ namespace BetoAPP.Visual
             this.btn_Exclui = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Recarrega = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridAnalise)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCultura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +73,7 @@ namespace BetoAPP.Visual
             this.btn_Pesquisa.Size = new System.Drawing.Size(51, 33);
             this.btn_Pesquisa.TabIndex = 6;
             this.btn_Pesquisa.UseVisualStyleBackColor = true;
+            this.btn_Pesquisa.Click += new System.EventHandler(this.btn_Pesquisa_Click);
             // 
             // lbl1
             // 
@@ -94,8 +94,9 @@ namespace BetoAPP.Visual
             this.txt_Pesquisa.Name = "txt_Pesquisa";
             this.txt_Pesquisa.Size = new System.Drawing.Size(339, 33);
             this.txt_Pesquisa.TabIndex = 4;
+            this.txt_Pesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Pesquisa_KeyDown);
             // 
-            // dataGridAnalise
+            // dataGridCultura
             // 
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
@@ -104,11 +105,8 @@ namespace BetoAPP.Visual
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridAnalise.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridAnalise.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridAnalise.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.grid_Id,
-            this.grid_Nome});
+            this.dataGridCultura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridCultura.ColumnHeadersHeight = 35;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -116,10 +114,12 @@ namespace BetoAPP.Visual
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridAnalise.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridAnalise.Location = new System.Drawing.Point(14, 155);
-            this.dataGridAnalise.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dataGridAnalise.Name = "dataGridAnalise";
+            this.dataGridCultura.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridCultura.Location = new System.Drawing.Point(14, 155);
+            this.dataGridCultura.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dataGridCultura.MultiSelect = false;
+            this.dataGridCultura.Name = "dataGridCultura";
+            this.dataGridCultura.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -127,25 +127,16 @@ namespace BetoAPP.Visual
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridAnalise.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridAnalise.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dataGridAnalise.RowTemplate.Height = 25;
-            this.dataGridAnalise.Size = new System.Drawing.Size(524, 428);
-            this.dataGridAnalise.TabIndex = 15;
-            // 
-            // grid_Id
-            // 
-            this.grid_Id.HeaderText = "Código";
-            this.grid_Id.Name = "grid_Id";
-            // 
-            // grid_Nome
-            // 
-            this.grid_Nome.HeaderText = "Nome";
-            this.grid_Nome.Name = "grid_Nome";
-            this.grid_Nome.Width = 385;
+            this.dataGridCultura.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridCultura.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dataGridCultura.RowTemplate.Height = 25;
+            this.dataGridCultura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridCultura.Size = new System.Drawing.Size(524, 428);
+            this.dataGridCultura.TabIndex = 15;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.AllowMerge = false;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Adiciona,
             this.btn_Edita,
@@ -165,6 +156,7 @@ namespace BetoAPP.Visual
             this.btn_Adiciona.Name = "btn_Adiciona";
             this.btn_Adiciona.Size = new System.Drawing.Size(112, 28);
             this.btn_Adiciona.Text = "Adicionar";
+            this.btn_Adiciona.Click += new System.EventHandler(this.btn_Adiciona_Click);
             // 
             // btn_Edita
             // 
@@ -174,6 +166,7 @@ namespace BetoAPP.Visual
             this.btn_Edita.Name = "btn_Edita";
             this.btn_Edita.Size = new System.Drawing.Size(86, 28);
             this.btn_Edita.Text = "Editar";
+            this.btn_Edita.Click += new System.EventHandler(this.btn_Edita_Click);
             // 
             // btn_Exclui
             // 
@@ -183,6 +176,7 @@ namespace BetoAPP.Visual
             this.btn_Exclui.Name = "btn_Exclui";
             this.btn_Exclui.Size = new System.Drawing.Size(91, 28);
             this.btn_Exclui.Text = "Excluir";
+            this.btn_Exclui.Click += new System.EventHandler(this.btn_Exclui_Click);
             // 
             // btn_Recarrega
             // 
@@ -192,6 +186,7 @@ namespace BetoAPP.Visual
             this.btn_Recarrega.Name = "btn_Recarrega";
             this.btn_Recarrega.Size = new System.Drawing.Size(169, 28);
             this.btn_Recarrega.Text = "Recarregar Tabela";
+            this.btn_Recarrega.Click += new System.EventHandler(this.btn_Recarrega_Click);
             // 
             // CulturaVisual
             // 
@@ -199,16 +194,18 @@ namespace BetoAPP.Visual
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(549, 595);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridAnalise);
+            this.Controls.Add(this.dataGridCultura);
             this.Controls.Add(this.menuStrip1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CulturaVisual";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cultura";
+            this.Load += new System.EventHandler(this.CulturaVisual_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridAnalise)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCultura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -223,9 +220,7 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.Button btn_Pesquisa;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.TextBox txt_Pesquisa;
-        private System.Windows.Forms.DataGridView dataGridAnalise;
-        private System.Windows.Forms.DataGridViewTextBoxColumn grid_Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn grid_Nome;
+        private System.Windows.Forms.DataGridView dataGridCultura;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btn_Adiciona;

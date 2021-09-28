@@ -19,6 +19,7 @@ namespace BetoAPP.Visual
                 components.Dispose();
             }
             base.Dispose(disposing);
+            aForm = null;
         }
 
         #region Windows Form Designer generated code
@@ -29,375 +30,219 @@ namespace BetoAPP.Visual
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.btn_Adiciona = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_Edita = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_Exclui = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_LimparTodosOsCampos = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_ImprimeQuadriculado = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.btn_Pesquisa = new System.Windows.Forms.Button();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.txt_Pesquisa = new System.Windows.Forms.TextBox();
+            this.dataGridAnalise = new System.Windows.Forms.DataGridView();
+            this.grid_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grid_Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAnalise)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // menuStrip1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1108, 787);
-            this.tabControl1.TabIndex = 9;
+            this.menuStrip1.AllowMerge = false;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn_Adiciona,
+            this.btn_Edita,
+            this.btn_Exclui,
+            this.btn_LimparTodosOsCampos,
+            this.btn_ImprimeQuadriculado});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(755, 32);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // tabPage1
+            // btn_Adiciona
             // 
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Controls.Add(this.groupBox4);
-            this.tabPage1.Controls.Add(this.groupBox5);
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.groupBox9);
-            this.tabPage1.Controls.Add(this.groupBox12);
-            this.tabPage1.Controls.Add(this.groupBox7);
-            this.tabPage1.Controls.Add(this.groupBox10);
-            this.tabPage1.Controls.Add(this.groupBox6);
-            this.tabPage1.Controls.Add(this.groupBox8);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1100, 759);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.btn_Adiciona.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Adiciona.Image = global::BetoAPP.Properties.Resources.file_add_fill;
+            this.btn_Adiciona.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_Adiciona.Name = "btn_Adiciona";
+            this.btn_Adiciona.Size = new System.Drawing.Size(112, 28);
+            this.btn_Adiciona.Text = "Adicionar";
+            this.btn_Adiciona.Click += new System.EventHandler(this.btn_Adiciona_Click);
             // 
-            // tabPage2
+            // btn_Edita
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(192, 72);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.btn_Edita.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Edita.Image = global::BetoAPP.Properties.Resources.edit_2_fill;
+            this.btn_Edita.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_Edita.Name = "btn_Edita";
+            this.btn_Edita.Size = new System.Drawing.Size(86, 28);
+            this.btn_Edita.Text = "Editar";
             // 
-            // groupBox2
+            // btn_Exclui
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Location = new System.Drawing.Point(6, 93);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1088, 120);
-            this.groupBox2.TabIndex = 10;
-            this.groupBox2.TabStop = false;
+            this.btn_Exclui.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Exclui.Image = global::BetoAPP.Properties.Resources.delete_bin_fill;
+            this.btn_Exclui.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_Exclui.Name = "btn_Exclui";
+            this.btn_Exclui.Size = new System.Drawing.Size(91, 28);
+            this.btn_Exclui.Text = "Excluir";
             // 
-            // label2
+            // btn_LimparTodosOsCampos
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(6, 45);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 30);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Amostra 1";
+            this.btn_LimparTodosOsCampos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_LimparTodosOsCampos.Image = global::BetoAPP.Properties.Resources.refresh_line;
+            this.btn_LimparTodosOsCampos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_LimparTodosOsCampos.Name = "btn_LimparTodosOsCampos";
+            this.btn_LimparTodosOsCampos.Size = new System.Drawing.Size(169, 28);
+            this.btn_LimparTodosOsCampos.Text = "Recarregar Tabela";
             // 
-            // textBox1
+            // btn_ImprimeQuadriculado
             // 
-            this.textBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(132, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(63, 29);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "99999";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(6, 214);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1088, 120);
-            this.groupBox3.TabIndex = 12;
-            this.groupBox3.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(6, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 30);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Amostra 2";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Location = new System.Drawing.Point(6, 335);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1088, 120);
-            this.groupBox4.TabIndex = 15;
-            this.groupBox4.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(6, 45);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 30);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Amostra 3";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Location = new System.Drawing.Point(6, 456);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1088, 120);
-            this.groupBox5.TabIndex = 17;
-            this.groupBox5.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(6, 45);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 30);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Amostra 4";
+            this.btn_ImprimeQuadriculado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_ImprimeQuadriculado.Image = global::BetoAPP.Properties.Resources.printer24px;
+            this.btn_ImprimeQuadriculado.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_ImprimeQuadriculado.Name = "btn_ImprimeQuadriculado";
+            this.btn_ImprimeQuadriculado.Size = new System.Drawing.Size(205, 28);
+            this.btn_ImprimeQuadriculado.Text = "Imprimir Quadriculado";
+            this.btn_ImprimeQuadriculado.Click += new System.EventHandler(this.btn_ImprimeQuadriculado_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.groupBox1.Location = new System.Drawing.Point(116, 47);
+            this.groupBox1.Controls.Add(this.btn_Pesquisa);
+            this.groupBox1.Controls.Add(this.lbl1);
+            this.groupBox1.Controls.Add(this.txt_Pesquisa);
+            this.groupBox1.Location = new System.Drawing.Point(13, 35);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(104, 449);
-            this.groupBox1.TabIndex = 9;
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox1.Size = new System.Drawing.Size(729, 99);
+            this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
-            // label1
+            // btn_Pesquisa
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(10, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "pH Água";
+            this.btn_Pesquisa.Image = global::BetoAPP.Properties.Resources.search_line__2_;
+            this.btn_Pesquisa.Location = new System.Drawing.Point(646, 42);
+            this.btn_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btn_Pesquisa.Name = "btn_Pesquisa";
+            this.btn_Pesquisa.Size = new System.Drawing.Size(51, 33);
+            this.btn_Pesquisa.TabIndex = 6;
+            this.btn_Pesquisa.UseVisualStyleBackColor = true;
+            this.btn_Pesquisa.Click += new System.EventHandler(this.btn_Pesquisa_Click);
             // 
-            // groupBox9
+            // lbl1
             // 
-            this.groupBox9.Controls.Add(this.label9);
-            this.groupBox9.Location = new System.Drawing.Point(820, 50);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(104, 449);
-            this.groupBox9.TabIndex = 16;
-            this.groupBox9.TabStop = false;
+            this.lbl1.AutoSize = true;
+            this.lbl1.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl1.Location = new System.Drawing.Point(8, 19);
+            this.lbl1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(101, 29);
+            this.lbl1.TabIndex = 5;
+            this.lbl1.Text = "Pesquisa";
             // 
-            // label9
+            // txt_Pesquisa
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(10, 19);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(30, 26);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "AI";
+            this.txt_Pesquisa.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_Pesquisa.Location = new System.Drawing.Point(301, 42);
+            this.txt_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txt_Pesquisa.Name = "txt_Pesquisa";
+            this.txt_Pesquisa.Size = new System.Drawing.Size(339, 33);
+            this.txt_Pesquisa.TabIndex = 4;
+            this.txt_Pesquisa.TextChanged += new System.EventHandler(this.txt_Pesquisa_TextChanged);
             // 
-            // groupBox12
+            // dataGridAnalise
             // 
-            this.groupBox12.Controls.Add(this.label12);
-            this.groupBox12.Location = new System.Drawing.Point(984, 47);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(104, 449);
-            this.groupBox12.TabIndex = 13;
-            this.groupBox12.TabStop = false;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridAnalise.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridAnalise.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridAnalise.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grid_Id,
+            this.grid_Nome});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridAnalise.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridAnalise.Location = new System.Drawing.Point(14, 155);
+            this.dataGridAnalise.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dataGridAnalise.Name = "dataGridAnalise";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridAnalise.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridAnalise.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dataGridAnalise.RowTemplate.Height = 25;
+            this.dataGridAnalise.Size = new System.Drawing.Size(728, 527);
+            this.dataGridAnalise.TabIndex = 14;
             // 
-            // label12
+            // grid_Id
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(10, 19);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 26);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "H+AI";
+            this.grid_Id.HeaderText = "Código";
+            this.grid_Id.Name = "grid_Id";
             // 
-            // groupBox7
+            // grid_Nome
             // 
-            this.groupBox7.Controls.Add(this.label7);
-            this.groupBox7.Location = new System.Drawing.Point(524, 47);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(104, 449);
-            this.groupBox7.TabIndex = 19;
-            this.groupBox7.TabStop = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(10, 19);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 26);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Ca";
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.label10);
-            this.groupBox10.Location = new System.Drawing.Point(676, 50);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(104, 449);
-            this.groupBox10.TabIndex = 14;
-            this.groupBox10.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(10, 19);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 26);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Mg";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.label6);
-            this.groupBox6.Location = new System.Drawing.Point(246, 47);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(104, 449);
-            this.groupBox6.TabIndex = 11;
-            this.groupBox6.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(10, 19);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(24, 26);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "P";
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.label8);
-            this.groupBox8.Location = new System.Drawing.Point(391, 47);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(104, 449);
-            this.groupBox8.TabIndex = 18;
-            this.groupBox8.TabStop = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(10, 19);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(25, 26);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "K";
+            this.grid_Nome.HeaderText = "Nome";
+            this.grid_Nome.Name = "grid_Nome";
+            this.grid_Nome.Width = 385;
             // 
             // AnaliseVisual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1132, 811);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(755, 694);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.dataGridAnalise);
+            this.Controls.Add(this.menuStrip1);
+            this.MaximizeBox = false;
             this.Name = "AnaliseVisual";
-            this.Text = "Analise";
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Análise";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAnalise)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem btn_Adiciona;
+        private System.Windows.Forms.ToolStripMenuItem btn_Edita;
+        private System.Windows.Forms.ToolStripMenuItem btn_Exclui;
+        private System.Windows.Forms.ToolStripMenuItem btn_LimparTodosOsCampos;
+        private System.Windows.Forms.ToolStripMenuItem btn_ImprimeQuadriculado;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button btn_Pesquisa;
+        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.TextBox txt_Pesquisa;
+        private System.Windows.Forms.DataGridView dataGridAnalise;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grid_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grid_Nome;
     }
 }

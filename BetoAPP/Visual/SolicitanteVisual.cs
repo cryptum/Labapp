@@ -12,6 +12,15 @@ namespace BetoAPP.Visual
 {
     public partial class SolicitanteVisual : Form
     {
+        private static SolicitanteVisual aForm = null;
+        public static SolicitanteVisual Instance()
+        {
+            if (aForm == null)
+            {
+                aForm = new SolicitanteVisual();
+            }
+            return aForm;
+        }
         public SolicitanteVisual()
         {
             InitializeComponent();
