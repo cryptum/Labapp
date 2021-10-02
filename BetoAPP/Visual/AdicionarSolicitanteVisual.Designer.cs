@@ -29,33 +29,36 @@ namespace BetoAPP.Visual
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_Edita = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_Cancelar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btn_Adiciona = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtObservacao = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.txtTitulo = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btn_Edita
+            // btn_Cancelar
             // 
-            this.btn_Edita.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Edita.Image = global::BetoAPP.Properties.Resources.close_circle_fill;
-            this.btn_Edita.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btn_Edita.Name = "btn_Edita";
-            this.btn_Edita.Size = new System.Drawing.Size(106, 28);
-            this.btn_Edita.Text = "Cancelar";
+            this.btn_Cancelar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Cancelar.Image = global::BetoAPP.Properties.Resources.close_circle_fill;
+            this.btn_Cancelar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_Cancelar.Name = "btn_Cancelar";
+            this.btn_Cancelar.Size = new System.Drawing.Size(106, 28);
+            this.btn_Cancelar.Text = "Cancelar";
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Adiciona,
-            this.btn_Edita});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 176);
+            this.btn_Cancelar});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 286);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(560, 32);
             this.menuStrip1.TabIndex = 26;
@@ -69,6 +72,7 @@ namespace BetoAPP.Visual
             this.btn_Adiciona.Name = "btn_Adiciona";
             this.btn_Adiciona.Size = new System.Drawing.Size(89, 28);
             this.btn_Adiciona.Text = "Salvar";
+            this.btn_Adiciona.Click += new System.EventHandler(this.btn_Adiciona_Click);
             // 
             // label1
             // 
@@ -82,23 +86,44 @@ namespace BetoAPP.Visual
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtObservacao);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 35);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(533, 124);
+            this.groupBox1.Size = new System.Drawing.Size(533, 235);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             // 
-            // textBox1
+            // txtObservacao
             // 
-            this.textBox1.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(21, 60);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(292, 33);
-            this.textBox1.TabIndex = 1;
+            this.txtObservacao.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtObservacao.Location = new System.Drawing.Point(21, 146);
+            this.txtObservacao.Multiline = true;
+            this.txtObservacao.Name = "txtObservacao";
+            this.txtObservacao.Size = new System.Drawing.Size(493, 76);
+            this.txtObservacao.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(21, 117);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 26);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Observação";
+            // 
+            // txtNome
+            // 
+            this.txtNome.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNome.Location = new System.Drawing.Point(21, 60);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(292, 33);
+            this.txtNome.TabIndex = 1;
             // 
             // txtTitulo
             // 
@@ -116,11 +141,12 @@ namespace BetoAPP.Visual
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(560, 208);
+            this.ClientSize = new System.Drawing.Size(560, 318);
             this.ControlBox = false;
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AdicionarSolicitanteVisual";
@@ -137,12 +163,14 @@ namespace BetoAPP.Visual
 
         #endregion
 
-        private System.Windows.Forms.ToolStripMenuItem btn_Edita;
+        private System.Windows.Forms.ToolStripMenuItem btn_Cancelar;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btn_Adiciona;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label txtTitulo;
+        private System.Windows.Forms.TextBox txtObservacao;
+        private System.Windows.Forms.Label label2;
     }
 }

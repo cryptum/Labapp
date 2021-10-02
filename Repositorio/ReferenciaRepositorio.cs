@@ -42,7 +42,7 @@ namespace Repositorio
             }
         }
 
-        public List<ReferenciaDTO> ObterUmPorNome(string nome)
+        public List<ReferenciaDTO> ObterListaPorNome(string nome)
         {
             using (var db = new ContextDB())
             {

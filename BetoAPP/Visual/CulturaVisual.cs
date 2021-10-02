@@ -39,7 +39,7 @@ namespace BetoAPP.Visual
 
         public List<CulturaDTO> Buscar(string nome)
         {
-            return new CulturaNegocio().ObterUmPorNome(nome);
+            return new CulturaNegocio().ObterListaPorNome(nome);
         }
 
         private void CulturaVisual_Load(object sender, EventArgs e)

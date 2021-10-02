@@ -12,18 +12,19 @@ namespace Repositorio
 {
     public class LocalRepositorio
     {
-        /*
         public LocalRepositorio() { }
 
-        public List<LocalDTO> ObterTodos()
+        public List<LocalDTO> ObterTodos(int idSolicitante, bool Excluido)
         {
             using (var db = new ContextDB())
             {
                 var query = db.Locais
+                                .Where(w => w.Excluido == Excluido && w.Solicitantes.IdSolicitante == idSolicitante)
                                 .Select(x => new LocalDTO
                                 {
-                                    Código = x.Idlocal,
-                                    Nome = x.Nome
+                                    Código = x.IdLocal,
+                                    Fazenda = x.Fazenda,
+                                    Municipio = x.Municipio
                                 })
                                 .ToList();
 
@@ -36,23 +37,25 @@ namespace Repositorio
             using (var db = new ContextDB())
             {
                 var query = db.Locais
-                                .Where(w => w.Idlocal == id)
+                                .Where(w => w.IdLocal == id)
                                 .FirstOrDefault();
 
                 return query;
             }
         }
 
-        public List<LocalDTO> ObterUmPorNome(string nome)
+        public List<LocalDTO> ObterListaPorNome(int idSolicitante, string nome, bool Excluido)
         {
             using (var db = new ContextDB())
             {
                 var query = db.Locais
-                                .Where(w => EF.Functions.Like(w.Nome, "%" + nome + "%"))
+                                .Where(w => EF.Functions.Like(w.Fazenda, "%" + nome + "%"))
+                                .Where(w => w.Excluido == Excluido && w.Solicitantes.IdSolicitante == idSolicitante)
                                 .Select(x => new LocalDTO
                                 {
-                                    Código = x.Idlocal,
-                                    Nome = x.Nome
+                                    Código = x.IdLocal,
+                                    Fazenda = x.Fazenda,
+                                    Municipio = x.Municipio
                                 })
                                 .ToList();
 
@@ -68,7 +71,7 @@ namespace Repositorio
                 db.SaveChanges();
             }
 
-            return local.Idlocal;
+            return local.IdLocal;
         }
 
         public int Editar(LocalEntidade local)
@@ -79,19 +82,7 @@ namespace Repositorio
                 db.SaveChanges();
             }
 
-            return local.Idlocal;
+            return local.IdLocal;
         }
-
-        public int Excluir(LocalEntidade local)
-        {
-            using (var db = new ContextDB())
-            {
-                db.Remove(local);
-                db.SaveChanges();
-            }
-
-            return local.Idlocal;
-        }
-        */
     }
 }

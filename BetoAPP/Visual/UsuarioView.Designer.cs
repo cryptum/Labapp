@@ -195,6 +195,7 @@ namespace BetoAPP.Visual
             this.btn_Recarrega.Name = "btn_Recarrega";
             this.btn_Recarrega.Size = new System.Drawing.Size(169, 28);
             this.btn_Recarrega.Text = "Recarregar Tabela";
+            this.btn_Recarrega.Click += new System.EventHandler(this.btn_Recarrega_Click);
             // 
             // UsuarioView
             // 

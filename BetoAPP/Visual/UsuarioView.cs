@@ -31,5 +31,10 @@ namespace BetoAPP.Visual
             AdicionaUsuarioVisual View = new AdicionaUsuarioVisual();
             View.ShowDialog();
         }
+
+        private void btn_Recarrega_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

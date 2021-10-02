@@ -11,7 +11,10 @@ namespace BetoAPP.Visual
         {
             InitializeComponent();
             lbl_UsuarioLogado.Text = Usuariologado;
-            AnaliseVisual View = AnaliseVisual.Instance();
+
+
+            //Remover Depois
+            SolicitanteVisual View = SolicitanteVisual.Instance();
             View.MdiParent = this;
             View.Show();
             View.Activate();

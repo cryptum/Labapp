@@ -19,13 +19,8 @@ namespace Negocio
 
         public void Gerar()
         {
-            string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            var caminho = $"{desktop}\\quadriculado\\quadriculado.pdf";
-
-            if (!Directory.Exists($"{desktop}\\quadriculado"))
-            {
-                Directory.CreateDirectory($"{desktop}\\quadriculado");
-            }
+            string caminho = ValidarCaminhoPDF();
+            caminho += "\\Laudo.pdf";
 
             using (PdfWriter wPdf = new PdfWriter(caminho, new WriterProperties().SetPdfVersion(PdfVersion.PDF_2_0)))
             {
@@ -40,7 +35,7 @@ namespace Negocio
                 string mes = DateTime.Now.Month.ToString();
                 string ano = DateTime.Now.Year.ToString();
 
-                document.Add(new Paragraph($"Quadriculado Analise química de Rotnina AA e CF ____/ {mes} / {ano}").AddStyle(normal));
+                document.Add(new Paragraph($"Quadriculado Análise química de Rotina AA e CF ____/ {mes} / {ano}").AddStyle(normal));
 
                 Table table = new Table(UnitValue.CreatePercentArray(8)).UseAllAvailableWidth();
 
@@ -62,6 +57,19 @@ namespace Negocio
                 document.Close();
                 pdfDocument.Close();
             };
+        }
+
+        string ValidarCaminhoPDF()
+        {
+            string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            var caminho = $"{desktop}\\Quadriculado";
+
+            if (!Directory.Exists(caminho))
+            {
+                Directory.CreateDirectory(caminho);
+            }
+
+            return caminho;
         }
     }
 }

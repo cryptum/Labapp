@@ -30,9 +30,9 @@ namespace BetoAPP.Visual
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btn_Adiciona = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Edita = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +40,7 @@ namespace BetoAPP.Visual
             this.btn_LimparTodosOsCampos = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_ImprimeQuadriculado = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbx_Pesquisa = new System.Windows.Forms.ComboBox();
             this.btn_Pesquisa = new System.Windows.Forms.Button();
             this.lbl1 = new System.Windows.Forms.Label();
             this.txt_Pesquisa = new System.Windows.Forms.TextBox();
@@ -115,6 +116,7 @@ namespace BetoAPP.Visual
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbx_Pesquisa);
             this.groupBox1.Controls.Add(this.btn_Pesquisa);
             this.groupBox1.Controls.Add(this.lbl1);
             this.groupBox1.Controls.Add(this.txt_Pesquisa);
@@ -126,14 +128,23 @@ namespace BetoAPP.Visual
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
+            // cbx_Pesquisa
+            // 
+            this.cbx_Pesquisa.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbx_Pesquisa.FormattingEnabled = true;
+            this.cbx_Pesquisa.Location = new System.Drawing.Point(135, 40);
+            this.cbx_Pesquisa.Name = "cbx_Pesquisa";
+            this.cbx_Pesquisa.Size = new System.Drawing.Size(121, 34);
+            this.cbx_Pesquisa.TabIndex = 1;
+            // 
             // btn_Pesquisa
             // 
             this.btn_Pesquisa.Image = global::BetoAPP.Properties.Resources.search_line__2_;
-            this.btn_Pesquisa.Location = new System.Drawing.Point(646, 42);
+            this.btn_Pesquisa.Location = new System.Drawing.Point(610, 40);
             this.btn_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btn_Pesquisa.Name = "btn_Pesquisa";
             this.btn_Pesquisa.Size = new System.Drawing.Size(51, 33);
-            this.btn_Pesquisa.TabIndex = 6;
+            this.btn_Pesquisa.TabIndex = 3;
             this.btn_Pesquisa.UseVisualStyleBackColor = true;
             this.btn_Pesquisa.Click += new System.EventHandler(this.btn_Pesquisa_Click);
             // 
@@ -141,7 +152,7 @@ namespace BetoAPP.Visual
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl1.Location = new System.Drawing.Point(8, 19);
+            this.lbl1.Location = new System.Drawing.Point(8, 40);
             this.lbl1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(101, 29);
@@ -151,50 +162,49 @@ namespace BetoAPP.Visual
             // txt_Pesquisa
             // 
             this.txt_Pesquisa.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Pesquisa.Location = new System.Drawing.Point(301, 42);
+            this.txt_Pesquisa.Location = new System.Drawing.Point(263, 40);
             this.txt_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_Pesquisa.Name = "txt_Pesquisa";
             this.txt_Pesquisa.Size = new System.Drawing.Size(339, 33);
-            this.txt_Pesquisa.TabIndex = 4;
-            this.txt_Pesquisa.TextChanged += new System.EventHandler(this.txt_Pesquisa_TextChanged);
+            this.txt_Pesquisa.TabIndex = 2;
             // 
             // dataGridAnalise
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridAnalise.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridAnalise.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridAnalise.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridAnalise.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.grid_Id,
             this.grid_Nome});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridAnalise.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridAnalise.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridAnalise.Location = new System.Drawing.Point(14, 155);
             this.dataGridAnalise.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridAnalise.Name = "dataGridAnalise";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridAnalise.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridAnalise.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridAnalise.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dataGridAnalise.RowTemplate.Height = 25;
             this.dataGridAnalise.Size = new System.Drawing.Size(728, 527);
-            this.dataGridAnalise.TabIndex = 14;
+            this.dataGridAnalise.TabIndex = 4;
             // 
             // grid_Id
             // 
@@ -244,5 +254,6 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.DataGridView dataGridAnalise;
         private System.Windows.Forms.DataGridViewTextBoxColumn grid_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn grid_Nome;
+        private System.Windows.Forms.ComboBox cbx_Pesquisa;
     }
 }

@@ -20,7 +20,7 @@ namespace Repositorio
             {
                 var query = db.TipoAnalises
                                 .Select(x => new TipoAnaliseDTO {
-                                    IdAnalise = x.IdTipoAnalise
+                                    Código = x.IdTipoAnalise
                                 })
                                 .ToList();
                 return query;

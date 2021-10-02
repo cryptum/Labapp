@@ -4,18 +4,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
-namespace Entidade
+namespace Entidade.DTO
 {
-    public class SolicitanteEntidade
+    public class SolicitanteDTO
     {
         [Key]
-        public int IdSolicitante { get; set; }
-        [Required]
-        public string Nome { get; set; }
-        public string Observacao { get; set; }
-        public bool Excluido { get; set; }
+        public int Código { get; set; }
 
-        public ICollection<LocalEntidade> Locais{ get; set; }
+        [Required(ErrorMessage = "O campo 'Nome' está vazio")]
+        public string Nome { get; set; }
+
+        public string Observacao { get; set; }
+
+        public int Fazendas { get; set; }
     }
 }

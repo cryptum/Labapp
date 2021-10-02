@@ -35,7 +35,7 @@ namespace BetoAPP.Visual
             this.btn_Adiciona = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPrincipal = new System.Windows.Forms.TabPage();
             this.button21 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
@@ -102,39 +102,39 @@ namespace BetoAPP.Visual
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabAdicional = new System.Windows.Forms.TabPage();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.textBox35 = new System.Windows.Forms.TextBox();
             this.textBox36 = new System.Windows.Forms.TextBox();
-            this.textBox37 = new System.Windows.Forms.TextBox();
-            this.textBox38 = new System.Windows.Forms.TextBox();
-            this.textBox39 = new System.Windows.Forms.TextBox();
+            this.N1_Mn = new System.Windows.Forms.TextBox();
+            this.N1_Fe = new System.Windows.Forms.TextBox();
+            this.N1_Cu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox40 = new System.Windows.Forms.TextBox();
+            this.N1_Zn = new System.Windows.Forms.TextBox();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.textBox43 = new System.Windows.Forms.TextBox();
+            this.N2_Cu = new System.Windows.Forms.TextBox();
             this.textBox44 = new System.Windows.Forms.TextBox();
-            this.textBox45 = new System.Windows.Forms.TextBox();
+            this.N2_Zn = new System.Windows.Forms.TextBox();
             this.textBox46 = new System.Windows.Forms.TextBox();
-            this.textBox47 = new System.Windows.Forms.TextBox();
+            this.N2_Mn = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox48 = new System.Windows.Forms.TextBox();
+            this.N2_Fe = new System.Windows.Forms.TextBox();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.textBox51 = new System.Windows.Forms.TextBox();
+            this.N3_Cu = new System.Windows.Forms.TextBox();
             this.textBox52 = new System.Windows.Forms.TextBox();
-            this.textBox53 = new System.Windows.Forms.TextBox();
+            this.N3_Zn = new System.Windows.Forms.TextBox();
             this.textBox54 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox55 = new System.Windows.Forms.TextBox();
-            this.textBox56 = new System.Windows.Forms.TextBox();
+            this.N3_Mn = new System.Windows.Forms.TextBox();
+            this.N3_Fe = new System.Windows.Forms.TextBox();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.textBox59 = new System.Windows.Forms.TextBox();
+            this.N4_Cu = new System.Windows.Forms.TextBox();
             this.textBox60 = new System.Windows.Forms.TextBox();
-            this.textBox61 = new System.Windows.Forms.TextBox();
+            this.N4_Zn = new System.Windows.Forms.TextBox();
             this.textBox62 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox63 = new System.Windows.Forms.TextBox();
-            this.textBox64 = new System.Windows.Forms.TextBox();
+            this.N4_Mn = new System.Windows.Forms.TextBox();
+            this.N4_Fe = new System.Windows.Forms.TextBox();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.button9 = new System.Windows.Forms.Button();
             this.groupBox19 = new System.Windows.Forms.GroupBox();
@@ -149,13 +149,23 @@ namespace BetoAPP.Visual
             this.button15 = new System.Windows.Forms.Button();
             this.groupBox24 = new System.Windows.Forms.GroupBox();
             this.button16 = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabOpicional = new System.Windows.Forms.TabPage();
+            this.tabSolicitante = new System.Windows.Forms.TabPage();
+            this.txt_Solicitante = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.cbxFazenda = new System.Windows.Forms.ComboBox();
+            this.cbxReferencia = new System.Windows.Forms.ComboBox();
+            this.cbxCultura = new System.Windows.Forms.ComboBox();
+            this.cbxSolicitacao = new System.Windows.Forms.ComboBox();
+            this.button22 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabPrincipal.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -168,7 +178,7 @@ namespace BetoAPP.Visual
             this.groupBox10.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox13.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tabAdicional.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.groupBox15.SuspendLayout();
             this.groupBox16.SuspendLayout();
@@ -180,6 +190,7 @@ namespace BetoAPP.Visual
             this.groupBox22.SuspendLayout();
             this.groupBox23.SuspendLayout();
             this.groupBox24.SuspendLayout();
+            this.tabSolicitante.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtTitulo
@@ -242,47 +253,46 @@ namespace BetoAPP.Visual
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabSolicitante);
+            this.tabControl1.Controls.Add(this.tabPrincipal);
+            this.tabControl1.Controls.Add(this.tabAdicional);
+            this.tabControl1.Controls.Add(this.tabOpicional);
             this.tabControl1.ItemSize = new System.Drawing.Size(58, 30);
             this.tabControl1.Location = new System.Drawing.Point(7, 22);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(60, 3);
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1132, 645);
-            this.tabControl1.TabIndex = 10;
+            this.tabControl1.TabIndex = 33;
             // 
-            // tabPage1
+            // tabPrincipal
             // 
-            this.tabPage1.Controls.Add(this.button21);
-            this.tabPage1.Controls.Add(this.button20);
-            this.tabPage1.Controls.Add(this.button19);
-            this.tabPage1.Controls.Add(this.button18);
-            this.tabPage1.Controls.Add(this.button17);
-            this.tabPage1.Controls.Add(this.button12);
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Controls.Add(this.groupBox4);
-            this.tabPage1.Controls.Add(this.groupBox5);
-            this.tabPage1.Controls.Add(this.groupBox11);
-            this.tabPage1.Controls.Add(this.groupBox6);
-            this.tabPage1.Controls.Add(this.groupBox9);
-            this.tabPage1.Controls.Add(this.groupBox12);
-            this.tabPage1.Controls.Add(this.groupBox7);
-            this.tabPage1.Controls.Add(this.groupBox10);
-            this.tabPage1.Controls.Add(this.groupBox8);
-            this.tabPage1.Controls.Add(this.groupBox13);
-            this.tabPage1.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tabPage1.Location = new System.Drawing.Point(4, 34);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1124, 607);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Principal";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPrincipal.Controls.Add(this.button21);
+            this.tabPrincipal.Controls.Add(this.button20);
+            this.tabPrincipal.Controls.Add(this.button19);
+            this.tabPrincipal.Controls.Add(this.button18);
+            this.tabPrincipal.Controls.Add(this.button17);
+            this.tabPrincipal.Controls.Add(this.button12);
+            this.tabPrincipal.Controls.Add(this.groupBox2);
+            this.tabPrincipal.Controls.Add(this.groupBox3);
+            this.tabPrincipal.Controls.Add(this.groupBox4);
+            this.tabPrincipal.Controls.Add(this.groupBox5);
+            this.tabPrincipal.Controls.Add(this.groupBox11);
+            this.tabPrincipal.Controls.Add(this.groupBox6);
+            this.tabPrincipal.Controls.Add(this.groupBox9);
+            this.tabPrincipal.Controls.Add(this.groupBox12);
+            this.tabPrincipal.Controls.Add(this.groupBox7);
+            this.tabPrincipal.Controls.Add(this.groupBox10);
+            this.tabPrincipal.Controls.Add(this.groupBox8);
+            this.tabPrincipal.Controls.Add(this.groupBox13);
+            this.tabPrincipal.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tabPrincipal.Location = new System.Drawing.Point(4, 34);
+            this.tabPrincipal.Name = "tabPrincipal";
+            this.tabPrincipal.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPrincipal.Size = new System.Drawing.Size(1124, 607);
+            this.tabPrincipal.TabIndex = 0;
+            this.tabPrincipal.Text = "Principal";
+            this.tabPrincipal.UseVisualStyleBackColor = true;
             // 
             // button21
             // 
@@ -1012,40 +1022,40 @@ namespace BetoAPP.Visual
             this.button3.Text = "K";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // tabPage2
+            // tabAdicional
             // 
-            this.tabPage2.Controls.Add(this.groupBox14);
-            this.tabPage2.Controls.Add(this.groupBox15);
-            this.tabPage2.Controls.Add(this.groupBox16);
-            this.tabPage2.Controls.Add(this.groupBox17);
-            this.tabPage2.Controls.Add(this.groupBox18);
-            this.tabPage2.Controls.Add(this.groupBox19);
-            this.tabPage2.Controls.Add(this.groupBox20);
-            this.tabPage2.Controls.Add(this.groupBox21);
-            this.tabPage2.Controls.Add(this.groupBox22);
-            this.tabPage2.Controls.Add(this.groupBox23);
-            this.tabPage2.Controls.Add(this.groupBox24);
-            this.tabPage2.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1124, 607);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Adicional";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabAdicional.Controls.Add(this.groupBox14);
+            this.tabAdicional.Controls.Add(this.groupBox15);
+            this.tabAdicional.Controls.Add(this.groupBox16);
+            this.tabAdicional.Controls.Add(this.groupBox17);
+            this.tabAdicional.Controls.Add(this.groupBox18);
+            this.tabAdicional.Controls.Add(this.groupBox19);
+            this.tabAdicional.Controls.Add(this.groupBox20);
+            this.tabAdicional.Controls.Add(this.groupBox21);
+            this.tabAdicional.Controls.Add(this.groupBox22);
+            this.tabAdicional.Controls.Add(this.groupBox23);
+            this.tabAdicional.Controls.Add(this.groupBox24);
+            this.tabAdicional.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tabAdicional.Location = new System.Drawing.Point(4, 34);
+            this.tabAdicional.Name = "tabAdicional";
+            this.tabAdicional.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAdicional.Size = new System.Drawing.Size(1124, 607);
+            this.tabAdicional.TabIndex = 1;
+            this.tabAdicional.Text = "Adicional";
+            this.tabAdicional.UseVisualStyleBackColor = true;
             // 
             // groupBox14
             // 
             this.groupBox14.BackColor = System.Drawing.Color.White;
             this.groupBox14.Controls.Add(this.textBox35);
             this.groupBox14.Controls.Add(this.textBox36);
-            this.groupBox14.Controls.Add(this.textBox37);
-            this.groupBox14.Controls.Add(this.textBox38);
-            this.groupBox14.Controls.Add(this.textBox39);
+            this.groupBox14.Controls.Add(this.N1_Mn);
+            this.groupBox14.Controls.Add(this.N1_Fe);
+            this.groupBox14.Controls.Add(this.N1_Cu);
             this.groupBox14.Controls.Add(this.label1);
-            this.groupBox14.Controls.Add(this.textBox40);
+            this.groupBox14.Controls.Add(this.N1_Zn);
             this.groupBox14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox14.Location = new System.Drawing.Point(6, 93);
+            this.groupBox14.Location = new System.Drawing.Point(14, 93);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(1088, 120);
             this.groupBox14.TabIndex = 21;
@@ -1069,32 +1079,32 @@ namespace BetoAPP.Visual
             this.textBox36.TabIndex = 6;
             this.textBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox37
+            // N1_Mn
             // 
-            this.textBox37.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox37.Location = new System.Drawing.Point(601, 48);
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Size = new System.Drawing.Size(73, 29);
-            this.textBox37.TabIndex = 5;
-            this.textBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.N1_Mn.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.N1_Mn.Location = new System.Drawing.Point(601, 48);
+            this.N1_Mn.Name = "N1_Mn";
+            this.N1_Mn.Size = new System.Drawing.Size(73, 29);
+            this.N1_Mn.TabIndex = 37;
+            this.N1_Mn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox38
+            // N1_Fe
             // 
-            this.textBox38.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox38.Location = new System.Drawing.Point(472, 48);
-            this.textBox38.Name = "textBox38";
-            this.textBox38.Size = new System.Drawing.Size(73, 29);
-            this.textBox38.TabIndex = 4;
-            this.textBox38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.N1_Fe.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.N1_Fe.Location = new System.Drawing.Point(472, 48);
+            this.N1_Fe.Name = "N1_Fe";
+            this.N1_Fe.Size = new System.Drawing.Size(73, 29);
+            this.N1_Fe.TabIndex = 36;
+            this.N1_Fe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox39
+            // N1_Cu
             // 
-            this.textBox39.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox39.Location = new System.Drawing.Point(341, 48);
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(73, 29);
-            this.textBox39.TabIndex = 2;
-            this.textBox39.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.N1_Cu.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.N1_Cu.Location = new System.Drawing.Point(341, 48);
+            this.N1_Cu.Name = "N1_Cu";
+            this.N1_Cu.Size = new System.Drawing.Size(73, 29);
+            this.N1_Cu.TabIndex = 35;
+            this.N1_Cu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -1106,38 +1116,38 @@ namespace BetoAPP.Visual
             this.label1.TabIndex = 5;
             this.label1.Text = "Nº 1";
             // 
-            // textBox40
+            // N1_Zn
             // 
-            this.textBox40.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox40.Location = new System.Drawing.Point(211, 48);
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(73, 29);
-            this.textBox40.TabIndex = 1;
-            this.textBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.N1_Zn.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.N1_Zn.Location = new System.Drawing.Point(211, 48);
+            this.N1_Zn.Name = "N1_Zn";
+            this.N1_Zn.Size = new System.Drawing.Size(73, 29);
+            this.N1_Zn.TabIndex = 34;
+            this.N1_Zn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox15
             // 
-            this.groupBox15.Controls.Add(this.textBox43);
+            this.groupBox15.Controls.Add(this.N2_Cu);
             this.groupBox15.Controls.Add(this.textBox44);
-            this.groupBox15.Controls.Add(this.textBox45);
+            this.groupBox15.Controls.Add(this.N2_Zn);
             this.groupBox15.Controls.Add(this.textBox46);
-            this.groupBox15.Controls.Add(this.textBox47);
+            this.groupBox15.Controls.Add(this.N2_Mn);
             this.groupBox15.Controls.Add(this.label6);
-            this.groupBox15.Controls.Add(this.textBox48);
-            this.groupBox15.Location = new System.Drawing.Point(6, 214);
+            this.groupBox15.Controls.Add(this.N2_Fe);
+            this.groupBox15.Location = new System.Drawing.Point(14, 217);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(1088, 120);
             this.groupBox15.TabIndex = 24;
             this.groupBox15.TabStop = false;
             // 
-            // textBox43
+            // N2_Cu
             // 
-            this.textBox43.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox43.Location = new System.Drawing.Point(341, 48);
-            this.textBox43.Name = "textBox43";
-            this.textBox43.Size = new System.Drawing.Size(73, 29);
-            this.textBox43.TabIndex = 10;
-            this.textBox43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.N2_Cu.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.N2_Cu.Location = new System.Drawing.Point(341, 48);
+            this.N2_Cu.Name = "N2_Cu";
+            this.N2_Cu.Size = new System.Drawing.Size(73, 29);
+            this.N2_Cu.TabIndex = 10;
+            this.N2_Cu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox44
             // 
@@ -1148,14 +1158,14 @@ namespace BetoAPP.Visual
             this.textBox44.TabIndex = 15;
             this.textBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox45
+            // N2_Zn
             // 
-            this.textBox45.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox45.Location = new System.Drawing.Point(211, 48);
-            this.textBox45.Name = "textBox45";
-            this.textBox45.Size = new System.Drawing.Size(73, 29);
-            this.textBox45.TabIndex = 9;
-            this.textBox45.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.N2_Zn.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.N2_Zn.Location = new System.Drawing.Point(211, 48);
+            this.N2_Zn.Name = "N2_Zn";
+            this.N2_Zn.Size = new System.Drawing.Size(73, 29);
+            this.N2_Zn.TabIndex = 9;
+            this.N2_Zn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox46
             // 
@@ -1166,14 +1176,14 @@ namespace BetoAPP.Visual
             this.textBox46.TabIndex = 14;
             this.textBox46.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox47
+            // N2_Mn
             // 
-            this.textBox47.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox47.Location = new System.Drawing.Point(601, 48);
-            this.textBox47.Name = "textBox47";
-            this.textBox47.Size = new System.Drawing.Size(73, 29);
-            this.textBox47.TabIndex = 13;
-            this.textBox47.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.N2_Mn.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.N2_Mn.Location = new System.Drawing.Point(601, 48);
+            this.N2_Mn.Name = "N2_Mn";
+            this.N2_Mn.Size = new System.Drawing.Size(73, 29);
+            this.N2_Mn.TabIndex = 13;
+            this.N2_Mn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -1185,39 +1195,39 @@ namespace BetoAPP.Visual
             this.label6.TabIndex = 6;
             this.label6.Text = "Nº 2";
             // 
-            // textBox48
+            // N2_Fe
             // 
-            this.textBox48.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox48.Location = new System.Drawing.Point(472, 48);
-            this.textBox48.Name = "textBox48";
-            this.textBox48.Size = new System.Drawing.Size(73, 29);
-            this.textBox48.TabIndex = 12;
-            this.textBox48.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.N2_Fe.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.N2_Fe.Location = new System.Drawing.Point(472, 48);
+            this.N2_Fe.Name = "N2_Fe";
+            this.N2_Fe.Size = new System.Drawing.Size(73, 29);
+            this.N2_Fe.TabIndex = 12;
+            this.N2_Fe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox16
             // 
             this.groupBox16.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox16.Controls.Add(this.textBox51);
+            this.groupBox16.Controls.Add(this.N3_Cu);
             this.groupBox16.Controls.Add(this.textBox52);
-            this.groupBox16.Controls.Add(this.textBox53);
+            this.groupBox16.Controls.Add(this.N3_Zn);
             this.groupBox16.Controls.Add(this.textBox54);
             this.groupBox16.Controls.Add(this.label7);
-            this.groupBox16.Controls.Add(this.textBox55);
-            this.groupBox16.Controls.Add(this.textBox56);
-            this.groupBox16.Location = new System.Drawing.Point(6, 335);
+            this.groupBox16.Controls.Add(this.N3_Mn);
+            this.groupBox16.Controls.Add(this.N3_Fe);
+            this.groupBox16.Location = new System.Drawing.Point(14, 341);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Size = new System.Drawing.Size(1088, 120);
             this.groupBox16.TabIndex = 27;
             this.groupBox16.TabStop = false;
             // 
-            // textBox51
+            // N3_Cu
             // 
-            this.textBox51.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox51.Location = new System.Drawing.Point(341, 48);
-            this.textBox51.Name = "textBox51";
-            this.textBox51.Size = new System.Drawing.Size(73, 29);
-            this.textBox51.TabIndex = 18;
-            this.textBox51.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.N3_Cu.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.N3_Cu.Location = new System.Drawing.Point(341, 48);
+            this.N3_Cu.Name = "N3_Cu";
+            this.N3_Cu.Size = new System.Drawing.Size(73, 29);
+            this.N3_Cu.TabIndex = 18;
+            this.N3_Cu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox52
             // 
@@ -1228,14 +1238,14 @@ namespace BetoAPP.Visual
             this.textBox52.TabIndex = 23;
             this.textBox52.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox53
+            // N3_Zn
             // 
-            this.textBox53.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox53.Location = new System.Drawing.Point(211, 48);
-            this.textBox53.Name = "textBox53";
-            this.textBox53.Size = new System.Drawing.Size(73, 29);
-            this.textBox53.TabIndex = 17;
-            this.textBox53.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.N3_Zn.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.N3_Zn.Location = new System.Drawing.Point(211, 48);
+            this.N3_Zn.Name = "N3_Zn";
+            this.N3_Zn.Size = new System.Drawing.Size(73, 29);
+            this.N3_Zn.TabIndex = 17;
+            this.N3_Zn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox54
             // 
@@ -1256,47 +1266,47 @@ namespace BetoAPP.Visual
             this.label7.TabIndex = 7;
             this.label7.Text = "Nº 3";
             // 
-            // textBox55
+            // N3_Mn
             // 
-            this.textBox55.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox55.Location = new System.Drawing.Point(601, 48);
-            this.textBox55.Name = "textBox55";
-            this.textBox55.Size = new System.Drawing.Size(73, 29);
-            this.textBox55.TabIndex = 21;
-            this.textBox55.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.N3_Mn.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.N3_Mn.Location = new System.Drawing.Point(601, 48);
+            this.N3_Mn.Name = "N3_Mn";
+            this.N3_Mn.Size = new System.Drawing.Size(73, 29);
+            this.N3_Mn.TabIndex = 21;
+            this.N3_Mn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox56
+            // N3_Fe
             // 
-            this.textBox56.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox56.Location = new System.Drawing.Point(472, 48);
-            this.textBox56.Name = "textBox56";
-            this.textBox56.Size = new System.Drawing.Size(73, 29);
-            this.textBox56.TabIndex = 20;
-            this.textBox56.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.N3_Fe.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.N3_Fe.Location = new System.Drawing.Point(472, 48);
+            this.N3_Fe.Name = "N3_Fe";
+            this.N3_Fe.Size = new System.Drawing.Size(73, 29);
+            this.N3_Fe.TabIndex = 20;
+            this.N3_Fe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox17
             // 
-            this.groupBox17.Controls.Add(this.textBox59);
+            this.groupBox17.Controls.Add(this.N4_Cu);
             this.groupBox17.Controls.Add(this.textBox60);
-            this.groupBox17.Controls.Add(this.textBox61);
+            this.groupBox17.Controls.Add(this.N4_Zn);
             this.groupBox17.Controls.Add(this.textBox62);
             this.groupBox17.Controls.Add(this.label8);
-            this.groupBox17.Controls.Add(this.textBox63);
-            this.groupBox17.Controls.Add(this.textBox64);
-            this.groupBox17.Location = new System.Drawing.Point(6, 456);
+            this.groupBox17.Controls.Add(this.N4_Mn);
+            this.groupBox17.Controls.Add(this.N4_Fe);
+            this.groupBox17.Location = new System.Drawing.Point(14, 465);
             this.groupBox17.Name = "groupBox17";
             this.groupBox17.Size = new System.Drawing.Size(1088, 120);
             this.groupBox17.TabIndex = 29;
             this.groupBox17.TabStop = false;
             // 
-            // textBox59
+            // N4_Cu
             // 
-            this.textBox59.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox59.Location = new System.Drawing.Point(341, 48);
-            this.textBox59.Name = "textBox59";
-            this.textBox59.Size = new System.Drawing.Size(73, 29);
-            this.textBox59.TabIndex = 26;
-            this.textBox59.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.N4_Cu.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.N4_Cu.Location = new System.Drawing.Point(341, 48);
+            this.N4_Cu.Name = "N4_Cu";
+            this.N4_Cu.Size = new System.Drawing.Size(73, 29);
+            this.N4_Cu.TabIndex = 26;
+            this.N4_Cu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox60
             // 
@@ -1307,14 +1317,14 @@ namespace BetoAPP.Visual
             this.textBox60.TabIndex = 31;
             this.textBox60.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox61
+            // N4_Zn
             // 
-            this.textBox61.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox61.Location = new System.Drawing.Point(211, 48);
-            this.textBox61.Name = "textBox61";
-            this.textBox61.Size = new System.Drawing.Size(73, 29);
-            this.textBox61.TabIndex = 25;
-            this.textBox61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.N4_Zn.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.N4_Zn.Location = new System.Drawing.Point(211, 48);
+            this.N4_Zn.Name = "N4_Zn";
+            this.N4_Zn.Size = new System.Drawing.Size(73, 29);
+            this.N4_Zn.TabIndex = 25;
+            this.N4_Zn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox62
             // 
@@ -1335,30 +1345,30 @@ namespace BetoAPP.Visual
             this.label8.TabIndex = 8;
             this.label8.Text = "Nº 4";
             // 
-            // textBox63
+            // N4_Mn
             // 
-            this.textBox63.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox63.Location = new System.Drawing.Point(601, 48);
-            this.textBox63.Name = "textBox63";
-            this.textBox63.Size = new System.Drawing.Size(73, 29);
-            this.textBox63.TabIndex = 29;
-            this.textBox63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.N4_Mn.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.N4_Mn.Location = new System.Drawing.Point(601, 48);
+            this.N4_Mn.Name = "N4_Mn";
+            this.N4_Mn.Size = new System.Drawing.Size(73, 29);
+            this.N4_Mn.TabIndex = 29;
+            this.N4_Mn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox64
+            // N4_Fe
             // 
-            this.textBox64.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox64.Location = new System.Drawing.Point(472, 48);
-            this.textBox64.Name = "textBox64";
-            this.textBox64.Size = new System.Drawing.Size(73, 29);
-            this.textBox64.TabIndex = 28;
-            this.textBox64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.N4_Fe.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.N4_Fe.Location = new System.Drawing.Point(472, 48);
+            this.N4_Fe.Name = "N4_Fe";
+            this.N4_Fe.Size = new System.Drawing.Size(73, 29);
+            this.N4_Fe.TabIndex = 28;
+            this.N4_Fe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox18
             // 
             this.groupBox18.Controls.Add(this.button9);
             this.groupBox18.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.groupBox18.Location = new System.Drawing.Point(8, 54);
+            this.groupBox18.Location = new System.Drawing.Point(16, 54);
             this.groupBox18.Name = "groupBox18";
             this.groupBox18.Padding = new System.Windows.Forms.Padding(0);
             this.groupBox18.Size = new System.Drawing.Size(104, 45);
@@ -1387,7 +1397,7 @@ namespace BetoAPP.Visual
             this.groupBox19.Controls.Add(this.button10);
             this.groupBox19.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox19.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.groupBox19.Location = new System.Drawing.Point(201, 54);
+            this.groupBox19.Location = new System.Drawing.Point(209, 54);
             this.groupBox19.Name = "groupBox19";
             this.groupBox19.Padding = new System.Windows.Forms.Padding(0);
             this.groupBox19.Size = new System.Drawing.Size(104, 45);
@@ -1414,7 +1424,7 @@ namespace BetoAPP.Visual
             // groupBox20
             // 
             this.groupBox20.Controls.Add(this.button11);
-            this.groupBox20.Location = new System.Drawing.Point(937, 54);
+            this.groupBox20.Location = new System.Drawing.Point(945, 54);
             this.groupBox20.Name = "groupBox20";
             this.groupBox20.Padding = new System.Windows.Forms.Padding(0);
             this.groupBox20.Size = new System.Drawing.Size(133, 45);
@@ -1441,7 +1451,7 @@ namespace BetoAPP.Visual
             // groupBox21
             // 
             this.groupBox21.Controls.Add(this.button13);
-            this.groupBox21.Location = new System.Drawing.Point(591, 54);
+            this.groupBox21.Location = new System.Drawing.Point(599, 54);
             this.groupBox21.Name = "groupBox21";
             this.groupBox21.Padding = new System.Windows.Forms.Padding(0);
             this.groupBox21.Size = new System.Drawing.Size(104, 45);
@@ -1468,7 +1478,7 @@ namespace BetoAPP.Visual
             // groupBox22
             // 
             this.groupBox22.Controls.Add(this.button14);
-            this.groupBox22.Location = new System.Drawing.Point(771, 54);
+            this.groupBox22.Location = new System.Drawing.Point(779, 54);
             this.groupBox22.Name = "groupBox22";
             this.groupBox22.Padding = new System.Windows.Forms.Padding(0);
             this.groupBox22.Size = new System.Drawing.Size(133, 45);
@@ -1495,7 +1505,7 @@ namespace BetoAPP.Visual
             // groupBox23
             // 
             this.groupBox23.Controls.Add(this.button15);
-            this.groupBox23.Location = new System.Drawing.Point(331, 54);
+            this.groupBox23.Location = new System.Drawing.Point(339, 54);
             this.groupBox23.Name = "groupBox23";
             this.groupBox23.Padding = new System.Windows.Forms.Padding(0);
             this.groupBox23.Size = new System.Drawing.Size(104, 45);
@@ -1522,7 +1532,7 @@ namespace BetoAPP.Visual
             // groupBox24
             // 
             this.groupBox24.Controls.Add(this.button16);
-            this.groupBox24.Location = new System.Drawing.Point(461, 54);
+            this.groupBox24.Location = new System.Drawing.Point(469, 54);
             this.groupBox24.Name = "groupBox24";
             this.groupBox24.Padding = new System.Windows.Forms.Padding(0);
             this.groupBox24.Size = new System.Drawing.Size(104, 45);
@@ -1546,36 +1556,146 @@ namespace BetoAPP.Visual
             this.button16.Text = "Fe";
             this.button16.UseVisualStyleBackColor = false;
             // 
-            // tabPage3
+            // tabOpicional
             // 
-            this.tabPage3.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tabPage3.Location = new System.Drawing.Point(4, 34);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1124, 607);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Opcional";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabOpicional.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tabOpicional.Location = new System.Drawing.Point(4, 34);
+            this.tabOpicional.Name = "tabOpicional";
+            this.tabOpicional.Padding = new System.Windows.Forms.Padding(3);
+            this.tabOpicional.Size = new System.Drawing.Size(1124, 607);
+            this.tabOpicional.TabIndex = 2;
+            this.tabOpicional.Text = "Opcional";
+            this.tabOpicional.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // tabSolicitante
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 34);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1124, 607);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabSolicitante.Controls.Add(this.button22);
+            this.tabSolicitante.Controls.Add(this.cbxSolicitacao);
+            this.tabSolicitante.Controls.Add(this.cbxCultura);
+            this.tabSolicitante.Controls.Add(this.cbxReferencia);
+            this.tabSolicitante.Controls.Add(this.cbxFazenda);
+            this.tabSolicitante.Controls.Add(this.label17);
+            this.tabSolicitante.Controls.Add(this.label16);
+            this.tabSolicitante.Controls.Add(this.label15);
+            this.tabSolicitante.Controls.Add(this.label14);
+            this.tabSolicitante.Controls.Add(this.label13);
+            this.tabSolicitante.Controls.Add(this.txt_Solicitante);
+            this.tabSolicitante.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tabSolicitante.Location = new System.Drawing.Point(4, 34);
+            this.tabSolicitante.Name = "tabSolicitante";
+            this.tabSolicitante.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSolicitante.Size = new System.Drawing.Size(1124, 607);
+            this.tabSolicitante.TabIndex = 3;
+            this.tabSolicitante.Text = "Solicitante";
+            this.tabSolicitante.UseVisualStyleBackColor = true;
             // 
-            // tabPage5
+            // txt_Solicitante
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 34);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1124, 607);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "tabPage5";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.txt_Solicitante.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_Solicitante.Location = new System.Drawing.Point(197, 30);
+            this.txt_Solicitante.Name = "txt_Solicitante";
+            this.txt_Solicitante.Size = new System.Drawing.Size(353, 33);
+            this.txt_Solicitante.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(26, 30);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(113, 29);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Soliciante";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(26, 120);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(98, 29);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Fazenda";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(26, 479);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(124, 29);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Solicitação";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label16.Location = new System.Drawing.Point(29, 231);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(121, 29);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Referência";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label17.Location = new System.Drawing.Point(26, 350);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(85, 29);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "Cultura";
+            // 
+            // 
+            this.cbxFazenda.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbxFazenda.FormattingEnabled = true;
+            this.cbxFazenda.Location = new System.Drawing.Point(197, 120);
+            this.cbxFazenda.Name = "cbxFazenda";
+            this.cbxFazenda.Size = new System.Drawing.Size(353, 34);
+            this.cbxFazenda.TabIndex = 2;
+            // 
+            // cbxReferencia
+            // 
+            this.cbxReferencia.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbxReferencia.FormattingEnabled = true;
+            this.cbxReferencia.Location = new System.Drawing.Point(197, 231);
+            this.cbxReferencia.Name = "cbxReferencia";
+            this.cbxReferencia.Size = new System.Drawing.Size(353, 34);
+            this.cbxReferencia.TabIndex = 3;
+            // 
+            // cbxCultura
+            // 
+            this.cbxCultura.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbxCultura.FormattingEnabled = true;
+            this.cbxCultura.Location = new System.Drawing.Point(197, 350);
+            this.cbxCultura.Name = "cbxCultura";
+            this.cbxCultura.Size = new System.Drawing.Size(353, 34);
+            this.cbxCultura.TabIndex = 4;
+            // 
+            // cbxSolicitacao
+            // 
+            this.cbxSolicitacao.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbxSolicitacao.FormattingEnabled = true;
+            this.cbxSolicitacao.Location = new System.Drawing.Point(197, 479);
+            this.cbxSolicitacao.Name = "cbxSolicitacao";
+            this.cbxSolicitacao.Size = new System.Drawing.Size(353, 34);
+            this.cbxSolicitacao.TabIndex = 5;
+            // 
+            // button22
+            // 
+            this.button22.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button22.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button22.Image = global::BetoAPP.Properties.Resources.arrow_right_fill__1_;
+            this.button22.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button22.Location = new System.Drawing.Point(941, 464);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(108, 62);
+            this.button22.TabIndex = 6;
+            this.button22.Text = "Avançar";
+            this.button22.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button22.UseVisualStyleBackColor = true;
             // 
             // AdicionarAnaliseVisual
             // 
@@ -1595,7 +1715,7 @@ namespace BetoAPP.Visual
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tabPrincipal.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -1612,7 +1732,7 @@ namespace BetoAPP.Visual
             this.groupBox10.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox13.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
+            this.tabAdicional.ResumeLayout(false);
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
             this.groupBox15.ResumeLayout(false);
@@ -1628,6 +1748,8 @@ namespace BetoAPP.Visual
             this.groupBox22.ResumeLayout(false);
             this.groupBox23.ResumeLayout(false);
             this.groupBox24.ResumeLayout(false);
+            this.tabSolicitante.ResumeLayout(false);
+            this.tabSolicitante.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1641,7 +1763,7 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.ToolStripMenuItem btn_Adiciona;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPrincipal;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button19;
@@ -1708,39 +1830,39 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabAdicional;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.TextBox textBox35;
         private System.Windows.Forms.TextBox textBox36;
-        private System.Windows.Forms.TextBox textBox37;
-        private System.Windows.Forms.TextBox textBox38;
-        private System.Windows.Forms.TextBox textBox39;
+        private System.Windows.Forms.TextBox N1_Mn;
+        private System.Windows.Forms.TextBox N1_Fe;
+        private System.Windows.Forms.TextBox N1_Cu;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox40;
+        private System.Windows.Forms.TextBox N1_Zn;
         private System.Windows.Forms.GroupBox groupBox15;
-        private System.Windows.Forms.TextBox textBox43;
+        private System.Windows.Forms.TextBox N2_Cu;
         private System.Windows.Forms.TextBox textBox44;
-        private System.Windows.Forms.TextBox textBox45;
+        private System.Windows.Forms.TextBox N2_Zn;
         private System.Windows.Forms.TextBox textBox46;
-        private System.Windows.Forms.TextBox textBox47;
+        private System.Windows.Forms.TextBox N2_Mn;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox48;
+        private System.Windows.Forms.TextBox N2_Fe;
         private System.Windows.Forms.GroupBox groupBox16;
-        private System.Windows.Forms.TextBox textBox51;
+        private System.Windows.Forms.TextBox N3_Cu;
         private System.Windows.Forms.TextBox textBox52;
-        private System.Windows.Forms.TextBox textBox53;
+        private System.Windows.Forms.TextBox N3_Zn;
         private System.Windows.Forms.TextBox textBox54;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox55;
-        private System.Windows.Forms.TextBox textBox56;
+        private System.Windows.Forms.TextBox N3_Mn;
+        private System.Windows.Forms.TextBox N3_Fe;
         private System.Windows.Forms.GroupBox groupBox17;
-        private System.Windows.Forms.TextBox textBox59;
+        private System.Windows.Forms.TextBox N4_Cu;
         private System.Windows.Forms.TextBox textBox60;
-        private System.Windows.Forms.TextBox textBox61;
+        private System.Windows.Forms.TextBox N4_Zn;
         private System.Windows.Forms.TextBox textBox62;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox63;
-        private System.Windows.Forms.TextBox textBox64;
+        private System.Windows.Forms.TextBox N4_Mn;
+        private System.Windows.Forms.TextBox N4_Fe;
         private System.Windows.Forms.GroupBox groupBox18;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.GroupBox groupBox19;
@@ -1755,8 +1877,18 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.GroupBox groupBox24;
         private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabOpicional;
+        private System.Windows.Forms.TabPage tabSolicitante;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txt_Solicitante;
+        private System.Windows.Forms.ComboBox cbxSolicitacao;
+        private System.Windows.Forms.ComboBox cbxCultura;
+        private System.Windows.Forms.ComboBox cbxReferencia;
+        private System.Windows.Forms.ComboBox cbxFazenda;
+        private System.Windows.Forms.Button button22;
     }
 }

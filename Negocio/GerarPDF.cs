@@ -3,6 +3,7 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using System;
+using System.IO;
 
 namespace Negocio
 {
@@ -12,8 +13,8 @@ namespace Negocio
 
         public void Gerar()
         {
-            string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            var caminho = $"{desktop}\\recibo.pdf";
+            var caminho = ValidarCaminhoPDF();
+            caminho += "\\Laudo.pdf";
 
             using (PdfWriter wPdf = new PdfWriter(caminho, new WriterProperties().SetPdfVersion(PdfVersion.PDF_2_0)))
             {
@@ -27,6 +28,17 @@ namespace Negocio
 
             };
         }
-        
+        string ValidarCaminhoPDF()
+        {
+            string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            var caminho = $"{desktop}\\Laudo";
+
+            if (!Directory.Exists(caminho))
+            {
+                Directory.CreateDirectory(caminho);
+            }
+
+            return caminho;
+        }
     }
 }

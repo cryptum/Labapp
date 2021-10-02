@@ -37,7 +37,7 @@ namespace BetoAPP.Visual
 
         public List<ReferenciaDTO> Buscar(string nome)
         {
-            return new ReferenciaNegocio().ObterUmPorNome(nome);
+            return new ReferenciaNegocio().ObterListaPorNome(nome);
         }
 
         private void ReferenciaVisual_Load(object sender, EventArgs e)

@@ -30,31 +30,21 @@ namespace BetoAPP.Visual
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btn_Adiciona = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Edita = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Exclui = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Recarrega = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridSolicitante = new System.Windows.Forms.DataGridView();
-            this.Id_Solicitante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome_Solicitante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_Solicitante = new System.Windows.Forms.Button();
             this.lbl1 = new System.Windows.Forms.Label();
             this.txt_Solicitante = new System.Windows.Forms.TextBox();
-            this.dataGridFazenda = new System.Windows.Forms.DataGridView();
-            this.Id_Fazenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome_Fazenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Municipio_Fazenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSolicitante)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridFazenda)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -67,7 +57,7 @@ namespace BetoAPP.Visual
             this.btn_Recarrega});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1097, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(693, 32);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -79,6 +69,7 @@ namespace BetoAPP.Visual
             this.btn_Adiciona.Name = "btn_Adiciona";
             this.btn_Adiciona.Size = new System.Drawing.Size(112, 28);
             this.btn_Adiciona.Text = "Adicionar";
+            this.btn_Adiciona.Click += new System.EventHandler(this.btn_Adiciona_Click);
             // 
             // btn_Edita
             // 
@@ -88,6 +79,7 @@ namespace BetoAPP.Visual
             this.btn_Edita.Name = "btn_Edita";
             this.btn_Edita.Size = new System.Drawing.Size(86, 28);
             this.btn_Edita.Text = "Editar";
+            this.btn_Edita.Click += new System.EventHandler(this.btn_Edita_Click);
             // 
             // btn_Exclui
             // 
@@ -97,6 +89,7 @@ namespace BetoAPP.Visual
             this.btn_Exclui.Name = "btn_Exclui";
             this.btn_Exclui.Size = new System.Drawing.Size(91, 28);
             this.btn_Exclui.Text = "Excluir";
+            this.btn_Exclui.Click += new System.EventHandler(this.btn_Exclui_Click);
             // 
             // btn_Recarrega
             // 
@@ -106,66 +99,64 @@ namespace BetoAPP.Visual
             this.btn_Recarrega.Name = "btn_Recarrega";
             this.btn_Recarrega.Size = new System.Drawing.Size(169, 28);
             this.btn_Recarrega.Text = "Recarregar Tabela";
+            this.btn_Recarrega.Click += new System.EventHandler(this.btn_Recarrega_Click);
             // 
             // dataGridSolicitante
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridSolicitante.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridSolicitante.AllowUserToAddRows = false;
+            this.dataGridSolicitante.AllowUserToDeleteRows = false;
+            this.dataGridSolicitante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridSolicitante.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridSolicitante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridSolicitante.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id_Solicitante,
-            this.Nome_Solicitante});
             this.dataGridSolicitante.Location = new System.Drawing.Point(13, 155);
             this.dataGridSolicitante.Name = "dataGridSolicitante";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridSolicitante.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridSolicitante.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridSolicitante.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridSolicitante.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dataGridSolicitante.RowTemplate.Height = 25;
-            this.dataGridSolicitante.Size = new System.Drawing.Size(524, 428);
+            this.dataGridSolicitante.Size = new System.Drawing.Size(668, 428);
             this.dataGridSolicitante.TabIndex = 13;
-            // 
-            // Id_Solicitante
-            // 
-            this.Id_Solicitante.HeaderText = "Código";
-            this.Id_Solicitante.Name = "Id_Solicitante";
-            // 
-            // Nome_Solicitante
-            // 
-            this.Nome_Solicitante.HeaderText = "Nome";
-            this.Nome_Solicitante.Name = "Nome_Solicitante";
-            this.Nome_Solicitante.Width = 385;
+            this.dataGridSolicitante.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridSolicitante_CellMouseClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btn_Solicitante);
             this.groupBox1.Controls.Add(this.lbl1);
             this.groupBox1.Controls.Add(this.txt_Solicitante);
             this.groupBox1.Location = new System.Drawing.Point(12, 35);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(524, 99);
+            this.groupBox1.Size = new System.Drawing.Size(669, 99);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
             // btn_Solicitante
             // 
             this.btn_Solicitante.Image = global::BetoAPP.Properties.Resources.search_line__2_;
-            this.btn_Solicitante.Location = new System.Drawing.Point(458, 44);
+            this.btn_Solicitante.Location = new System.Drawing.Point(510, 44);
             this.btn_Solicitante.Name = "btn_Solicitante";
             this.btn_Solicitante.Size = new System.Drawing.Size(51, 33);
             this.btn_Solicitante.TabIndex = 6;
             this.btn_Solicitante.UseVisualStyleBackColor = true;
+            this.btn_Solicitante.Click += new System.EventHandler(this.btn_Solicitante_Click);
             // 
             // lbl1
             // 
@@ -180,75 +171,17 @@ namespace BetoAPP.Visual
             // txt_Solicitante
             // 
             this.txt_Solicitante.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Solicitante.Location = new System.Drawing.Point(113, 44);
+            this.txt_Solicitante.Location = new System.Drawing.Point(165, 44);
             this.txt_Solicitante.Name = "txt_Solicitante";
             this.txt_Solicitante.Size = new System.Drawing.Size(339, 33);
             this.txt_Solicitante.TabIndex = 4;
-            // 
-            // dataGridFazenda
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridFazenda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridFazenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridFazenda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id_Fazenda,
-            this.Nome_Fazenda,
-            this.Municipio_Fazenda});
-            this.dataGridFazenda.Location = new System.Drawing.Point(563, 155);
-            this.dataGridFazenda.Name = "dataGridFazenda";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridFazenda.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridFazenda.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dataGridFazenda.RowTemplate.Height = 25;
-            this.dataGridFazenda.Size = new System.Drawing.Size(522, 428);
-            this.dataGridFazenda.TabIndex = 14;
-            // 
-            // Id_Fazenda
-            // 
-            this.Id_Fazenda.HeaderText = "Código";
-            this.Id_Fazenda.Name = "Id_Fazenda";
-            // 
-            // Nome_Fazenda
-            // 
-            this.Nome_Fazenda.HeaderText = "Fazenda";
-            this.Nome_Fazenda.Name = "Nome_Fazenda";
-            this.Nome_Fazenda.Width = 250;
-            // 
-            // Municipio_Fazenda
-            // 
-            this.Municipio_Fazenda.HeaderText = "Município";
-            this.Municipio_Fazenda.Name = "Municipio_Fazenda";
-            this.Municipio_Fazenda.Width = 250;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(559, 123);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 29);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Fazenda:";
+            this.txt_Solicitante.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Solicitante_KeyDown);
             // 
             // SolicitanteVisual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1097, 598);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridFazenda);
+            this.ClientSize = new System.Drawing.Size(693, 595);
             this.Controls.Add(this.dataGridSolicitante);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
@@ -258,12 +191,12 @@ namespace BetoAPP.Visual
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Solicitante";
+            this.Load += new System.EventHandler(this.SolicitanteVisual_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSolicitante)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridFazenda)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,12 +214,5 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.Button btn_Solicitante;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.TextBox txt_Solicitante;
-        private System.Windows.Forms.DataGridView dataGridFazenda;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Solicitante;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome_Solicitante;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Fazenda;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome_Fazenda;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Municipio_Fazenda;
     }
 }

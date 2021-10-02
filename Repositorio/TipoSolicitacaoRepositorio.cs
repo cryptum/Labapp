@@ -22,7 +22,7 @@ namespace Repositorio
             var query = _context.TipoAnalises
                                 .Select(x => new TipoAnaliseDTO
                                 {
-                                    IdAnalise = x.IdTipoAnalise
+                                    Código = x.IdTipoAnalise
                                 })
                                 .ToList();
 

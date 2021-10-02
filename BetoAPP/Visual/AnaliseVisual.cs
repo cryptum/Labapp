@@ -25,6 +25,8 @@ namespace BetoAPP.Visual
         public AnaliseVisual()
         {
             InitializeComponent();
+            cbx_Pesquisa.Items.Add("Solicitante");
+            cbx_Pesquisa.Items.Add("Laudo");
         }
 
         private void btn_ImprimeQuadriculado_Click(object sender, EventArgs e)
@@ -39,11 +41,6 @@ namespace BetoAPP.Visual
         }
 
         private void btn_Pesquisa_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_Pesquisa_TextChanged(object sender, EventArgs e)
         {
 
         }

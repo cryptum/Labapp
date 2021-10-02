@@ -11,8 +11,13 @@ namespace Entidade
     {
         [Key]
         public int IdLocal { get; set; }
+
         public string Fazenda { get; set; }
+
         public string Municipio { get; set; }
-        public SolicitanteEntidade Solicitante { get; set; }
+
+        public bool Excluido { get; set; }
+
+        public SolicitanteEntidade Solicitantes { get; set; }
     }
 }

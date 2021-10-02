@@ -24,6 +24,15 @@ namespace BetoAPP
             Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             pnl_Usuario.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, pnl_Usuario.Width, pnl_Usuario.Height, 5, 5));
             pnl_Senha.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, pnl_Senha.Width, pnl_Senha.Height, 5, 5));
+
+
+            //Remover Depois
+            Guid n = new Guid();
+            PrincipalVisual View = new PrincipalVisual(n, "");
+            this.Hide();
+            View.Show();
+
+
         }
 
         private void btn_Sair_Click(object sender, EventArgs e)
