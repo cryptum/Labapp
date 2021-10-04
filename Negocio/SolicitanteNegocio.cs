@@ -21,6 +21,11 @@ namespace Negocio
             return new SolicitanteRepositorio().ObterListaPorNome(nome);
         }
 
+        public SolicitanteEntidade ObterUmPorCodigo(int id)
+        {
+            return new SolicitanteRepositorio().ObterUmPorCodigo(id);
+        }
+
         public int Salvar(String Nome, String Observacao)
         {
             SolicitanteEntidade Solicitante = new SolicitanteEntidade();

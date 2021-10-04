@@ -25,5 +25,16 @@ namespace BetoAPP.Visual
         {
             InitializeComponent();
         }
+        private void LocalVisual_Load(object sender, EventArgs e)
+        {
+            RecarregarGrid();
+        }
+
+        private void btn_Adiciona_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

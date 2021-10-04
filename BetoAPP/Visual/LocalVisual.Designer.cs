@@ -152,6 +152,7 @@ namespace BetoAPP.Visual
             this.btn_Adiciona.Name = "btn_Adiciona";
             this.btn_Adiciona.Size = new System.Drawing.Size(112, 28);
             this.btn_Adiciona.Text = "Adicionar";
+            this.btn_Adiciona.Click += new System.EventHandler(this.btn_Adiciona_Click);
             // 
             // btn_Edita
             // 
@@ -194,6 +195,7 @@ namespace BetoAPP.Visual
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Local";
+            this.Load += new System.EventHandler(this.LocalVisual_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSolicitacao)).EndInit();

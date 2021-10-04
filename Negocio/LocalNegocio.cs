@@ -24,10 +24,11 @@ namespace Negocio
 
         public int Salvar(String fazenda, String municipio, int idSolicitante)
         {
+            var Solicitante = new SolicitanteNegocio().ObterUmPorCodigo(idSolicitante);
             LocalEntidade Local = new LocalEntidade();
             Local.Fazenda = fazenda;
             Local.Municipio = municipio;
-            //Local.Solicitantes = Solici
+            Local.Solicitantes = Solicitante;
             Local.Excluido = false;
             return new LocalRepositorio().Salvar(Local);
         }
