@@ -1,7 +1,7 @@
 ﻿
 namespace BetoAPP.Visual
 {
-    partial class UsuarioView
+    partial class UsuarioVisual
     {
         /// <summary>
         /// Required designer variable.
@@ -39,8 +39,6 @@ namespace BetoAPP.Visual
             this.lbl1 = new System.Windows.Forms.Label();
             this.txt_Usuario = new System.Windows.Forms.TextBox();
             this.dataGridAnalise = new System.Windows.Forms.DataGridView();
-            this.grid_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grid_Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btn_Adiciona = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,9 +105,6 @@ namespace BetoAPP.Visual
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridAnalise.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridAnalise.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridAnalise.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.grid_Id,
-            this.grid_Nome});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -133,17 +128,6 @@ namespace BetoAPP.Visual
             this.dataGridAnalise.RowTemplate.Height = 25;
             this.dataGridAnalise.Size = new System.Drawing.Size(524, 428);
             this.dataGridAnalise.TabIndex = 18;
-            // 
-            // grid_Id
-            // 
-            this.grid_Id.HeaderText = "Código";
-            this.grid_Id.Name = "grid_Id";
-            // 
-            // grid_Nome
-            // 
-            this.grid_Nome.HeaderText = "Nome";
-            this.grid_Nome.Name = "grid_Nome";
-            this.grid_Nome.Width = 385;
             // 
             // menuStrip1
             // 
@@ -229,8 +213,6 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.TextBox txt_Usuario;
         private System.Windows.Forms.DataGridView dataGridAnalise;
-        private System.Windows.Forms.DataGridViewTextBoxColumn grid_Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn grid_Nome;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btn_Adiciona;

@@ -22,7 +22,7 @@ namespace Negocio
             return new LocalRepositorio().ObterListaPorNome(idSolicitante, nome, false);
         }
 
-        public int Salvar(String fazenda, String municipio, int idSolicitante)
+        public int Salvar(string fazenda, string municipio, int idSolicitante)
         {
             var Solicitante = new SolicitanteNegocio().ObterUmPorCodigo(idSolicitante);
             LocalEntidade Local = new LocalEntidade();
@@ -33,15 +33,23 @@ namespace Negocio
             return new LocalRepositorio().Salvar(Local);
         }
 
-        public int Editar(int Id, String Nome, String Observacao)
+        public int Editar(int Id, string fazenda, string municipio, int idSolicitante)
         {
+            SolicitanteEntidade Solicitante = new SolicitanteNegocio().ObterUmPorCodigo(idSolicitante);
+            if (Solicitante == null)
+            {
+                return 0;
+            }
+
             LocalEntidade Local = new LocalRepositorio().ObterUmPorCodigo(Id);
             if (Local == null)
             {
                 return 0;
             }
-            //Local.Nome = Nome;
-            //Local.Observacao = Observacao;
+            Local.Fazenda = fazenda;
+            Local.Municipio = municipio;
+            Local.Solicitantes = Solicitante;
+            Local.Excluido = false;
             return new LocalRepositorio().Editar(Local);
         }
 

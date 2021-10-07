@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace BetoAPP.Visual
 {
-    public partial class UsuarioView : Form
+    public partial class UsuarioVisual : Form
     {
-        private static UsuarioView aForm = null;
-        public static UsuarioView Instance()
+        private static UsuarioVisual aForm = null;
+        public static UsuarioVisual Instance()
         {
             if (aForm == null)
             {
-                aForm = new UsuarioView();
+                aForm = new UsuarioVisual();
             }
             return aForm;
         }
-        public UsuarioView()
+        public UsuarioVisual()
         {
             InitializeComponent();
         }

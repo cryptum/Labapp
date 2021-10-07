@@ -58,7 +58,7 @@ namespace BetoAPP.Visual
             //panel1.Controls.Add(View);
             //View.Show();
 
-            UsuarioView View = UsuarioView.Instance();
+            UsuarioVisual View = UsuarioVisual.Instance();
             View.MdiParent = this;
             View.Show();
             View.Activate();

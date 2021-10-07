@@ -1,7 +1,7 @@
 ﻿
 namespace BetoAPP.Visual
 {
-    partial class AdicionarCulturaView
+    partial class AdicionarCulturaVisual
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,9 @@ namespace BetoAPP.Visual
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_Cancelar = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_Cancela = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.btn_Adiciona = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_Salva = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -40,37 +40,37 @@ namespace BetoAPP.Visual
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btn_Cancelar
+            // btn_Cancela
             // 
-            this.btn_Cancelar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Cancelar.Image = global::BetoAPP.Properties.Resources.close_circle_fill;
-            this.btn_Cancelar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(106, 28);
-            this.btn_Cancelar.Text = "Cancelar";
-            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
+            this.btn_Cancela.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Cancela.Image = global::BetoAPP.Properties.Resources.close_circle_fill;
+            this.btn_Cancela.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_Cancela.Name = "btn_Cancela";
+            this.btn_Cancela.Size = new System.Drawing.Size(106, 28);
+            this.btn_Cancela.Text = "Cancelar";
+            this.btn_Cancela.Click += new System.EventHandler(this.btn_Cancela_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btn_Adiciona,
-            this.btn_Cancelar});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 176);
+            this.btn_Salva,
+            this.btn_Cancela});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 168);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(560, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(552, 32);
             this.menuStrip1.TabIndex = 23;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // btn_Adiciona
+            // btn_Salva
             // 
-            this.btn_Adiciona.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Adiciona.Image = global::BetoAPP.Properties.Resources.save_3_fill;
-            this.btn_Adiciona.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btn_Adiciona.Name = "btn_Adiciona";
-            this.btn_Adiciona.Size = new System.Drawing.Size(89, 28);
-            this.btn_Adiciona.Text = "Salvar";
-            this.btn_Adiciona.Click += new System.EventHandler(this.btn_Adiciona_Click);
+            this.btn_Salva.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Salva.Image = global::BetoAPP.Properties.Resources.save_3_fill;
+            this.btn_Salva.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_Salva.Name = "btn_Salva";
+            this.btn_Salva.Size = new System.Drawing.Size(89, 28);
+            this.btn_Salva.Text = "Salvar";
+            this.btn_Salva.Click += new System.EventHandler(this.btn_Salva_Click);
             // 
             // label1
             // 
@@ -113,19 +113,21 @@ namespace BetoAPP.Visual
             this.txtTitulo.TabIndex = 21;
             this.txtTitulo.Text = "Adicionar Cultura";
             // 
-            // AdicionarCulturaView
+            // AdicionarCulturaVisual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(560, 208);
+            this.ClientSize = new System.Drawing.Size(552, 200);
             this.ControlBox = false;
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AdicionarCulturaView";
+            this.Name = "AdicionarCulturaVisual";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -138,9 +140,9 @@ namespace BetoAPP.Visual
 
         #endregion
 
-        private System.Windows.Forms.ToolStripMenuItem btn_Cancelar;
+        private System.Windows.Forms.ToolStripMenuItem btn_Cancela;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem btn_Adiciona;
+        private System.Windows.Forms.ToolStripMenuItem btn_Salva;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtNome;

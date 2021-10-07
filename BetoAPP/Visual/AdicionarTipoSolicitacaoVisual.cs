@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BetoAPP.Util;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,52 @@ namespace BetoAPP.Visual
 {
     public partial class AdicionarTipoSolicitacaoVisual : Form
     {
-        public AdicionarTipoSolicitacaoVisual()
+        public int IdInicial { get; set; }
+        public AdicionarTipoSolicitacaoVisual(string titulo, int idInicial, string valorInicial)
         {
             InitializeComponent();
+            txtTitulo.Text = titulo;
+            txtNome.Text = valorInicial;
+            IdInicial = idInicial;
+        }
+
+        private void btn_Cancela_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btn_Salva_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtTitulo.Text == "Adicionar Tipo Solicitação")
+                {
+                    var result = new TipoAnaliseNegocio().Salvar(txtNome.Text);
+                    if (result == 0)
+                    {
+                        MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    txtNome.Text = "";
+                    txtNome.Focus();
+                    MessageBox.Show("Salvo!");
+                }
+                else if (txtTitulo.Text == "Editar Tipo Solicitação")
+                {
+                    var result = new TipoAnaliseNegocio().Editar(this.IdInicial, txtNome.Text);
+                    if (result == 0)
+                    {
+                        MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    txtNome.Text = "";
+                    txtNome.Focus();
+                    MessageBox.Show("Salvo!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                throw;
+            }
         }
     }
 }

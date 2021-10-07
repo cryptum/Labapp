@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Entidade;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace Repositorio.Config
 {
     public class ContextDB : DbContext
     {
+        //MYSQL
         const string connectionString = "server=localhost;user=root;password=root;database=betoapp";
-
         MySqlServerVersion serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
+
+        //HEROKU MYSQL
+        //const string connectionString = "server=us-cdbr-east-04.cleardb.com;user=b6e9f8aa4e49dd;password=a4d7bcf8;database=heroku_85a77976580b632";
+        //MySqlServerVersion serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -25,7 +24,6 @@ namespace Repositorio.Config
         public DbSet<LaudoEntidade> Laudos { get; set; }
         public DbSet<LocalEntidade> Locais { get; set; }
         public DbSet<ReferenciaEntidade> Referencias { get; set; }
-        public DbSet<SolicitacaoEntidade> Solicitacaos { get; set; }
         public DbSet<SolicitanteEntidade> Solicitantes { get; set; }
         public DbSet<TipoAnaliseEntidade> TipoAnalises { get; set; }
         public DbSet<TipoSolicitacaoEntidade> TipoSolicitacaos { get; set; }
@@ -50,8 +48,6 @@ namespace Repositorio.Config
             //modelBuilder.Entity<LocalEntidade>().HasOne(e => e.Solicitante).WithOne(c => c.IdSolicitante);
 
             modelBuilder.Entity<ReferenciaEntidade>().HasKey(u => u.IdReferencia);
-
-            modelBuilder.Entity<SolicitacaoEntidade>().HasKey(u => u.IdSolicitacao);
 
             modelBuilder.Entity<SolicitanteEntidade>().HasKey(u => u.IdSolicitante);
 

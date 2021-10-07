@@ -9,7 +9,7 @@ namespace Entidade
 {
     public class TipoAnaliseEntidade
     {
-        // EX: Particular
+        // EX: Agua
         [Key]
         public int IdTipoAnalise { get; set; }
         public string Nome { get; set; }

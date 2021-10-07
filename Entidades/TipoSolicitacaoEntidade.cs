@@ -10,7 +10,7 @@ namespace Entidade
     public class TipoSolicitacaoEntidade
     {
         [Key]
-        public Guid IdTipoSolicitacao { get; set; }
+        public int IdTipoSolicitacao { get; set; }
         public string Nome { get; set; }
     }
 }

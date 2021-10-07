@@ -29,10 +29,7 @@ namespace BetoAPP.Visual
             cbx_Pesquisa.Items.Add("Laudo");
         }
 
-        private void btn_ImprimeQuadriculado_Click(object sender, EventArgs e)
-        {
-            new GerarQuardriculado().Gerar();
-        }
+        
 
         private void btn_Adiciona_Click(object sender, EventArgs e)
         {
@@ -40,7 +37,32 @@ namespace BetoAPP.Visual
             View.ShowDialog();
         }
 
+        private void btn_Edita_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Exclui_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_LimparTodosOsCampos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_ImprimeQuadriculado_Click(object sender, EventArgs e)
+        {
+            new GerarQuardriculado().Gerar();
+        }
+
         private void btn_Pesquisa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Pesquisa_KeyDown(object sender, KeyEventArgs e)
         {
 
         }

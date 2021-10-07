@@ -1,15 +1,8 @@
 ﻿using BetoAPP.Util;
-using Entidade;
 using Entidade.DTO;
 using Negocio;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BetoAPP.Visual
@@ -49,7 +42,7 @@ namespace BetoAPP.Visual
 
         private void btn_Adiciona_Click(object sender, EventArgs e)
         {
-            AdicionarCulturaView View = new AdicionarCulturaView("Adicionar Cultura", 0 ,"");
+            AdicionarCulturaVisual View = new AdicionarCulturaVisual("Adicionar Cultura", 0 ,"");
             View.ShowDialog();
             RecarregarGrid();
         }
@@ -63,7 +56,7 @@ namespace BetoAPP.Visual
 
                 if (MessageBox.Show($"Deseja editar: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    AdicionarCulturaView View = new AdicionarCulturaView("Editar Cultura", idSelecionada, nameSelecionada);
+                    AdicionarCulturaVisual View = new AdicionarCulturaVisual("Editar Cultura", idSelecionada, nameSelecionada);
                     View.ShowDialog();
                     RecarregarGrid();
                 }

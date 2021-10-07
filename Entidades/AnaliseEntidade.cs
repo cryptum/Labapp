@@ -11,6 +11,6 @@ namespace Entidade
     {
         [Key]
         public int IdAnalise { get; set; }
-        public DateTime DataEntrada { get; set; }
+        //public DateTime DataEntrada { get; set; }
     }
 }

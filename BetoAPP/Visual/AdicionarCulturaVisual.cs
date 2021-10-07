@@ -12,51 +12,41 @@ using System.Windows.Forms;
 
 namespace BetoAPP.Visual
 {
-    public partial class AdicionarLocalVisual : Form
+    public partial class AdicionarCulturaVisual : Form
     {
         public int IdInicial { get; set; }
-        public int IdSolicitante { get; set; }
-        public AdicionarLocalVisual(string titulo, int idInicial, string valorFazenda, string valorMunicipio, int idSolicitante)
+        public AdicionarCulturaVisual(string titulo, int idInicial, string valorInicial)
         {
             InitializeComponent();
             txtTitulo.Text = titulo;
-            txtFazenda.Text = valorFazenda;
-            txtMunicipio.Text = valorMunicipio;
-            IdSolicitante = idSolicitante;
-            IdInicial = idInicial;
+            txtNome.Text = valorInicial;
+            IdInicial= idInicial;
         }
 
-        private void btn_Cancelar_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void btn_Adiciona_Click(object sender, EventArgs e)
+        private void btn_Salva_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtTitulo.Text == "Adicionar Local")
+                if (txtTitulo.Text == "Adicionar Cultura")
                 {
-                    var result = new LocalNegocio().Salvar(txtFazenda.Text, txtMunicipio.Text, IdSolicitante);
+                    var result = new CulturaNegocio().Salvar(txtNome.Text);
                     if (result == 0)
                     {
                         MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-                    txtFazenda.Text = "";
-                    txtMunicipio.Text = "";
-                    txtFazenda.Focus();
+                    txtNome.Text = "";
+                    txtNome.Focus();
                     MessageBox.Show("Salvo!");
                 }
-                else if (txtTitulo.Text == "Editar Local")
+                else if (txtTitulo.Text == "Editar Cultura")
                 {
-                    var result = new LocalNegocio().Editar(this.IdInicial, txtFazenda.Text, txtMunicipio.Text, IdSolicitante);
+                    var result = new CulturaNegocio().Editar(this.IdInicial, txtNome.Text);
                     if (result == 0)
                     {
                         MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-                    txtFazenda.Text = "";
-                    txtMunicipio.Text = "";
-                    txtFazenda.Focus();
+                    txtNome.Text = "";
+                    txtNome.Focus();
                     MessageBox.Show("Salvo!");
                 }
             }
@@ -65,6 +55,11 @@ namespace BetoAPP.Visual
                 MessageBox.Show(ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 throw;
             }
+        }
+
+        private void btn_Cancela_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

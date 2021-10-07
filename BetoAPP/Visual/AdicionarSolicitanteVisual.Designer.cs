@@ -78,7 +78,7 @@ namespace BetoAPP.Visual
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(21, 31);
+            this.label1.Location = new System.Drawing.Point(21, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 26);
             this.label1.TabIndex = 0;
@@ -111,7 +111,7 @@ namespace BetoAPP.Visual
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(21, 117);
+            this.label2.Location = new System.Drawing.Point(21, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 26);
             this.label2.TabIndex = 2;
@@ -129,7 +129,7 @@ namespace BetoAPP.Visual
             // 
             this.txtTitulo.AutoSize = true;
             this.txtTitulo.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTitulo.Location = new System.Drawing.Point(13, 3);
+            this.txtTitulo.Location = new System.Drawing.Point(13, 9);
             this.txtTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(222, 29);
@@ -146,12 +146,11 @@ namespace BetoAPP.Visual
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtTitulo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AdicionarSolicitanteVisual";
             this.ShowIcon = false;
-            this.Text = "AdicionarSolicitanteVisual";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

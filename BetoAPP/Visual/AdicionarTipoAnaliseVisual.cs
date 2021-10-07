@@ -12,29 +12,29 @@ using System.Windows.Forms;
 
 namespace BetoAPP.Visual
 {
-    public partial class AdicionarCulturaView : Form
+    public partial class AdicionarTipoAnaliseVisual : Form
     {
         public int IdInicial { get; set; }
-        public AdicionarCulturaView(string titulo, int idInicial, string valorInicial)
+        public AdicionarTipoAnaliseVisual(string titulo, int idInicial, string valorInicial)
         {
             InitializeComponent();
             txtTitulo.Text = titulo;
             txtNome.Text = valorInicial;
-            IdInicial= idInicial;
+            IdInicial = idInicial;
         }
 
-        private void btn_Cancelar_Click(object sender, EventArgs e)
+        private void btn_Cancela_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
-        private void btn_Adiciona_Click(object sender, EventArgs e)
+        private void btn_Salva_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtTitulo.Text =="Adicionar Cultura")
+                if (txtTitulo.Text == "Adicionar Tipo Análise")
                 {
-                    var result = new CulturaNegocio().Salvar(txtNome.Text);
+                    var result = new TipoAnaliseNegocio().Salvar(txtNome.Text);
                     if (result == 0)
                     {
                         MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -43,9 +43,9 @@ namespace BetoAPP.Visual
                     txtNome.Focus();
                     MessageBox.Show("Salvo!");
                 }
-                else if (txtTitulo.Text == "Editar Cultura")
+                else if (txtTitulo.Text == "Editar Tipo Análise")
                 {
-                    var result = new CulturaNegocio().Editar(this.IdInicial, txtNome.Text);
+                    var result = new TipoAnaliseNegocio().Editar(this.IdInicial, txtNome.Text);
                     if (result == 0)
                     {
                         MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
