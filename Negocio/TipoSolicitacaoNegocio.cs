@@ -14,6 +14,11 @@ namespace Negocio
             return new TipoSolicitacaoRepositorio().ObterTodos();
         }
 
+        public List<TipoSolicitacaoNomesDTO> ObterTodosOsNomes()
+        {
+            return new TipoSolicitacaoRepositorio().ObterTodosOsNomes();
+        }
+
         public List<TipoSolicitacaoDTO> ObterListaPorNome(string nome)
         {
             return new TipoSolicitacaoRepositorio().ObterListaPorNome(nome);

@@ -44,6 +44,18 @@ namespace Repositorio
             }
         }
 
+        public List<LocalEntidade> ObterUmPorCodigoSolicitante(int id)
+        {
+            using (var db = new ContextDB())
+            {
+                var query = db.Locais
+                                .Where(w => w.Solicitantes.IdSolicitante == id)
+                                .ToList();
+
+                return query;
+            }
+        }
+
         public List<LocalDTO> ObterListaPorNome(int idSolicitante, string nome, bool Excluido)
         {
             using (var db = new ContextDB())

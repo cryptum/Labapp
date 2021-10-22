@@ -30,6 +30,21 @@ namespace Repositorio
             }
         }
 
+        public List<ReferenciaNomeDTO> ObterTodosOsNome()
+        {
+            using (var db = new ContextDB())
+            {
+                var query = db.Referencias
+                                .Select(x => new ReferenciaNomeDTO
+                                {
+                                    Nome = x.Nome
+                                })
+                                .ToList();
+
+                return query;
+            }
+        }
+
         public ReferenciaEntidade ObterUmPorCodigo(int id)
         {
             using (var db = new ContextDB())

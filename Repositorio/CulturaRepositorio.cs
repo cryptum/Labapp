@@ -30,6 +30,21 @@ namespace Repositorio
             }
         }
 
+        public List<CulturaNomeDTO> ObterTodosOsNomes()
+        {
+            using (var db = new ContextDB())
+            {
+                var query = db.Culturas
+                                .Select(x => new CulturaNomeDTO
+                                {
+                                    Nome = x.Nome
+                                })
+                                .ToList();
+
+                return query;
+            }
+        }
+
         public CulturaEntidade ObterUmPorCodigo(int id)
         {
             using (var db = new ContextDB())

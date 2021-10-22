@@ -30,6 +30,7 @@ namespace BetoAPP.Visual
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pcbCarregar = new System.Windows.Forms.PictureBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Cancelar = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,6 +38,7 @@ namespace BetoAPP.Visual
             this.btn_Adiciona = new System.Windows.Forms.ToolStripMenuItem();
             this.txtTitulo = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +53,16 @@ namespace BetoAPP.Visual
             this.groupBox1.Size = new System.Drawing.Size(533, 124);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
+            // 
+            // pcbCarregar
+            // 
+            this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.Eclipse_0_6s_200px;
+            this.pcbCarregar.Location = new System.Drawing.Point(0, 0);
+            this.pcbCarregar.Name = "pcbCarregar";
+            this.pcbCarregar.Size = new System.Drawing.Size(552, 200);
+            this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pcbCarregar.TabIndex = 30;
+            this.pcbCarregar.TabStop = false;
             // 
             // txtNome
             // 
@@ -86,9 +98,9 @@ namespace BetoAPP.Visual
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Adiciona,
             this.btn_Cancelar});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 176);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 168);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(560, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(552, 32);
             this.menuStrip1.TabIndex = 29;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -118,11 +130,12 @@ namespace BetoAPP.Visual
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(560, 208);
+            this.ClientSize = new System.Drawing.Size(552, 200);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.txtTitulo);
+            this.Controls.Add(this.pcbCarregar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -131,6 +144,7 @@ namespace BetoAPP.Visual
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -147,5 +161,6 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btn_Adiciona;
         private System.Windows.Forms.Label txtTitulo;
+        private System.Windows.Forms.PictureBox pcbCarregar;
     }
 }

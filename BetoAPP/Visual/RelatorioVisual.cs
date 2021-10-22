@@ -31,7 +31,6 @@ namespace BetoAPP.Visual
 
         private void btn_Imprime_Click(object sender, EventArgs e)
         {
-            new GerarPDF().Gerar();
         }
     }
 }

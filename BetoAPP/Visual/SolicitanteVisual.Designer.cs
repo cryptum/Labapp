@@ -42,9 +42,11 @@ namespace BetoAPP.Visual
             this.btn_Solicitante = new System.Windows.Forms.Button();
             this.lbl1 = new System.Windows.Forms.Label();
             this.txt_Solicitante = new System.Windows.Forms.TextBox();
+            this.pcbCarregar = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSolicitante)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -177,6 +179,17 @@ namespace BetoAPP.Visual
             this.txt_Solicitante.TabIndex = 4;
             this.txt_Solicitante.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Solicitante_KeyDown);
             // 
+            // pcbCarregar
+            // 
+            this.pcbCarregar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.Eclipse_0_6s_200px;
+            this.pcbCarregar.Location = new System.Drawing.Point(0, 0);
+            this.pcbCarregar.Name = "pcbCarregar";
+            this.pcbCarregar.Size = new System.Drawing.Size(693, 595);
+            this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pcbCarregar.TabIndex = 30;
+            this.pcbCarregar.TabStop = false;
+            // 
             // SolicitanteVisual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -185,6 +198,7 @@ namespace BetoAPP.Visual
             this.Controls.Add(this.dataGridSolicitante);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pcbCarregar);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "SolicitanteVisual";
@@ -197,6 +211,7 @@ namespace BetoAPP.Visual
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSolicitante)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +229,6 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.Button btn_Solicitante;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.TextBox txt_Solicitante;
+        private System.Windows.Forms.PictureBox pcbCarregar;
     }
 }

@@ -42,10 +42,13 @@ namespace BetoAPP.Visual
                     {
                         MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-                    txtFazenda.Text = "";
-                    txtMunicipio.Text = "";
-                    txtFazenda.Focus();
-                    MessageBox.Show("Salvo!");
+                    else
+                    {
+                        txtFazenda.Text = "";
+                        txtMunicipio.Text = "";
+                        txtFazenda.Focus();
+                        MessageBox.Show("Salvo!");
+                    }
                 }
                 else if (txtTitulo.Text == "Editar Local")
                 {
@@ -54,16 +57,18 @@ namespace BetoAPP.Visual
                     {
                         MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-                    txtFazenda.Text = "";
-                    txtMunicipio.Text = "";
-                    txtFazenda.Focus();
-                    MessageBox.Show("Salvo!");
+                    else
+                    {
+                        txtFazenda.Text = "";
+                        txtMunicipio.Text = "";
+                        txtFazenda.Focus();
+                        MessageBox.Show("Salvo!");
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                throw;
             }
         }
     }

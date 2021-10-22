@@ -16,6 +16,11 @@ namespace Negocio
             return new CulturaRepositorio().ObterTodos();
         }
 
+        public List<CulturaNomeDTO> ObterTodosOsNomes()
+        {
+            return new CulturaRepositorio().ObterTodosOsNomes();
+        }
+
         public List<CulturaDTO> ObterListaPorNome(string nome)
         {
             return new CulturaRepositorio().ObterListaPorNome(nome);

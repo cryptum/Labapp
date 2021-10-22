@@ -30,24 +30,27 @@ namespace BetoAPP.Visual
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btn_Adiciona = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Edita = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Exclui = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_LimparTodosOsCampos = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_Recarregar = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_ImprimeQuadriculado = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_ImprimeLaudo = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbx_Pesquisa = new System.Windows.Forms.ComboBox();
             this.btn_Pesquisa = new System.Windows.Forms.Button();
             this.lbl1 = new System.Windows.Forms.Label();
             this.txt_Pesquisa = new System.Windows.Forms.TextBox();
             this.dataGridAnalise = new System.Windows.Forms.DataGridView();
+            this.pcbCarregar = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAnalise)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -57,11 +60,12 @@ namespace BetoAPP.Visual
             this.btn_Adiciona,
             this.btn_Edita,
             this.btn_Exclui,
-            this.btn_LimparTodosOsCampos,
-            this.btn_ImprimeQuadriculado});
+            this.btn_Recarregar,
+            this.btn_ImprimeQuadriculado,
+            this.btn_ImprimeLaudo});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(755, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(1056, 32);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -95,25 +99,35 @@ namespace BetoAPP.Visual
             this.btn_Exclui.Text = "Excluir";
             this.btn_Exclui.Click += new System.EventHandler(this.btn_Exclui_Click);
             // 
-            // btn_LimparTodosOsCampos
+            // btn_Recarregar
             // 
-            this.btn_LimparTodosOsCampos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_LimparTodosOsCampos.Image = global::BetoAPP.Properties.Resources.refresh_line;
-            this.btn_LimparTodosOsCampos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btn_LimparTodosOsCampos.Name = "btn_LimparTodosOsCampos";
-            this.btn_LimparTodosOsCampos.Size = new System.Drawing.Size(169, 28);
-            this.btn_LimparTodosOsCampos.Text = "Recarregar Tabela";
-            this.btn_LimparTodosOsCampos.Click += new System.EventHandler(this.btn_LimparTodosOsCampos_Click);
+            this.btn_Recarregar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Recarregar.Image = global::BetoAPP.Properties.Resources.refresh_line;
+            this.btn_Recarregar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_Recarregar.Name = "btn_Recarregar";
+            this.btn_Recarregar.Size = new System.Drawing.Size(169, 28);
+            this.btn_Recarregar.Text = "Recarregar Tabela";
+            this.btn_Recarregar.Click += new System.EventHandler(this.btn_Recarregar_Click);
             // 
             // btn_ImprimeQuadriculado
             // 
             this.btn_ImprimeQuadriculado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_ImprimeQuadriculado.Image = global::BetoAPP.Properties.Resources.printer24px;
+            this.btn_ImprimeQuadriculado.Image = global::BetoAPP.Properties.Resources.printer_Amarelo;
             this.btn_ImprimeQuadriculado.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_ImprimeQuadriculado.Name = "btn_ImprimeQuadriculado";
             this.btn_ImprimeQuadriculado.Size = new System.Drawing.Size(205, 28);
             this.btn_ImprimeQuadriculado.Text = "Imprimir Quadriculado";
             this.btn_ImprimeQuadriculado.Click += new System.EventHandler(this.btn_ImprimeQuadriculado_Click);
+            // 
+            // btn_ImprimeLaudo
+            // 
+            this.btn_ImprimeLaudo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_ImprimeLaudo.Image = global::BetoAPP.Properties.Resources.printer_Laranja;
+            this.btn_ImprimeLaudo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_ImprimeLaudo.Name = "btn_ImprimeLaudo";
+            this.btn_ImprimeLaudo.Size = new System.Drawing.Size(154, 28);
+            this.btn_ImprimeLaudo.Text = "Imprimir Laudo";
+            this.btn_ImprimeLaudo.Click += new System.EventHandler(this.btn_ImprimeLaudo_Click);
             // 
             // groupBox1
             // 
@@ -125,7 +139,7 @@ namespace BetoAPP.Visual
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(729, 99);
+            this.groupBox1.Size = new System.Drawing.Size(1030, 99);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
@@ -133,7 +147,7 @@ namespace BetoAPP.Visual
             // 
             this.cbx_Pesquisa.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbx_Pesquisa.FormattingEnabled = true;
-            this.cbx_Pesquisa.Location = new System.Drawing.Point(135, 40);
+            this.cbx_Pesquisa.Location = new System.Drawing.Point(320, 42);
             this.cbx_Pesquisa.Name = "cbx_Pesquisa";
             this.cbx_Pesquisa.Size = new System.Drawing.Size(121, 34);
             this.cbx_Pesquisa.TabIndex = 1;
@@ -141,7 +155,7 @@ namespace BetoAPP.Visual
             // btn_Pesquisa
             // 
             this.btn_Pesquisa.Image = global::BetoAPP.Properties.Resources.search_line__2_;
-            this.btn_Pesquisa.Location = new System.Drawing.Point(610, 40);
+            this.btn_Pesquisa.Location = new System.Drawing.Point(795, 42);
             this.btn_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btn_Pesquisa.Name = "btn_Pesquisa";
             this.btn_Pesquisa.Size = new System.Drawing.Size(51, 33);
@@ -153,7 +167,7 @@ namespace BetoAPP.Visual
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl1.Location = new System.Drawing.Point(8, 40);
+            this.lbl1.Location = new System.Drawing.Point(193, 42);
             this.lbl1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(101, 29);
@@ -163,7 +177,7 @@ namespace BetoAPP.Visual
             // txt_Pesquisa
             // 
             this.txt_Pesquisa.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Pesquisa.Location = new System.Drawing.Point(263, 40);
+            this.txt_Pesquisa.Location = new System.Drawing.Point(448, 42);
             this.txt_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_Pesquisa.Name = "txt_Pesquisa";
             this.txt_Pesquisa.Size = new System.Drawing.Size(339, 33);
@@ -172,57 +186,72 @@ namespace BetoAPP.Visual
             // 
             // dataGridAnalise
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridAnalise.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridAnalise.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridAnalise.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridAnalise.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridAnalise.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridAnalise.Location = new System.Drawing.Point(14, 155);
             this.dataGridAnalise.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridAnalise.Name = "dataGridAnalise";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridAnalise.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridAnalise.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridAnalise.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dataGridAnalise.RowTemplate.Height = 25;
-            this.dataGridAnalise.Size = new System.Drawing.Size(728, 527);
+            this.dataGridAnalise.Size = new System.Drawing.Size(1029, 527);
             this.dataGridAnalise.TabIndex = 4;
+            // 
+            // pcbCarregar
+            // 
+            this.pcbCarregar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.Eclipse_0_6s_200px;
+            this.pcbCarregar.Location = new System.Drawing.Point(0, 0);
+            this.pcbCarregar.Name = "pcbCarregar";
+            this.pcbCarregar.Size = new System.Drawing.Size(1056, 694);
+            this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pcbCarregar.TabIndex = 28;
+            this.pcbCarregar.TabStop = false;
             // 
             // AnaliseVisual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(755, 694);
+            this.ClientSize = new System.Drawing.Size(1056, 694);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridAnalise);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pcbCarregar);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AnaliseVisual";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Análise";
+            this.Load += new System.EventHandler(this.AnaliseVisual_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAnalise)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,7 +262,7 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.ToolStripMenuItem btn_Adiciona;
         private System.Windows.Forms.ToolStripMenuItem btn_Edita;
         private System.Windows.Forms.ToolStripMenuItem btn_Exclui;
-        private System.Windows.Forms.ToolStripMenuItem btn_LimparTodosOsCampos;
+        private System.Windows.Forms.ToolStripMenuItem btn_Recarregar;
         private System.Windows.Forms.ToolStripMenuItem btn_ImprimeQuadriculado;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_Pesquisa;
@@ -241,5 +270,7 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.TextBox txt_Pesquisa;
         private System.Windows.Forms.DataGridView dataGridAnalise;
         private System.Windows.Forms.ComboBox cbx_Pesquisa;
+        private System.Windows.Forms.ToolStripMenuItem btn_ImprimeLaudo;
+        private System.Windows.Forms.PictureBox pcbCarregar;
     }
 }

@@ -37,6 +37,7 @@ namespace BetoAPP
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pcbCarregar = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_Sair = new System.Windows.Forms.PictureBox();
             this.btn_Minimiza = new System.Windows.Forms.PictureBox();
@@ -44,6 +45,7 @@ namespace BetoAPP
             this.pnl_Senha = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Sair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Minimiza)).BeginInit();
@@ -51,7 +53,7 @@ namespace BetoAPP
             // 
             // btn_Acessar
             // 
-            this.btn_Acessar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_Acessar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_Acessar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btn_Acessar.FlatAppearance.BorderSize = 0;
             this.btn_Acessar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -68,6 +70,7 @@ namespace BetoAPP
             // 
             // txt_Usuario
             // 
+            this.txt_Usuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_Usuario.BackColor = System.Drawing.Color.GhostWhite;
             this.txt_Usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Usuario.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -76,9 +79,11 @@ namespace BetoAPP
             this.txt_Usuario.Name = "txt_Usuario";
             this.txt_Usuario.Size = new System.Drawing.Size(190, 33);
             this.txt_Usuario.TabIndex = 1;
+            this.txt_Usuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Usuario_KeyDown);
             // 
             // txt_Senha
             // 
+            this.txt_Senha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_Senha.BackColor = System.Drawing.Color.GhostWhite;
             this.txt_Senha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_Senha.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -88,9 +93,11 @@ namespace BetoAPP
             this.txt_Senha.PasswordChar = '*';
             this.txt_Senha.Size = new System.Drawing.Size(190, 33);
             this.txt_Senha.TabIndex = 2;
+            this.txt_Senha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Senha_KeyDown);
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.GhostWhite;
             this.label1.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -103,6 +110,7 @@ namespace BetoAPP
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.GhostWhite;
             this.label2.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -137,12 +145,24 @@ namespace BetoAPP
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // pcbCarregar
+            // 
+            this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.Eclipse_0_6s_200px;
+            this.pcbCarregar.Location = new System.Drawing.Point(157, 318);
+            this.pcbCarregar.Name = "pcbCarregar";
+            this.pcbCarregar.Size = new System.Drawing.Size(147, 121);
+            this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbCarregar.TabIndex = 7;
+            this.pcbCarregar.TabStop = false;
+            this.pcbCarregar.Visible = false;
+            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel2.Controls.Add(this.pcbCarregar);
             this.panel2.Controls.Add(this.btn_Sair);
             this.panel2.Controls.Add(this.btn_Minimiza);
             this.panel2.Controls.Add(this.btn_Acessar);
@@ -156,7 +176,6 @@ namespace BetoAPP
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(431, 521);
             this.panel2.TabIndex = 6;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btn_Sair
             // 
@@ -189,8 +208,7 @@ namespace BetoAPP
             // 
             // pnl_Usuario
             // 
-            this.pnl_Usuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_Usuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_Usuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.pnl_Usuario.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.pnl_Usuario.Location = new System.Drawing.Point(168, 213);
@@ -200,8 +218,7 @@ namespace BetoAPP
             // 
             // pnl_Senha
             // 
-            this.pnl_Senha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_Senha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnl_Senha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.pnl_Senha.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.pnl_Senha.Location = new System.Drawing.Point(168, 293);
@@ -215,10 +232,9 @@ namespace BetoAPP
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 520);
-            this.ControlBox = false;
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "LoginVisual";
@@ -226,6 +242,7 @@ namespace BetoAPP
             this.Text = "Acesso";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Sair)).EndInit();
@@ -248,6 +265,7 @@ namespace BetoAPP
         private System.Windows.Forms.Panel pnl_Senha;
         private System.Windows.Forms.PictureBox btn_Sair;
         private System.Windows.Forms.PictureBox btn_Minimiza;
+        private System.Windows.Forms.PictureBox pcbCarregar;
     }
 }
 

@@ -44,10 +44,12 @@ namespace BetoAPP.Visual
             this.btn_Edita = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Exclui = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Recarrega = new System.Windows.Forms.ToolStripMenuItem();
+            this.pcbCarregar = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTipoAnalise)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -170,6 +172,17 @@ namespace BetoAPP.Visual
             this.btn_Recarrega.Text = "Recarregar Tabela";
             this.btn_Recarrega.Click += new System.EventHandler(this.btn_Recarrega_Click);
             // 
+            // pcbCarregar
+            // 
+            this.pcbCarregar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.Eclipse_0_6s_200px;
+            this.pcbCarregar.Location = new System.Drawing.Point(0, 0);
+            this.pcbCarregar.Name = "pcbCarregar";
+            this.pcbCarregar.Size = new System.Drawing.Size(549, 595);
+            this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pcbCarregar.TabIndex = 30;
+            this.pcbCarregar.TabStop = false;
+            // 
             // TipoAnaliseVisual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -178,6 +191,7 @@ namespace BetoAPP.Visual
             this.Controls.Add(this.dataGridTipoAnalise);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pcbCarregar);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -192,6 +206,7 @@ namespace BetoAPP.Visual
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,5 +225,6 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.ToolStripMenuItem btn_Exclui;
         private System.Windows.Forms.ToolStripMenuItem btn_Recarrega;
         private System.Windows.Forms.Button btn_Pesquisar;
+        private System.Windows.Forms.PictureBox pcbCarregar;
     }
 }

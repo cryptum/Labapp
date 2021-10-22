@@ -32,6 +32,7 @@ namespace BetoAPP.Visual
             this.lbl1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pcbCarregar = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -47,6 +48,7 @@ namespace BetoAPP.Visual
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btn_Edita = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -83,6 +85,7 @@ namespace BetoAPP.Visual
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.pcbCarregar);
             this.groupBox1.Location = new System.Drawing.Point(13, 35);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
@@ -90,6 +93,17 @@ namespace BetoAPP.Visual
             this.groupBox1.Size = new System.Drawing.Size(533, 362);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
+            // 
+            // pcbCarregar
+            // 
+            this.pcbCarregar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.Eclipse_0_6s_200px;
+            this.pcbCarregar.Location = new System.Drawing.Point(4, 19);
+            this.pcbCarregar.Name = "pcbCarregar";
+            this.pcbCarregar.Size = new System.Drawing.Size(525, 340);
+            this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pcbCarregar.TabIndex = 27;
+            this.pcbCarregar.TabStop = false;
             // 
             // groupBox3
             // 
@@ -220,9 +234,9 @@ namespace BetoAPP.Visual
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Adiciona,
             this.btn_Edita});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 418);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 410);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(560, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(552, 32);
             this.menuStrip1.TabIndex = 26;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -241,7 +255,7 @@ namespace BetoAPP.Visual
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(560, 450);
+            this.ClientSize = new System.Drawing.Size(552, 442);
             this.ControlBox = false;
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.groupBox1);
@@ -254,6 +268,7 @@ namespace BetoAPP.Visual
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -284,5 +299,6 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.ToolStripMenuItem btn_Adiciona;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btn_Edita;
+        private System.Windows.Forms.PictureBox pcbCarregar;
     }
 }

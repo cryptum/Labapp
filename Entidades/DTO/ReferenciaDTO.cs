@@ -15,4 +15,9 @@ namespace Entidade.DTO
         [Required(ErrorMessage = "O campo 'Nome' está vazio")]
         public string Nome { get; set; }
     }
+
+    public class ReferenciaNomeDTO
+    {
+        public string Nome { get; set; }
+    }
 }

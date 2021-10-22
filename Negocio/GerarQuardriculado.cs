@@ -20,7 +20,7 @@ namespace Negocio
         public void Gerar()
         {
             string caminho = ValidarCaminhoPDF();
-            caminho += "\\Laudo.pdf";
+            caminho += "\\Quadriculado - " + DateTime.Now.Month + "-" + DateTime.Now.Year  +".pdf";
 
             using (PdfWriter wPdf = new PdfWriter(caminho, new WriterProperties().SetPdfVersion(PdfVersion.PDF_2_0)))
             {

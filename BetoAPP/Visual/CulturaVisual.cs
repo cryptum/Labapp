@@ -109,6 +109,7 @@ namespace BetoAPP.Visual
             if (e.KeyCode == Keys.Enter)
             {
                 Buscar(txt_Pesquisa.Text);
+                e.Handled = e.SuppressKeyPress = true;
             }
         }
     }

@@ -12,6 +12,12 @@ namespace Negocio
         {
             return new ReferenciaRepositorio().ObterTodos();
         }
+
+        public List<ReferenciaNomeDTO> ObterTodosOsNomes()
+        {
+            return new ReferenciaRepositorio().ObterTodosOsNome();
+        }
+
         public List<ReferenciaDTO> ObterListaPorNome(string nome)
         {
             return new ReferenciaRepositorio().ObterListaPorNome(nome);

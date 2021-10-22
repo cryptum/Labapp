@@ -39,9 +39,12 @@ namespace BetoAPP.Visual
                     {
                         MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-                    txtNome.Text = "";
-                    txtNome.Focus();
-                    MessageBox.Show("Salvo!");
+                    else
+                    {
+                        txtNome.Text = "";
+                        txtNome.Focus();
+                        MessageBox.Show("Salvo!");
+                    }
                 }
                 else if (txtTitulo.Text == "Editar Tipo Análise")
                 {
@@ -50,15 +53,17 @@ namespace BetoAPP.Visual
                     {
                         MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-                    txtNome.Text = "";
-                    txtNome.Focus();
-                    MessageBox.Show("Salvo!");
+                    else
+                    {
+                        txtNome.Text = "";
+                        txtNome.Focus();
+                        MessageBox.Show("Salvo!");
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                throw;
             }
         }
     }

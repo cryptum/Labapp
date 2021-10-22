@@ -124,6 +124,7 @@ namespace BetoAPP.Visual
             if (e.KeyCode == Keys.Enter)
             {
                 Buscar(txt_Solicitante.Text);
+                e.Handled = e.SuppressKeyPress = true;
             }
         }
 

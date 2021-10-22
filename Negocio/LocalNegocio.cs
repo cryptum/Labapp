@@ -16,6 +16,10 @@ namespace Negocio
             return new LocalRepositorio().ObterTodos(idSolicitante, false);
         }
 
+        public List<LocalEntidade> ObterUmPorCodigoSolicitante(int idSolicitante)
+        {
+            return new LocalRepositorio().ObterUmPorCodigoSolicitante(idSolicitante);
+        }
 
         public List<LocalDTO> ObterListaPorNome(int idSolicitante, string nome)
         {

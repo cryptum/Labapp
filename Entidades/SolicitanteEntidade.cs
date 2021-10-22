@@ -17,5 +17,7 @@ namespace Entidade
         public bool Excluido { get; set; }
 
         public ICollection<LocalEntidade> Locais{ get; set; }
+        public ICollection<AnaliseEntidade> Analises { get; set; }
+
     }
 }

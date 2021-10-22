@@ -34,11 +34,13 @@ namespace BetoAPP.Visual
             this.label2 = new System.Windows.Forms.Label();
             this.txtFazenda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pcbCarregar = new System.Windows.Forms.PictureBox();
             this.btn_Cancelar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btn_Adiciona = new System.Windows.Forms.ToolStripMenuItem();
             this.txtTitulo = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +54,7 @@ namespace BetoAPP.Visual
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(533, 221);
+            this.groupBox1.Size = new System.Drawing.Size(518, 217);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             // 
@@ -92,6 +94,16 @@ namespace BetoAPP.Visual
             this.label1.TabIndex = 0;
             this.label1.Text = "Fazenda";
             // 
+            // pcbCarregar
+            // 
+            this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.Eclipse_0_6s_200px;
+            this.pcbCarregar.Location = new System.Drawing.Point(0, 0);
+            this.pcbCarregar.Name = "pcbCarregar";
+            this.pcbCarregar.Size = new System.Drawing.Size(546, 291);
+            this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pcbCarregar.TabIndex = 25;
+            this.pcbCarregar.TabStop = false;
+            // 
             // btn_Cancelar
             // 
             this.btn_Cancelar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -108,9 +120,9 @@ namespace BetoAPP.Visual
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Adiciona,
             this.btn_Cancelar});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 267);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 255);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(556, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(544, 32);
             this.menuStrip1.TabIndex = 26;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -140,11 +152,12 @@ namespace BetoAPP.Visual
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(556, 299);
+            this.ClientSize = new System.Drawing.Size(544, 287);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.txtTitulo);
+            this.Controls.Add(this.pcbCarregar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -153,6 +166,7 @@ namespace BetoAPP.Visual
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -171,5 +185,6 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.Label txtTitulo;
         private System.Windows.Forms.TextBox txtMunicipio;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pcbCarregar;
     }
 }

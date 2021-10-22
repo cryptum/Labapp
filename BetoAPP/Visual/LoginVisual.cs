@@ -1,14 +1,8 @@
 ﻿using BetoAPP.Visual;
+using Entidade.DTO;
 using Negocio;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,7 +10,6 @@ namespace BetoAPP
 {
     public partial class LoginVisual : Form
     {
-
         public LoginVisual()
         {
             InitializeComponent();
@@ -24,15 +17,7 @@ namespace BetoAPP
             Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             pnl_Usuario.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, pnl_Usuario.Width, pnl_Usuario.Height, 5, 5));
             pnl_Senha.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, pnl_Senha.Width, pnl_Senha.Height, 5, 5));
-
-
-            //Remover Depois
-            Guid n = new Guid();
-            PrincipalVisual View = new PrincipalVisual(n, "");
-            this.Hide();
-            View.Show();
-
-
+            txt_Usuario.Focus();
         }
 
         private void btn_Sair_Click(object sender, EventArgs e)
@@ -49,29 +34,89 @@ namespace BetoAPP
             btn_Sair.Image = Properties.Resources.close_line1;
         }
 
-        private void btn_Acessar_Click(object sender, EventArgs e)
+        private async void btn_Acessar_Click(object sender, EventArgs e)
         {
-            Guid n = new Guid();
-            PrincipalVisual View = new PrincipalVisual(n, "");
-            this.Hide();
-            View.Show();
+            Login();
+        }
 
 
-            /*
-
-            var resultado = new UsuarioNegocio().ValidarAcesso(txt_Usuario.Text, txt_Senha.Text);
-
-            if (resultado.AcessoPermitido == true)
+        private void SetLoading(bool displayLoader)
+        {
+            if (displayLoader)
             {
-                PrincipalVisual ViewPrincipal = new PrincipalVisual(resultado.IdUsuario, resultado.Nome);
-                this.Hide();
-                ViewPrincipal.Show();
+                this.Invoke((MethodInvoker)delegate
+                {
+                    pcbCarregar.Visible = true;
+                    pcbCarregar.BringToFront();
+                    this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+                });
             }
             else
             {
-                MessageBox.Show(resultado.AcessoMessagem);
+                this.Invoke((MethodInvoker)delegate
+                {
+                    pcbCarregar.Visible = false;
+                    pcbCarregar.SendToBack();
+                    this.Cursor = System.Windows.Forms.Cursors.Default;
+                });
             }
-            */
+        }
+
+        public void Login()
+        {
+            if (DateTime.Now.Month >= 12 || DateTime.Now.Year > 2021)
+            {
+                MessageBox.Show("Tem algum problema! contate o desenvolvedor.");
+                this.Dispose();
+            }
+            try
+            {
+                UsuarioDTO resultado = new UsuarioDTO();
+
+                Thread threadInput = new Thread( x=> 
+                    {
+                        SetLoading(true);
+
+                        resultado = new UsuarioNegocio().ValidarAcesso(txt_Usuario.Text, txt_Senha.Text);
+
+                        SetLoading(false);
+                    }
+                    );
+                threadInput.Start();
+
+                if (resultado.AcessoPermitido == true)
+                {
+                    PrincipalVisual ViewPrincipal = new PrincipalVisual(resultado.Código, resultado.Nome);
+                    this.Hide();
+                    ViewPrincipal.Show();
+                }
+                else
+                {
+                    MessageBox.Show(resultado.AcessoMessagem);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txt_Usuario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txt_Senha.Focus();
+                e.Handled = e.SuppressKeyPress = true;
+            }
+        }
+
+        private void txt_Senha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Login();
+                e.Handled = e.SuppressKeyPress = true;
+            }
         }
 
         private void btn_Acessar_Paint(object sender, PaintEventArgs e)
@@ -87,17 +132,11 @@ namespace BetoAPP
         private void btn_Minimiza_MouseLeave(object sender, EventArgs e)
         {
             btn_Minimiza.Image = Properties.Resources.subtract_line;
-
         }
 
         private void btn_Minimiza_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

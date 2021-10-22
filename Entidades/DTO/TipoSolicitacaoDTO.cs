@@ -12,4 +12,9 @@ namespace Entidade.DTO
 
         public string Nome { get; set; }
     }
+
+    public class TipoSolicitacaoNomesDTO
+    {
+        public string Nome { get; set; }
+    }
 }

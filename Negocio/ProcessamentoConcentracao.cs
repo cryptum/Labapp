@@ -9,6 +9,11 @@ namespace Negocio
     public class ProcessamentoConcentracao
     {
 
+        public double ProcessarPH(double pH)
+        {
+            return Math.Round(pH, 2);
+        }
+
         public double ProcessarFosforo(double P, double DiluicaoP)
         {
             // carregando dados
@@ -104,6 +109,65 @@ namespace Negocio
             double mmolc = (HAl - ProvaEmBanco) * 10;
 
             return Math.Round(mmolc, 2);
+        }
+
+        public double ProcessarZinco(double Zn)
+        {
+            return Math.Round(Zn, 2);
+        }
+
+        public double ProcessarCobre(double Cu)
+        {
+            return Math.Round(Cu, 2);
+        }
+
+        public double ProcessarFerro(double Fe)
+        {
+            return Math.Round(Fe, 2);
+        }
+
+        public double ProcessarManganes(double Mn)
+        {
+            return Math.Round(Mn, 2);
+        }
+
+        public double ProcessarArgila(double Inicio, double Fim)
+        {
+            var subt = Fim - Inicio;
+            var result = (100 * subt) / 20;
+
+            return Math.Round(result, 2);
+        }
+
+        public double ProcessarAreia(double Inicio, double Fim)
+        {
+            var subt = Fim - Inicio;
+            var result = (100 * subt) / 20;
+
+            return Math.Round(result, 2);
+        }
+
+        public double ProcessarSilte(double Inicio, double Fim)
+        {
+            var subt = Fim - Inicio;
+            var result = (100 * subt) / 20;
+
+            return Math.Round(result, 2);
+        }
+
+        public double ProcessarBoro(double B)
+        {
+            return Math.Round(B, 2);
+        }
+
+        public double ProcessarEnxofre(double S)
+        {
+            return Math.Round(S, 2);
+        }
+
+        public double ProcessarMateriaOrganica(double MO)
+        {
+            return Math.Round(MO, 2);
         }
     }
 }

@@ -34,25 +34,31 @@ namespace BetoAPP.Visual
             {
                 if (txtTitulo.Text == "Adicionar Tipo Solicitação")
                 {
-                    var result = new TipoAnaliseNegocio().Salvar(txtNome.Text);
+                    var result = new TipoSolicitacaoNegocio().Salvar(txtNome.Text);
                     if (result == 0)
                     {
                         MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-                    txtNome.Text = "";
-                    txtNome.Focus();
-                    MessageBox.Show("Salvo!");
+                    else
+                    {
+                        txtNome.Text = "";
+                        txtNome.Focus();
+                        MessageBox.Show("Salvo!");
+                    }
                 }
                 else if (txtTitulo.Text == "Editar Tipo Solicitação")
                 {
-                    var result = new TipoAnaliseNegocio().Editar(this.IdInicial, txtNome.Text);
+                    var result = new TipoSolicitacaoNegocio().Editar(this.IdInicial, txtNome.Text);
                     if (result == 0)
                     {
                         MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-                    txtNome.Text = "";
-                    txtNome.Focus();
-                    MessageBox.Show("Salvo!");
+                    else
+                    {
+                        txtNome.Text = "";
+                        txtNome.Focus();
+                        MessageBox.Show("Salvo!");
+                    }
                 }
             }
             catch (Exception ex)

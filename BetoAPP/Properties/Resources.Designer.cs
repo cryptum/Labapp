@@ -143,6 +143,16 @@ namespace BetoAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Eclipse_0_6s_200px {
+            get {
+                object obj = ResourceManager.GetObject("Eclipse-0.6s-200px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_2_fill {
             get {
                 object obj = ResourceManager.GetObject("edit-2-fill", resourceCulture);
@@ -233,6 +243,26 @@ namespace BetoAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap printer_Amarelo {
+            get {
+                object obj = ResourceManager.GetObject("printer-Amarelo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap printer_cinza {
+            get {
+                object obj = ResourceManager.GetObject("printer-cinza", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap printer_fill {
             get {
                 object obj = ResourceManager.GetObject("printer-fill", resourceCulture);
@@ -246,6 +276,16 @@ namespace BetoAPP.Properties {
         internal static System.Drawing.Bitmap printer_fill1 {
             get {
                 object obj = ResourceManager.GetObject("printer-fill1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap printer_Laranja {
+            get {
+                object obj = ResourceManager.GetObject("printer-Laranja", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

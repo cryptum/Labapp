@@ -23,7 +23,11 @@ namespace BetoAPP.Util
 
         public string Value { get; private set; }
 
-        public static Mensagem NDeuCerto { get { return new Mensagem("Algo não deu certo"); } }
+        public static Mensagem NDeuCerto { get { return new Mensagem("Algo não deu certo!"); } }
+
+        public static Mensagem AnaliseCamposVazios { get { return new Mensagem("Existe campos vazios!"); } }
+
+        public static Mensagem ErroThread { get { return new Mensagem("Houve erro em algum fluxo, alguma thread quebrou!"); } }
 
     }
 }

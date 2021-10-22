@@ -31,6 +31,21 @@ namespace Repositorio
             }
         }
 
+        public List<TipoSolicitacaoNomesDTO> ObterTodosOsNomes()
+        {
+            using (var db = new ContextDB())
+            {
+                var query = db.TipoSolicitacaos
+                                .Select(x => new TipoSolicitacaoNomesDTO
+                                {
+                                    Nome = x.Nome
+                                })
+                                .ToList();
+
+                return query;
+            }
+        }
+
         public TipoSolicitacaoEntidade ObterUmPorCodigo(int id)
         {
             using (var db = new ContextDB())

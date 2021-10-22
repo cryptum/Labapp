@@ -124,6 +124,9 @@
   <data name="microscope-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\microscope-fill (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="printer-cinza" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printer-cinza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fullscreen-exit-line" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fullscreen-exit-line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,8 +151,8 @@
   <data name="edit-2-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-2-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shield-user-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shield-user-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow-right-fill (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow-right-fill (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fullscreen-exit-line (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fullscreen-exit-line (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -162,6 +165,12 @@
   </data>
   <data name="save-3-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save-3-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="printer-Laranja" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printer-Laranja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shield-user-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shield-user-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close-line1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close-line1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,10 +205,13 @@
   <data name="arrow-right-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\arrow-right-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="printer-Amarelo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printer-Amarelo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="printer-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\printer-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrow-right-fill (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow-right-fill (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Eclipse-0.6s-200px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Eclipse-0.6s-200px.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
