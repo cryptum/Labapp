@@ -3,15 +3,12 @@ using Entidade.DTO;
 using Repositorio;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio
 {
     public class AnaliseNegocio
     {
-        public AnaliseNegocio(){}
+        public AnaliseNegocio() { }
 
         public List<AnaliseObterTodosDTO> ObterTodos()
         {

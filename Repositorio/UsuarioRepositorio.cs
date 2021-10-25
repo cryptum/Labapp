@@ -1,16 +1,12 @@
 ﻿using Entidade.DTO;
 using Repositorio.Config;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repositorio
 {
     public class UsuarioRepositorio
     {
-        public UsuarioRepositorio(){}
+        public UsuarioRepositorio() { }
 
         public UsuarioDTO ValidarAcesso(string Acesso, string Senha)
         {

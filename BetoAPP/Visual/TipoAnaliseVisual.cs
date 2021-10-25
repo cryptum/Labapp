@@ -1,8 +1,6 @@
 ﻿using BetoAPP.Util;
-using Entidade.DTO;
 using Negocio;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace BetoAPP.Visual
@@ -22,6 +20,28 @@ namespace BetoAPP.Visual
         {
             InitializeComponent();
         }
+        //private void SetLoading(bool displayLoader)
+        //{
+        //    if (displayLoader)
+        //    {
+        //        this.Invoke((MethodInvoker)delegate
+        //        {
+        //            pcbCarregar.Visible = true;
+        //            pcbCarregar.BringToFront();
+        //            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+        //        });
+        //    }
+        //    else
+        //    {
+        //        this.Invoke((MethodInvoker)delegate
+        //        {
+        //            pcbCarregar.Visible = false;
+        //            pcbCarregar.SendToBack();
+        //            this.Cursor = System.Windows.Forms.Cursors.Default;
+        //        });
+        //    }
+        //}
+
 
         public void RecarregarGrid()
         {
@@ -29,9 +49,10 @@ namespace BetoAPP.Visual
             dataGridTipoAnalise.Columns[1].Width = 381;
         }
 
-        public List<TipoAnaliseDTO> Buscar(string nome)
+        public void Buscar(string nome)
         {
-            return new TipoAnaliseNegocio().ObterListaPorNome(nome);
+            dataGridTipoAnalise.DataSource = new TipoAnaliseNegocio().ObterListaPorNome(nome);
+            dataGridTipoAnalise.Columns[1].Width = 381;
         }
 
         private void TipoAnalise_Load(object sender, EventArgs e)

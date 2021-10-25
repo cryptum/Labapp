@@ -31,7 +31,7 @@ namespace BetoAPP.Visual
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalVisual));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.solicitanteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.analiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colaboradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +50,7 @@ namespace BetoAPP.Visual
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.solicitanteToolStripMenuItem,
+            this.clienteToolStripMenuItem,
             this.analiseToolStripMenuItem,
             this.relatórioToolStripMenuItem,
             this.colaboradoresToolStripMenuItem,
@@ -62,15 +62,15 @@ namespace BetoAPP.Visual
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // solicitanteToolStripMenuItem
+            // clienteToolStripMenuItem
             // 
-            this.solicitanteToolStripMenuItem.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.solicitanteToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.user_fill;
-            this.solicitanteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.solicitanteToolStripMenuItem.Name = "solicitanteToolStripMenuItem";
-            this.solicitanteToolStripMenuItem.Size = new System.Drawing.Size(140, 40);
-            this.solicitanteToolStripMenuItem.Text = "Solicitante";
-            this.solicitanteToolStripMenuItem.Click += new System.EventHandler(this.solicitanteToolStripMenuItem_Click);
+            this.clienteToolStripMenuItem.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.clienteToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.user_fill;
+            this.clienteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(112, 40);
+            this.clienteToolStripMenuItem.Text = "Cliente";
+            this.clienteToolStripMenuItem.Click += new System.EventHandler(this.solicitanteToolStripMenuItem_Click);
             // 
             // analiseToolStripMenuItem
             // 
@@ -212,7 +212,7 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.ToolStripMenuItem referenciaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoAnaliseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoSolicitacaoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem solicitanteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel lbl_UsuarioLogado;

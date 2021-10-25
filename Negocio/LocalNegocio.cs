@@ -1,11 +1,7 @@
 ﻿using Entidade;
 using Entidade.DTO;
 using Repositorio;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio
 {
@@ -28,13 +24,13 @@ namespace Negocio
 
         public int Salvar(string fazenda, string municipio, int idSolicitante)
         {
-            var Solicitante = new SolicitanteNegocio().ObterUmPorCodigo(idSolicitante);
+            //SolicitanteEntidade Solicitante = new SolicitanteNegocio().ObterUmPorCodigo(idSolicitante);
             LocalEntidade Local = new LocalEntidade();
             Local.Fazenda = fazenda;
             Local.Municipio = municipio;
-            Local.Solicitantes = Solicitante;
+            //Local.Solicitantes = Solicitante;
             Local.Excluido = false;
-            return new LocalRepositorio().Salvar(Local);
+            return new LocalRepositorio().Salvar(Local, idSolicitante);
         }
 
         public int Editar(int Id, string fazenda, string municipio, int idSolicitante)

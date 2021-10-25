@@ -3,9 +3,6 @@ using Entidade.DTO;
 using Repositorio;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio
 {
@@ -36,7 +33,7 @@ namespace Negocio
         public int Editar(int Id, String Nome)
         {
             CulturaEntidade cultura = new CulturaRepositorio().ObterUmPorCodigo(Id);
-            if(cultura == null)
+            if (cultura == null)
             {
                 return 0;
             }

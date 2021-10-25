@@ -2,8 +2,6 @@
 using Entidade.DTO;
 using Negocio;
 using System;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BetoAPP
@@ -18,6 +16,10 @@ namespace BetoAPP
             pnl_Usuario.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, pnl_Usuario.Width, pnl_Usuario.Height, 5, 5));
             pnl_Senha.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, pnl_Senha.Width, pnl_Senha.Height, 5, 5));
             txt_Usuario.Focus();
+
+
+            txt_Usuario.Text = "beto";
+            txt_Senha.Text = "123";
         }
 
         private void btn_Sair_Click(object sender, EventArgs e)
@@ -34,33 +36,32 @@ namespace BetoAPP
             btn_Sair.Image = Properties.Resources.close_line1;
         }
 
-        private async void btn_Acessar_Click(object sender, EventArgs e)
+        private void btn_Acessar_Click(object sender, EventArgs e)
         {
             Login();
         }
 
-
-        private void SetLoading(bool displayLoader)
-        {
-            if (displayLoader)
-            {
-                this.Invoke((MethodInvoker)delegate
-                {
-                    pcbCarregar.Visible = true;
-                    pcbCarregar.BringToFront();
-                    this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-                });
-            }
-            else
-            {
-                this.Invoke((MethodInvoker)delegate
-                {
-                    pcbCarregar.Visible = false;
-                    pcbCarregar.SendToBack();
-                    this.Cursor = System.Windows.Forms.Cursors.Default;
-                });
-            }
-        }
+        //private void SetLoading(bool displayLoader)
+        //{
+        //    if (displayLoader)
+        //    {
+        //        this.Invoke((MethodInvoker)delegate
+        //        {
+        //            pcbCarregar.Visible = true;
+        //            pcbCarregar.BringToFront();
+        //            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+        //        });
+        //    }
+        //    else
+        //    {
+        //        this.Invoke((MethodInvoker)delegate
+        //        {
+        //            pcbCarregar.Visible = false;
+        //            pcbCarregar.SendToBack();
+        //            this.Cursor = System.Windows.Forms.Cursors.Default;
+        //        });
+        //    }
+        //}
 
         public void Login()
         {
@@ -71,19 +72,7 @@ namespace BetoAPP
             }
             try
             {
-                UsuarioDTO resultado = new UsuarioDTO();
-
-                Thread threadInput = new Thread( x=> 
-                    {
-                        SetLoading(true);
-
-                        resultado = new UsuarioNegocio().ValidarAcesso(txt_Usuario.Text, txt_Senha.Text);
-
-                        SetLoading(false);
-                    }
-                    );
-                threadInput.Start();
-
+                UsuarioDTO resultado = new UsuarioNegocio().ValidarAcesso(txt_Usuario.Text.Trim(), txt_Senha.Text);
                 if (resultado.AcessoPermitido == true)
                 {
                     PrincipalVisual ViewPrincipal = new PrincipalVisual(resultado.Código, resultado.Nome);

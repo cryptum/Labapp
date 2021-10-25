@@ -7,7 +7,7 @@ namespace Negocio
 {
     public class TipoSolicitacaoNegocio
     {
-        public TipoSolicitacaoNegocio(){}
+        public TipoSolicitacaoNegocio() { }
 
         public List<TipoSolicitacaoDTO> ObterTodos()
         {

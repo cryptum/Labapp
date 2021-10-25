@@ -6,11 +6,7 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio
 {
@@ -20,7 +16,7 @@ namespace Negocio
         public void Gerar()
         {
             string caminho = ValidarCaminhoPDF();
-            caminho += "\\Quadriculado - " + DateTime.Now.Month + "-" + DateTime.Now.Year  +".pdf";
+            caminho += "\\Quadriculado - " + DateTime.Now.Month + "-" + DateTime.Now.Year + ".pdf";
 
             using (PdfWriter wPdf = new PdfWriter(caminho, new WriterProperties().SetPdfVersion(PdfVersion.PDF_2_0)))
             {

@@ -59,7 +59,7 @@ namespace BetoAPP.Visual
             this.btn_Recarrega});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(693, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(1020, 32);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -110,6 +110,7 @@ namespace BetoAPP.Visual
             this.dataGridSolicitante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridSolicitante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -132,7 +133,7 @@ namespace BetoAPP.Visual
             this.dataGridSolicitante.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridSolicitante.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dataGridSolicitante.RowTemplate.Height = 25;
-            this.dataGridSolicitante.Size = new System.Drawing.Size(668, 428);
+            this.dataGridSolicitante.Size = new System.Drawing.Size(995, 428);
             this.dataGridSolicitante.TabIndex = 13;
             this.dataGridSolicitante.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridSolicitante_CellMouseClick);
             // 
@@ -146,7 +147,7 @@ namespace BetoAPP.Visual
             this.groupBox1.Controls.Add(this.txt_Solicitante);
             this.groupBox1.Location = new System.Drawing.Point(12, 35);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(669, 99);
+            this.groupBox1.Size = new System.Drawing.Size(996, 99);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
@@ -185,7 +186,7 @@ namespace BetoAPP.Visual
             this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.Eclipse_0_6s_200px;
             this.pcbCarregar.Location = new System.Drawing.Point(0, 0);
             this.pcbCarregar.Name = "pcbCarregar";
-            this.pcbCarregar.Size = new System.Drawing.Size(693, 595);
+            this.pcbCarregar.Size = new System.Drawing.Size(1020, 595);
             this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pcbCarregar.TabIndex = 30;
             this.pcbCarregar.TabStop = false;
@@ -194,7 +195,7 @@ namespace BetoAPP.Visual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 595);
+            this.ClientSize = new System.Drawing.Size(1020, 595);
             this.Controls.Add(this.dataGridSolicitante);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
@@ -204,7 +205,7 @@ namespace BetoAPP.Visual
             this.Name = "SolicitanteVisual";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Solicitante";
+            this.Text = "Cliente";
             this.Load += new System.EventHandler(this.SolicitanteVisual_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

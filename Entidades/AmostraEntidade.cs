@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Entidade
 {
@@ -17,7 +12,7 @@ namespace Entidade
         public string Ca { get; set; }
         public string Mg { get; set; }
         public string Al { get; set; }
-        public string AlH{ get; set; }
+        public string AlH { get; set; }
         public string SB { get; set; }
         public string ti { get; set; }
         public string T { get; set; }
@@ -33,7 +28,7 @@ namespace Entidade
         public string Argila { get; set; }
         public string Areia { get; set; }
         public string Silte { get; set; }
-        public string TonHa{ get; set; }
+        public string TonHa { get; set; }
 
         public AnaliseEntidade Analises { get; set; }
     }

@@ -1,7 +1,6 @@
 ﻿using Entidade;
 using Entidade.DTO;
 using Repositorio;
-using System;
 using System.Collections.Generic;
 
 namespace Negocio

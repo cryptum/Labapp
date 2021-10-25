@@ -1,8 +1,6 @@
 ﻿using BetoAPP.Util;
-using Entidade.DTO;
 using Negocio;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace BetoAPP.Visual
@@ -24,15 +22,39 @@ namespace BetoAPP.Visual
             InitializeComponent();
         }
 
+        //private void SetLoading(bool displayLoader)
+        //{
+        //    if (displayLoader)
+        //    {
+        //        this.Invoke((MethodInvoker)delegate
+        //        {
+        //            pcbCarregar.Visible = true;
+        //            pcbCarregar.BringToFront();
+        //            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+        //        });
+        //    }
+        //    else
+        //    {
+        //        this.Invoke((MethodInvoker)delegate
+        //        {
+        //            pcbCarregar.Visible = false;
+        //            pcbCarregar.SendToBack();
+        //            this.Cursor = System.Windows.Forms.Cursors.Default;
+        //        });
+        //    }
+        //}
+
+
         public void RecarregarGrid()
         {
             dataGridCultura.DataSource = new CulturaNegocio().ObterTodos();
             dataGridCultura.Columns[1].Width = 381;
         }
 
-        public List<CulturaDTO> Buscar(string nome)
+        public void Buscar(string nome)
         {
-            return new CulturaNegocio().ObterListaPorNome(nome);
+            dataGridCultura.DataSource = new CulturaNegocio().ObterListaPorNome(nome);
+            dataGridCultura.Columns[1].Width = 381;
         }
 
         private void CulturaVisual_Load(object sender, EventArgs e)
@@ -42,7 +64,7 @@ namespace BetoAPP.Visual
 
         private void btn_Adiciona_Click(object sender, EventArgs e)
         {
-            AdicionarCulturaVisual View = new AdicionarCulturaVisual("Adicionar Cultura", 0 ,"");
+            AdicionarCulturaVisual View = new AdicionarCulturaVisual("Adicionar Cultura", 0, "");
             View.ShowDialog();
             RecarregarGrid();
         }
@@ -51,7 +73,7 @@ namespace BetoAPP.Visual
         {
             try
             {
-                int idSelecionada= Convert.ToInt32(dataGridCultura.CurrentRow.Cells[0].Value.ToString());
+                int idSelecionada = Convert.ToInt32(dataGridCultura.CurrentRow.Cells[0].Value.ToString());
                 string nameSelecionada = dataGridCultura.CurrentRow.Cells[1].Value.ToString();
 
                 if (MessageBox.Show($"Deseja editar: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

@@ -1,14 +1,6 @@
 ﻿using BetoAPP.Util;
-using Entidade.DTO;
 using Negocio;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BetoAPP.Visual
@@ -31,15 +23,39 @@ namespace BetoAPP.Visual
             InitializeComponent();
             idInicialSolicitante = idSolicitante;
         }
+
+        //private void SetLoading(bool displayLoader)
+        //{
+        //    if (displayLoader)
+        //    {
+        //        this.Invoke((MethodInvoker)delegate
+        //        {
+        //            pcbCarregar.Visible = true;
+        //            pcbCarregar.BringToFront();
+        //            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+        //        });
+        //    }
+        //    else
+        //    {
+        //        this.Invoke((MethodInvoker)delegate
+        //        {
+        //            pcbCarregar.Visible = false;
+        //            pcbCarregar.SendToBack();
+        //            this.Cursor = System.Windows.Forms.Cursors.Default;
+        //        });
+        //    }
+        //}
+
         public void RecarregarGrid()
         {
             dataGridLocal.DataSource = new LocalNegocio().ObterTodos(idInicialSolicitante);
             dataGridLocal.Columns[1].Width = 381;
         }
 
-        public List<LocalDTO> Buscar(string nome)
+        public void Buscar(string nome)
         {
-            return new LocalNegocio().ObterListaPorNome(idInicialSolicitante, nome);
+            dataGridLocal.DataSource = new LocalNegocio().ObterListaPorNome(idInicialSolicitante, nome);
+            dataGridLocal.Columns[1].Width = 381;
         }
 
         private void LocalVisual_Load(object sender, EventArgs e)
@@ -49,8 +65,10 @@ namespace BetoAPP.Visual
 
         private void btn_Adiciona_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
             AdicionarLocalVisual View = new AdicionarLocalVisual("Adicionar Local", 0, "", "", idInicialSolicitante);
             View.ShowDialog();
+            this.Visible = true;
             RecarregarGrid();
         }
 
@@ -120,6 +138,11 @@ namespace BetoAPP.Visual
                 Buscar(txt_Local.Text);
                 e.Handled = e.SuppressKeyPress = true;
             }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

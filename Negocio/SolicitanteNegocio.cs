@@ -3,9 +3,6 @@ using Entidade.DTO;
 using Repositorio;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio
 {
@@ -26,16 +23,17 @@ namespace Negocio
             return new SolicitanteRepositorio().ObterUmPorCodigo(id);
         }
 
-        public int Salvar(String Nome, String Observacao)
+        public int Salvar(String Nome, String Cpf, String Observacao)
         {
             SolicitanteEntidade Solicitante = new SolicitanteEntidade();
             Solicitante.Nome = Nome;
+            Solicitante.Cpf = Cpf;
             Solicitante.Observacao = Observacao;
             Solicitante.Excluido = false;
             return new SolicitanteRepositorio().Salvar(Solicitante);
         }
 
-        public int Editar(int Id, String Nome, String Observacao)
+        public int Editar(int Id, String Nome, String Cpf, String Observacao)
         {
             SolicitanteEntidade Solicitante = new SolicitanteRepositorio().ObterUmPorCodigo(Id);
             if (Solicitante == null)
@@ -43,6 +41,7 @@ namespace Negocio
                 return 0;
             }
             Solicitante.Nome = Nome;
+            Solicitante.Cpf = Cpf;
             Solicitante.Observacao = Observacao;
             return new SolicitanteRepositorio().Editar(Solicitante);
         }

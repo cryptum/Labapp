@@ -1,18 +1,19 @@
-﻿using System;
-using Entidade;
+﻿using Entidade;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Repositorio.Config
 {
     public class ContextDB : DbContext
     {
         //MYSQL
-        //const string connectionString = "server=localhost;user=root;password=root;database=betoapp";
-        //MySqlServerVersion serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
+        const string connectionString = "server=localhost;user=root;password=root;database=betoapp";
+        MySqlServerVersion serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
 
         //HEROKU MYSQL
-        const string connectionString = "server=us-cdbr-east-04.cleardb.com;user=b6e9f8aa4e49dd;password=a4d7bcf8;database=heroku_85a77976580b632";
-        MySqlServerVersion serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
+        //const string connectionString = "server=us-cdbr-east-04.cleardb.com;user=b6e9f8aa4e49dd;password=a4d7bcf8;database=heroku_85a77976580b632";
+        //MySqlServerVersion serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,6 +33,9 @@ namespace Repositorio.Config
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+            //modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
             modelBuilder.Entity<AmostraEntidade>().HasKey(u => u.IdAmostras);
 

@@ -31,8 +31,8 @@ namespace BetoAPP.Visual
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_Solicitacao = new System.Windows.Forms.Button();
             this.lbl1 = new System.Windows.Forms.Label();
@@ -59,14 +59,14 @@ namespace BetoAPP.Visual
             this.groupBox1.Controls.Add(this.txt_Local);
             this.groupBox1.Location = new System.Drawing.Point(12, 35);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(524, 99);
+            this.groupBox1.Size = new System.Drawing.Size(996, 99);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
             // btn_Solicitacao
             // 
             this.btn_Solicitacao.Image = global::BetoAPP.Properties.Resources.search_line__2_;
-            this.btn_Solicitacao.Location = new System.Drawing.Point(458, 44);
+            this.btn_Solicitacao.Location = new System.Drawing.Point(510, 44);
             this.btn_Solicitacao.Name = "btn_Solicitacao";
             this.btn_Solicitacao.Size = new System.Drawing.Size(51, 33);
             this.btn_Solicitacao.TabIndex = 6;
@@ -86,7 +86,7 @@ namespace BetoAPP.Visual
             // txt_Local
             // 
             this.txt_Local.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Local.Location = new System.Drawing.Point(113, 44);
+            this.txt_Local.Location = new System.Drawing.Point(165, 44);
             this.txt_Local.Name = "txt_Local";
             this.txt_Local.Size = new System.Drawing.Size(339, 33);
             this.txt_Local.TabIndex = 4;
@@ -94,28 +94,29 @@ namespace BetoAPP.Visual
             // 
             // dataGridLocal
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridLocal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridLocal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridLocal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridLocal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridLocal.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridLocal.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridLocal.Location = new System.Drawing.Point(13, 155);
             this.dataGridLocal.Name = "dataGridLocal";
             this.dataGridLocal.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dataGridLocal.RowTemplate.Height = 25;
-            this.dataGridLocal.Size = new System.Drawing.Size(524, 428);
+            this.dataGridLocal.Size = new System.Drawing.Size(995, 428);
             this.dataGridLocal.TabIndex = 12;
             // 
             // menuStrip1
@@ -128,9 +129,10 @@ namespace BetoAPP.Visual
             this.btn_Recarrega});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(549, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(1020, 32);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // btn_Adiciona
             // 
@@ -178,7 +180,7 @@ namespace BetoAPP.Visual
             this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.Eclipse_0_6s_200px;
             this.pcbCarregar.Location = new System.Drawing.Point(0, 0);
             this.pcbCarregar.Name = "pcbCarregar";
-            this.pcbCarregar.Size = new System.Drawing.Size(549, 595);
+            this.pcbCarregar.Size = new System.Drawing.Size(1020, 595);
             this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pcbCarregar.TabIndex = 29;
             this.pcbCarregar.TabStop = false;
@@ -187,7 +189,7 @@ namespace BetoAPP.Visual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 595);
+            this.ClientSize = new System.Drawing.Size(1020, 595);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridLocal);
             this.Controls.Add(this.menuStrip1);

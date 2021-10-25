@@ -1,16 +1,11 @@
 ﻿using Entidade.DTO;
 using Repositorio;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio
 {
     public class UsuarioNegocio
     {
-        public UsuarioNegocio(){}
+        public UsuarioNegocio() { }
 
         public UsuarioDTO ValidarAcesso(string Acesso, string Senha)
         {

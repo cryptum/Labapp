@@ -1,12 +1,9 @@
-﻿using Repositorio.Config;
+﻿using Entidade;
 using Entidade.DTO;
-using System;
+using Microsoft.EntityFrameworkCore;
+using Repositorio.Config;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Entidade;
-using Microsoft.EntityFrameworkCore;
 
 namespace Repositorio
 {

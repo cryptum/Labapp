@@ -102,7 +102,7 @@ namespace BetoAPP
             this.label1.BackColor = System.Drawing.Color.GhostWhite;
             this.label1.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label1.Location = new System.Drawing.Point(39, 191);
+            this.label1.Location = new System.Drawing.Point(39, 184);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 33);
             this.label1.TabIndex = 3;
@@ -115,7 +115,7 @@ namespace BetoAPP
             this.label2.BackColor = System.Drawing.Color.GhostWhite;
             this.label2.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label2.Location = new System.Drawing.Point(55, 270);
+            this.label2.Location = new System.Drawing.Point(55, 263);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 33);
             this.label2.TabIndex = 4;

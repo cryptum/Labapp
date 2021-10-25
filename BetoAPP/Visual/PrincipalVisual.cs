@@ -2,7 +2,6 @@
 using Negocio;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -10,7 +9,7 @@ namespace BetoAPP.Visual
 {
     public partial class PrincipalVisual : Form
     {
-        public PrincipalVisual(int IdUsuarioLogado,String Usuariologado)
+        public PrincipalVisual(int IdUsuarioLogado, String Usuariologado)
         {
             InitializeComponent();
             lbl_UsuarioLogado.Text = Usuariologado;
@@ -213,7 +212,7 @@ namespace BetoAPP.Visual
         private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AnaliseEntidade analise = new AnaliseEntidade();
-            
+
             analise.Solicitantes = new SolicitanteNegocio().ObterUmPorCodigo(1);
             analise.Local = "Fazenda louca";
             analise.Municipio = "São Charlis";

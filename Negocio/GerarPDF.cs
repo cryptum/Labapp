@@ -11,7 +11,6 @@ using iText.Layout.Properties;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace Negocio
 {
@@ -37,7 +36,7 @@ namespace Negocio
                 tituloCent.SetFont(font).SetFontSize(12).SetTextAlignment(TextAlignment.CENTER).SetFontColor(Color.ConvertRgbToCmyk(new DeviceRgb(255, 255, 255))).SetBackgroundColor(Color.ConvertRgbToCmyk(new DeviceRgb(149, 164, 166)));
                 Style subTituloCent = new Style();
                 subTituloCent.SetFont(font).SetFontSize(12).SetHorizontalAlignment(HorizontalAlignment.CENTER).SetTextAlignment(TextAlignment.CENTER).SetFontColor(Color.ConvertRgbToCmyk(new DeviceRgb(255, 255, 255))).SetBackgroundColor(Color.ConvertRgbToCmyk(new DeviceRgb(149, 164, 166)));
-                
+
                 Style normalInfo = new Style();
                 normalInfo.SetFont(font).SetFontSize(12).SetTextAlignment(TextAlignment.CENTER);
                 Style normalCent = new Style();
@@ -78,7 +77,7 @@ namespace Negocio
                 tableSubTitulo.AddCell("Amostra").AddStyle(subTituloCent).SetBorder(Border.NO_BORDER);
                 document.Add(tableSubTitulo);
 
-                colWidths = new float[] { 1,2,2,1,1,1,1,1 };
+                colWidths = new float[] { 1, 2, 2, 1, 1, 1, 1, 1 };
                 Table tableValores = new Table(UnitValue.CreatePercentArray(colWidths)).UseAllAvailableWidth().SetBorder(Border.NO_BORDER);
 
                 tableValores.AddCell("Símbolo").AddStyle(normal).SetBorder(Border.NO_BORDER);
@@ -304,11 +303,11 @@ namespace Negocio
 
                 document.Add(new Paragraph("\n"));
 
-                Table tableRodape = new Table(UnitValue.CreatePercentArray(1)).UseAllAvailableWidth().SetBorder(Border.NO_BORDER);
-                tableRodape.AddCell("Observações: Caso a sujestão de calagem tenha um valor negativo não há a necessidade de calagem.").AddStyle(rodape).SetBorder(Border.NO_BORDER);
-                tableRodape.AddCell("Necessidade  de calagem foi calculada usando a metodologia do livro:Recomendações para o uso de corretivos  e fertilizantes em minas gerais, Pág 52. E V% ideal de 60. Item 8.2.2 \"Método da saturação por base\".").AddStyle(rodape).SetBorder(Border.NO_BORDER);
-                tableRodape.AddCell("A Agro Frutal Laboratórios de análies agrícolas LTDA, não se responsabiliza pela interpretação desta análise.").AddStyle(rodape).SetBorder(Border.NO_BORDER);
-                document.Add(tableRodape);
+                //Table tableRodape = new Table(UnitValue.CreatePercentArray(1)).UseAllAvailableWidth().SetBorder(Border.NO_BORDER);
+                //tableRodape.AddCell("Observações: Caso a sujestão de calagem tenha um valor negativo não há a necessidade de calagem.").AddStyle(rodape).SetBorder(Border.NO_BORDER);
+                //tableRodape.AddCell("Necessidade  de calagem foi calculada usando a metodologia do livro:Recomendações para o uso de corretivos  e fertilizantes em minas gerais, Pág 52. E V% ideal de 60. Item 8.2.2 \"Método da saturação por base\".").AddStyle(rodape).SetBorder(Border.NO_BORDER);
+                //tableRodape.AddCell("A Agro Frutal Laboratórios de análies agrícolas LTDA, não se responsabiliza pela interpretação desta análise.").AddStyle(rodape).SetBorder(Border.NO_BORDER);
+                //document.Add(tableRodape);
 
                 document.Close();
                 pdfDocument.Close();

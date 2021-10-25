@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio
 {
@@ -14,7 +10,7 @@ namespace Negocio
             return Math.Round(pH, 2);
         }
 
-        public double ProcessarFosforo(double P, double DiluicaoP)
+        public double ProcessarFosforo(double P)
         {
             // carregando dados
             double[] xValues = { 0.4, 0.8, 1.2, 1.6 };  // Concentração de P
@@ -51,11 +47,13 @@ namespace Negocio
             a = Math.Round(a, 4);
             b = Math.Round(b, 4);
 
+            double DiluicaoP = 2;
+
             double conc = (P - b) / a;
 
             double mgdm = conc * 10 * DiluicaoP;
 
-           return Math.Round(mgdm, 2);
+            return Math.Round(mgdm, 2);
         }
 
         public double ProcessarPotassio(double K)

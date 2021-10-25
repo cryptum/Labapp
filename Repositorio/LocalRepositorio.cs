@@ -2,11 +2,8 @@
 using Entidade.DTO;
 using Microsoft.EntityFrameworkCore;
 using Repositorio.Config;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repositorio
 {
@@ -75,11 +72,13 @@ namespace Repositorio
             }
         }
 
-        public int Salvar(LocalEntidade local)
+        public int Salvar(LocalEntidade local, int idSolicitante)
         {
+            local.Solicitantes = new SolicitanteRepositorio().ObterUmPorCodigo(idSolicitante);
+
             using (var db = new ContextDB())
             {
-                db.Locais.Add(local);
+                db.Entry<LocalEntidade>(local).State = EntityState.Added;
                 db.SaveChanges();
             }
 

@@ -1,13 +1,6 @@
 ﻿using BetoAPP.Util;
 using Negocio;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BetoAPP.Visual
@@ -23,6 +16,28 @@ namespace BetoAPP.Visual
             IdInicial = idInicial;
         }
 
+        //private void SetLoading(bool displayLoader)
+        //{
+        //    if (displayLoader)
+        //    {
+        //        this.Invoke((MethodInvoker)delegate
+        //        {
+        //            pcbCarregar.Visible = true;
+        //            pcbCarregar.BringToFront();
+        //            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+        //        });
+        //    }
+        //    else
+        //    {
+        //        this.Invoke((MethodInvoker)delegate
+        //        {
+        //            pcbCarregar.Visible = false;
+        //            pcbCarregar.SendToBack();
+        //            this.Cursor = System.Windows.Forms.Cursors.Default;
+        //        });
+        //    }
+        //}
+
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -30,42 +45,40 @@ namespace BetoAPP.Visual
 
         private void btn_Adiciona_Click(object sender, EventArgs e)
         {
+
             try
             {
-                if (txtTitulo.Text == "Adicionar Solicitante")
+                if (txtTitulo.Text == "Adicionar Cliente")
                 {
-                    var result = new SolicitanteNegocio().Salvar(txtNome.Text, txtObservacao.Text);
+                    var result = new SolicitanteNegocio().Salvar(txtNome.Text, txtCpf.Text, txtObservacao.Text);
                     if (result == 0)
                     {
                         MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     else
                     {
-                        txtNome.Text = "";
-                        txtObservacao.Text = "";
-                        txtNome.Focus();
                         MessageBox.Show("Salvo!");
+                        this.Dispose();
                     }
                 }
-                else if (txtTitulo.Text == "Editar Solicitante")
+                else if (txtTitulo.Text == "Editar Cliente")
                 {
-                    var result = new SolicitanteNegocio().Editar(this.IdInicial, txtNome.Text, txtObservacao.Text);
+                    var result = new SolicitanteNegocio().Editar(this.IdInicial, txtNome.Text, txtCpf.Text, txtObservacao.Text);
                     if (result == 0)
                     {
                         MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                     else
                     {
-                        txtNome.Text = "";
-                        txtObservacao.Text = "";
-                        txtNome.Focus();
                         MessageBox.Show("Salvo!");
+                        this.Dispose();
                     }
                 }
+
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

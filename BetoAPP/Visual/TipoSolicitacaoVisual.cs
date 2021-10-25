@@ -1,8 +1,6 @@
 ﻿using BetoAPP.Util;
-using Entidade.DTO;
 using Negocio;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace BetoAPP.Visual
@@ -23,15 +21,39 @@ namespace BetoAPP.Visual
             InitializeComponent();
         }
 
+        //private void SetLoading(bool displayLoader)
+        //{
+        //    if (displayLoader)
+        //    {
+        //        this.Invoke((MethodInvoker)delegate
+        //        {
+        //            pcbCarregar.Visible = true;
+        //            pcbCarregar.BringToFront();
+        //            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+        //        });
+        //    }
+        //    else
+        //    {
+        //        this.Invoke((MethodInvoker)delegate
+        //        {
+        //            pcbCarregar.Visible = false;
+        //            pcbCarregar.SendToBack();
+        //            this.Cursor = System.Windows.Forms.Cursors.Default;
+        //        });
+        //    }
+        //}
+
+
         public void RecarregarGrid()
         {
             dataGridTipoSolicitacao.DataSource = new TipoSolicitacaoNegocio().ObterTodos();
             dataGridTipoSolicitacao.Columns[1].Width = 381;
         }
 
-        public List<TipoSolicitacaoDTO> Buscar(string nome)
+        public void Buscar(string nome)
         {
-            return new TipoSolicitacaoNegocio().ObterListaPorNome(nome);
+            dataGridTipoSolicitacao.DataSource = new TipoSolicitacaoNegocio().ObterListaPorNome(nome);
+            dataGridTipoSolicitacao.Columns[1].Width = 381;
         }
 
         private void TipoSolicitacaoVisual_Load(object sender, EventArgs e)

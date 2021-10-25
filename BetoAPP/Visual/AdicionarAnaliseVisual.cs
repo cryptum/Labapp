@@ -3,13 +3,8 @@ using Entidade;
 using Negocio;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BetoAPP.Visual
@@ -23,27 +18,27 @@ namespace BetoAPP.Visual
             txtTitulo.Text = titulo;
         }
 
-        private void SetLoading(bool displayLoader)
-        {
-            if (displayLoader)
-            {
-                this.Invoke((MethodInvoker)delegate
-                {
-                    pcbCarregar.Visible = true;
-                    pcbCarregar.BringToFront();
-                    this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-                });
-            }
-            else
-            {
-                this.Invoke((MethodInvoker)delegate
-                {
-                    pcbCarregar.Visible = false;
-                    pcbCarregar.SendToBack();
-                    this.Cursor = System.Windows.Forms.Cursors.Default;
-                });
-            }
-        }
+        //private void SetLoading(bool displayLoader)
+        //{
+        //    if (displayLoader)
+        //    {
+        //        this.Invoke((MethodInvoker)delegate
+        //        {
+        //            pcbCarregar.Visible = true;
+        //            pcbCarregar.BringToFront();
+        //            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+        //        });
+        //    }
+        //    else
+        //    {
+        //        this.Invoke((MethodInvoker)delegate
+        //        {
+        //            pcbCarregar.Visible = false;
+        //            pcbCarregar.SendToBack();
+        //            this.Cursor = System.Windows.Forms.Cursors.Default;
+        //        });
+        //    }
+        //}
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
@@ -122,12 +117,12 @@ namespace BetoAPP.Visual
             }
             else
             {
-                ((Control)this.tabPrincipal).Enabled = true;
-                ((Control)this.tabAdicional).Enabled = true;
+                ((Control)this.tabBasico).Enabled = true;
+                ((Control)this.tabCompleta).Enabled = true;
                 ((Control)this.tabFisica).Enabled = true;
                 ((Control)this.tabOpicional).Enabled = true;
                 ((Control)this.tabSolicitante).Enabled = false;
-                tabControl1.SelectedTab = tabPrincipal;
+                tabControl1.SelectedTab = tabBasico;
             }
         }
 
@@ -135,68 +130,58 @@ namespace BetoAPP.Visual
         {
             try
             {
-                Thread threadInput = new Thread(x =>
-                {
-                    SetLoading(true);
-
-                    var idAnaliseSalva = new AnaliseNegocio().Salvar(
+                var idAnaliseSalva = new AnaliseNegocio().Salvar(
                     this.GlobalSolicitante,
                     cbxFazenda.Text,
                     cbxReferencia.Text,
                     cbxCultura.Text,
                     cbxSolicitacao.Text);
 
-                    AnaliseEntidade analiseSalva = new AnaliseNegocio().ObterUmPorCodigo(idAnaliseSalva);
-                    List<AmostraEntidade> AmostraSalva = new List<AmostraEntidade>();
+                AnaliseEntidade analiseSalva = new AnaliseNegocio().ObterUmPorCodigo(idAnaliseSalva);
+                List<AmostraEntidade> AmostraSalva = new List<AmostraEntidade>();
 
-                    for (int i = 0; i < 4; i++)
-                    {
-                        AmostraEntidade amostra;
+                for (int i = 0; i < 4; i++)
+                {
+                    AmostraEntidade amostra;
 
-                        amostra = PreencherAmostra(
-                                Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[2].Value),
-                                Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[3].Value),
-                                Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[4].Value),
-                                Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[5].Value),
-                                Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[6].Value),
-                                Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[7].Value),
-                                Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[8].Value),
-
-
-                                Convert.ToDouble(dataGridAdicional.Rows[i].Cells[2].Value),
-                                Convert.ToDouble(dataGridAdicional.Rows[i].Cells[3].Value),
-                                Convert.ToDouble(dataGridAdicional.Rows[i].Cells[4].Value),
-                                Convert.ToDouble(dataGridAdicional.Rows[i].Cells[5].Value),
-                                Convert.ToDouble(dataGridAdicional.Rows[i].Cells[6].Value),
+                    amostra = PreencherAmostra(
+                            Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[2].Value),
+                            Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[3].Value),
+                            Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[4].Value),
+                            Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[5].Value),
+                            Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[6].Value),
+                            Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[7].Value),
+                            Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[8].Value),
 
 
-                                Convert.ToDouble(dataGridFisica.Rows[i].Cells[2].Value),
-                                Convert.ToDouble(dataGridFisica.Rows[i].Cells[3].Value),
-                                Convert.ToDouble(dataGridFisica.Rows[i].Cells[4].Value),
-                                Convert.ToDouble(dataGridFisica.Rows[i].Cells[5].Value),
-                                Convert.ToDouble(dataGridFisica.Rows[i].Cells[6].Value),
-                                Convert.ToDouble(dataGridFisica.Rows[i].Cells[7].Value),
+                            Convert.ToDouble(dataGridAdicional.Rows[i].Cells[2].Value),
+                            Convert.ToDouble(dataGridAdicional.Rows[i].Cells[3].Value),
+                            Convert.ToDouble(dataGridAdicional.Rows[i].Cells[4].Value),
+                            Convert.ToDouble(dataGridAdicional.Rows[i].Cells[5].Value),
 
 
-                                Convert.ToDouble(dataGridOpcional.Rows[i].Cells[2].Value),
-                                Convert.ToDouble(dataGridOpcional.Rows[i].Cells[3].Value),
-                                Convert.ToDouble(dataGridOpcional.Rows[i].Cells[4].Value)
+                            Convert.ToDouble(dataGridFisica.Rows[i].Cells[2].Value),
+                            Convert.ToDouble(dataGridFisica.Rows[i].Cells[3].Value),
+                            Convert.ToDouble(dataGridFisica.Rows[i].Cells[4].Value),
+                            Convert.ToDouble(dataGridFisica.Rows[i].Cells[5].Value),
+                            Convert.ToDouble(dataGridFisica.Rows[i].Cells[6].Value),
+                            Convert.ToDouble(dataGridFisica.Rows[i].Cells[7].Value),
 
-                                );
 
-                        amostra.Analises = analiseSalva;
+                            Convert.ToDouble(dataGridOpcional.Rows[i].Cells[2].Value),
+                            Convert.ToDouble(dataGridOpcional.Rows[i].Cells[3].Value),
+                            Convert.ToDouble(dataGridOpcional.Rows[i].Cells[4].Value)
 
-                        new AmostraNegocio().Salvar(amostra);
-                        AmostraSalva.Add(amostra);
-                    }
+                            );
 
-                    var result = new GerarPDF().Gerar(analiseSalva, AmostraSalva);
-                    MessageBox.Show(result);
+                    amostra.Analises = analiseSalva;
 
-                    SetLoading(false);
+                    new AmostraNegocio().Salvar(amostra);
+                    AmostraSalva.Add(amostra);
                 }
-                    );
-                threadInput.Start();
+
+                var result = new GerarPDF().Gerar(analiseSalva, AmostraSalva);
+                MessageBox.Show(result);
 
             }
             catch (Exception)
@@ -207,7 +192,6 @@ namespace BetoAPP.Visual
 
         private AmostraEntidade PreencherAmostra(
             double pH,
-            double DiluicaoP,
             double P,
             double K,
             double Ca,
@@ -231,7 +215,7 @@ namespace BetoAPP.Visual
         {
             AmostraEntidade amostra = new AmostraEntidade();
             amostra.pH = new ProcessamentoConcentracao().ProcessarPH(pH).ToString();
-            amostra.P = new ProcessamentoConcentracao().ProcessarFosforo(P, DiluicaoP).ToString();
+            amostra.P = new ProcessamentoConcentracao().ProcessarFosforo(P).ToString();
 
             double k = new ProcessamentoConcentracao().ProcessarPotassio(K);
             amostra.K = k.ToString();
@@ -254,7 +238,7 @@ namespace BetoAPP.Visual
             double ti = al + sb;
             amostra.ti = ti.ToString();
 
-            double T = alh +  sb;
+            double T = alh + sb;
             amostra.T = T.ToString();
 
 
