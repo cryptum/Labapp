@@ -43,17 +43,21 @@ namespace BetoAPP.Visual
         //    }
         //}
 
-
-        public void RecarregarGrid()
+        void AlinharGrid()
         {
-            dataGridTipoSolicitacao.DataSource = new TipoSolicitacaoNegocio().ObterTodos();
-            dataGridTipoSolicitacao.Columns[1].Width = 381;
+            dataGridTipoSolicitacao.Columns[0].Width = 100;
         }
 
-        public void Buscar(string nome)
+        void RecarregarGrid()
+        {
+            dataGridTipoSolicitacao.DataSource = new TipoSolicitacaoNegocio().ObterTodos();
+            AlinharGrid();
+        }
+
+        void Buscar(string nome)
         {
             dataGridTipoSolicitacao.DataSource = new TipoSolicitacaoNegocio().ObterListaPorNome(nome);
-            dataGridTipoSolicitacao.Columns[1].Width = 381;
+            AlinharGrid();
         }
 
         private void TipoSolicitacaoVisual_Load(object sender, EventArgs e)

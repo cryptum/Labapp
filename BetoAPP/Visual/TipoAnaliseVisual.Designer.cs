@@ -68,6 +68,7 @@ namespace BetoAPP.Visual
             // 
             // btn_Pesquisar
             // 
+            this.btn_Pesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Pesquisar.Image = global::BetoAPP.Properties.Resources.search_line__2_;
             this.btn_Pesquisar.Location = new System.Drawing.Point(464, 48);
             this.btn_Pesquisar.Name = "btn_Pesquisar";
@@ -88,6 +89,8 @@ namespace BetoAPP.Visual
             // 
             // txt_Pesquisa
             // 
+            this.txt_Pesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Pesquisa.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Pesquisa.Location = new System.Drawing.Point(117, 48);
             this.txt_Pesquisa.Name = "txt_Pesquisa";
@@ -208,7 +211,6 @@ namespace BetoAPP.Visual
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pcbCarregar);
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
             this.Name = "TipoAnaliseVisual";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

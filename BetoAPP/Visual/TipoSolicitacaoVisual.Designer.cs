@@ -70,6 +70,7 @@ namespace BetoAPP.Visual
             // 
             // btn_Pesquisa
             // 
+            this.btn_Pesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Pesquisa.Image = global::BetoAPP.Properties.Resources.search_line__2_;
             this.btn_Pesquisa.Location = new System.Drawing.Point(464, 48);
             this.btn_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -92,6 +93,8 @@ namespace BetoAPP.Visual
             // 
             // txt_Pesquisa
             // 
+            this.txt_Pesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Pesquisa.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Pesquisa.Location = new System.Drawing.Point(117, 48);
             this.txt_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -214,7 +217,7 @@ namespace BetoAPP.Visual
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pcbCarregar);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(521, 403);
             this.Name = "TipoSolicitacaoVisual";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

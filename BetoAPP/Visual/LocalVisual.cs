@@ -46,16 +46,21 @@ namespace BetoAPP.Visual
         //    }
         //}
 
-        public void RecarregarGrid()
+        void AlinharGrid()
         {
-            dataGridLocal.DataSource = new LocalNegocio().ObterTodos(idInicialSolicitante);
-            dataGridLocal.Columns[1].Width = 381;
+            dataGridLocal.Columns[0].Width = 100;
         }
 
-        public void Buscar(string nome)
+        void RecarregarGrid()
+        {
+            dataGridLocal.DataSource = new LocalNegocio().ObterTodos(idInicialSolicitante);
+            AlinharGrid();
+        }
+
+        void Buscar(string nome)
         {
             dataGridLocal.DataSource = new LocalNegocio().ObterListaPorNome(idInicialSolicitante, nome);
-            dataGridLocal.Columns[1].Width = 381;
+            AlinharGrid();
         }
 
         private void LocalVisual_Load(object sender, EventArgs e)

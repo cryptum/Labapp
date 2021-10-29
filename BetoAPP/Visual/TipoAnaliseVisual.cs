@@ -42,17 +42,21 @@ namespace BetoAPP.Visual
         //    }
         //}
 
-
-        public void RecarregarGrid()
+        void AlinharGrid()
         {
-            dataGridTipoAnalise.DataSource = new TipoAnaliseNegocio().ObterTodos();
-            dataGridTipoAnalise.Columns[1].Width = 381;
+            dataGridTipoAnalise.Columns[0].Width = 100;
         }
 
-        public void Buscar(string nome)
+        void RecarregarGrid()
+        {
+            dataGridTipoAnalise.DataSource = new TipoAnaliseNegocio().ObterTodos();
+            AlinharGrid();
+        }
+
+        void Buscar(string nome)
         {
             dataGridTipoAnalise.DataSource = new TipoAnaliseNegocio().ObterListaPorNome(nome);
-            dataGridTipoAnalise.Columns[1].Width = 381;
+            AlinharGrid();
         }
 
         private void TipoAnalise_Load(object sender, EventArgs e)

@@ -43,17 +43,21 @@ namespace BetoAPP.Visual
         //    }
         //}
 
+        void AlinharGrid()
+        {
+            dataGridReferencia.Columns[0].Width = 100;
+        }
 
         public void RecarregarGrid()
         {
             dataGridReferencia.DataSource = new ReferenciaNegocio().ObterTodos();
-            dataGridReferencia.Columns[1].Width = 381;
+            AlinharGrid();
         }
 
         public void Buscar(string nome)
         {
             dataGridReferencia.DataSource = new ReferenciaNegocio().ObterListaPorNome(nome);
-            dataGridReferencia.Columns[1].Width = 381;
+            AlinharGrid();
         }
 
         private void ReferenciaVisual_Load(object sender, EventArgs e)

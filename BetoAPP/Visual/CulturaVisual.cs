@@ -44,17 +44,21 @@ namespace BetoAPP.Visual
         //    }
         //}
 
-
-        public void RecarregarGrid()
+        void AlinharGrid()
         {
-            dataGridCultura.DataSource = new CulturaNegocio().ObterTodos();
-            dataGridCultura.Columns[1].Width = 381;
+            dataGridCultura.Columns[0].Width = 100;
         }
 
-        public void Buscar(string nome)
+        void RecarregarGrid()
+        {
+            dataGridCultura.DataSource = new CulturaNegocio().ObterTodos();
+            AlinharGrid();
+        }
+
+        void Buscar(string nome)
         {
             dataGridCultura.DataSource = new CulturaNegocio().ObterListaPorNome(nome);
-            dataGridCultura.Columns[1].Width = 381;
+            AlinharGrid();
         }
 
         private void CulturaVisual_Load(object sender, EventArgs e)

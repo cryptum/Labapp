@@ -48,16 +48,20 @@ namespace BetoAPP.Visual
             }
         }
 
-
-        public void RecarregarGrid()
+        void AlinharGrid()
         {
-            dataGridAnalise.DataSource = new AnaliseNegocio().ObterTodos();
             dataGridAnalise.Columns[0].Width = 100;
             dataGridAnalise.Columns[1].Width = 300;
             dataGridAnalise.Columns[2].Width = 195;
             dataGridAnalise.Columns[3].Width = 120;
             dataGridAnalise.Columns[4].Width = 120;
             dataGridAnalise.Columns[5].Width = 150;
+        }
+
+        public void RecarregarGrid()
+        {
+            dataGridAnalise.DataSource = new AnaliseNegocio().ObterTodos();
+            AlinharGrid();
         }
 
         public void Buscar(string nomeOuCpf)
@@ -67,23 +71,13 @@ namespace BetoAPP.Visual
                 case "Nome do Cliente":
                     {
                         dataGridAnalise.DataSource = new AnaliseNegocio().ObterListaPorSolicitanteNome(nomeOuCpf);
-                        dataGridAnalise.Columns[0].Width = 100;
-                        dataGridAnalise.Columns[1].Width = 300;
-                        dataGridAnalise.Columns[2].Width = 195;
-                        dataGridAnalise.Columns[3].Width = 120;
-                        dataGridAnalise.Columns[4].Width = 120;
-                        dataGridAnalise.Columns[5].Width = 150;
+                        AlinharGrid();
                         break;
                     }
                 case "CPF do Cliente":
                     {
                         dataGridAnalise.DataSource = new AnaliseNegocio().ObterListaPorSolicitanteCpf(nomeOuCpf);
-                        dataGridAnalise.Columns[0].Width = 100;
-                        dataGridAnalise.Columns[1].Width = 300;
-                        dataGridAnalise.Columns[2].Width = 195;
-                        dataGridAnalise.Columns[3].Width = 120;
-                        dataGridAnalise.Columns[4].Width = 120;
-                        dataGridAnalise.Columns[5].Width = 150;
+                        AlinharGrid();
                         break;
                     }
                 default:

@@ -70,6 +70,7 @@ namespace BetoAPP.Visual
             // 
             // btn_Usuario
             // 
+            this.btn_Usuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Usuario.Image = global::BetoAPP.Properties.Resources.search_line__2_;
             this.btn_Usuario.Location = new System.Drawing.Point(464, 48);
             this.btn_Usuario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -91,6 +92,8 @@ namespace BetoAPP.Visual
             // 
             // txt_Usuario
             // 
+            this.txt_Usuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Usuario.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Usuario.Location = new System.Drawing.Point(117, 48);
             this.txt_Usuario.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -209,7 +212,7 @@ namespace BetoAPP.Visual
             this.Controls.Add(this.dataGridAnalise);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pcbCarregar);
-            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(521, 403);
             this.Name = "UsuarioVisual";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

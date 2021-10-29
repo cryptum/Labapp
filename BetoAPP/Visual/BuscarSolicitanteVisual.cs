@@ -13,7 +13,7 @@ namespace BetoAPP.Visual
             InitializeComponent();
         }
 
-        public void RecarregarGrid()
+        void RecarregarGrid()
         {
             dataGridSolicitante.DataSource = new SolicitanteNegocio().ObterTodos();
 
