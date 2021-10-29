@@ -28,12 +28,12 @@ namespace BetoAPP
         }
         private void btn_Sair_MouseLeave(object sender, EventArgs e)
         {
-            btn_Sair.Image = Properties.Resources.close_line;
+            btn_Sair.Image = Properties.Resources.close_cinza_24px;
         }
 
         private void btn_Sair_MouseHover(object sender, EventArgs e)
         {
-            btn_Sair.Image = Properties.Resources.close_line1;
+            btn_Sair.Image = Properties.Resources.close_vermelho_24px;
         }
 
         private void btn_Acessar_Click(object sender, EventArgs e)
@@ -115,12 +115,12 @@ namespace BetoAPP
 
         private void btn_Minimiza_MouseHover(object sender, EventArgs e)
         {
-            btn_Minimiza.Image = Properties.Resources.subtract_line__1_;
+            btn_Minimiza.Image = Properties.Resources.subtract_vermelho_24px;
         }
 
         private void btn_Minimiza_MouseLeave(object sender, EventArgs e)
         {
-            btn_Minimiza.Image = Properties.Resources.subtract_line;
+            btn_Minimiza.Image = Properties.Resources.subtract_cinza_24px;
         }
 
         private void btn_Minimiza_Click(object sender, EventArgs e)

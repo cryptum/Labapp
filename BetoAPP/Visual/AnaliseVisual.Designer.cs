@@ -72,7 +72,7 @@ namespace BetoAPP.Visual
             // btn_Adiciona
             // 
             this.btn_Adiciona.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Adiciona.Image = global::BetoAPP.Properties.Resources.file_add_fill;
+            this.btn_Adiciona.Image = global::BetoAPP.Properties.Resources.fileadd_verde_24px;
             this.btn_Adiciona.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Adiciona.Name = "btn_Adiciona";
             this.btn_Adiciona.Size = new System.Drawing.Size(112, 28);
@@ -82,7 +82,7 @@ namespace BetoAPP.Visual
             // btn_Edita
             // 
             this.btn_Edita.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Edita.Image = global::BetoAPP.Properties.Resources.edit_2_fill;
+            this.btn_Edita.Image = global::BetoAPP.Properties.Resources.edit_azul_24px;
             this.btn_Edita.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Edita.Name = "btn_Edita";
             this.btn_Edita.Size = new System.Drawing.Size(86, 28);
@@ -92,7 +92,7 @@ namespace BetoAPP.Visual
             // btn_Exclui
             // 
             this.btn_Exclui.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Exclui.Image = global::BetoAPP.Properties.Resources.delete_bin_fill;
+            this.btn_Exclui.Image = global::BetoAPP.Properties.Resources.delete_vermelho_24px;
             this.btn_Exclui.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Exclui.Name = "btn_Exclui";
             this.btn_Exclui.Size = new System.Drawing.Size(91, 28);
@@ -102,7 +102,7 @@ namespace BetoAPP.Visual
             // btn_Recarregar
             // 
             this.btn_Recarregar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Recarregar.Image = global::BetoAPP.Properties.Resources.refresh_line;
+            this.btn_Recarregar.Image = global::BetoAPP.Properties.Resources.refresh_amarelo_24px;
             this.btn_Recarregar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Recarregar.Name = "btn_Recarregar";
             this.btn_Recarregar.Size = new System.Drawing.Size(169, 28);
@@ -112,7 +112,7 @@ namespace BetoAPP.Visual
             // btn_ImprimeQuadriculado
             // 
             this.btn_ImprimeQuadriculado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_ImprimeQuadriculado.Image = global::BetoAPP.Properties.Resources.printer_Amarelo;
+            this.btn_ImprimeQuadriculado.Image = global::BetoAPP.Properties.Resources.printer_amarelo_24px;
             this.btn_ImprimeQuadriculado.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_ImprimeQuadriculado.Name = "btn_ImprimeQuadriculado";
             this.btn_ImprimeQuadriculado.Size = new System.Drawing.Size(205, 28);
@@ -122,7 +122,7 @@ namespace BetoAPP.Visual
             // btn_ImprimeLaudo
             // 
             this.btn_ImprimeLaudo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_ImprimeLaudo.Image = global::BetoAPP.Properties.Resources.printer_Laranja;
+            this.btn_ImprimeLaudo.Image = global::BetoAPP.Properties.Resources.printer_laranja_24px;
             this.btn_ImprimeLaudo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_ImprimeLaudo.Name = "btn_ImprimeLaudo";
             this.btn_ImprimeLaudo.Size = new System.Drawing.Size(154, 28);
@@ -168,7 +168,7 @@ namespace BetoAPP.Visual
             // btn_Pesquisa
             // 
             this.btn_Pesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Pesquisa.Image = global::BetoAPP.Properties.Resources.search_line__2_;
+            this.btn_Pesquisa.Image = global::BetoAPP.Properties.Resources.search_line_24px;
             this.btn_Pesquisa.Location = new System.Drawing.Point(795, 42);
             this.btn_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btn_Pesquisa.Name = "btn_Pesquisa";
@@ -229,7 +229,7 @@ namespace BetoAPP.Visual
             // pcbCarregar
             // 
             this.pcbCarregar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.Eclipse_0_6s_200px;
+            this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.eclipse_0_6s_200px;
             this.pcbCarregar.Location = new System.Drawing.Point(0, 0);
             this.pcbCarregar.Name = "pcbCarregar";
             this.pcbCarregar.Size = new System.Drawing.Size(1056, 694);

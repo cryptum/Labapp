@@ -66,7 +66,7 @@ namespace BetoAPP.Visual
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.clienteToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.user_fill;
+            this.clienteToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.user_fill_36px;
             this.clienteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
             this.clienteToolStripMenuItem.Size = new System.Drawing.Size(169, 40);
@@ -76,7 +76,7 @@ namespace BetoAPP.Visual
             // analiseToolStripMenuItem
             // 
             this.analiseToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.analiseToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.microscope_fill;
+            this.analiseToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.microscope_fill_36px;
             this.analiseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.analiseToolStripMenuItem.Name = "analiseToolStripMenuItem";
             this.analiseToolStripMenuItem.Size = new System.Drawing.Size(128, 40);
@@ -86,7 +86,7 @@ namespace BetoAPP.Visual
             // culturatoolStripMenuItem
             // 
             this.culturatoolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.culturatoolStripMenuItem.Image = global::BetoAPP.Properties.Resources.plant_fill;
+            this.culturatoolStripMenuItem.Image = global::BetoAPP.Properties.Resources.plant_fill_36px;
             this.culturatoolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.culturatoolStripMenuItem.Name = "culturatoolStripMenuItem";
             this.culturatoolStripMenuItem.Size = new System.Drawing.Size(128, 40);
@@ -96,7 +96,7 @@ namespace BetoAPP.Visual
             // referenciatoolStripMenuItem
             // 
             this.referenciatoolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.referenciatoolStripMenuItem.Image = global::BetoAPP.Properties.Resources.map_pin_2_fill;
+            this.referenciatoolStripMenuItem.Image = global::BetoAPP.Properties.Resources.pin_fill_36px;
             this.referenciatoolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.referenciatoolStripMenuItem.Name = "referenciatoolStripMenuItem";
             this.referenciatoolStripMenuItem.Size = new System.Drawing.Size(159, 40);
@@ -106,7 +106,7 @@ namespace BetoAPP.Visual
             // solicitantetoolStripMenuItem
             // 
             this.solicitantetoolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.solicitantetoolStripMenuItem.Image = global::BetoAPP.Properties.Resources.git_pull_request_line;
+            this.solicitantetoolStripMenuItem.Image = global::BetoAPP.Properties.Resources.request_fill_36px;
             this.solicitantetoolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.solicitantetoolStripMenuItem.Name = "solicitantetoolStripMenuItem";
             this.solicitantetoolStripMenuItem.Size = new System.Drawing.Size(157, 40);
@@ -116,7 +116,7 @@ namespace BetoAPP.Visual
             // tipoanalisetoolStripMenuItem
             // 
             this.tipoanalisetoolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tipoanalisetoolStripMenuItem.Image = global::BetoAPP.Properties.Resources.flask_fill;
+            this.tipoanalisetoolStripMenuItem.Image = global::BetoAPP.Properties.Resources.flask_fill_36px;
             this.tipoanalisetoolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tipoanalisetoolStripMenuItem.Name = "tipoanalisetoolStripMenuItem";
             this.tipoanalisetoolStripMenuItem.Size = new System.Drawing.Size(203, 40);
@@ -127,7 +127,7 @@ namespace BetoAPP.Visual
             // 
             this.colaboradoresToolStripMenuItem.Enabled = false;
             this.colaboradoresToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.colaboradoresToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.shield_user_fill;
+            this.colaboradoresToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.sheld_fill_36px;
             this.colaboradoresToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.colaboradoresToolStripMenuItem.Name = "colaboradoresToolStripMenuItem";
             this.colaboradoresToolStripMenuItem.Size = new System.Drawing.Size(195, 40);
@@ -202,14 +202,7 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel lbl_UsuarioLogado;
-        private System.Windows.Forms.ToolStripMenuItem culturatoolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem solicitantetoolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tipoanalisetoolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem culturaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem referenciaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tipoSolicitacaoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tipoAnaliseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem culturatoolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem referenciatoolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoanalisetoolStripMenuItem;

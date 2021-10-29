@@ -137,7 +137,7 @@ namespace BetoAPP.Visual
             // btn_Cancelar
             // 
             this.btn_Cancelar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Cancelar.Image = global::BetoAPP.Properties.Resources.close_circle_fill;
+            this.btn_Cancelar.Image = global::BetoAPP.Properties.Resources.close_fill_vermelho_24px;
             this.btn_Cancelar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(106, 28);
@@ -159,7 +159,7 @@ namespace BetoAPP.Visual
             // btn_Salvar
             // 
             this.btn_Salvar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Salvar.Image = global::BetoAPP.Properties.Resources.save_3_fill;
+            this.btn_Salvar.Image = global::BetoAPP.Properties.Resources.save_verde_24px;
             this.btn_Salvar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Salvar.Name = "btn_Salvar";
             this.btn_Salvar.Size = new System.Drawing.Size(89, 28);
@@ -227,7 +227,7 @@ namespace BetoAPP.Visual
             this.btnAvancar.FlatAppearance.BorderSize = 0;
             this.btnAvancar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAvancar.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAvancar.Image = global::BetoAPP.Properties.Resources.arrow_right_fill__1_;
+            this.btnAvancar.Image = global::BetoAPP.Properties.Resources.arrowright_fill_36px;
             this.btnAvancar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAvancar.Location = new System.Drawing.Point(613, 316);
             this.btnAvancar.Name = "btnAvancar";
@@ -764,7 +764,7 @@ namespace BetoAPP.Visual
             // 
             // pcbCarregar
             // 
-            this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.Eclipse_0_6s_200px;
+            this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.eclipse_0_6s_200px;
             this.pcbCarregar.Location = new System.Drawing.Point(0, 5);
             this.pcbCarregar.Name = "pcbCarregar";
             this.pcbCarregar.Size = new System.Drawing.Size(1254, 538);

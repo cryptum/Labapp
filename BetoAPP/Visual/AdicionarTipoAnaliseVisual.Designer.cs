@@ -45,7 +45,7 @@ namespace BetoAPP.Visual
             // btn_Cancela
             // 
             this.btn_Cancela.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Cancela.Image = global::BetoAPP.Properties.Resources.close_circle_fill;
+            this.btn_Cancela.Image = global::BetoAPP.Properties.Resources.close_fill_vermelho_24px;
             this.btn_Cancela.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Cancela.Name = "btn_Cancela";
             this.btn_Cancela.Size = new System.Drawing.Size(106, 28);
@@ -67,7 +67,7 @@ namespace BetoAPP.Visual
             // btn_Salva
             // 
             this.btn_Salva.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Salva.Image = global::BetoAPP.Properties.Resources.save_3_fill;
+            this.btn_Salva.Image = global::BetoAPP.Properties.Resources.save_verde_24px;
             this.btn_Salva.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Salva.Name = "btn_Salva";
             this.btn_Salva.Size = new System.Drawing.Size(89, 28);
@@ -106,7 +106,7 @@ namespace BetoAPP.Visual
             // 
             // pcbCarregar
             // 
-            this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.Eclipse_0_6s_200px;
+            this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.eclipse_0_6s_200px;
             this.pcbCarregar.Location = new System.Drawing.Point(0, 0);
             this.pcbCarregar.Name = "pcbCarregar";
             this.pcbCarregar.Size = new System.Drawing.Size(534, 166);

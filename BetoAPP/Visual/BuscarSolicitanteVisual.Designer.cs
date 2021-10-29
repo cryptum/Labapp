@@ -96,7 +96,7 @@ namespace BetoAPP.Visual
             // btn_Cancelar
             // 
             this.btn_Cancelar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Cancelar.Image = global::BetoAPP.Properties.Resources.close_circle_fill;
+            this.btn_Cancelar.Image = global::BetoAPP.Properties.Resources.close_fill_vermelho_24px;
             this.btn_Cancelar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(106, 28);
