@@ -20,9 +20,14 @@ namespace Negocio
             return new AnaliseRepositorio().ObterUmPorCodigo(id);
         }
 
-        public List<AnaliseObterTodosDTO> ObterListaPorSolicitante(string nome)
+        public List<AnaliseObterTodosDTO> ObterListaPorSolicitanteNome(string nome)
         {
-            return new AnaliseRepositorio().ObterListaPorSolicitante(nome);
+            return new AnaliseRepositorio().ObterListaPorSolicitanteNome(nome);
+        }
+
+        public List<AnaliseObterTodosDTO> ObterListaPorSolicitanteCpf(string nome)
+        {
+            return new AnaliseRepositorio().ObterListaPorSolicitanteCpf(nome);
         }
 
 

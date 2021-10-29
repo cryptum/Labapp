@@ -55,6 +55,8 @@ namespace BetoAPP.Visual
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btn_Pesquisa);
             this.groupBox1.Controls.Add(this.lbl1);
             this.groupBox1.Controls.Add(this.txt_Pesquisa);
@@ -62,17 +64,17 @@ namespace BetoAPP.Visual
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(524, 99);
+            this.groupBox1.Size = new System.Drawing.Size(523, 115);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
             // btn_Pesquisa
             // 
             this.btn_Pesquisa.Image = global::BetoAPP.Properties.Resources.search_line__2_;
-            this.btn_Pesquisa.Location = new System.Drawing.Point(458, 44);
+            this.btn_Pesquisa.Location = new System.Drawing.Point(464, 48);
             this.btn_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btn_Pesquisa.Name = "btn_Pesquisa";
-            this.btn_Pesquisa.Size = new System.Drawing.Size(51, 33);
+            this.btn_Pesquisa.Size = new System.Drawing.Size(51, 36);
             this.btn_Pesquisa.TabIndex = 6;
             this.btn_Pesquisa.UseVisualStyleBackColor = true;
             this.btn_Pesquisa.Click += new System.EventHandler(this.btn_Pesquisa_Click);
@@ -81,7 +83,7 @@ namespace BetoAPP.Visual
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl1.Location = new System.Drawing.Point(7, 44);
+            this.lbl1.Location = new System.Drawing.Point(8, 52);
             this.lbl1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(101, 29);
@@ -90,41 +92,44 @@ namespace BetoAPP.Visual
             // 
             // txt_Pesquisa
             // 
-            this.txt_Pesquisa.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Pesquisa.Location = new System.Drawing.Point(113, 44);
+            this.txt_Pesquisa.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_Pesquisa.Location = new System.Drawing.Point(117, 48);
             this.txt_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_Pesquisa.Name = "txt_Pesquisa";
-            this.txt_Pesquisa.Size = new System.Drawing.Size(339, 33);
+            this.txt_Pesquisa.Size = new System.Drawing.Size(339, 36);
             this.txt_Pesquisa.TabIndex = 4;
             this.txt_Pesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Pesquisa_KeyDown);
             // 
             // dataGridCultura
             // 
+            this.dataGridCultura.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridCultura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridCultura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridCultura.ColumnHeadersHeight = 35;
+            this.dataGridCultura.ColumnHeadersHeight = 38;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridCultura.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridCultura.Location = new System.Drawing.Point(14, 155);
+            this.dataGridCultura.Location = new System.Drawing.Point(13, 156);
             this.dataGridCultura.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridCultura.MultiSelect = false;
             this.dataGridCultura.Name = "dataGridCultura";
             this.dataGridCultura.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -133,7 +138,7 @@ namespace BetoAPP.Visual
             this.dataGridCultura.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dataGridCultura.RowTemplate.Height = 25;
             this.dataGridCultura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridCultura.Size = new System.Drawing.Size(524, 428);
+            this.dataGridCultura.Size = new System.Drawing.Size(523, 427);
             this.dataGridCultura.TabIndex = 15;
             // 
             // menuStrip1
@@ -200,6 +205,7 @@ namespace BetoAPP.Visual
             this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pcbCarregar.TabIndex = 29;
             this.pcbCarregar.TabStop = false;
+            this.pcbCarregar.Visible = false;
             // 
             // CulturaVisual
             // 
@@ -211,7 +217,6 @@ namespace BetoAPP.Visual
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pcbCarregar);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "CulturaVisual";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

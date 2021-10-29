@@ -43,5 +43,10 @@ namespace BetoAPP.Visual
 
 
         }
+
+        private void AdicionaUsuarioVisual_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

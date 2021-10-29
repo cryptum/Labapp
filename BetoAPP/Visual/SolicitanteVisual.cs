@@ -1,6 +1,7 @@
 ﻿using BetoAPP.Util;
 using Negocio;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BetoAPP.Visual
@@ -19,6 +20,8 @@ namespace BetoAPP.Visual
         public SolicitanteVisual()
         {
             InitializeComponent();
+            this.menuStrip1.BackColor = Color.DimGray;
+            this.menuStrip1.ForeColor = Color.WhiteSmoke;
         }
 
         //private void SetLoading(bool displayLoader)
@@ -46,7 +49,7 @@ namespace BetoAPP.Visual
         public void RecarregarGrid()
         {
             dataGridSolicitante.DataSource = new SolicitanteNegocio().ObterTodos();
-
+            dataGridSolicitante.Columns[0].Width = 100;
             dataGridSolicitante.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridSolicitante.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridSolicitante.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -57,7 +60,7 @@ namespace BetoAPP.Visual
         public void Buscar(string nome)
         {
             dataGridSolicitante.DataSource = new SolicitanteNegocio().ObterListaPorNome(nome);
-
+            dataGridSolicitante.Columns[0].Width = 100;
             dataGridSolicitante.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridSolicitante.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridSolicitante.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -156,6 +159,22 @@ namespace BetoAPP.Visual
                 View.ShowDialog();
                 RecarregarGrid();
             }
+        }
+
+        private void minimizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void SolicitanteVisual_MinimumSizeChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Test minium size changed");
+        }
+
+        private void SolicitanteVisual_MaximumSizeChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Test maximum size changed");
         }
     }
 }

@@ -41,10 +41,10 @@ namespace BetoAPP.Visual
             this.btn_ImprimeQuadriculado = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_ImprimeLaudo = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_Pesquisa = new System.Windows.Forms.MaskedTextBox();
             this.cbx_Pesquisa = new System.Windows.Forms.ComboBox();
             this.btn_Pesquisa = new System.Windows.Forms.Button();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.txt_Pesquisa = new System.Windows.Forms.TextBox();
             this.dataGridAnalise = new System.Windows.Forms.DataGridView();
             this.pcbCarregar = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
@@ -131,10 +131,12 @@ namespace BetoAPP.Visual
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.txt_Pesquisa);
             this.groupBox1.Controls.Add(this.cbx_Pesquisa);
             this.groupBox1.Controls.Add(this.btn_Pesquisa);
             this.groupBox1.Controls.Add(this.lbl1);
-            this.groupBox1.Controls.Add(this.txt_Pesquisa);
             this.groupBox1.Location = new System.Drawing.Point(13, 35);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
@@ -143,14 +145,23 @@ namespace BetoAPP.Visual
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
+            // txt_Pesquisa
+            // 
+            this.txt_Pesquisa.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_Pesquisa.Location = new System.Drawing.Point(447, 42);
+            this.txt_Pesquisa.Name = "txt_Pesquisa";
+            this.txt_Pesquisa.Size = new System.Drawing.Size(341, 36);
+            this.txt_Pesquisa.TabIndex = 6;
+            // 
             // cbx_Pesquisa
             // 
-            this.cbx_Pesquisa.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbx_Pesquisa.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbx_Pesquisa.FormattingEnabled = true;
-            this.cbx_Pesquisa.Location = new System.Drawing.Point(320, 42);
+            this.cbx_Pesquisa.Location = new System.Drawing.Point(195, 42);
             this.cbx_Pesquisa.Name = "cbx_Pesquisa";
-            this.cbx_Pesquisa.Size = new System.Drawing.Size(121, 34);
+            this.cbx_Pesquisa.Size = new System.Drawing.Size(246, 38);
             this.cbx_Pesquisa.TabIndex = 1;
+            this.cbx_Pesquisa.SelectedIndexChanged += new System.EventHandler(this.cbx_Pesquisa_SelectedIndexChanged);
             // 
             // btn_Pesquisa
             // 
@@ -158,7 +169,7 @@ namespace BetoAPP.Visual
             this.btn_Pesquisa.Location = new System.Drawing.Point(795, 42);
             this.btn_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btn_Pesquisa.Name = "btn_Pesquisa";
-            this.btn_Pesquisa.Size = new System.Drawing.Size(51, 33);
+            this.btn_Pesquisa.Size = new System.Drawing.Size(51, 36);
             this.btn_Pesquisa.TabIndex = 3;
             this.btn_Pesquisa.UseVisualStyleBackColor = true;
             this.btn_Pesquisa.Click += new System.EventHandler(this.btn_Pesquisa_Click);
@@ -167,28 +178,21 @@ namespace BetoAPP.Visual
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl1.Location = new System.Drawing.Point(193, 42);
+            this.lbl1.Location = new System.Drawing.Point(87, 46);
             this.lbl1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(101, 29);
             this.lbl1.TabIndex = 5;
             this.lbl1.Text = "Pesquisa";
             // 
-            // txt_Pesquisa
-            // 
-            this.txt_Pesquisa.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Pesquisa.Location = new System.Drawing.Point(448, 42);
-            this.txt_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txt_Pesquisa.Name = "txt_Pesquisa";
-            this.txt_Pesquisa.Size = new System.Drawing.Size(339, 33);
-            this.txt_Pesquisa.TabIndex = 2;
-            this.txt_Pesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Pesquisa_KeyDown);
-            // 
             // dataGridAnalise
             // 
+            this.dataGridAnalise.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridAnalise.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -197,7 +201,7 @@ namespace BetoAPP.Visual
             this.dataGridAnalise.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -208,7 +212,7 @@ namespace BetoAPP.Visual
             this.dataGridAnalise.Name = "dataGridAnalise";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -229,6 +233,7 @@ namespace BetoAPP.Visual
             this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pcbCarregar.TabIndex = 28;
             this.pcbCarregar.TabStop = false;
+            this.pcbCarregar.Visible = false;
             // 
             // AnaliseVisual
             // 
@@ -240,7 +245,6 @@ namespace BetoAPP.Visual
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pcbCarregar);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "AnaliseVisual";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -267,10 +271,10 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_Pesquisa;
         private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.TextBox txt_Pesquisa;
         private System.Windows.Forms.DataGridView dataGridAnalise;
         private System.Windows.Forms.ComboBox cbx_Pesquisa;
         private System.Windows.Forms.ToolStripMenuItem btn_ImprimeLaudo;
         private System.Windows.Forms.PictureBox pcbCarregar;
+        private System.Windows.Forms.MaskedTextBox txt_Pesquisa;
     }
 }

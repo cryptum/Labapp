@@ -44,12 +44,33 @@ namespace Repositorio
             }
         }
 
-        public List<AnaliseObterTodosDTO> ObterListaPorSolicitante(string nome)
+        public List<AnaliseObterTodosDTO> ObterListaPorSolicitanteNome(string nome)
         {
             using (var db = new ContextDB())
             {
                 var query = db.Analises
                                 .Where(w => EF.Functions.Like(w.Solicitantes.Nome, "%" + nome + "%"))
+                                .Select(x => new AnaliseObterTodosDTO
+                                {
+                                    Código = x.IdAnalise,
+                                    Solicitante = x.Solicitantes.Nome,
+                                    Local = x.Local,
+                                    Referencia = x.Referencia,
+                                    Cultura = x.Cultura,
+                                    TipoSolicitacao = x.TipoSolicitacao
+                                })
+                                .ToList();
+
+                return query;
+            }
+        }
+
+        public List<AnaliseObterTodosDTO> ObterListaPorSolicitanteCpf(string cpf)
+        {
+            using (var db = new ContextDB())
+            {
+                var query = db.Analises
+                                .Where(w => EF.Functions.Like(w.Solicitantes.Cpf, "%" + cpf + "%"))
                                 .Select(x => new AnaliseObterTodosDTO
                                 {
                                     Código = x.IdAnalise,

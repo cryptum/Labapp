@@ -1,7 +1,6 @@
 ﻿using BetoAPP.Util;
 using Negocio;
 using System;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace BetoAPP.Visual

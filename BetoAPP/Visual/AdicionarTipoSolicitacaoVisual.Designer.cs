@@ -58,9 +58,9 @@ namespace BetoAPP.Visual
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Salva,
             this.btn_Cancela});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 156);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 169);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(540, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(528, 32);
             this.menuStrip1.TabIndex = 26;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -92,16 +92,16 @@ namespace BetoAPP.Visual
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(514, 118);
+            this.groupBox1.Size = new System.Drawing.Size(502, 118);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             // 
             // txtNome
             // 
-            this.txtNome.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNome.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNome.Location = new System.Drawing.Point(21, 61);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(292, 33);
+            this.txtNome.Size = new System.Drawing.Size(292, 36);
             this.txtNome.TabIndex = 1;
             // 
             // pcbCarregar
@@ -109,10 +109,11 @@ namespace BetoAPP.Visual
             this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.Eclipse_0_6s_200px;
             this.pcbCarregar.Location = new System.Drawing.Point(0, 0);
             this.pcbCarregar.Name = "pcbCarregar";
-            this.pcbCarregar.Size = new System.Drawing.Size(544, 192);
+            this.pcbCarregar.Size = new System.Drawing.Size(528, 166);
             this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbCarregar.TabIndex = 27;
             this.pcbCarregar.TabStop = false;
+            this.pcbCarregar.Visible = false;
             // 
             // txtTitulo
             // 
@@ -130,7 +131,7 @@ namespace BetoAPP.Visual
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(540, 188);
+            this.ClientSize = new System.Drawing.Size(528, 201);
             this.ControlBox = false;
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);

@@ -1,7 +1,6 @@
 ﻿using Entidade;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Repositorio.Config
 {

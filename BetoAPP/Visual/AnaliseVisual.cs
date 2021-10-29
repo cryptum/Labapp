@@ -21,8 +21,8 @@ namespace BetoAPP.Visual
         {
             InitializeComponent();
             btn_Edita.Visible = false;
-            cbx_Pesquisa.Items.Add("Solicitante");
-            cbx_Pesquisa.Items.Add("Laudo");
+            cbx_Pesquisa.Items.Add("Nome do Cliente");
+            cbx_Pesquisa.Items.Add("CPF do Cliente");
             cbx_Pesquisa.SelectedIndex = 0;
         }
 
@@ -60,15 +60,36 @@ namespace BetoAPP.Visual
             dataGridAnalise.Columns[5].Width = 150;
         }
 
-        public void Buscar(string nome)
+        public void Buscar(string nomeOuCpf)
         {
-            dataGridAnalise.DataSource = new AnaliseNegocio().ObterListaPorSolicitante(nome);
-            dataGridAnalise.Columns[0].Width = 100;
-            dataGridAnalise.Columns[1].Width = 300;
-            dataGridAnalise.Columns[2].Width = 195;
-            dataGridAnalise.Columns[3].Width = 120;
-            dataGridAnalise.Columns[4].Width = 120;
-            dataGridAnalise.Columns[5].Width = 150;
+            switch (cbx_Pesquisa.SelectedItem)
+            {
+                case "Nome do Cliente":
+                    {
+                        dataGridAnalise.DataSource = new AnaliseNegocio().ObterListaPorSolicitanteNome(nomeOuCpf);
+                        dataGridAnalise.Columns[0].Width = 100;
+                        dataGridAnalise.Columns[1].Width = 300;
+                        dataGridAnalise.Columns[2].Width = 195;
+                        dataGridAnalise.Columns[3].Width = 120;
+                        dataGridAnalise.Columns[4].Width = 120;
+                        dataGridAnalise.Columns[5].Width = 150;
+                        break;
+                    }
+                case "CPF do Cliente":
+                    {
+                        dataGridAnalise.DataSource = new AnaliseNegocio().ObterListaPorSolicitanteCpf(nomeOuCpf);
+                        dataGridAnalise.Columns[0].Width = 100;
+                        dataGridAnalise.Columns[1].Width = 300;
+                        dataGridAnalise.Columns[2].Width = 195;
+                        dataGridAnalise.Columns[3].Width = 120;
+                        dataGridAnalise.Columns[4].Width = 120;
+                        dataGridAnalise.Columns[5].Width = 150;
+                        break;
+                    }
+                default:
+                    break;
+            }
+
         }
 
         private void AnaliseVisual_Load(object sender, EventArgs e)
@@ -198,6 +219,25 @@ namespace BetoAPP.Visual
             catch (Exception)
             {
                 MessageBox.Show(Mensagem.ErroThread.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void cbx_Pesquisa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbx_Pesquisa.SelectedItem)
+            {
+                case "Nome do Cliente":
+                    {
+                        txt_Pesquisa.Mask = "";
+                        break;
+                    }
+                case "CPF do Cliente":
+                    {
+                        txt_Pesquisa.Mask = "000 , 000 , 000 - 00";
+                        break;
+                    }
+                default:
+                    break;
             }
         }
     }

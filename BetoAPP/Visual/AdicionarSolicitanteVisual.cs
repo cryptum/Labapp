@@ -58,7 +58,6 @@ namespace BetoAPP.Visual
                     else
                     {
                         MessageBox.Show("Salvo!");
-                        this.Dispose();
                     }
                 }
                 else if (txtTitulo.Text == "Editar Cliente")
@@ -71,10 +70,10 @@ namespace BetoAPP.Visual
                     else
                     {
                         MessageBox.Show("Salvo!");
-                        this.Dispose();
+
                     }
                 }
-
+                this.Dispose();
             }
             catch (Exception)
             {

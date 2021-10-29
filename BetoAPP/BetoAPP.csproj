@@ -6,7 +6,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <PackageIcon>code-fill.png</PackageIcon>
     <PackageIconUrl />
-    <ApplicationIcon>fire-fill.ico</ApplicationIcon>
+    <ApplicationIcon>Tubo 240px.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

@@ -3,8 +3,8 @@ using Entidade;
 using Negocio;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace BetoAPP.Visual
@@ -91,16 +91,56 @@ namespace BetoAPP.Visual
                 cbxSolicitacao.Items.Add(nomesSolicitacao[i].Nome);
             }
 
+            var TipoAnalise = new TipoAnaliseNegocio().ObterTodosParaAdicinarAmostra();
+
             for (int i = 1; i < 5; i++)
             {
-                dataGridPrincipal.Rows.Add("", "Nº " + i);
-                dataGridAdicional.Rows.Add("", "Nº " + i);
-                dataGridFisica.Rows.Add("", "Nº " + i);
-                dataGridOpcional.Rows.Add("", "Nº " + i);
+                dataGridPrincipal.Rows.Add("");
+                dataGridAdicional.Rows.Add("");
+                dataGridFisica.Rows.Add("");
+                dataGridOpcional.Rows.Add("");
+
+                //for (int j = 0; j < TipoAnalise.Count(); j++)
+                //{
+                //    (dataGridPrincipal.Rows[i].Cells[1] as DataGridViewComboBoxCell).Items.Add(TipoAnalise[j].Nome);
+                //    (dataGridAdicional.Rows[i].Cells[1] as DataGridViewComboBoxCell).Items.Add(TipoAnalise[j].Nome);
+                //    (dataGridFisica.Rows[i].Cells[1] as DataGridViewComboBoxCell).Items.Add(TipoAnalise[j].Nome);
+                //    (dataGridOpcional.Rows[i].Cells[1] as DataGridViewComboBoxCell).Items.Add(TipoAnalise[j].Nome);
+                //}
             }
 
-            //((Control)this.tabPrincipal).Enabled = false;
-            //((Control)this.tabAdicional).Enabled = false;
+            
+
+            (dataGridPrincipal.Rows[1].Cells[1] as DataGridViewComboBoxCell).Items.Add(TipoAnalise[1].Nome);
+            //(dataGridPrincipal.Rows[2].Cells[1] as DataGridViewComboBoxCell).Items.Add(nomes[1].Nome);
+            //(dataGridPrincipal.Rows[3].Cells[1] as DataGridViewComboBoxCell).Items.Add(nomes[1].Nome);
+
+            
+
+
+
+            //foreach (DataGridViewRow row in dataGridPrincipal.Rows)
+            //{
+            //    DataGridViewComboBoxCell comboBoxCell = (row.Cells[1] as DataGridViewComboBoxCell);
+                
+            //    comboBoxCell.Items.Add("Select Country");
+            //    comboBoxCell.Items.Add("Select Country1");
+            //    comboBoxCell.Value = "Select Country";
+            //}
+
+            //for (int i = 1; i < 5; i++)
+            //{
+            //    for (int j = 0; j < nomes.Count(); j++)
+            //    {
+            //        (dataGridPrincipal.Rows[i].Cells[1] as DataGridViewComboBoxCell).Items.Add(nomes[j].Nome);
+            //    }
+            //}
+
+
+
+
+            //((Control)this.tabBasico).Enabled = false;
+            //((Control)this.tabCompleta).Enabled = false;
             //((Control)this.tabFisica).Enabled = false;
             //((Control)this.tabOpicional).Enabled = false;
         }
@@ -259,10 +299,9 @@ namespace BetoAPP.Visual
             return amostra;
         }
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnAvancar_Paint(object sender, PaintEventArgs e)
         {
-
+            btnAvancar.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, btnAvancar.Width, btnAvancar.Height, 15, 15));
         }
-
     }
 }

@@ -273,16 +273,6 @@ namespace BetoAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap printer_fill1 {
-            get {
-                object obj = ResourceManager.GetObject("printer-fill1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap printer_Laranja {
             get {
                 object obj = ResourceManager.GetObject("printer-Laranja", resourceCulture);
@@ -366,6 +356,26 @@ namespace BetoAPP.Properties {
         internal static System.Drawing.Bitmap subtract_line__1_ {
             get {
                 object obj = ResourceManager.GetObject("subtract-line (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sun_fill_Dark_36px {
+            get {
+                object obj = ResourceManager.GetObject("sun-fill Dark 36px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sun_fill_White_36px {
+            get {
+                object obj = ResourceManager.GetObject("sun-fill White 36px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

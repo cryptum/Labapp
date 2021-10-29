@@ -13,6 +13,12 @@ namespace Negocio
             return new TipoAnaliseRepositorio().ObterTodos();
         }
 
+        public List<TipoAnaliseEntidade> ObterTodosParaAdicinarAmostra()
+        {
+            return new TipoAnaliseRepositorio().ObterTodosParaAdicinarAmostra();
+        }
+
+
         public List<TipoAnaliseDTO> ObterListaPorNome(string nome)
         {
             return new TipoAnaliseRepositorio().ObterListaPorNome(nome);
