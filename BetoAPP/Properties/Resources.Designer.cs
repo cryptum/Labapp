@@ -223,6 +223,16 @@ namespace BetoAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LAB1 {
+            get {
+                object obj = ResourceManager.GetObject("LAB1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap microscope_fill_36px {
             get {
                 object obj = ResourceManager.GetObject("microscope-fill-36px", resourceCulture);
