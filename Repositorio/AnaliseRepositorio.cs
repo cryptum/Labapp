@@ -11,19 +11,42 @@ namespace Repositorio
     {
         public AnaliseRepositorio() { }
 
-        public List<AnaliseObterTodosDTO> ObterTodos()
+        public List<AnaliseObterTodosImcompletoDTO> ObterTodosImcompleta()
         {
             using (var db = new ContextDB())
             {
                 var query = db.Analises
-                                .Select(x => new AnaliseObterTodosDTO
+                                .Where(w => w.Completa == false)
+                                .Select(x => new AnaliseObterTodosImcompletoDTO
                                 {
                                     Código = x.IdAnalise,
-                                    Solicitante = x.Solicitantes.Nome,
+                                    Análise = x.NomeAnalise,
                                     Local = x.Local,
-                                    Referencia = x.Referencia,
+                                    Referência = x.Referencia,
+                                    Cultura = x.Cultura
+                                })
+                                .OrderByDescending(o => o.Código)
+                                .ToList();
+
+                return query;
+            }
+        }
+
+        public List<AnaliseObterTodosCompletoDTO> ObterTodosCompletos()
+        {
+            using (var db = new ContextDB())
+            {
+                var query = db.Analises
+                                .Where(w => w.Completa == true)
+                                .Select(x => new AnaliseObterTodosCompletoDTO
+                                {
+                                    Código = x.IdAnalise,
+                                    Análise = x.NomeAnalise,
+                                    Proprietário = x.Solicitantes.Nome,
+                                    Local = x.Local,
+                                    Referência = x.Referencia,
                                     Cultura = x.Cultura,
-                                    TipoSolicitacao = x.TipoSolicitacao
+                                    Solicitação = x.TipoSolicitacao
                                 })
                                 .OrderByDescending(o => o.Código)
                                 .ToList();
@@ -38,10 +61,12 @@ namespace Repositorio
             {
                 var query = db.Analises
                                 .Where(w => w.IdAnalise == id)
+                                .Include(i => i.Solicitantes)
                                 .FirstOrDefault();
 
                 return query;
             }
+
         }
 
         public List<AnaliseObterTodosDTO> ObterListaPorSolicitanteNome(string nome)
@@ -53,11 +78,11 @@ namespace Repositorio
                                 .Select(x => new AnaliseObterTodosDTO
                                 {
                                     Código = x.IdAnalise,
-                                    Solicitante = x.Solicitantes.Nome,
+                                    Proprietário = x.Solicitantes.Nome,
                                     Local = x.Local,
-                                    Referencia = x.Referencia,
+                                    Referência = x.Referencia,
                                     Cultura = x.Cultura,
-                                    TipoSolicitacao = x.TipoSolicitacao
+                                    Solicitação = x.TipoSolicitacao
                                 })
                                 .ToList();
 
@@ -74,11 +99,11 @@ namespace Repositorio
                                 .Select(x => new AnaliseObterTodosDTO
                                 {
                                     Código = x.IdAnalise,
-                                    Solicitante = x.Solicitantes.Nome,
+                                    Proprietário = x.Solicitantes.Nome,
                                     Local = x.Local,
-                                    Referencia = x.Referencia,
+                                    Referência = x.Referencia,
                                     Cultura = x.Cultura,
-                                    TipoSolicitacao = x.TipoSolicitacao
+                                    Solicitação = x.TipoSolicitacao
                                 })
                                 .ToList();
 
@@ -86,11 +111,13 @@ namespace Repositorio
             }
         }
 
-        public int Salvar(AnaliseEntidade Analise)
+        public int Salvar(AnaliseEntidade Analise, int idSolicitante)
         {
+            Analise.Solicitantes = new SolicitanteRepositorio().ObterUmPorCodigo(idSolicitante);
+
             using (var db = new ContextDB())
             {
-                db.Analises.Add(Analise);
+                db.Entry<AnaliseEntidade>(Analise).State = EntityState.Added;
                 db.SaveChanges();
             }
 

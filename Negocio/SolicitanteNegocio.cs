@@ -26,9 +26,9 @@ namespace Negocio
         public int Salvar(String Nome, String Cpf, String Observacao)
         {
             SolicitanteEntidade Solicitante = new SolicitanteEntidade();
-            Solicitante.Nome = Nome;
+            Solicitante.Nome = Nome.Trim();
             Solicitante.Cpf = Cpf;
-            Solicitante.Observacao = Observacao;
+            Solicitante.Observacao = Observacao.Trim();
             Solicitante.Excluido = false;
             return new SolicitanteRepositorio().Salvar(Solicitante);
         }
@@ -40,9 +40,9 @@ namespace Negocio
             {
                 return 0;
             }
-            Solicitante.Nome = Nome;
+            Solicitante.Nome = Nome.Trim();
             Solicitante.Cpf = Cpf;
-            Solicitante.Observacao = Observacao;
+            Solicitante.Observacao = Observacao.Trim();
             return new SolicitanteRepositorio().Editar(Solicitante);
         }
 

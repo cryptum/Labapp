@@ -9,8 +9,6 @@ namespace Entidade.DTO
 
         public string Fazenda { get; set; }
 
-        public string Municipio { get; set; }
-
-        public SolicitanteEntidade Solicitantes { get; set; }
+        public string Município { get; set; }
     }
 }

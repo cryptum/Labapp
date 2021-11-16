@@ -78,18 +78,19 @@ namespace BetoAPP.Visual
             this.dataGridSolicitante.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dataGridSolicitante.RowTemplate.Height = 25;
             this.dataGridSolicitante.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridSolicitante.Size = new System.Drawing.Size(872, 513);
+            this.dataGridSolicitante.Size = new System.Drawing.Size(856, 512);
             this.dataGridSolicitante.TabIndex = 14;
             this.dataGridSolicitante.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridSolicitante_CellDoubleClick);
+            this.dataGridSolicitante.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridSolicitante_KeyDown);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Cancelar});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 535);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 527);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(888, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(880, 32);
             this.menuStrip1.TabIndex = 27;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -107,7 +108,7 @@ namespace BetoAPP.Visual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 567);
+            this.ClientSize = new System.Drawing.Size(880, 559);
             this.ControlBox = false;
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataGridSolicitante);

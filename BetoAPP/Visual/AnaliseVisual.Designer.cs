@@ -30,12 +30,11 @@ namespace BetoAPP.Visual
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btn_Adiciona = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_Edita = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Exclui = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Recarregar = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_ImprimeQuadriculado = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,14 +57,13 @@ namespace BetoAPP.Visual
             this.menuStrip1.AllowMerge = false;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Adiciona,
-            this.btn_Edita,
             this.btn_Exclui,
             this.btn_Recarregar,
             this.btn_ImprimeQuadriculado,
             this.btn_ImprimeLaudo});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1056, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(1307, 32);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -75,19 +73,9 @@ namespace BetoAPP.Visual
             this.btn_Adiciona.Image = global::BetoAPP.Properties.Resources.fileadd_verde_24px;
             this.btn_Adiciona.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Adiciona.Name = "btn_Adiciona";
-            this.btn_Adiciona.Size = new System.Drawing.Size(112, 28);
-            this.btn_Adiciona.Text = "Adicionar";
+            this.btn_Adiciona.Size = new System.Drawing.Size(134, 28);
+            this.btn_Adiciona.Text = "Criar Análise";
             this.btn_Adiciona.Click += new System.EventHandler(this.btn_Adiciona_Click);
-            // 
-            // btn_Edita
-            // 
-            this.btn_Edita.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Edita.Image = global::BetoAPP.Properties.Resources.edit_azul_24px;
-            this.btn_Edita.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btn_Edita.Name = "btn_Edita";
-            this.btn_Edita.Size = new System.Drawing.Size(86, 28);
-            this.btn_Edita.Text = "Editar";
-            this.btn_Edita.Click += new System.EventHandler(this.btn_Edita_Click);
             // 
             // btn_Exclui
             // 
@@ -112,7 +100,7 @@ namespace BetoAPP.Visual
             // btn_ImprimeQuadriculado
             // 
             this.btn_ImprimeQuadriculado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_ImprimeQuadriculado.Image = global::BetoAPP.Properties.Resources.printer_amarelo_24px;
+            this.btn_ImprimeQuadriculado.Image = global::BetoAPP.Properties.Resources.grid_azul_24px;
             this.btn_ImprimeQuadriculado.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_ImprimeQuadriculado.Name = "btn_ImprimeQuadriculado";
             this.btn_ImprimeQuadriculado.Size = new System.Drawing.Size(205, 28);
@@ -122,7 +110,7 @@ namespace BetoAPP.Visual
             // btn_ImprimeLaudo
             // 
             this.btn_ImprimeLaudo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_ImprimeLaudo.Image = global::BetoAPP.Properties.Resources.printer_laranja_24px;
+            this.btn_ImprimeLaudo.Image = global::BetoAPP.Properties.Resources.printer_fill_24px;
             this.btn_ImprimeLaudo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_ImprimeLaudo.Name = "btn_ImprimeLaudo";
             this.btn_ImprimeLaudo.Size = new System.Drawing.Size(154, 28);
@@ -141,7 +129,7 @@ namespace BetoAPP.Visual
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(1030, 99);
+            this.groupBox1.Size = new System.Drawing.Size(1281, 99);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
@@ -152,11 +140,13 @@ namespace BetoAPP.Visual
             this.txt_Pesquisa.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_Pesquisa.Location = new System.Drawing.Point(447, 42);
             this.txt_Pesquisa.Name = "txt_Pesquisa";
-            this.txt_Pesquisa.Size = new System.Drawing.Size(341, 36);
+            this.txt_Pesquisa.Size = new System.Drawing.Size(592, 36);
             this.txt_Pesquisa.TabIndex = 6;
+            this.txt_Pesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Pesquisa_KeyDown);
             // 
             // cbx_Pesquisa
             // 
+            this.cbx_Pesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_Pesquisa.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbx_Pesquisa.FormattingEnabled = true;
             this.cbx_Pesquisa.Location = new System.Drawing.Point(195, 42);
@@ -169,7 +159,7 @@ namespace BetoAPP.Visual
             // 
             this.btn_Pesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Pesquisa.Image = global::BetoAPP.Properties.Resources.search_line_24px;
-            this.btn_Pesquisa.Location = new System.Drawing.Point(795, 42);
+            this.btn_Pesquisa.Location = new System.Drawing.Point(1046, 42);
             this.btn_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btn_Pesquisa.Name = "btn_Pesquisa";
             this.btn_Pesquisa.Size = new System.Drawing.Size(51, 36);
@@ -190,40 +180,41 @@ namespace BetoAPP.Visual
             // 
             // dataGridAnalise
             // 
-            this.dataGridAnalise.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridAnalise.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridAnalise.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridAnalise.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridAnalise.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridAnalise.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridAnalise.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridAnalise.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridAnalise.Location = new System.Drawing.Point(14, 155);
             this.dataGridAnalise.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridAnalise.Name = "dataGridAnalise";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridAnalise.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridAnalise.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridAnalise.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dataGridAnalise.RowTemplate.Height = 25;
-            this.dataGridAnalise.Size = new System.Drawing.Size(1029, 527);
+            this.dataGridAnalise.Size = new System.Drawing.Size(1280, 527);
             this.dataGridAnalise.TabIndex = 4;
             // 
             // pcbCarregar
@@ -232,7 +223,7 @@ namespace BetoAPP.Visual
             this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.eclipse_0_6s_200px;
             this.pcbCarregar.Location = new System.Drawing.Point(0, 0);
             this.pcbCarregar.Name = "pcbCarregar";
-            this.pcbCarregar.Size = new System.Drawing.Size(1056, 694);
+            this.pcbCarregar.Size = new System.Drawing.Size(1307, 694);
             this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pcbCarregar.TabIndex = 28;
             this.pcbCarregar.TabStop = false;
@@ -242,7 +233,7 @@ namespace BetoAPP.Visual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 694);
+            this.ClientSize = new System.Drawing.Size(1307, 694);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridAnalise);
             this.Controls.Add(this.menuStrip1);
@@ -267,7 +258,6 @@ namespace BetoAPP.Visual
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btn_Adiciona;
-        private System.Windows.Forms.ToolStripMenuItem btn_Edita;
         private System.Windows.Forms.ToolStripMenuItem btn_Exclui;
         private System.Windows.Forms.ToolStripMenuItem btn_Recarregar;
         private System.Windows.Forms.ToolStripMenuItem btn_ImprimeQuadriculado;

@@ -60,7 +60,10 @@ namespace BetoAPP.Visual
                     }
                     else
                     {
-                        MessageBox.Show("Salvo!");
+                        txtFazenda.Text = "";
+                        txtMunicipio.Text = "";
+                        txtFazenda.Focus();
+                        MessageBox.Show("Salvo!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
                 else if (txtTitulo.Text == "Editar Local")
@@ -72,10 +75,10 @@ namespace BetoAPP.Visual
                     }
                     else
                     {
-                        MessageBox.Show("Salvo!");
+                        MessageBox.Show("Salvo!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
+                    this.Dispose();
                 }
-                this.Dispose();
             }
             catch (Exception ex)
             {

@@ -35,6 +35,19 @@ namespace BetoAPP.Visual
 
         private void dataGridSolicitante_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            SelecionarSolicitante();
+        }
+
+        private void dataGridSolicitante_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SelecionarSolicitante();
+            }
+        }
+
+        void SelecionarSolicitante()
+        {
             this.IdSolicitante = Convert.ToInt32(dataGridSolicitante.CurrentRow.Cells[0].Value.ToString());
             this.NomeSolicitante = dataGridSolicitante.CurrentRow.Cells[1].Value.ToString();
             this.Dispose();

@@ -1,4 +1,5 @@
 ﻿using Entidade;
+using Microsoft.EntityFrameworkCore;
 using Repositorio.Config;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,13 @@ namespace Repositorio
             }
         }
 
-        public int Salvar(AmostraEntidade amostra)
+        public int Salvar(AmostraEntidade amostra, int IdAnalise)
         {
+            amostra.Analises = new AnaliseRepositorio().ObterUmPorCodigo(IdAnalise);
+
             using (var db = new ContextDB())
             {
-                db.Amostras.Add(amostra);
+                db.Entry<AmostraEntidade>(amostra).State = EntityState.Added;
                 db.SaveChanges();
             }
 

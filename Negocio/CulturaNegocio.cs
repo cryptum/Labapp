@@ -26,7 +26,7 @@ namespace Negocio
         public int Salvar(String Nome)
         {
             CulturaEntidade cultura = new CulturaEntidade();
-            cultura.Nome = Nome;
+            cultura.Nome = Nome.Trim();
             return new CulturaRepositorio().Salvar(cultura);
         }
 
@@ -37,7 +37,7 @@ namespace Negocio
             {
                 return 0;
             }
-            cultura.Nome = Nome;
+            cultura.Nome = Nome.Trim();
             return new CulturaRepositorio().Editar(cultura);
         }
 

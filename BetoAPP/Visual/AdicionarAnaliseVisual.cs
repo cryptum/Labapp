@@ -1,9 +1,7 @@
-﻿using BetoAPP.Util;
-using Entidade;
+﻿using Entidade;
 using Negocio;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -11,12 +9,91 @@ namespace BetoAPP.Visual
 {
     public partial class AdicionarAnaliseVisual : Form
     {
-        public SolicitanteEntidade GlobalSolicitante { get; set; }
-        public AdicionarAnaliseVisual(string titulo, int idAmostra, string nomeSolicitante)
+        public int GlobalIdSolicitante { get; set; }
+        public int GlobalIdAnalise { get; set; }
+
+        public AdicionarAnaliseVisual(string titulo, int idAnalise, string nomeSolicitante)
         {
             InitializeComponent();
             txtTitulo.Text = titulo;
+            GlobalIdAnalise = idAnalise;
+
+            CriarAnaliseOuAdicionarAmostra();
         }
+
+        void CriarAnaliseOuAdicionarAmostra()
+        {
+            if (txtTitulo.Text == "Adicionar Amostras")
+            {
+                //Adicionar Amostra
+                tabControl1.TabPages.Remove(tabSolicitante);
+            }
+            else
+            {
+                //Criar Análise
+                tabControl1.TabPages.Remove(tabBasico);
+                tabControl1.TabPages.Remove(tabCompleta);
+                tabControl1.TabPages.Remove(tabFisica);
+                tabControl1.TabPages.Remove(tabOpicional);
+                txtNomeAnalise.Focus();
+            }
+        }
+
+        private void AdicionarAnaliseVisual_Load(object sender, EventArgs e)
+        {
+            if (txtTitulo.Text != "Adicionar Amostras")
+            {
+                var nomesReferencias = new ReferenciaNegocio().ObterTodos();
+
+                for (int i = 0; i < nomesReferencias.Count(); i++)
+                {
+                    cbxReferencia.Items.Add(nomesReferencias[i].Nome);
+                }
+
+                var nomesCultura = new CulturaNegocio().ObterTodos();
+                for (int i = 0; i < nomesCultura.Count(); i++)
+                {
+                    cbxCultura.Items.Add(nomesCultura[i].Nome);
+                }
+
+                var nomesSolicitacao = new TipoSolicitacaoNegocio().ObterTodos();
+                for (int i = 0; i < nomesSolicitacao.Count(); i++)
+                {
+                    cbxSolicitacao.Items.Add(nomesSolicitacao[i].Nome);
+                }
+            }
+
+            for (int i = 1; i < 5; i++)
+            {
+                dataGridBasica.Rows.Add("");
+                dataGridCompleta.Rows.Add("");
+                dataGridFisica.Rows.Add("");
+                dataGridOpcional.Rows.Add("");
+            }
+
+            var listaTipoAnalise = new TipoAnaliseNegocio().ObterTodosParaAdicinarAmostra();
+
+            for (int i = 0; i < listaTipoAnalise.Count(); i++)
+            {
+                cbx_Nome_Amostra_1.Items.Add(listaTipoAnalise[i].Nome);
+                cbx_Nome_Amostra_2.Items.Add(listaTipoAnalise[i].Nome);
+                cbx_Nome_Amostra_3.Items.Add(listaTipoAnalise[i].Nome);
+                cbx_Nome_Amostra_4.Items.Add(listaTipoAnalise[i].Nome);
+            }
+
+            if (txtTitulo.Text == "Adicionar Amostras")
+            {
+                var analise = new AnaliseNegocio().ObterUmPorCodigo(GlobalIdAnalise);
+
+                cbx_Nome_Amostra_1.SelectedItem = analise.NomeAmostra1;
+                cbx_Nome_Amostra_2.SelectedItem = analise.NomeAmostra2;
+                cbx_Nome_Amostra_3.SelectedItem = analise.NomeAmostra3;
+                cbx_Nome_Amostra_4.SelectedItem = analise.NomeAmostra4;
+            }
+
+        }
+
+
 
         //private void SetLoading(bool displayLoader)
         //{
@@ -47,6 +124,19 @@ namespace BetoAPP.Visual
 
         private void txt_Solicitante_DoubleClick(object sender, EventArgs e)
         {
+            FormsSelecionarSolicitante();
+        }
+
+        private void txt_Solicitante_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                FormsSelecionarSolicitante();
+            }
+        }
+
+        void FormsSelecionarSolicitante()
+        {
             using (var form = new BuscarSolicitanteVisual())
             {
                 form.ShowDialog();
@@ -54,8 +144,8 @@ namespace BetoAPP.Visual
                 if (form.NomeSolicitante != null)
                 {
                     txt_Solicitante.Text = form.NomeSolicitante;
-                    this.GlobalSolicitante = RecuperarSolicitante(Convert.ToInt32(form.IdSolicitante));
-                    var locais = new LocalNegocio().ObterUmPorCodigoSolicitante(this.GlobalSolicitante.IdSolicitante);
+                    this.GlobalIdSolicitante = form.IdSolicitante;
+                    var locais = new LocalNegocio().ObterUmPorCodigoSolicitante(this.GlobalIdSolicitante);
 
                     for (int i = 0; i < locais.Count(); i++)
                     {
@@ -65,168 +155,123 @@ namespace BetoAPP.Visual
             }
         }
 
-        private SolicitanteEntidade RecuperarSolicitante(int idSolicitante)
-        {
-            return new SolicitanteNegocio().ObterUmPorCodigo(idSolicitante);
-        }
-
-        private void AdicionarAnaliseVisual_Load(object sender, EventArgs e)
-        {
-            var nomesReferencias = new ReferenciaNegocio().ObterTodos();
-
-            for (int i = 0; i < nomesReferencias.Count(); i++)
-            {
-                cbxReferencia.Items.Add(nomesReferencias[i].Nome);
-            }
-
-            var nomesCultura = new CulturaNegocio().ObterTodos();
-            for (int i = 0; i < nomesCultura.Count(); i++)
-            {
-                cbxCultura.Items.Add(nomesCultura[i].Nome);
-            }
-
-            var nomesSolicitacao = new TipoSolicitacaoNegocio().ObterTodos();
-            for (int i = 0; i < nomesSolicitacao.Count(); i++)
-            {
-                cbxSolicitacao.Items.Add(nomesSolicitacao[i].Nome);
-            }
-
-            var TipoAnalise = new TipoAnaliseNegocio().ObterTodosParaAdicinarAmostra();
-
-            for (int i = 1; i < 5; i++)
-            {
-                dataGridPrincipal.Rows.Add("");
-                dataGridAdicional.Rows.Add("");
-                dataGridFisica.Rows.Add("");
-                dataGridOpcional.Rows.Add("");
-
-                //for (int j = 0; j < TipoAnalise.Count(); j++)
-                //{
-                //    (dataGridPrincipal.Rows[i].Cells[1] as DataGridViewComboBoxCell).Items.Add(TipoAnalise[j].Nome);
-                //    (dataGridAdicional.Rows[i].Cells[1] as DataGridViewComboBoxCell).Items.Add(TipoAnalise[j].Nome);
-                //    (dataGridFisica.Rows[i].Cells[1] as DataGridViewComboBoxCell).Items.Add(TipoAnalise[j].Nome);
-                //    (dataGridOpcional.Rows[i].Cells[1] as DataGridViewComboBoxCell).Items.Add(TipoAnalise[j].Nome);
-                //}
-            }
-
-            
-
-            (dataGridPrincipal.Rows[1].Cells[1] as DataGridViewComboBoxCell).Items.Add(TipoAnalise[1].Nome);
-            //(dataGridPrincipal.Rows[2].Cells[1] as DataGridViewComboBoxCell).Items.Add(nomes[1].Nome);
-            //(dataGridPrincipal.Rows[3].Cells[1] as DataGridViewComboBoxCell).Items.Add(nomes[1].Nome);
-
-            
-
-
-
-            //foreach (DataGridViewRow row in dataGridPrincipal.Rows)
-            //{
-            //    DataGridViewComboBoxCell comboBoxCell = (row.Cells[1] as DataGridViewComboBoxCell);
-                
-            //    comboBoxCell.Items.Add("Select Country");
-            //    comboBoxCell.Items.Add("Select Country1");
-            //    comboBoxCell.Value = "Select Country";
-            //}
-
-            //for (int i = 1; i < 5; i++)
-            //{
-            //    for (int j = 0; j < nomes.Count(); j++)
-            //    {
-            //        (dataGridPrincipal.Rows[i].Cells[1] as DataGridViewComboBoxCell).Items.Add(nomes[j].Nome);
-            //    }
-            //}
-
-
-
-
-            //((Control)this.tabBasico).Enabled = false;
-            //((Control)this.tabCompleta).Enabled = false;
-            //((Control)this.tabFisica).Enabled = false;
-            //((Control)this.tabOpicional).Enabled = false;
-        }
-
-        private void btnAvancar_Click(object sender, EventArgs e)
-        {
-            if (txt_Solicitante.Text == null ||
-                cbxFazenda.SelectedItem == null ||
-                cbxReferencia.SelectedItem == null ||
-                cbxCultura.SelectedItem == null ||
-                cbxSolicitacao.SelectedItem == null)
-            {
-                MessageBox.Show(Mensagem.AnaliseCamposVazios.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                ((Control)this.tabBasico).Enabled = true;
-                ((Control)this.tabCompleta).Enabled = true;
-                ((Control)this.tabFisica).Enabled = true;
-                ((Control)this.tabOpicional).Enabled = true;
-                ((Control)this.tabSolicitante).Enabled = false;
-                tabControl1.SelectedTab = tabBasico;
-            }
-        }
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
             try
             {
-                var idAnaliseSalva = new AnaliseNegocio().Salvar(
-                    this.GlobalSolicitante,
-                    cbxFazenda.Text,
-                    cbxReferencia.Text,
-                    cbxCultura.Text,
-                    cbxSolicitacao.Text);
-
-                AnaliseEntidade analiseSalva = new AnaliseNegocio().ObterUmPorCodigo(idAnaliseSalva);
-                List<AmostraEntidade> AmostraSalva = new List<AmostraEntidade>();
-
-                for (int i = 0; i < 4; i++)
+                switch (txtTitulo.Text)
                 {
-                    AmostraEntidade amostra;
+                    case "Criar Análise":
 
-                    amostra = PreencherAmostra(
-                            Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[2].Value),
-                            Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[3].Value),
-                            Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[4].Value),
-                            Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[5].Value),
-                            Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[6].Value),
-                            Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[7].Value),
-                            Convert.ToDouble(dataGridPrincipal.Rows[i].Cells[8].Value),
+                        var idAnaliseSalva = new AnaliseNegocio().Salvar(
+                        txtNomeAnalise.Text.Trim(),
+                        this.GlobalIdSolicitante,
+                        cbxFazenda.Text,
+                        cbxReferencia.Text,
+                        cbxCultura.Text,
+                        cbxSolicitacao.Text,
+                        cbx_Nome_Amostra_1.Text,
+                        cbx_Nome_Amostra_2.Text,
+                        cbx_Nome_Amostra_3.Text,
+                        cbx_Nome_Amostra_4.Text);
+
+                        MessageBox.Show("Salvo!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                        break;
+
+                    case "Adicionar Amostras":
+
+                        AnaliseEntidade analiseSalva = new AnaliseNegocio().ObterUmPorCodigo(GlobalIdAnalise);
+
+                        AnaliseEntidade analiseComNomesDeAmostras = analiseSalva;
+                        analiseComNomesDeAmostras.NomeAmostra1 = cbx_Nome_Amostra_1.Text;
+                        analiseComNomesDeAmostras.NomeAmostra2 = cbx_Nome_Amostra_2.Text;
+                        analiseComNomesDeAmostras.NomeAmostra3 = cbx_Nome_Amostra_3.Text;
+                        analiseComNomesDeAmostras.NomeAmostra4 = cbx_Nome_Amostra_4.Text;
+                        analiseComNomesDeAmostras.Completa = true;
+
+                        new AnaliseNegocio().EditarNomesDasAmostras(analiseComNomesDeAmostras);
+
+                        List<AmostraEntidade> AmostraSalva = new List<AmostraEntidade>();
+
+                        for (int i = 0; i < 4; i++)
+                        {
+                            AmostraEntidade amostra;
+
+                            amostra = PreencherAmostra(
+                                    Convert.ToDouble(dataGridBasica.Rows[i].Cells[2].Value),
+                                    Convert.ToDouble(dataGridBasica.Rows[i].Cells[3].Value),
+                                    Convert.ToDouble(dataGridBasica.Rows[i].Cells[4].Value),
+                                    Convert.ToDouble(dataGridBasica.Rows[i].Cells[5].Value),
+                                    Convert.ToDouble(dataGridBasica.Rows[i].Cells[6].Value),
+                                    Convert.ToDouble(dataGridBasica.Rows[i].Cells[7].Value),
+                                    Convert.ToDouble(dataGridBasica.Rows[i].Cells[8].Value),
 
 
-                            Convert.ToDouble(dataGridAdicional.Rows[i].Cells[2].Value),
-                            Convert.ToDouble(dataGridAdicional.Rows[i].Cells[3].Value),
-                            Convert.ToDouble(dataGridAdicional.Rows[i].Cells[4].Value),
-                            Convert.ToDouble(dataGridAdicional.Rows[i].Cells[5].Value),
+                                    Convert.ToDouble(dataGridCompleta.Rows[i].Cells[2].Value),
+                                    Convert.ToDouble(dataGridCompleta.Rows[i].Cells[3].Value),
+                                    Convert.ToDouble(dataGridCompleta.Rows[i].Cells[4].Value),
+                                    Convert.ToDouble(dataGridCompleta.Rows[i].Cells[5].Value),
 
 
-                            Convert.ToDouble(dataGridFisica.Rows[i].Cells[2].Value),
-                            Convert.ToDouble(dataGridFisica.Rows[i].Cells[3].Value),
-                            Convert.ToDouble(dataGridFisica.Rows[i].Cells[4].Value),
-                            Convert.ToDouble(dataGridFisica.Rows[i].Cells[5].Value),
-                            Convert.ToDouble(dataGridFisica.Rows[i].Cells[6].Value),
-                            Convert.ToDouble(dataGridFisica.Rows[i].Cells[7].Value),
+                                    Convert.ToDouble(dataGridFisica.Rows[i].Cells[2].Value),
+                                    Convert.ToDouble(dataGridFisica.Rows[i].Cells[3].Value),
+                                    Convert.ToDouble(dataGridFisica.Rows[i].Cells[4].Value),
+                                    Convert.ToDouble(dataGridFisica.Rows[i].Cells[5].Value),
+                                    Convert.ToDouble(dataGridFisica.Rows[i].Cells[6].Value),
+                                    Convert.ToDouble(dataGridFisica.Rows[i].Cells[7].Value),
 
 
-                            Convert.ToDouble(dataGridOpcional.Rows[i].Cells[2].Value),
-                            Convert.ToDouble(dataGridOpcional.Rows[i].Cells[3].Value),
-                            Convert.ToDouble(dataGridOpcional.Rows[i].Cells[4].Value)
+                                    Convert.ToDouble(dataGridOpcional.Rows[i].Cells[2].Value),
+                                    Convert.ToDouble(dataGridOpcional.Rows[i].Cells[3].Value),
+                                    Convert.ToDouble(dataGridOpcional.Rows[i].Cells[4].Value)
 
-                            );
+                                    );
+                            amostra.Analises = analiseSalva;
 
-                    amostra.Analises = analiseSalva;
 
-                    new AmostraNegocio().Salvar(amostra);
-                    AmostraSalva.Add(amostra);
+
+
+
+                            switch (i)
+                            {
+                                case 0:
+                                    {
+                                        amostra.NomeAmostra = cbx_Nome_Amostra_1.Text; break;
+                                    }
+                                case 1:
+                                    {
+                                        amostra.NomeAmostra = cbx_Nome_Amostra_2.Text; break;
+                                    }
+                                case 2:
+                                    {
+                                        amostra.NomeAmostra = cbx_Nome_Amostra_3.Text; break;
+                                    }
+                                case 3:
+                                    {
+                                        amostra.NomeAmostra = cbx_Nome_Amostra_4.Text; break;
+                                    }
+                                default:
+                                    break;
+                            }
+
+                            new AmostraNegocio().Salvar(amostra, analiseComNomesDeAmostras.IdAnalise);
+                            AmostraSalva.Add(amostra);
+                        }
+
+                        var result = new GerarPDF().Gerar(analiseSalva, AmostraSalva);
+                        MessageBox.Show(result, "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+                    default:
+                        break;
                 }
 
-                var result = new GerarPDF().Gerar(analiseSalva, AmostraSalva);
-                MessageBox.Show(result);
-
+                this.Dispose();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show(Mensagem.ErroThread.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ex.ToString(), "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -272,18 +317,18 @@ namespace BetoAPP.Visual
             double alh = new ProcessamentoConcentracao().ProcessarAcidoPotencial(AlH);
             amostra.AlH = alh.ToString();
 
-            double sb = k + Ca + mg;
+            double sb = Math.Round(k + Ca + mg, 2);
             amostra.SB = sb.ToString();
 
-            double ti = al + sb;
+            double ti = Math.Round(al + sb, 2);
             amostra.ti = ti.ToString();
 
-            double T = alh + sb;
+            double T = Math.Round(alh + sb, 2);
             amostra.T = T.ToString();
 
 
-            amostra.V = ((100 * sb) / T).ToString();
-            amostra.m = ((100 * al) / ti).ToString();
+            amostra.V = Math.Round(((100 * sb) / T), 2).ToString();
+            amostra.m = Math.Round(((100 * al) / ti), 2).ToString();
             amostra.Zn = new ProcessamentoConcentracao().ProcessarZinco(Zn).ToString();
             amostra.Cu = new ProcessamentoConcentracao().ProcessarCobre(Cu).ToString();
             amostra.Fe = new ProcessamentoConcentracao().ProcessarFerro(Fe).ToString();
@@ -294,14 +339,41 @@ namespace BetoAPP.Visual
             amostra.Argila = new ProcessamentoConcentracao().ProcessarArgila(ArgilaInicial, ArgilaFinal).ToString();
             amostra.Areia = new ProcessamentoConcentracao().ProcessarAreia(AreiaInicial, AreiaFinal).ToString();
             amostra.Silte = new ProcessamentoConcentracao().ProcessarSilte(SilteInicial, SilteFinal).ToString();
-            amostra.TonHa = ((0.6 * T - sb) / 10).ToString();
+            amostra.TonHa = Math.Round(((0.6 * T - sb) / 10), 2).ToString();
 
             return amostra;
         }
 
-        private void btnAvancar_Paint(object sender, PaintEventArgs e)
+        private void cbx_Nome_Amostra_1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnAvancar.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, btnAvancar.Width, btnAvancar.Height, 15, 15));
+            dataGridBasica.Rows[0].Cells[1].Value = cbx_Nome_Amostra_1.Text;
+            dataGridCompleta.Rows[0].Cells[1].Value = cbx_Nome_Amostra_1.Text;
+            dataGridFisica.Rows[0].Cells[1].Value = cbx_Nome_Amostra_1.Text;
+            dataGridOpcional.Rows[0].Cells[1].Value = cbx_Nome_Amostra_1.Text;
+        }
+
+        private void cbx_Nome_Amostra_2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridBasica.Rows[1].Cells[1].Value = cbx_Nome_Amostra_2.Text;
+            dataGridCompleta.Rows[1].Cells[1].Value = cbx_Nome_Amostra_2.Text;
+            dataGridFisica.Rows[1].Cells[1].Value = cbx_Nome_Amostra_2.Text;
+            dataGridOpcional.Rows[1].Cells[1].Value = cbx_Nome_Amostra_2.Text;
+        }
+
+        private void cbx_Nome_Amostra_3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridBasica.Rows[2].Cells[1].Value = cbx_Nome_Amostra_3.Text;
+            dataGridCompleta.Rows[2].Cells[1].Value = cbx_Nome_Amostra_3.Text;
+            dataGridFisica.Rows[2].Cells[1].Value = cbx_Nome_Amostra_3.Text;
+            dataGridOpcional.Rows[2].Cells[1].Value = cbx_Nome_Amostra_3.Text;
+        }
+
+        private void cbx_Nome_Amostra_4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dataGridBasica.Rows[3].Cells[1].Value = cbx_Nome_Amostra_4.Text;
+            dataGridCompleta.Rows[3].Cells[1].Value = cbx_Nome_Amostra_4.Text;
+            dataGridFisica.Rows[3].Cells[1].Value = cbx_Nome_Amostra_4.Text;
+            dataGridOpcional.Rows[3].Cells[1].Value = cbx_Nome_Amostra_4.Text;
         }
     }
 }

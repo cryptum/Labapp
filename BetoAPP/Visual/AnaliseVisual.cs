@@ -20,7 +20,7 @@ namespace BetoAPP.Visual
         public AnaliseVisual()
         {
             InitializeComponent();
-            btn_Edita.Visible = false;
+            btn_Pesquisa.Select();
             cbx_Pesquisa.Items.Add("Nome do Cliente");
             cbx_Pesquisa.Items.Add("CPF do Cliente");
             cbx_Pesquisa.SelectedIndex = 0;
@@ -50,17 +50,17 @@ namespace BetoAPP.Visual
 
         void AlinharGrid()
         {
-            dataGridAnalise.Columns[0].Width = 100;
-            dataGridAnalise.Columns[1].Width = 300;
-            dataGridAnalise.Columns[2].Width = 195;
-            dataGridAnalise.Columns[3].Width = 120;
+            dataGridAnalise.Columns[0].Width = 80;
+            dataGridAnalise.Columns[1].Width = 80;
+            dataGridAnalise.Columns[2].Width = 300;
+            dataGridAnalise.Columns[3].Width = 195;
             dataGridAnalise.Columns[4].Width = 120;
-            dataGridAnalise.Columns[5].Width = 150;
+            dataGridAnalise.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         public void RecarregarGrid()
         {
-            dataGridAnalise.DataSource = new AnaliseNegocio().ObterTodos();
+            dataGridAnalise.DataSource = new AnaliseNegocio().ObterTodosCompletos();
             AlinharGrid();
         }
 
@@ -94,30 +94,33 @@ namespace BetoAPP.Visual
         private void btn_Adiciona_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            AdicionarAnaliseVisual View = new AdicionarAnaliseVisual("Adicionar Análise", 0, "");
+            AdicionarAnaliseVisual View = new AdicionarAnaliseVisual("Criar Análise", 0, "");
             View.ShowDialog();
             this.Visible = true;
             RecarregarGrid();
         }
 
-        private void btn_Edita_Click(object sender, EventArgs e)
-        {
-            //try
-            //{
-            //    int idSelecionada = Convert.ToInt32(dataGridAnalise.CurrentRow.Cells[0].Value.ToString());
-            //    string nameSelecionada = dataGridAnalise.CurrentRow.Cells[1].Value.ToString();
 
-            //    if (MessageBox.Show($"Deseja editar: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            //    {
-            //        AdicionarCulturaVisual View = new AdicionarCulturaVisual("Editar Análise", idSelecionada, nameSelecionada);
-            //        View.ShowDialog();
-            //        RecarregarGrid();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //}
+        private void btn_Adicionar_Amostra_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idSelecionada = Convert.ToInt32(dataGridAnalise.CurrentRow.Cells[0].Value.ToString());
+                string nameSelecionada = dataGridAnalise.CurrentRow.Cells[1].Value.ToString();
+
+                if (MessageBox.Show($"Deseja Adicionar Amostras ao: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.Visible = false;
+                    AdicionarCulturaVisual View = new AdicionarCulturaVisual("Adicionar Amostras", idSelecionada, nameSelecionada);
+                    View.ShowDialog();
+                    this.Visible = true;
+                    RecarregarGrid();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void btn_Exclui_Click(object sender, EventArgs e)

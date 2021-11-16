@@ -75,7 +75,7 @@ namespace BetoAPP
                 UsuarioDTO resultado = new UsuarioNegocio().ValidarAcesso(txt_Usuario.Text.Trim(), txt_Senha.Text.Trim());
                 if (resultado.AcessoPermitido == true)
                 {
-                    PrincipalVisual ViewPrincipal = new PrincipalVisual(resultado.Código, resultado.Nome);
+                    PrincipalVisual ViewPrincipal = new PrincipalVisual(resultado.Código, resultado.Nome, resultado.Administrador);
                     this.Hide();
                     ViewPrincipal.Show();
                 }

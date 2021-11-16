@@ -27,7 +27,7 @@ namespace Negocio
         public int Salvar(string Nome)
         {
             TipoAnaliseEntidade TipoAnalise = new TipoAnaliseEntidade();
-            TipoAnalise.Nome = Nome;
+            TipoAnalise.Nome = Nome.Trim();
             return new TipoAnaliseRepositorio().Salvar(TipoAnalise);
         }
 
@@ -38,7 +38,7 @@ namespace Negocio
             {
                 return 0;
             }
-            TipoAnalise.Nome = Nome;
+            TipoAnalise.Nome = Nome.Trim();
             return new TipoAnaliseRepositorio().Editar(TipoAnalise);
         }
 

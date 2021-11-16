@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Entidade
 {
@@ -9,8 +10,8 @@ namespace Entidade
         public string Nome { get; set; }
         public string Acesso { get; set; }
         public string Senha { get; set; }
-        public string Tipo { get; set; }
         public bool Bloqueado { get; set; }
-        public string DataCriado { get; set; }
+        public bool Administrador { get; set; }
+        public DateTime DataCriado { get; set; }
     }
 }

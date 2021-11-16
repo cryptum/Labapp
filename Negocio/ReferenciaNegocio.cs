@@ -26,7 +26,7 @@ namespace Negocio
         public int Salvar(String Nome)
         {
             ReferenciaEntidade referencia = new ReferenciaEntidade();
-            referencia.Nome = Nome;
+            referencia.Nome = Nome.Trim();
             return new ReferenciaRepositorio().Salvar(referencia);
         }
 
@@ -37,7 +37,7 @@ namespace Negocio
             {
                 return 0;
             }
-            referencia.Nome = Nome;
+            referencia.Nome = Nome.Trim();
             return new ReferenciaRepositorio().Editar(referencia);
         }
 

@@ -24,7 +24,6 @@ namespace Negocio
         public string Gerar(AnaliseEntidade Analise, List<AmostraEntidade> Amostra)
         {
             var caminho = ValidarCaminhoPDF(Analise.Solicitantes.Nome);
-            caminho += $"\\{Analise.Solicitantes.Nome} - " + DateTime.Now.Month + "-" + DateTime.Now.Year + ".pdf";
 
             using (PdfWriter wPdf = new PdfWriter(caminho, new WriterProperties().SetPdfVersion(PdfVersion.PDF_2_0)))
             {
@@ -63,7 +62,7 @@ namespace Negocio
                 Table tableInfoSolicitante = new Table(UnitValue.CreatePercentArray(2)).UseAllAvailableWidth().SetBorder(Border.NO_BORDER);
                 tableInfoSolicitante.AddCell("Data: " + Analise.DataCriado).AddStyle(normal).SetBorder(Border.NO_BORDER);
                 tableInfoSolicitante.AddCell("Solicitante: " + Analise.TipoSolicitacao).SetBorder(Border.NO_BORDER);
-                tableInfoSolicitante.AddCell("Laudo: " + Analise.IdAnalise).AddStyle(normal).SetBorder(Border.NO_BORDER);
+                tableInfoSolicitante.AddCell("Laudo: " + Analise.NomeAnalise).AddStyle(normal).SetBorder(Border.NO_BORDER);
                 tableInfoSolicitante.AddCell("Cultura: " + Analise.Cultura).AddStyle(normal).SetBorder(Border.NO_BORDER);
                 tableInfoSolicitante.AddCell("Fazenda: " + Analise.Local).AddStyle(normal).SetBorder(Border.NO_BORDER);
                 tableInfoSolicitante.AddCell("Referência: " + Analise.Referencia).AddStyle(normal).SetBorder(Border.NO_BORDER);
@@ -91,7 +90,7 @@ namespace Negocio
 
                 tableValores.AddCell("pH").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
                 tableValores.AddCell("Água").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell("Poten. Hidrogen.").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                tableValores.AddCell("Poten. Hidrogenico").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
                 tableValores.AddCell(" ").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
                 tableValores.AddCell(Amostra[0].pH).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
                 tableValores.AddCell(Amostra[1].pH).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
@@ -330,7 +329,31 @@ namespace Negocio
                 Directory.CreateDirectory(caminhoSolicitante);
             }
 
+
+            caminhoSolicitante += MontaNomeArquivoPDF(caminhoSolicitante, nomeSolicitante);
+
             return caminhoSolicitante;
         }
+
+        string MontaNomeArquivoPDF(string caminhoDestino, string SolicitantesNome)
+        {
+            bool loop = true;
+            string caminho = "";
+            int n = 0;
+            while (loop)
+            {
+                caminho = $"\\ {DateTime.Now.Day}-{DateTime.Now.Month}-{DateTime.Now.Year} - {SolicitantesNome} - {n} " + ".pdf";
+
+                if (!File.Exists(caminhoDestino + caminho))
+                {
+                    loop = false;
+                }
+
+                n++;
+            }
+
+            return caminho;
+        }
+
     }
 }

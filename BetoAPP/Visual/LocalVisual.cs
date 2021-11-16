@@ -49,6 +49,7 @@ namespace BetoAPP.Visual
         void AlinharGrid()
         {
             dataGridLocal.Columns[0].Width = 100;
+            dataGridLocal.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         void RecarregarGrid()

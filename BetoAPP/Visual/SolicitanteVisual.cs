@@ -1,7 +1,6 @@
 ﻿using BetoAPP.Util;
 using Negocio;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace BetoAPP.Visual
@@ -20,6 +19,7 @@ namespace BetoAPP.Visual
         public SolicitanteVisual()
         {
             InitializeComponent();
+            btn_Pesquisa.Select();
             //this.menuStrip1.BackColor = Color.DimGray;
             //this.menuStrip1.ForeColor = Color.WhiteSmoke;
         }
@@ -49,6 +49,9 @@ namespace BetoAPP.Visual
         void AlinharGrid()
         {
             dataGridSolicitante.Columns[0].Width = 100;
+            dataGridSolicitante.Columns[2].Width = 160;
+            dataGridSolicitante.Columns[3].Width = 180;
+            dataGridSolicitante.Columns[4].Width = 110;
             dataGridSolicitante.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridSolicitante.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridSolicitante.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -72,6 +75,7 @@ namespace BetoAPP.Visual
         private void SolicitanteVisual_Load(object sender, EventArgs e)
         {
             RecarregarGrid();
+            AlinharGrid();
         }
 
         private void btn_Adiciona_Click(object sender, EventArgs e)
@@ -133,7 +137,7 @@ namespace BetoAPP.Visual
             RecarregarGrid();
         }
 
-        private void btn_Solicitante_Click(object sender, EventArgs e)
+        private void btn_Pesquisa_Click(object sender, EventArgs e)
         {
             Buscar(txt_Solicitante.Text);
         }

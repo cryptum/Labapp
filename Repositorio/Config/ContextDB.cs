@@ -39,6 +39,7 @@ namespace Repositorio.Config
             modelBuilder.Entity<AmostraEntidade>().HasKey(u => u.IdAmostras);
 
             modelBuilder.Entity<AnaliseEntidade>().HasKey(u => u.IdAnalise);
+            modelBuilder.Entity<AnaliseEntidade>().HasOne(e => e.Solicitantes).WithMany(c => c.Analises);
 
             modelBuilder.Entity<CulturaEntidade>().HasKey(u => u.IdCultura);
             modelBuilder.Entity<CulturaEntidade>().HasIndex(u => u.Nome).IsUnique();
@@ -50,13 +51,13 @@ namespace Repositorio.Config
             modelBuilder.Entity<ReferenciaEntidade>().HasKey(u => u.IdReferencia);
 
             modelBuilder.Entity<SolicitanteEntidade>().HasKey(u => u.IdSolicitante);
+            modelBuilder.Entity<SolicitanteEntidade>().HasMany(bc => bc.Analises).WithOne(b => b.Solicitantes);
 
             modelBuilder.Entity<TipoAnaliseEntidade>().HasKey(u => u.IdTipoAnalise);
             modelBuilder.Entity<TipoAnaliseEntidade>().HasIndex(u => u.Nome).IsUnique();
 
             modelBuilder.Entity<TipoSolicitacaoEntidade>().HasKey(u => u.IdTipoSolicitacao);
             modelBuilder.Entity<TipoSolicitacaoEntidade>().HasIndex(u => u.Nome).IsUnique();
-
 
             modelBuilder.Entity<UsuarioEntidade>().HasKey(u => u.IdUsuario);
 

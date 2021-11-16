@@ -1,6 +1,5 @@
 ﻿using Entidade;
 using Entidade.DTO;
-using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Repositorio.Config;
 using System.Collections.Generic;

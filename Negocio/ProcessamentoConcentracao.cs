@@ -155,17 +155,148 @@ namespace Negocio
 
         public double ProcessarBoro(double B)
         {
-            return Math.Round(B, 2);
+            // carregando dados
+            double[] xValues = { 0.4, 0.8, 1.2, 1.6 };  // Concentração de P
+            double[] yValues = { 0.2240, 0.3850, 0.5100, 0.6020 }; // Absobância
+
+            // encontrando a média do valor das variáveis independentes (eixo x) e dependentes (eixo y)
+            double xMedia = 0;
+            double yMedia = 0;
+            for (int index = 0; index < xValues.Length; index++)
+            {
+                xMedia += xValues[index];
+                yMedia += yValues[index];
+            }
+            xMedia = xMedia / xValues.Length;
+            yMedia = yMedia / yValues.Length;
+
+            // codificando a fórmula para calcular a inclinação
+            double dividendo = 0;
+            double divisor = 0;
+            for (int index = 0; index < xValues.Length; index++)
+            {
+                // a soma do produto da dispersão das variáveis independentes e dependentes = distâncias entre cada um dos valores e o valor médio daquele eixo = covariância de x e y
+                dividendo += (xValues[index] - xMedia) * (yValues[index] - yMedia);
+                // a soma do quadrado da dispersão das variáveis independentes (do eixo x)
+                divisor += Math.Pow(xValues[index] - xMedia, 2);
+            }
+
+            // encontrando a inclinação
+            double a = dividendo / divisor;
+
+            // codificando a fórmula para encontrar o ponto onde a linha de tendência intercepta o eixo y
+            // a média das variáveis dependentes, subtraido o produto da inclinação com a média das variáveis independentes
+            double b = yMedia - a * xMedia;
+            a = Math.Round(a, 4);
+            b = Math.Round(b, 4);
+
+            double DiluicaoS_1 = 2.0;
+            double DiluicaoS_2 = 1.1;
+
+            double conc = (B - b) / a;
+
+            double mgdm_1 = conc * DiluicaoS_1;
+
+            double mgdm_2 = mgdm_1 * DiluicaoS_2;
+
+
+            return Math.Round(mgdm_2, 2);
         }
 
         public double ProcessarEnxofre(double S)
         {
-            return Math.Round(S, 2);
+            // carregando dados
+            double[] xValues = { 0.4, 0.8, 1.2, 1.6 };  // Concentração de P
+            double[] yValues = { 0.2240, 0.3850, 0.5100, 0.6020 }; // Absobância
+
+            // encontrando a média do valor das variáveis independentes (eixo x) e dependentes (eixo y)
+            double xMedia = 0;
+            double yMedia = 0;
+            for (int index = 0; index < xValues.Length; index++)
+            {
+                xMedia += xValues[index];
+                yMedia += yValues[index];
+            }
+            xMedia = xMedia / xValues.Length;
+            yMedia = yMedia / yValues.Length;
+
+            // codificando a fórmula para calcular a inclinação
+            double dividendo = 0;
+            double divisor = 0;
+            for (int index = 0; index < xValues.Length; index++)
+            {
+                // a soma do produto da dispersão das variáveis independentes e dependentes = distâncias entre cada um dos valores e o valor médio daquele eixo = covariância de x e y
+                dividendo += (xValues[index] - xMedia) * (yValues[index] - yMedia);
+                // a soma do quadrado da dispersão das variáveis independentes (do eixo x)
+                divisor += Math.Pow(xValues[index] - xMedia, 2);
+            }
+
+            // encontrando a inclinação
+            double a = dividendo / divisor;
+
+            // codificando a fórmula para encontrar o ponto onde a linha de tendência intercepta o eixo y
+            // a média das variáveis dependentes, subtraido o produto da inclinação com a média das variáveis independentes
+            double b = yMedia - a * xMedia;
+            a = Math.Round(a, 4);
+            b = Math.Round(b, 4);
+
+            double DiluicaoS_1 = 2.5;
+            double DiluicaoS_2 = 1.1;
+
+            double conc = (S - b) / a;
+
+            double mgdm_1 = conc * DiluicaoS_1;
+
+            double mgdm_2 = mgdm_1 * DiluicaoS_2;
+
+
+            return Math.Round(mgdm_2, 2);
         }
 
         public double ProcessarMateriaOrganica(double MO)
         {
-            return Math.Round(MO, 2);
+            // carregando dados
+            double[] xValues = { 0.80, 1.20, 1.60, 1.80, 2.0 };  // Concentração de P
+            double[] yValues = { 0.045, 0.076, 0.105, 0.117, 0.134 }; // Absobância
+
+            // encontrando a média do valor das variáveis independentes (eixo x) e dependentes (eixo y)
+            double xMedia = 0;
+            double yMedia = 0;
+            for (int index = 0; index < xValues.Length; index++)
+            {
+                xMedia += xValues[index];
+                yMedia += yValues[index];
+            }
+            xMedia = xMedia / xValues.Length;
+            yMedia = yMedia / yValues.Length;
+
+            // codificando a fórmula para calcular a inclinação
+            double dividendo = 0;
+            double divisor = 0;
+            for (int index = 0; index < xValues.Length; index++)
+            {
+                // a soma do produto da dispersão das variáveis independentes e dependentes = distâncias entre cada um dos valores e o valor médio daquele eixo = covariância de x e y
+                dividendo += (xValues[index] - xMedia) * (yValues[index] - yMedia);
+                // a soma do quadrado da dispersão das variáveis independentes (do eixo x)
+                divisor += Math.Pow(xValues[index] - xMedia, 2);
+            }
+
+            // encontrando a inclinação
+            double a = dividendo / divisor;
+
+            // codificando a fórmula para encontrar o ponto onde a linha de tendência intercepta o eixo y
+            // a média das variáveis dependentes, subtraido o produto da inclinação com a média das variáveis independentes
+            double b = yMedia - a * xMedia;
+            a = Math.Round(a, 4);
+            b = Math.Round(b, 4);
+
+            double DiluicaoMO = 60;
+
+            double conc = (MO - b) / a;
+
+            double mgdm = conc * DiluicaoMO;
+
+            return Math.Round(mgdm, 2);
         }
     }
 }

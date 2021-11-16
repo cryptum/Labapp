@@ -10,12 +10,12 @@ namespace Negocio
 
         public List<AmostraEntidade> ObterAmostrarPorIdAnalise(int idAnalise)
         {
-            return new AmostraNegocio().ObterAmostrarPorIdAnalise(idAnalise);
+            return new AmostraRepositorio().ObterAmostrarPorIdAnalise(idAnalise);
         }
 
-        public int Salvar(AmostraEntidade amostra)
+        public int Salvar(AmostraEntidade amostra, int IdAnalise)
         {
-            return new AmostraRepositorio().Salvar(amostra);
+            return new AmostraRepositorio().Salvar(amostra, IdAnalise);
         }
 
         public int Excluir(int idAnalise)

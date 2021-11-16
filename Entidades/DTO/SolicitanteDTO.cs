@@ -12,7 +12,7 @@ namespace Entidade.DTO
 
         public string Cpf { get; set; }
 
-        public string Observacao { get; set; }
+        public string Observação { get; set; }
 
         public int Fazendas { get; set; }
     }

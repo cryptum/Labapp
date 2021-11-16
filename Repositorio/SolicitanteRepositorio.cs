@@ -22,7 +22,7 @@ namespace Repositorio
                                     Código = x.IdSolicitante,
                                     Nome = x.Nome,
                                     Cpf = x.Cpf,
-                                    Observacao = x.Observacao,
+                                    Observação = x.Observacao,
                                     Fazendas = x.Locais.Count()
                                 })
                                 .ToList();
@@ -37,7 +37,7 @@ namespace Repositorio
             {
                 var query = db.Solicitantes
                                 .Where(w => w.IdSolicitante == id)
-                                .FirstOrDefault();
+                                .First();
 
                 return query;
             }
@@ -54,7 +54,7 @@ namespace Repositorio
                                     Código = x.IdSolicitante,
                                     Nome = x.Nome,
                                     Cpf = x.Cpf,
-                                    Observacao = x.Observacao,
+                                    Observação = x.Observacao,
                                     Fazendas = x.Locais.Count()
                                 })
                                 .ToList();

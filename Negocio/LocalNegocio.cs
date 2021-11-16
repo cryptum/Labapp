@@ -24,13 +24,13 @@ namespace Negocio
 
         public int Salvar(string fazenda, string municipio, int idSolicitante)
         {
-            //SolicitanteEntidade Solicitante = new SolicitanteNegocio().ObterUmPorCodigo(idSolicitante);
+            SolicitanteEntidade Solicitante = new SolicitanteNegocio().ObterUmPorCodigo(idSolicitante);
             LocalEntidade Local = new LocalEntidade();
-            Local.Fazenda = fazenda;
-            Local.Municipio = municipio;
-            //Local.Solicitantes = Solicitante;
+            Local.Fazenda = fazenda.Trim();
+            Local.Municipio = municipio.Trim();
+            Local.Solicitantes = Solicitante;
             Local.Excluido = false;
-            return new LocalRepositorio().Salvar(Local, idSolicitante);
+            return new LocalRepositorio().Salvar(Local);
         }
 
         public int Editar(int Id, string fazenda, string municipio, int idSolicitante)

@@ -10,9 +10,13 @@ namespace Negocio
     {
         public AnaliseNegocio() { }
 
-        public List<AnaliseObterTodosDTO> ObterTodos()
+        public List<AnaliseObterTodosImcompletoDTO> ObterTodosImcompleta()
         {
-            return new AnaliseRepositorio().ObterTodos();
+            return new AnaliseRepositorio().ObterTodosImcompleta();
+        }
+        public List<AnaliseObterTodosCompletoDTO> ObterTodosCompletos()
+        {
+            return new AnaliseRepositorio().ObterTodosCompletos();
         }
 
         public AnaliseEntidade ObterUmPorCodigo(int id)
@@ -31,32 +35,27 @@ namespace Negocio
         }
 
 
-        public int Salvar(SolicitanteEntidade Solicitante, string Local, string Referencia, string cultura, string tipoSolicitacao)
+        public int Salvar(string nomeAnalise, int idSolicitante, string Local, string Referencia, string cultura, string tipoSolicitacao, string NomeAmostra1, string NomeAmostra2, string NomeAmostra3, string NomeAmostra4)
         {
             AnaliseEntidade Analise = new AnaliseEntidade();
-            Analise.Solicitantes = Solicitante;
+            Analise.NomeAnalise = nomeAnalise.Trim();
+            //Analise.Solicitantes = Solicitante;
             Analise.Local = Local;
             Analise.Referencia = Referencia;
             Analise.Cultura = cultura;
             Analise.TipoSolicitacao = tipoSolicitacao;
             Analise.DataCriado = DateTime.Now;
-            return new AnaliseRepositorio().Salvar(Analise);
+            Analise.NomeAmostra1 = NomeAmostra1;
+            Analise.NomeAmostra2 = NomeAmostra2;
+            Analise.NomeAmostra3 = NomeAmostra3;
+            Analise.NomeAmostra4 = NomeAmostra4;
+            Analise.Completa = false;
+            return new AnaliseRepositorio().Salvar(Analise, idSolicitante);
         }
 
-        public int Editar(int Id, SolicitanteEntidade Solicitante, string Local, string Referencia, string cultura, string tipoSolicitacao)
+        public int EditarNomesDasAmostras(AnaliseEntidade analise)
         {
-            AnaliseEntidade Analise = new AnaliseRepositorio().ObterUmPorCodigo(Id);
-            if (Analise == null)
-            {
-                return 0;
-            }
-            Analise.Solicitantes = Solicitante;
-            Analise.Local = Local;
-            Analise.Referencia = Referencia;
-            Analise.Cultura = cultura;
-            Analise.TipoSolicitacao = tipoSolicitacao;
-            Analise.DataUltimaAtualizacao = DateTime.Now;
-            return new AnaliseRepositorio().Editar(Analise);
+            return new AnaliseRepositorio().Editar(analise);
         }
 
         public int Excluir(int Id)

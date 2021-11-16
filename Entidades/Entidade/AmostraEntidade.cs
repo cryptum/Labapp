@@ -6,6 +6,8 @@ namespace Entidade
     {
         [Key]
         public int IdAmostras { get; set; }
+
+        public string NomeAmostra { get; set; }
         public string pH { get; set; }
         public string P { get; set; }
         public string K { get; set; }

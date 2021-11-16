@@ -27,7 +27,7 @@ namespace Negocio
         public int Salvar(string Nome)
         {
             TipoSolicitacaoEntidade TipoSolicitacao = new TipoSolicitacaoEntidade();
-            TipoSolicitacao.Nome = Nome;
+            TipoSolicitacao.Nome = Nome.Trim();
             return new TipoSolicitacaoRepositorio().Salvar(TipoSolicitacao);
         }
 
@@ -38,7 +38,7 @@ namespace Negocio
             {
                 return 0;
             }
-            TipoSolicitacao.Nome = Nome;
+            TipoSolicitacao.Nome = Nome.Trim();
             return new TipoSolicitacaoRepositorio().Editar(TipoSolicitacao);
         }
 

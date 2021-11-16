@@ -96,11 +96,14 @@ namespace BetoAPP.Visual
             this.txt_Pesquisa.Name = "txt_Pesquisa";
             this.txt_Pesquisa.Size = new System.Drawing.Size(339, 36);
             this.txt_Pesquisa.TabIndex = 4;
+            this.txt_Pesquisa.Text = "    Água, Quimicos,  ...";
+            this.txt_Pesquisa.Click += new System.EventHandler(this.txt_Pesquisa_Click);
             this.txt_Pesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Solicitacao_KeyDown);
             // 
             // dataGridTipoAnalise
             // 
-            this.dataGridTipoAnalise.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridTipoAnalise.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridTipoAnalise.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

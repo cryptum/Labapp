@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Entidade.DTO
 {
@@ -13,15 +14,27 @@ namespace Entidade.DTO
         public string Acesso { get; set; }
 
         public string Senha { get; set; }
-
-        public string Tipo { get; set; }
-
         public bool Bloqueado { get; set; }
 
-        public string DataCriado { get; set; }
+        public bool Administrador { get; set; }
+
+        public DateTime DataCriado { get; set; }
 
         public bool AcessoPermitido { get; set; }
 
         public string AcessoMessagem { get; set; }
+    }
+
+    public class UsuarioObterTodosDTO
+    {
+        public int Código { get; set; }
+
+        public string Nome { get; set; }
+
+        public string Acesso { get; set; }
+
+        public bool Bloqueado { get; set; }
+
+        public bool Administrador { get; set; }
     }
 }

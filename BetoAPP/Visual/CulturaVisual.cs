@@ -20,6 +20,7 @@ namespace BetoAPP.Visual
         public CulturaVisual()
         {
             InitializeComponent();
+            btn_Pesquisa.Select();
         }
 
         //private void SetLoading(bool displayLoader)
@@ -47,6 +48,7 @@ namespace BetoAPP.Visual
         void AlinharGrid()
         {
             dataGridCultura.Columns[0].Width = 100;
+            dataGridCultura.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         void RecarregarGrid()
@@ -137,6 +139,11 @@ namespace BetoAPP.Visual
                 Buscar(txt_Pesquisa.Text);
                 e.Handled = e.SuppressKeyPress = true;
             }
+        }
+
+        private void txt_Pesquisa_Click(object sender, EventArgs e)
+        {
+            txt_Pesquisa.Text = "";
         }
     }
 }

@@ -9,6 +9,8 @@ namespace Entidade
         [Key]
         public int IdAnalise { get; set; }
 
+        public string NomeAnalise { get; set; }
+
         public SolicitanteEntidade Solicitantes { get; set; }
 
         public string Local { get; set; }
@@ -21,10 +23,18 @@ namespace Entidade
 
         public string TipoSolicitacao { get; set; }
 
+        public string NomeAmostra1 { get; set; }
+
+        public string NomeAmostra2 { get; set; }
+
+        public string NomeAmostra3 { get; set; }
+
+        public string NomeAmostra4 { get; set; }
+
+        public bool? Completa { get; set; }
+
         public ICollection<AmostraEntidade> Amostras { get; set; }
 
         public DateTime DataCriado { get; set; }
-
-        public DateTime? DataUltimaAtualizacao { get; set; }
     }
 }

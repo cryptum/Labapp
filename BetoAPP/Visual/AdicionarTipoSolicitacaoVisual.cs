@@ -59,7 +59,7 @@ namespace BetoAPP.Visual
                     {
                         txtNome.Text = "";
                         txtNome.Focus();
-                        MessageBox.Show("Salvo!");
+                        MessageBox.Show("Salvo!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
                 else if (txtTitulo.Text == "Editar Tipo Solicitação")
@@ -71,12 +71,11 @@ namespace BetoAPP.Visual
                     }
                     else
                     {
-                        txtNome.Text = "";
-                        txtNome.Focus();
-                        MessageBox.Show("Salvo!");
+                        MessageBox.Show("Salvo!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-                }
 
+                    this.Dispose();
+                }
             }
             catch (Exception)
             {

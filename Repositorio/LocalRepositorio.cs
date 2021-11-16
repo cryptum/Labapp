@@ -21,7 +21,7 @@ namespace Repositorio
                                 {
                                     Código = x.IdLocal,
                                     Fazenda = x.Fazenda,
-                                    Municipio = x.Municipio
+                                    Município = x.Municipio
                                 })
                                 .ToList();
 
@@ -64,7 +64,7 @@ namespace Repositorio
                                 {
                                     Código = x.IdLocal,
                                     Fazenda = x.Fazenda,
-                                    Municipio = x.Municipio
+                                    Município = x.Municipio
                                 })
                                 .ToList();
 
@@ -72,9 +72,9 @@ namespace Repositorio
             }
         }
 
-        public int Salvar(LocalEntidade local, int idSolicitante)
+        public int Salvar(LocalEntidade local)
         {
-            local.Solicitantes = new SolicitanteRepositorio().ObterUmPorCodigo(idSolicitante);
+            //local.Solicitantes = new SolicitanteRepositorio().ObterUmPorCodigo(idSolicitante);
 
             using (var db = new ContextDB())
             {

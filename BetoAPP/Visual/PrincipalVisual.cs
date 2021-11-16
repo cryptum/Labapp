@@ -1,8 +1,6 @@
-﻿using Entidade;
-using Negocio;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 
@@ -10,11 +8,21 @@ namespace BetoAPP.Visual
 {
     public partial class PrincipalVisual : Form
     {
-        public PrincipalVisual(int IdUsuarioLogado, String Usuariologado)
+        public PrincipalVisual(int IdUsuarioLogado, string Usuariologado, bool hierarquia)
         {
             InitializeComponent();
             lbl_UsuarioLogado.Text = Usuariologado;
-            this.menuStrip1.BackColor = Color.GhostWhite;
+            //this.menuStrip1.BackColor = Color.GhostWhite;
+            this.btnDarkAndLight.Visible = false;
+
+            if (hierarquia)
+            {
+                colaboradoresToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                colaboradoresToolStripMenuItem.Visible = false;
+            }
         }
 
         private void Principal_FormClosed(object sender, FormClosedEventArgs e)
@@ -25,6 +33,14 @@ namespace BetoAPP.Visual
         private void analiseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AnaliseVisual View = AnaliseVisual.Instance();
+            View.MdiParent = this;
+            View.Show();
+            View.Activate();
+        }
+
+        private void amostratoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AmostraVisual View = AmostraVisual.Instance();
             View.MdiParent = this;
             View.Show();
             View.Activate();
@@ -78,19 +94,62 @@ namespace BetoAPP.Visual
             View.Activate();
         }
 
-        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
+        private void btnDarkAndLight_Click(object sender, EventArgs e)
         {
             if (menuStrip1.BackColor == Color.GhostWhite)
             {
-                toolStripSplitButton1.Image = Properties.Resources.sun_fill_Dark_36px;
-                this.menuStrip1.BackColor = Color.DimGray;
-                this.menuStrip1.ForeColor = Color.WhiteSmoke;
+                btnDarkAndLight.Image = Properties.Resources.sun_fill_White_36px;
+
+                this.menuStrip1.BackColor = Color.DarkSlateGray;
+                this.menuStrip1.ForeColor = Color.White;
+
+                this.statusStrip1.BackColor = Color.DarkSlateGray;
+                this.statusStrip1.ForeColor = Color.White;
+
+                Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.DarkSlateGray;
+
+                clienteToolStripMenuItem.Image = Properties.Resources.user_fill_Branco_36px;
+                analiseToolStripMenuItem.Image = Properties.Resources.microscope_fill_Branco_36px;
+                amostratoolStripMenuItem.Image = Properties.Resources.test_tube_Branco_36px;
+                culturatoolStripMenuItem.Image = Properties.Resources.plant_fill_Branco_36px;
+                referenciatoolStripMenuItem.Image = Properties.Resources.pin_fill_Branco_36px;
+                solicitantetoolStripMenuItem.Image = Properties.Resources.request_fill_Branco_36px;
+                tipoanalisetoolStripMenuItem.Image = Properties.Resources.flask_Branco_36px;
+                colaboradoresToolStripMenuItem.Image = Properties.Resources.shield_fill_Branco_36px;
             }
             else
             {
-                toolStripSplitButton1.Image = Properties.Resources.sun_fill_White_36px;
-                this.menuStrip1.BackColor = Color.GhostWhite;
-                this.menuStrip1.ForeColor = Color.DimGray;
+                btnDarkAndLight.Image = Properties.Resources.sun_fill_Dark_36px;
+                this.menuStrip1.BackColor = Color.White;
+                this.menuStrip1.ForeColor = Color.Black;
+
+                this.statusStrip1.BackColor = Color.White;
+                this.statusStrip1.ForeColor = Color.Black;
+
+                Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.White;
+
+                clienteToolStripMenuItem.Image = Properties.Resources.user_fill_36px;
+                analiseToolStripMenuItem.Image = Properties.Resources.microscope_fill_36px;
+                amostratoolStripMenuItem.Image = Properties.Resources.test_tube_azul_36px;
+                culturatoolStripMenuItem.Image = Properties.Resources.plant_fill_36px;
+                referenciatoolStripMenuItem.Image = Properties.Resources.pin_fill_36px;
+                solicitantetoolStripMenuItem.Image = Properties.Resources.request_fill_36px;
+                tipoanalisetoolStripMenuItem.Image = Properties.Resources.flask_fill_36px;
+                colaboradoresToolStripMenuItem.Image = Properties.Resources.sheld_fill_36px;
+
+
+            }
+        }
+
+        private void PrincipalVisual_Load(object sender, EventArgs e)
+        {
+            foreach (Control ctrlControl in this.Controls)
+            {
+                if (ctrlControl is MdiClient)
+                {
+                    BackgroundImage = Properties.Resources.AgroFrutal;
+                    BackgroundImageLayout = ImageLayout.Center;
+                }
             }
         }
     }
