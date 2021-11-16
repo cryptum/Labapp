@@ -1,0 +1,12 @@
+{
+    "name": "BetAPP",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+      "start": "cd BetoAPP && dotnet run .\\BetoAPP.csproj",
+      "add": "cd Repositorio && dotnet-ef migrations add",
+      "run": "cd Repositorio && dotnet-ef database update",
+      "rem": "cd Repositorio &&  dotnet-ef  migrations remove"
+    }
+  }
