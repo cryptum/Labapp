@@ -153,16 +153,19 @@ namespace BetoAPP.Visual
 
         private void dataGridSolicitante_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            var nomeCabecalho = dataGridSolicitante.Columns[e.ColumnIndex].Name;
-            string NumeroFazenda = dataGridSolicitante.CurrentRow.Cells[3].Value.ToString();
-            int IdSolicitante = Convert.ToInt32(dataGridSolicitante.CurrentRow.Cells[0].Value);
-
-
-            if (nomeCabecalho == "Fazendas")
+            if (e.ColumnIndex >= 0)
             {
-                LocalVisual View = new LocalVisual(IdSolicitante);
-                View.ShowDialog();
-                RecarregarGrid();
+                var nomeCabecalho = dataGridSolicitante.Columns[e.ColumnIndex].Name;
+                string NumeroFazenda = dataGridSolicitante.CurrentRow.Cells[3].Value.ToString();
+                int IdSolicitante = Convert.ToInt32(dataGridSolicitante.CurrentRow.Cells[0].Value);
+
+
+                if (nomeCabecalho == "Fazendas")
+                {
+                    LocalVisual View = new LocalVisual(IdSolicitante);
+                    View.ShowDialog();
+                    RecarregarGrid();
+                }
             }
         }
     }

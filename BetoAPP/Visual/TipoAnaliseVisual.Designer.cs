@@ -135,6 +135,7 @@ namespace BetoAPP.Visual
             this.dataGridTipoAnalise.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridTipoAnalise.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dataGridTipoAnalise.RowTemplate.Height = 25;
+            this.dataGridTipoAnalise.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridTipoAnalise.Size = new System.Drawing.Size(523, 427);
             this.dataGridTipoAnalise.TabIndex = 1;
             // 

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BetoAPP", "BetoAPP\BetoAPP.csproj", "{2E726B33-C37C-4AE9-83E8-C787BABCC8B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APP", "BetoAPP\APP.csproj", "{2E726B33-C37C-4AE9-83E8-C787BABCC8B4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidade", "Entidades\Entidade.csproj", "{65EEB28B-2C42-41F1-A49A-9C41CD470721}"
 EndProject

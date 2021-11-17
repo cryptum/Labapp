@@ -7,6 +7,12 @@
     <PackageIcon>code-fill.png</PackageIcon>
     <PackageIconUrl />
     <ApplicationIcon>Tubo 240px.ico</ApplicationIcon>
+    <AssemblyName>PreisserAPP</AssemblyName>
+    <RootNamespace>BetoAPP</RootNamespace>
+    <PackageId>PreisserAPP</PackageId>
+    <Authors>PreisserAPP</Authors>
+    <Company>PreisserAPP</Company>
+    <Product>PreisserAPP</Product>
   </PropertyGroup>
 
   <ItemGroup>

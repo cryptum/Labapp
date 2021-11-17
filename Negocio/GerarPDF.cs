@@ -70,7 +70,7 @@ namespace Negocio
 
                 document.Add(new Paragraph("\n"));
 
-                float[] colWidths = new float[] { 4, 1 };
+                float[] colWidths = new float[] { 6, 4 };
                 Table tableSubTitulo = new Table(UnitValue.CreatePercentArray(colWidths)).UseAllAvailableWidth().SetBorder(Border.NO_BORDER);
                 tableSubTitulo.AddCell("Laudo de monitoramento nutricional do solo").AddStyle(subTituloCent).SetBorder(Border.NO_BORDER);
                 tableSubTitulo.AddCell("Amostra").AddStyle(subTituloCent).SetBorder(Border.NO_BORDER);
@@ -307,6 +307,20 @@ namespace Negocio
                 //tableRodape.AddCell("Necessidade  de calagem foi calculada usando a metodologia do livro:Recomendações para o uso de corretivos  e fertilizantes em minas gerais, Pág 52. E V% ideal de 60. Item 8.2.2 \"Método da saturação por base\".").AddStyle(rodape).SetBorder(Border.NO_BORDER);
                 //tableRodape.AddCell("A Agro Frutal Laboratórios de análies agrícolas LTDA, não se responsabiliza pela interpretação desta análise.").AddStyle(rodape).SetBorder(Border.NO_BORDER);
                 //document.Add(tableRodape);
+
+
+                Table tableLeganda = new Table(UnitValue.CreatePercentArray(1)).UseAllAvailableWidth().SetBorder(Border.NO_BORDER);
+                tableLeganda.AddCell("Legenda das Amostras").AddStyle(tituloCent).SetBorder(Border.NO_BORDER);
+                document.Add(tableLeganda);
+
+                colWidths = new float[] { 3, 3, 3, 3 };
+                Table tableNomeAmostra = new Table(UnitValue.CreatePercentArray(colWidths)).UseAllAvailableWidth().SetBorder(Border.NO_BORDER);
+                tableNomeAmostra.AddCell("1:" + Amostra[0].NomeAmostra).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                tableNomeAmostra.AddCell("2:" + Amostra[1].NomeAmostra).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                tableNomeAmostra.AddCell("3:" + Amostra[2].NomeAmostra).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                tableNomeAmostra.AddCell("4:" + Amostra[3].NomeAmostra).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+
+                document.Add(tableNomeAmostra);
 
                 document.Close();
                 pdfDocument.Close();
