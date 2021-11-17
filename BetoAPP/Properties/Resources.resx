@@ -130,9 +130,6 @@
   <data name="fullscreen-cinza-24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fullscreen-exit-line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pin-fill-Branco-36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\map-pin-2-fill2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="test-tube-roxo24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\test-tube-roxo24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,11 +157,8 @@
   <data name="request-fill-Branco-36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\git-pull-request-line1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search-line-36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search-line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="printer-cinza-24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\printer-cinza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pin-fill-Branco-36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\map-pin-2-fill2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user-fill-Branco-36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-fill1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,11 +184,14 @@
   <data name="microscope-fill-36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\microscope-fill (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="LAB1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LAB1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="printer-amarelo-24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\printer-Amarelo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="plant-fill-36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\plant-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="account-fill-36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\account1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="test-tube-Branco-36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\test-tube-fill (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,20 +202,26 @@
   <data name="fullscreen-vermelho-24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fullscreen-exit-line (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="sheld-fill-36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shield-user-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plant-fill-36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plant-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="subtract-vermelho-24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\subtract-line (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit-azul-24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit-2-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eclipse-0.6s-200px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Eclipse-0.6s-200px.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search-line-36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search-line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close-vermelho-24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close-line1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="account-fill-36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\account1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="printer-cinza-24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printer-cinza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="save-verde-24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save-3-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,8 +241,8 @@
   <data name="sun-fill-Dark-36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sun-fill Dark 36px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sheld-fill-36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shield-user-fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eclipse-0.6s-200px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Eclipse-0.6s-200px.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="grid-azul-24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\grid-azul-24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,7 +256,7 @@
   <data name="plant-fill-Branco-36px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plant-fill1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LAB1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LAB1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Preisser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Preisser.jfif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
