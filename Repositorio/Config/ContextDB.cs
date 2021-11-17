@@ -22,7 +22,6 @@ namespace Repositorio.Config
         public DbSet<AmostraEntidade> Amostras { get; set; }
         public DbSet<AnaliseEntidade> Analises { get; set; }
         public DbSet<CulturaEntidade> Culturas { get; set; }
-        public DbSet<LaudoEntidade> Laudos { get; set; }
         public DbSet<LocalEntidade> Locais { get; set; }
         public DbSet<ReferenciaEntidade> Referencias { get; set; }
         public DbSet<SolicitanteEntidade> Solicitantes { get; set; }
@@ -44,8 +43,6 @@ namespace Repositorio.Config
 
             modelBuilder.Entity<CulturaEntidade>().HasKey(u => u.IdCultura);
             modelBuilder.Entity<CulturaEntidade>().HasIndex(u => u.Nome).IsUnique();
-
-            modelBuilder.Entity<LaudoEntidade>().HasKey(u => u.IdLaudo);
 
             modelBuilder.Entity<LocalEntidade>().HasKey(u => u.IdLocal);
 
