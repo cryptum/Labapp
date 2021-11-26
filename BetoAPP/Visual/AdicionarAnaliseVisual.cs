@@ -17,6 +17,7 @@ namespace BetoAPP.Visual
             InitializeComponent();
             txtTitulo.Text = titulo;
             GlobalIdAnalise = idAnalise;
+            tabControl1.TabPages.Remove(tabFisica);
 
             CriarAnaliseOuAdicionarAmostra();
         }
@@ -339,11 +340,11 @@ namespace BetoAPP.Visual
             amostra.Completa = Zn == 0 && Cu == 0 && Fe == 0 && Mn == 0 ? false : true;
 
 
-            amostra.Argila = ArgilaInicial == 0 ? "N/S" : new MotorDeCalculo().ProcessarArgila(ArgilaInicial, ArgilaFinal).ToString();
-            amostra.Areia = AreiaInicial == 0 ? "N/S" : new MotorDeCalculo().ProcessarAreia(AreiaInicial, AreiaFinal).ToString();
-            amostra.Silte = SilteInicial == 0 ? "N/S" : new MotorDeCalculo().ProcessarSilte(SilteInicial, SilteFinal).ToString();
+            amostra.Argila = "N/S";
+            amostra.Areia = "N/S";
+            amostra.Silte = "N/S";
 
-            amostra.Fisica = ArgilaInicial == 0 && ArgilaFinal == 0 && AreiaInicial == 0 && AreiaFinal == 0 && SilteInicial == 0 && SilteFinal == 0 ? false : true;
+            amostra.Fisica = false;
 
 
             amostra.S = S == 0 ? "N/S" : new MotorDeCalculo().ProcessarEnxofre(S).ToString();

@@ -257,46 +257,46 @@ namespace Negocio
                 tableValores.AddCell(Amostra[2].MO).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
                 tableValores.AddCell(Amostra[3].MO).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
 
-                tableValores.AddCell("Argila").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell("NaOH 1,0 mol").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell("Argila").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell("%").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell(Amostra[0].Argila).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell(Amostra[1].Argila).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell(Amostra[2].Argila).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell(Amostra[3].Argila).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell("Argila").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell("NaOH 1,0 mol").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell("Argila").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell("%").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell(Amostra[0].Argila).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell(Amostra[1].Argila).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell(Amostra[2].Argila).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell(Amostra[3].Argila).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
 
-                tableValores.AddCell("Areia").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell("NaOH 1,0 mol").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell("Areia").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell("%").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell(Amostra[0].Areia).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell(Amostra[1].Areia).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell(Amostra[2].Areia).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell(Amostra[3].Areia).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell("Areia").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell("NaOH 1,0 mol").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell("Areia").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell("%").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell(Amostra[0].Areia).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell(Amostra[1].Areia).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell(Amostra[2].Areia).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell(Amostra[3].Areia).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
 
-                tableValores.AddCell("Silte").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell("NaOH 1,0 mol").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell("Silte").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell("%").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell(Amostra[0].Silte).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell(Amostra[1].Silte).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell(Amostra[2].Silte).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableValores.AddCell(Amostra[3].Silte).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell("Silte").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell("NaOH 1,0 mol").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell("Silte").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell("%").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell(Amostra[0].Silte).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell(Amostra[1].Silte).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell(Amostra[2].Silte).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableValores.AddCell(Amostra[3].Silte).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
 
                 document.Add(tableValores);
 
 
-                colWidths = new float[] { 6, 1, 1, 1, 1 };
-                Table tableTonHa = new Table(UnitValue.CreatePercentArray(colWidths)).UseAllAvailableWidth().SetBorder(Border.NO_BORDER);
+                //colWidths = new float[] { 6, 1, 1, 1, 1 };
+                //Table tableTonHa = new Table(UnitValue.CreatePercentArray(colWidths)).UseAllAvailableWidth().SetBorder(Border.NO_BORDER);
 
-                tableTonHa.AddCell("Sujestão de necessidade de Calagem (Ton/Ha)").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableTonHa.AddCell(Amostra[0].TonHa).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableTonHa.AddCell(Amostra[1].TonHa).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableTonHa.AddCell(Amostra[2].TonHa).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
-                tableTonHa.AddCell(Amostra[3].TonHa).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableTonHa.AddCell("Sujestão de necessidade de Calagem (Ton/Ha)").AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableTonHa.AddCell(Amostra[0].TonHa).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableTonHa.AddCell(Amostra[1].TonHa).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableTonHa.AddCell(Amostra[2].TonHa).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
+                //tableTonHa.AddCell(Amostra[3].TonHa).AddStyle(normalCent).SetBorder(Border.NO_BORDER);
 
-                document.Add(tableTonHa);
+                //document.Add(tableTonHa);
 
                 document.Add(new Paragraph("\n"));
 

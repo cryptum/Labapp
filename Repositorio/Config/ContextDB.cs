@@ -11,16 +11,16 @@ namespace Repositorio.Config
         //MySqlServerVersion serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
 
         //HEROKU MYSQL
-        const string connectionString = "server=us-cdbr-east-04.cleardb.com;user=bb99f016b6b5bf;password=19b53d70;database=heroku_90e938867b37517";
-        MySqlServerVersion serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
+        //const string connectionString = "server=us-cdbr-east-04.cleardb.com;user=bb99f016b6b5bf;password=19b53d70;database=heroku_90e938867b37517";
+        //MySqlServerVersion serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
 
         //HEROKU MYSQL ---===BETO===---
         //const string connectionString = "server=us-cdbr-east-04.cleardb.com;user=b6e9f8aa4e49dd;password=a4d7bcf8;database=heroku_85a77976580b632";
         //MySqlServerVersion serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
 
         //HEROKU MYSQL ---===PREISSER===---
-        //const string connectionString = "server=us-cdbr-east-04.cleardb.com;user=bb99f016b6b5bf;password=19b53d70;database=heroku_90e938867b37517";
-        //MySqlServerVersion serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
+        const string connectionString = "server=us-cdbr-east-04.cleardb.com;user=bb99f016b6b5bf;password=19b53d70;database=heroku_90e938867b37517";
+        MySqlServerVersion serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -433,9 +433,9 @@ namespace BetoAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sheld_fill_36px {
+        internal static System.Drawing.Bitmap shield_fill_Branco_36px {
             get {
-                object obj = ResourceManager.GetObject("sheld-fill-36px", resourceCulture);
+                object obj = ResourceManager.GetObject("shield-fill-Branco-36px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -443,9 +443,9 @@ namespace BetoAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap shield_fill_Branco_36px {
+        internal static System.Drawing.Bitmap shield_user_fill {
             get {
-                object obj = ResourceManager.GetObject("shield-fill-Branco-36px", resourceCulture);
+                object obj = ResourceManager.GetObject("shield-user-fill", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
