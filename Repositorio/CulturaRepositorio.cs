@@ -21,6 +21,7 @@ namespace Repositorio
                                     Código = x.IdCultura,
                                     Nome = x.Nome
                                 })
+                                .AsNoTracking()
                                 .ToList();
 
                 return query;
@@ -36,6 +37,7 @@ namespace Repositorio
                                 {
                                     Nome = x.Nome
                                 })
+                                .AsNoTracking()
                                 .ToList();
 
                 return query;
@@ -48,6 +50,7 @@ namespace Repositorio
             {
                 var query = db.Culturas
                                 .Where(w => w.IdCultura == id)
+                                .AsNoTracking()
                                 .FirstOrDefault();
 
                 return query;
@@ -65,6 +68,7 @@ namespace Repositorio
                                     Código = x.IdCultura,
                                     Nome = x.Nome
                                 })
+                                .AsNoTracking()
                                 .ToList();
 
                 return query;

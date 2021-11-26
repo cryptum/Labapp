@@ -23,6 +23,7 @@ namespace Repositorio
                                     Fazenda = x.Fazenda,
                                     Município = x.Municipio
                                 })
+                                .AsNoTracking()
                                 .ToList();
 
                 return query;
@@ -35,6 +36,7 @@ namespace Repositorio
             {
                 var query = db.Locais
                                 .Where(w => w.IdLocal == id)
+                                .AsNoTracking()
                                 .FirstOrDefault();
 
                 return query;
@@ -47,6 +49,7 @@ namespace Repositorio
             {
                 var query = db.Locais
                                 .Where(w => w.Solicitantes.IdSolicitante == id)
+                                .AsNoTracking()
                                 .ToList();
 
                 return query;
@@ -66,6 +69,7 @@ namespace Repositorio
                                     Fazenda = x.Fazenda,
                                     Município = x.Municipio
                                 })
+                                .AsNoTracking()
                                 .ToList();
 
                 return query;

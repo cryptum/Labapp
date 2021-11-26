@@ -71,10 +71,10 @@ namespace BetoAPP.Visual
 
         private void btn_Adiciona_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            //this.Visible = false;
             AdicionarLocalVisual View = new AdicionarLocalVisual("Adicionar Local", 0, "", "", idInicialSolicitante);
             View.ShowDialog();
-            this.Visible = true;
+            //this.Visible = true;
             RecarregarGrid();
         }
 
@@ -82,15 +82,18 @@ namespace BetoAPP.Visual
         {
             try
             {
-                int idSelecionada = Convert.ToInt32(dataGridLocal.CurrentRow.Cells[0].Value.ToString());
-                string FazendaSelecionada = dataGridLocal.CurrentRow.Cells[1].Value.ToString();
-                string municipioSelecionada = dataGridLocal.CurrentRow.Cells[2].Value.ToString();
-
-                if (MessageBox.Show($"Deseja editar: {FazendaSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dataGridLocal.CurrentRow != null)
                 {
-                    AdicionarLocalVisual View = new AdicionarLocalVisual("Editar Local", idSelecionada, FazendaSelecionada, municipioSelecionada, idInicialSolicitante);
-                    View.ShowDialog();
-                    RecarregarGrid();
+                    int idSelecionada = Convert.ToInt32(dataGridLocal.CurrentRow.Cells[0].Value.ToString());
+                    string FazendaSelecionada = dataGridLocal.CurrentRow.Cells[1].Value.ToString();
+                    string municipioSelecionada = dataGridLocal.CurrentRow.Cells[2].Value.ToString();
+
+                    if (MessageBox.Show($"Deseja editar: {FazendaSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        AdicionarLocalVisual View = new AdicionarLocalVisual("Editar Local", idSelecionada, FazendaSelecionada, municipioSelecionada, idInicialSolicitante);
+                        View.ShowDialog();
+                        RecarregarGrid();
+                    }
                 }
             }
             catch (Exception ex)
@@ -103,21 +106,24 @@ namespace BetoAPP.Visual
         {
             try
             {
-                int idSelecionada = Convert.ToInt32(dataGridLocal.CurrentRow.Cells[0].Value.ToString());
-                string FazendaSelecionada = dataGridLocal.CurrentRow.Cells[1].Value.ToString();
-                string municipioSelecionada = dataGridLocal.CurrentRow.Cells[2].Value.ToString();
-
-                if (MessageBox.Show($"Deseja Excluir: {FazendaSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dataGridLocal.CurrentRow != null)
                 {
-                    int result = new LocalNegocio().ExcluirLogicamente(idSelecionada, true);
-                    if (result == 0)
+                    int idSelecionada = Convert.ToInt32(dataGridLocal.CurrentRow.Cells[0].Value.ToString());
+                    string FazendaSelecionada = dataGridLocal.CurrentRow.Cells[1].Value.ToString();
+                    string municipioSelecionada = dataGridLocal.CurrentRow.Cells[2].Value.ToString();
+
+                    if (MessageBox.Show($"Deseja Excluir: {FazendaSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        RecarregarGrid();
-                    }
-                    else
-                    {
-                        RecarregarGrid();
+                        int result = new LocalNegocio().ExcluirLogicamente(idSelecionada, true);
+                        if (result == 0)
+                        {
+                            MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            RecarregarGrid();
+                        }
+                        else
+                        {
+                            RecarregarGrid();
+                        }
                     }
                 }
             }
@@ -144,11 +150,6 @@ namespace BetoAPP.Visual
                 Buscar(txt_Local.Text);
                 e.Handled = e.SuppressKeyPress = true;
             }
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
     }
 }

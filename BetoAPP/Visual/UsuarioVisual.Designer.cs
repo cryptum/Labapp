@@ -64,7 +64,7 @@ namespace BetoAPP.Visual
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(523, 115);
+            this.groupBox1.Size = new System.Drawing.Size(1030, 115);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
@@ -72,7 +72,7 @@ namespace BetoAPP.Visual
             // 
             this.btn_Pesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Pesquisa.Image = global::BetoAPP.Properties.Resources.search_line_24px;
-            this.btn_Pesquisa.Location = new System.Drawing.Point(464, 48);
+            this.btn_Pesquisa.Location = new System.Drawing.Point(971, 48);
             this.btn_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btn_Pesquisa.Name = "btn_Pesquisa";
             this.btn_Pesquisa.Size = new System.Drawing.Size(51, 36);
@@ -99,7 +99,7 @@ namespace BetoAPP.Visual
             this.txt_Pesquisa.Location = new System.Drawing.Point(117, 48);
             this.txt_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_Pesquisa.Name = "txt_Pesquisa";
-            this.txt_Pesquisa.Size = new System.Drawing.Size(339, 36);
+            this.txt_Pesquisa.Size = new System.Drawing.Size(846, 36);
             this.txt_Pesquisa.TabIndex = 4;
             this.txt_Pesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Pesquisa_KeyDown);
             // 
@@ -140,7 +140,7 @@ namespace BetoAPP.Visual
             this.dataGridUsuario.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dataGridUsuario.RowTemplate.Height = 25;
             this.dataGridUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridUsuario.Size = new System.Drawing.Size(523, 427);
+            this.dataGridUsuario.Size = new System.Drawing.Size(1030, 526);
             this.dataGridUsuario.TabIndex = 18;
             // 
             // menuStrip1
@@ -153,7 +153,7 @@ namespace BetoAPP.Visual
             this.btn_Recarrega});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(549, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(1056, 32);
             this.menuStrip1.TabIndex = 19;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -203,7 +203,7 @@ namespace BetoAPP.Visual
             this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.eclipse_0_6s_200px;
             this.pcbCarregar.Location = new System.Drawing.Point(0, 0);
             this.pcbCarregar.Name = "pcbCarregar";
-            this.pcbCarregar.Size = new System.Drawing.Size(549, 595);
+            this.pcbCarregar.Size = new System.Drawing.Size(1056, 694);
             this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pcbCarregar.TabIndex = 30;
             this.pcbCarregar.TabStop = false;
@@ -213,7 +213,7 @@ namespace BetoAPP.Visual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 595);
+            this.ClientSize = new System.Drawing.Size(1056, 694);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridUsuario);
             this.Controls.Add(this.menuStrip1);

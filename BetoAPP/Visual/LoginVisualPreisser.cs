@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace BetoAPP
 {
-    public partial class LoginVisual : Form
+    public partial class LoginVisualPreisser : Form
     {
-        public LoginVisual()
+        public LoginVisualPreisser()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;

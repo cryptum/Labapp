@@ -197,7 +197,7 @@ namespace BetoAPP.Visual
 
                         for (int i = 0; i < 4; i++)
                         {
-                            AmostraEntidade amostra;
+                            AmostraEntidade amostra = new();
 
                             amostra = PreencherAmostra(
                                     Convert.ToDouble(dataGridBasica.Rows[i].Cells[2].Value),
@@ -299,22 +299,23 @@ namespace BetoAPP.Visual
             )
         {
             AmostraEntidade amostra = new AmostraEntidade();
-            amostra.pH = new ProcessamentoConcentracao().ProcessarPH(pH).ToString();
-            amostra.P = new ProcessamentoConcentracao().ProcessarFosforo(P).ToString();
+            amostra.Basica = true;
+            amostra.pH = new MotorDeCalculo().ProcessarPH(pH).ToString();
+            amostra.P = new MotorDeCalculo().ProcessarFosforo(P).ToString();
 
-            double k = new ProcessamentoConcentracao().ProcessarPotassio(K);
+            double k = new MotorDeCalculo().ProcessarPotassio(K);
             amostra.K = k.ToString();
 
-            double ca = new ProcessamentoConcentracao().ProcessarCalcio(Ca);
+            double ca = new MotorDeCalculo().ProcessarCalcio(Ca);
             amostra.Ca = ca.ToString();
 
-            double mg = new ProcessamentoConcentracao().ProcessarMagnesio(Mg);
+            double mg = new MotorDeCalculo().ProcessarMagnesio(Mg);
             amostra.Mg = mg.ToString();
 
-            double al = new ProcessamentoConcentracao().ProcessarAluminio(Al);
+            double al = new MotorDeCalculo().ProcessarAluminio(Al);
             amostra.Al = al.ToString();
 
-            double alh = new ProcessamentoConcentracao().ProcessarAcidoPotencial(AlH);
+            double alh = new MotorDeCalculo().ProcessarAcidoPotencial(AlH);
             amostra.AlH = alh.ToString();
 
             double sb = Math.Round(k + Ca + mg, 2);
@@ -326,19 +327,32 @@ namespace BetoAPP.Visual
             double T = Math.Round(alh + sb, 2);
             amostra.T = T.ToString();
 
-
             amostra.V = Math.Round(((100 * sb) / T), 2).ToString();
             amostra.m = Math.Round(((100 * al) / ti), 2).ToString();
-            amostra.Zn = new ProcessamentoConcentracao().ProcessarZinco(Zn).ToString();
-            amostra.Cu = new ProcessamentoConcentracao().ProcessarCobre(Cu).ToString();
-            amostra.Fe = new ProcessamentoConcentracao().ProcessarFerro(Fe).ToString();
-            amostra.Mn = new ProcessamentoConcentracao().ProcessarManganes(Mn).ToString();
-            amostra.B = new ProcessamentoConcentracao().ProcessarBoro(B).ToString();
-            amostra.S = new ProcessamentoConcentracao().ProcessarEnxofre(S).ToString();
-            amostra.MO = new ProcessamentoConcentracao().ProcessarMateriaOrganica(MO).ToString();
-            amostra.Argila = new ProcessamentoConcentracao().ProcessarArgila(ArgilaInicial, ArgilaFinal).ToString();
-            amostra.Areia = new ProcessamentoConcentracao().ProcessarAreia(AreiaInicial, AreiaFinal).ToString();
-            amostra.Silte = new ProcessamentoConcentracao().ProcessarSilte(SilteInicial, SilteFinal).ToString();
+
+
+            amostra.Zn = Zn == 0 ? "N/S" : new MotorDeCalculo().ProcessarZinco(Zn).ToString();
+            amostra.Cu = Cu == 0 ? "N/S" : new MotorDeCalculo().ProcessarCobre(Cu).ToString();
+            amostra.Fe = Cu == 0 ? "N/S" : new MotorDeCalculo().ProcessarFerro(Fe).ToString();
+            amostra.Mn = Mn == 0 ? "N/S" : new MotorDeCalculo().ProcessarManganes(Mn).ToString();
+
+            amostra.Completa = Zn == 0 && Cu == 0 && Fe == 0 && Mn == 0 ? false : true;
+
+
+            amostra.Argila = ArgilaInicial == 0 ? "N/S" : new MotorDeCalculo().ProcessarArgila(ArgilaInicial, ArgilaFinal).ToString();
+            amostra.Areia = AreiaInicial == 0 ? "N/S" : new MotorDeCalculo().ProcessarAreia(AreiaInicial, AreiaFinal).ToString();
+            amostra.Silte = SilteInicial == 0 ? "N/S" : new MotorDeCalculo().ProcessarSilte(SilteInicial, SilteFinal).ToString();
+
+            amostra.Fisica = ArgilaInicial == 0 && ArgilaFinal == 0 && AreiaInicial == 0 && AreiaFinal == 0 && SilteInicial == 0 && SilteFinal == 0 ? false : true;
+
+
+            amostra.S = S == 0 ? "N/S" : new MotorDeCalculo().ProcessarEnxofre(S).ToString();
+            amostra.B = B == 0 ? "N/S" : new MotorDeCalculo().ProcessarBoro(B).ToString();
+            amostra.MO = MO == 0 ? "N/S" : new MotorDeCalculo().ProcessarMateriaOrganica(MO).ToString();
+
+            amostra.Opcional = S == 0 && B == 0 && MO == 0 ? false : true;
+
+
             amostra.TonHa = Math.Round(((0.6 * T - sb) / 10), 2).ToString();
 
             return amostra;
@@ -374,6 +388,36 @@ namespace BetoAPP.Visual
             dataGridCompleta.Rows[3].Cells[1].Value = cbx_Nome_Amostra_4.Text;
             dataGridFisica.Rows[3].Cells[1].Value = cbx_Nome_Amostra_4.Text;
             dataGridOpcional.Rows[3].Cells[1].Value = cbx_Nome_Amostra_4.Text;
+        }
+
+        private void btn_Salvar_MouseHover(object sender, EventArgs e)
+        {
+            txtNomeAnalise.Focus();
+        }
+
+        private void btn_Cancelar_MouseHover(object sender, EventArgs e)
+        {
+            txtNomeAnalise.Focus();
+        }
+
+        private void btn_Salvar_MouseEnter(object sender, EventArgs e)
+        {
+            txtNomeAnalise.Focus();
+        }
+
+        private void btn_Cancelar_MouseEnter(object sender, EventArgs e)
+        {
+            txtNomeAnalise.Focus();
+        }
+
+        private void menuStrip1_MouseEnter(object sender, EventArgs e)
+        {
+            txtNomeAnalise.Focus();
+        }
+
+        private void menuStrip1_MouseHover(object sender, EventArgs e)
+        {
+            txtNomeAnalise.Focus();
         }
     }
 }

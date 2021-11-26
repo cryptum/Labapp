@@ -103,6 +103,16 @@ namespace BetoAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bug_2_line {
+            get {
+                object obj = ResourceManager.GetObject("bug-2-line", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_cinza_24px {
             get {
                 object obj = ResourceManager.GetObject("close-cinza-24px", resourceCulture);
@@ -266,6 +276,16 @@ namespace BetoAPP.Properties {
         internal static System.Drawing.Bitmap pin_fill_Branco_36px {
             get {
                 object obj = ResourceManager.GetObject("pin-fill-Branco-36px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plant_fill {
+            get {
+                object obj = ResourceManager.GetObject("plant-fill", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

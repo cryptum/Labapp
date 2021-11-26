@@ -1,7 +1,7 @@
 ﻿
 namespace BetoAPP
 {
-    partial class LoginVisual
+    partial class LoginVisualBeto
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@ namespace BetoAPP
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginVisual));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginVisualBeto));
             this.btn_Acessar = new System.Windows.Forms.Button();
             this.txt_Usuario = new System.Windows.Forms.TextBox();
             this.txt_Senha = new System.Windows.Forms.TextBox();

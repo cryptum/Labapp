@@ -17,9 +17,7 @@ namespace Negocio
     public class GerarPDF
     {
         public GerarPDF()
-        {
-
-        }
+        {}
 
         public string Gerar(AnaliseEntidade Analise, List<AmostraEntidade> Amostra)
         {

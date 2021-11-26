@@ -25,6 +25,7 @@ namespace Repositorio
                                     Referência = x.Referencia,
                                     Cultura = x.Cultura
                                 })
+                                .AsNoTracking()
                                 .OrderByDescending(o => o.Código)
                                 .ToList();
 
@@ -48,6 +49,7 @@ namespace Repositorio
                                     Cultura = x.Cultura,
                                     Solicitação = x.TipoSolicitacao
                                 })
+                                .AsNoTracking()
                                 .OrderByDescending(o => o.Código)
                                 .ToList();
 
@@ -84,6 +86,7 @@ namespace Repositorio
                                     Cultura = x.Cultura,
                                     Solicitação = x.TipoSolicitacao
                                 })
+                                .AsNoTracking()
                                 .ToList();
 
                 return query;
@@ -105,6 +108,7 @@ namespace Repositorio
                                     Cultura = x.Cultura,
                                     Solicitação = x.TipoSolicitacao
                                 })
+                                .AsNoTracking()
                                 .ToList();
 
                 return query;

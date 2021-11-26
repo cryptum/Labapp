@@ -89,14 +89,17 @@ namespace BetoAPP.Visual
         {
             try
             {
-                int idSelecionada = Convert.ToInt32(dataGridSolicitante.CurrentRow.Cells[0].Value.ToString());
-                string nameSelecionada = dataGridSolicitante.CurrentRow.Cells[1].Value.ToString();
-
-                if (MessageBox.Show($"Deseja editar: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dataGridSolicitante.CurrentRow != null)
                 {
-                    AdicionarSolicitanteVisual View = new AdicionarSolicitanteVisual("Editar Cliente", idSelecionada, nameSelecionada);
-                    View.ShowDialog();
-                    RecarregarGrid();
+                    int idSelecionada = Convert.ToInt32(dataGridSolicitante.CurrentRow.Cells[0].Value.ToString());
+                    string nameSelecionada = dataGridSolicitante.CurrentRow.Cells[1].Value.ToString();
+
+                    if (MessageBox.Show($"Deseja editar: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        AdicionarSolicitanteVisual View = new AdicionarSolicitanteVisual("Editar Cliente", idSelecionada, nameSelecionada);
+                        View.ShowDialog();
+                        RecarregarGrid();
+                    }
                 }
             }
             catch (Exception ex)
@@ -109,20 +112,23 @@ namespace BetoAPP.Visual
         {
             try
             {
-                int idSelecionada = Convert.ToInt32(dataGridSolicitante.CurrentRow.Cells[0].Value.ToString());
-                string nameSelecionada = dataGridSolicitante.CurrentRow.Cells[1].Value.ToString();
-
-                if (MessageBox.Show($"Deseja Excluir: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dataGridSolicitante.CurrentRow != null)
                 {
-                    int result = new SolicitanteNegocio().ExcluirLogicamente(idSelecionada, true);
-                    if (result == 0)
+                    int idSelecionada = Convert.ToInt32(dataGridSolicitante.CurrentRow.Cells[0].Value.ToString());
+                    string nameSelecionada = dataGridSolicitante.CurrentRow.Cells[1].Value.ToString();
+
+                    if (MessageBox.Show($"Deseja Excluir: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        RecarregarGrid();
-                    }
-                    else
-                    {
-                        RecarregarGrid();
+                        int result = new SolicitanteNegocio().ExcluirLogicamente(idSelecionada, true);
+                        if (result == 0)
+                        {
+                            MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            RecarregarGrid();
+                        }
+                        else
+                        {
+                            RecarregarGrid();
+                        }
                     }
                 }
             }
@@ -153,19 +159,33 @@ namespace BetoAPP.Visual
 
         private void dataGridSolicitante_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex >= 0)
+            if (e.RowIndex >= 0)
             {
-                var nomeCabecalho = dataGridSolicitante.Columns[e.ColumnIndex].Name;
-                string NumeroFazenda = dataGridSolicitante.CurrentRow.Cells[3].Value.ToString();
+                if (e.ColumnIndex >= 0)
+                {
+                    var nomeCabecalho = dataGridSolicitante.Columns[e.ColumnIndex].Name;
+                    int IdSolicitante = Convert.ToInt32(dataGridSolicitante.CurrentRow.Cells[0].Value);
+
+
+                    if (nomeCabecalho == "Fazendas")
+                    {
+                        LocalVisual View = new LocalVisual(IdSolicitante);
+                        View.ShowDialog();
+                        RecarregarGrid();
+                    }
+                }
+            }
+        }
+
+        private void btn_Fazendas_Click(object sender, EventArgs e)
+        {
+            if (dataGridSolicitante.CurrentRow != null)
+            {
                 int IdSolicitante = Convert.ToInt32(dataGridSolicitante.CurrentRow.Cells[0].Value);
 
-
-                if (nomeCabecalho == "Fazendas")
-                {
-                    LocalVisual View = new LocalVisual(IdSolicitante);
-                    View.ShowDialog();
-                    RecarregarGrid();
-                }
+                LocalVisual View = new LocalVisual(IdSolicitante);
+                View.ShowDialog();
+                RecarregarGrid();
             }
         }
     }

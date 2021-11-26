@@ -103,21 +103,22 @@ namespace BetoAPP.Visual
         {
             try
             {
-                Thread threadInput = new Thread(x =>
+                if (dataGridAnalise.CurrentRow != null)
                 {
-                    SetLoading(true);
+                    Thread threadInput = new Thread(x =>
+                    {
+                        SetLoading(true);
 
-                    int idSelecionada = Convert.ToInt32(dataGridAnalise.CurrentRow.Cells[0].Value.ToString());
+                        int idSelecionada = Convert.ToInt32(dataGridAnalise.CurrentRow.Cells[0].Value.ToString());
 
-                    var analise = new AnaliseNegocio().ObterUmPorCodigo(idSelecionada);
-                    var amostra = new AmostraNegocio().ObterAmostrarPorIdAnalise(idSelecionada);
-                    new GerarPDF().Gerar(analise, amostra);
+                        var analise = new AnaliseNegocio().ObterUmPorCodigo(idSelecionada);
+                        var amostra = new AmostraNegocio().ObterAmostrarPorIdAnalise(idSelecionada);
+                        new GerarPDF().Gerar(analise, amostra);
 
-                    SetLoading(false);
+                        SetLoading(false);
+                    });
+                    threadInput.Start();
                 }
-                    );
-                threadInput.Start();
-
             }
             catch (Exception)
             {

@@ -78,14 +78,17 @@ namespace BetoAPP.Visual
         {
             try
             {
-                int idSelecionada = Convert.ToInt32(dataGridReferencia.CurrentRow.Cells[0].Value.ToString());
-                string nameSelecionada = dataGridReferencia.CurrentRow.Cells[1].Value.ToString();
-
-                if (MessageBox.Show($"Deseja editar: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dataGridReferencia.CurrentRow != null)
                 {
-                    AdicionarReferenciaVisual View = new AdicionarReferenciaVisual("Editar Referência", idSelecionada, nameSelecionada);
-                    View.ShowDialog();
-                    RecarregarGrid();
+                    int idSelecionada = Convert.ToInt32(dataGridReferencia.CurrentRow.Cells[0].Value.ToString());
+                    string nameSelecionada = dataGridReferencia.CurrentRow.Cells[1].Value.ToString();
+
+                    if (MessageBox.Show($"Deseja editar: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        AdicionarReferenciaVisual View = new AdicionarReferenciaVisual("Editar Referência", idSelecionada, nameSelecionada);
+                        View.ShowDialog();
+                        RecarregarGrid();
+                    }
                 }
             }
             catch (Exception ex)
@@ -98,20 +101,23 @@ namespace BetoAPP.Visual
         {
             try
             {
-                int idSelecionada = Convert.ToInt32(dataGridReferencia.CurrentRow.Cells[0].Value.ToString());
-                string nameSelecionada = dataGridReferencia.CurrentRow.Cells[1].Value.ToString();
-
-                if (MessageBox.Show($"Deseja Excluir: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dataGridReferencia.CurrentRow != null)
                 {
-                    int result = new ReferenciaNegocio().Excluir(idSelecionada);
-                    if (result == 0)
+                    int idSelecionada = Convert.ToInt32(dataGridReferencia.CurrentRow.Cells[0].Value.ToString());
+                    string nameSelecionada = dataGridReferencia.CurrentRow.Cells[1].Value.ToString();
+
+                    if (MessageBox.Show($"Deseja Excluir: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        RecarregarGrid();
-                    }
-                    else
-                    {
-                        RecarregarGrid();
+                        int result = new ReferenciaNegocio().Excluir(idSelecionada);
+                        if (result == 0)
+                        {
+                            MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            RecarregarGrid();
+                        }
+                        else
+                        {
+                            RecarregarGrid();
+                        }
                     }
                 }
             }

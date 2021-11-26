@@ -79,7 +79,13 @@ namespace Entidade
         [MaxLength(10)]
         public string TonHa { get; set; }
 
-        [MaxLength(10)]
+        public bool Basica { get; set; }
+
+        public bool Completa { get; set; }
+
+        public bool Fisica { get; set; }
+
+        public bool Opcional { get; set; }
 
         public AnaliseEntidade Analises { get; set; }
     }
