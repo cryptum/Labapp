@@ -79,14 +79,17 @@ namespace BetoAPP.Visual
         {
             try
             {
-                int idSelecionada = Convert.ToInt32(dataGridCultura.CurrentRow.Cells[0].Value.ToString());
-                string nameSelecionada = dataGridCultura.CurrentRow.Cells[1].Value.ToString();
-
-                if (MessageBox.Show($"Deseja editar: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dataGridCultura.CurrentRow != null)
                 {
-                    AdicionarCulturaVisual View = new AdicionarCulturaVisual("Editar Cultura", idSelecionada, nameSelecionada);
-                    View.ShowDialog();
-                    RecarregarGrid();
+                    int idSelecionada = Convert.ToInt32(dataGridCultura.CurrentRow.Cells[0].Value.ToString());
+                    string nameSelecionada = dataGridCultura.CurrentRow.Cells[1].Value.ToString();
+
+                    if (MessageBox.Show($"Deseja editar: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        AdicionarCulturaVisual View = new AdicionarCulturaVisual("Editar Cultura", idSelecionada, nameSelecionada);
+                        View.ShowDialog();
+                        RecarregarGrid();
+                    }
                 }
             }
             catch (Exception ex)
@@ -99,20 +102,23 @@ namespace BetoAPP.Visual
         {
             try
             {
-                int idSelecionada = Convert.ToInt32(dataGridCultura.CurrentRow.Cells[0].Value.ToString());
-                string nameSelecionada = dataGridCultura.CurrentRow.Cells[1].Value.ToString();
-
-                if (MessageBox.Show($"Deseja Excluir: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dataGridCultura.CurrentRow != null)
                 {
-                    int result = new CulturaNegocio().Excluir(idSelecionada);
-                    if (result == 0)
+                    int idSelecionada = Convert.ToInt32(dataGridCultura.CurrentRow.Cells[0].Value.ToString());
+                    string nameSelecionada = dataGridCultura.CurrentRow.Cells[1].Value.ToString();
+
+                    if (MessageBox.Show($"Deseja Excluir: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        RecarregarGrid();
-                    }
-                    else
-                    {
-                        RecarregarGrid();
+                        int result = new CulturaNegocio().Excluir(idSelecionada);
+                        if (result == 0)
+                        {
+                            MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            RecarregarGrid();
+                        }
+                        else
+                        {
+                            RecarregarGrid();
+                        }
                     }
                 }
             }

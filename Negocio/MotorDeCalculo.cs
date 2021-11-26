@@ -2,7 +2,7 @@
 
 namespace Negocio
 {
-    public class ProcessamentoConcentracao
+    public class MotorDeCalculo
     {
 
         public double ProcessarPH(double pH)

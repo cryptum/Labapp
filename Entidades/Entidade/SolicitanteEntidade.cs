@@ -9,10 +9,13 @@ namespace Entidade
         public int IdSolicitante { get; set; }
 
         [Required]
+        [MaxLength(150)]
         public string Nome { get; set; }
 
+        [MaxLength(30)]
         public string Cpf { get; set; }
 
+        [MaxLength(100)]
         public string Observacao { get; set; }
 
         public bool Excluido { get; set; }

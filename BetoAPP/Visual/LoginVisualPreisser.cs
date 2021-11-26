@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace BetoAPP
 {
-    public partial class LoginVisual : Form
+    public partial class LoginVisualPreisser : Form
     {
-        public LoginVisual()
+        public LoginVisualPreisser()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -16,10 +16,6 @@ namespace BetoAPP
             pnl_Usuario.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, pnl_Usuario.Width, pnl_Usuario.Height, 5, 5));
             pnl_Senha.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, pnl_Senha.Width, pnl_Senha.Height, 5, 5));
             txt_Usuario.Focus();
-
-
-            txt_Usuario.Text = "beto";
-            txt_Senha.Text = "123";
         }
 
         private void btn_Sair_Click(object sender, EventArgs e)

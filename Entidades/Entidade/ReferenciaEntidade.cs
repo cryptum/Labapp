@@ -6,6 +6,8 @@ namespace Entidade
     {
         [Key]
         public int IdReferencia { get; set; }
+
+        [MaxLength(100)]
         public string Nome { get; set; }
     }
 }

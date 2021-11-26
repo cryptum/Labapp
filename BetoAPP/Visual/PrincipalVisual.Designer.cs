@@ -92,8 +92,8 @@ namespace BetoAPP.Visual
             this.amostratoolStripMenuItem.Image = global::BetoAPP.Properties.Resources.test_tube_azul_36px;
             this.amostratoolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.amostratoolStripMenuItem.Name = "amostratoolStripMenuItem";
-            this.amostratoolStripMenuItem.Size = new System.Drawing.Size(128, 40);
-            this.amostratoolStripMenuItem.Text = "Análise";
+            this.amostratoolStripMenuItem.Size = new System.Drawing.Size(139, 40);
+            this.amostratoolStripMenuItem.Text = "Amostra";
             this.amostratoolStripMenuItem.Click += new System.EventHandler(this.amostratoolStripMenuItem_Click);
             // 
             // culturatoolStripMenuItem

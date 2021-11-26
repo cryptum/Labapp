@@ -7,7 +7,9 @@ namespace Entidade
     {
         [Key]
         public int IdCultura { get; set; }
+
         [Required]
+        [MaxLength(100)]
         public string Nome { get; set; }
     }
 }

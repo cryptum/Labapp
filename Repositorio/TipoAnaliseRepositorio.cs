@@ -22,6 +22,7 @@ namespace Repositorio
                                     Código = x.IdTipoAnalise,
                                     Nome = x.Nome
                                 })
+                                .AsNoTracking()
                                 .ToList();
 
                 return query;
@@ -32,7 +33,9 @@ namespace Repositorio
         {
             using (var db = new ContextDB())
             {
-                var query = db.TipoAnalises.ToList();
+                var query = db.TipoAnalises
+                                .AsNoTracking()
+                                .ToList();
 
                 return query;
             }
@@ -44,6 +47,7 @@ namespace Repositorio
             {
                 var query = db.TipoAnalises
                                 .Where(w => w.IdTipoAnalise == id)
+                                .AsNoTracking()
                                 .FirstOrDefault();
 
                 return query;
@@ -61,6 +65,7 @@ namespace Repositorio
                                     Código = x.IdTipoAnalise,
                                     Nome = x.Nome
                                 })
+                                .AsNoTracking()
                                 .ToList();
 
                 return query;

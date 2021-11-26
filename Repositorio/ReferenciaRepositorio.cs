@@ -21,6 +21,7 @@ namespace Repositorio
                                     Código = x.IdReferencia,
                                     Nome = x.Nome
                                 })
+                                .AsNoTracking()
                                 .ToList();
 
                 return query;
@@ -36,6 +37,7 @@ namespace Repositorio
                                 {
                                     Nome = x.Nome
                                 })
+                                .AsNoTracking()
                                 .ToList();
 
                 return query;
@@ -48,6 +50,7 @@ namespace Repositorio
             {
                 var query = db.Referencias
                                 .Where(w => w.IdReferencia == id)
+                                .AsNoTracking()
                                 .FirstOrDefault();
 
                 return query;
@@ -65,6 +68,7 @@ namespace Repositorio
                                     Código = x.IdReferencia,
                                     Nome = x.Nome
                                 })
+                                .AsNoTracking()
                                 .ToList();
 
                 return query;

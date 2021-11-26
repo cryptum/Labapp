@@ -25,6 +25,7 @@ namespace Repositorio
                                     Observação = x.Observacao,
                                     Fazendas = x.Locais.Count()
                                 })
+                                .AsNoTracking()
                                 .ToList();
 
                 return query;
@@ -37,6 +38,7 @@ namespace Repositorio
             {
                 var query = db.Solicitantes
                                 .Where(w => w.IdSolicitante == id)
+                                .AsNoTracking()
                                 .First();
 
                 return query;
@@ -57,6 +59,7 @@ namespace Repositorio
                                     Observação = x.Observacao,
                                     Fazendas = x.Locais.Count()
                                 })
+                                .AsNoTracking()
                                 .ToList();
 
                 return query;

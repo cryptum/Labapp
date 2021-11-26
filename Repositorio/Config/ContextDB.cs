@@ -10,9 +10,14 @@ namespace Repositorio.Config
         const string connectionString = "server=localhost;user=root;password=root;database=betoapp";
         MySqlServerVersion serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
 
-        //HEROKU MYSQL
+        //HEROKU MYSQL ---===BETO===---
         //const string connectionString = "server=us-cdbr-east-04.cleardb.com;user=b6e9f8aa4e49dd;password=a4d7bcf8;database=heroku_85a77976580b632";
         //MySqlServerVersion serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
+
+        //HEROKU MYSQL ---===PREISSER===---
+        //const string connectionString = "server=us-cdbr-east-04.cleardb.com;user=bb99f016b6b5bf;password=19b53d70;database=heroku_90e938867b37517";
+        //MySqlServerVersion serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -21,7 +26,6 @@ namespace Repositorio.Config
         public DbSet<AmostraEntidade> Amostras { get; set; }
         public DbSet<AnaliseEntidade> Analises { get; set; }
         public DbSet<CulturaEntidade> Culturas { get; set; }
-        public DbSet<LaudoEntidade> Laudos { get; set; }
         public DbSet<LocalEntidade> Locais { get; set; }
         public DbSet<ReferenciaEntidade> Referencias { get; set; }
         public DbSet<SolicitanteEntidade> Solicitantes { get; set; }
@@ -43,8 +47,6 @@ namespace Repositorio.Config
 
             modelBuilder.Entity<CulturaEntidade>().HasKey(u => u.IdCultura);
             modelBuilder.Entity<CulturaEntidade>().HasIndex(u => u.Nome).IsUnique();
-
-            modelBuilder.Entity<LaudoEntidade>().HasKey(u => u.IdLaudo);
 
             modelBuilder.Entity<LocalEntidade>().HasKey(u => u.IdLocal);
 

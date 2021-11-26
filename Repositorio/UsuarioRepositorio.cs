@@ -23,6 +23,7 @@ namespace Repositorio
                                     Bloqueado = x.Bloqueado,
                                     Administrador = x.Administrador
                                 })
+                                .AsNoTracking()
                                 .FirstOrDefault();
                 return query;
             }
@@ -42,6 +43,7 @@ namespace Repositorio
                                     Bloqueado = x.Bloqueado,
                                     Administrador = x.Administrador
                                 })
+                                .AsNoTracking()
                                 .ToList();
 
                 return query;
@@ -54,6 +56,7 @@ namespace Repositorio
             {
                 var query = db.Usuarios
                                 .Where(w => w.IdUsuario == id)
+                                .AsNoTracking()
                                 .FirstOrDefault();
 
                 return query;
@@ -74,6 +77,7 @@ namespace Repositorio
                                     Bloqueado = x.Bloqueado,
                                     Administrador = x.Administrador
                                 })
+                                .AsNoTracking()
                                 .ToList();
 
                 return query;

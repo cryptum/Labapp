@@ -127,21 +127,24 @@ namespace BetoAPP.Visual
         {
             try
             {
-                int idSelecionada = Convert.ToInt32(dataGridAnalise.CurrentRow.Cells[0].Value.ToString());
-                string nameSelecionada = dataGridAnalise.CurrentRow.Cells[1].Value.ToString();
-
-                if (MessageBox.Show($"Deseja Excluir: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dataGridAnalise.CurrentRow != null)
                 {
-                    new AmostraNegocio().Excluir(idSelecionada);
-                    int result = new AnaliseNegocio().Excluir(idSelecionada);
-                    if (result == 0)
+                    int idSelecionada = Convert.ToInt32(dataGridAnalise.CurrentRow.Cells[0].Value.ToString());
+                    string nameSelecionada = dataGridAnalise.CurrentRow.Cells[1].Value.ToString();
+
+                    if (MessageBox.Show($"Deseja Excluir: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        RecarregarGrid();
-                    }
-                    else
-                    {
-                        RecarregarGrid();
+                        new AmostraNegocio().Excluir(idSelecionada);
+                        int result = new AnaliseNegocio().Excluir(idSelecionada);
+                        if (result == 0)
+                        {
+                            MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            RecarregarGrid();
+                        }
+                        else
+                        {
+                            RecarregarGrid();
+                        }
                     }
                 }
             }
@@ -197,21 +200,22 @@ namespace BetoAPP.Visual
         {
             try
             {
-                Thread threadInput = new Thread(x =>
+                if (dataGridAnalise.CurrentRow != null)
                 {
-                    SetLoading(true);
+                    Thread threadInput = new Thread(x =>
+                    {
+                        SetLoading(true);
 
-                    int idSelecionada = Convert.ToInt32(dataGridAnalise.CurrentRow.Cells[0].Value.ToString());
+                        int idSelecionada = Convert.ToInt32(dataGridAnalise.CurrentRow.Cells[0].Value.ToString());
 
-                    var analise = new AnaliseNegocio().ObterUmPorCodigo(idSelecionada);
-                    var amostra = new AmostraNegocio().ObterAmostrarPorIdAnalise(idSelecionada);
-                    new GerarPDF().Gerar(analise, amostra);
+                        var analise = new AnaliseNegocio().ObterUmPorCodigo(idSelecionada);
+                        var amostra = new AmostraNegocio().ObterAmostrarPorIdAnalise(idSelecionada);
+                        new GerarPDF().Gerar(analise, amostra);
 
-                    SetLoading(false);
+                        SetLoading(false);
+                    });
+                    threadInput.Start();
                 }
-                    );
-                threadInput.Start();
-
             }
             catch (Exception)
             {

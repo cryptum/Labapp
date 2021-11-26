@@ -77,14 +77,17 @@ namespace BetoAPP.Visual
         {
             try
             {
-                int idSelecionada = Convert.ToInt32(dataGridTipoAnalise.CurrentRow.Cells[0].Value.ToString());
-                string nameSelecionada = dataGridTipoAnalise.CurrentRow.Cells[1].Value.ToString();
-
-                if (MessageBox.Show($"Deseja editar: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dataGridTipoAnalise.CurrentRow != null)
                 {
-                    AdicionarTipoAnaliseVisual View = new AdicionarTipoAnaliseVisual("Editar Tipo Análise", idSelecionada, nameSelecionada);
-                    View.ShowDialog();
-                    RecarregarGrid();
+                    int idSelecionada = Convert.ToInt32(dataGridTipoAnalise.CurrentRow.Cells[0].Value.ToString());
+                    string nameSelecionada = dataGridTipoAnalise.CurrentRow.Cells[1].Value.ToString();
+
+                    if (MessageBox.Show($"Deseja editar: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        AdicionarTipoAnaliseVisual View = new AdicionarTipoAnaliseVisual("Editar Tipo Análise", idSelecionada, nameSelecionada);
+                        View.ShowDialog();
+                        RecarregarGrid();
+                    }
                 }
             }
             catch (Exception ex)
@@ -97,20 +100,23 @@ namespace BetoAPP.Visual
         {
             try
             {
-                int idSelecionada = Convert.ToInt32(dataGridTipoAnalise.CurrentRow.Cells[0].Value.ToString());
-                string nameSelecionada = dataGridTipoAnalise.CurrentRow.Cells[1].Value.ToString();
-
-                if (MessageBox.Show($"Deseja Excluir: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (dataGridTipoAnalise.CurrentRow != null)
                 {
-                    int result = new TipoAnaliseNegocio().Excluir(idSelecionada);
-                    if (result == 0)
+                    int idSelecionada = Convert.ToInt32(dataGridTipoAnalise.CurrentRow.Cells[0].Value.ToString());
+                    string nameSelecionada = dataGridTipoAnalise.CurrentRow.Cells[1].Value.ToString();
+
+                    if (MessageBox.Show($"Deseja Excluir: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        RecarregarGrid();
-                    }
-                    else
-                    {
-                        RecarregarGrid();
+                        int result = new TipoAnaliseNegocio().Excluir(idSelecionada);
+                        if (result == 0)
+                        {
+                            MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            RecarregarGrid();
+                        }
+                        else
+                        {
+                            RecarregarGrid();
+                        }
                     }
                 }
             }

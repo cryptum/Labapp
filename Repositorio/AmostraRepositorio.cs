@@ -16,6 +16,7 @@ namespace Repositorio
             {
                 var query = db.Amostras
                                 .Where(w => w.Analises.IdAnalise == idAnalise)
+                                .AsNoTracking()
                                 .ToList();
 
                 return query;

@@ -147,8 +147,8 @@ namespace BetoAPP.Visual
             {
                 if (ctrlControl is MdiClient)
                 {
-                    BackgroundImage = Properties.Resources.AgroFrutal;
-                    BackgroundImageLayout = ImageLayout.Center;
+                    BackgroundImage = Properties.Resources.Preisser;
+                    BackgroundImageLayout = ImageLayout.Stretch;
                 }
             }
         }
