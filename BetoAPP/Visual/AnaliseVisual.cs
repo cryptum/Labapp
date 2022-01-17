@@ -62,6 +62,7 @@ namespace BetoAPP.Visual
             dataGridAnalise.Columns[3].Width = 195;
             dataGridAnalise.Columns[4].Width = 120;
             dataGridAnalise.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridAnalise.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         public void RecarregarGrid()

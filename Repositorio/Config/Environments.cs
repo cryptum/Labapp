@@ -2,11 +2,11 @@
 {
     public enum Environments
     {
-        local = 1,
-        beto = 2,
-        preisser = 3,
-        betoInMemory = 4,
-        preisserInMemory = 5
+        local,
+        beto,
+        preisser,
+        betoInMemory,
+        preisserInMemory
     }
 
     public class Env

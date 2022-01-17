@@ -55,6 +55,7 @@ namespace BetoAPP.Visual
         {
             dataGridAnalise.Columns[0].Width = 100;
             dataGridAnalise.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridAnalise.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             //dataGridAnalise.Columns[1].Width = 300;
             //dataGridAnalise.Columns[2].Width = 195;
             //dataGridAnalise.Columns[3].Width = 120;
@@ -65,7 +66,7 @@ namespace BetoAPP.Visual
         public void RecarregarGrid()
         {
             dataGridAnalise.DataSource = new AnaliseNegocio().ObterTodosImcompleta();
-            //AlinharGrid();
+            AlinharGrid();
         }
 
         private void btn_Recarregar_Click(object sender, EventArgs e)
