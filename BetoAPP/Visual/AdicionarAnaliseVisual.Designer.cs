@@ -1,5 +1,5 @@
 ﻿
-namespace BetoAPP.Visual
+namespace LabAPP.Visual
 {
     partial class AdicionarAnaliseVisual
     {
@@ -163,7 +163,7 @@ namespace BetoAPP.Visual
             // btn_Cancelar
             // 
             this.btn_Cancelar.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Cancelar.Image = global::BetoAPP.Properties.Resources.close_fill_vermelho_24px;
+            this.btn_Cancelar.Image = global::LabAPP.Properties.Resources.close_fill_vermelho_24px;
             this.btn_Cancelar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(122, 29);
@@ -189,7 +189,7 @@ namespace BetoAPP.Visual
             // btn_Salvar
             // 
             this.btn_Salvar.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Salvar.Image = global::BetoAPP.Properties.Resources.save_verde_24px;
+            this.btn_Salvar.Image = global::LabAPP.Properties.Resources.save_verde_24px;
             this.btn_Salvar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Salvar.Name = "btn_Salvar";
             this.btn_Salvar.Size = new System.Drawing.Size(99, 29);
@@ -1038,7 +1038,7 @@ namespace BetoAPP.Visual
             // 
             // pcbCarregar
             // 
-            this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.eclipse_0_6s_200px;
+            this.pcbCarregar.Image = global::LabAPP.Properties.Resources.eclipse_0_6s_200px;
             this.pcbCarregar.Location = new System.Drawing.Point(0, 5);
             this.pcbCarregar.Name = "pcbCarregar";
             this.pcbCarregar.Size = new System.Drawing.Size(1340, 538);

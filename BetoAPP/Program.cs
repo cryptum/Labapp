@@ -4,7 +4,7 @@ using System;
 using System.Windows.Forms;
 using Environments = Repositorio.Config.Environments;
 
-namespace BetoAPP
+namespace LabAPP
 {
     static class Program
     {

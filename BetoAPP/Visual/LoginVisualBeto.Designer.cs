@@ -1,5 +1,5 @@
 ﻿
-namespace BetoAPP
+namespace LabAPP
 {
     partial class LoginVisualBeto
     {
@@ -126,7 +126,7 @@ namespace BetoAPP
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::BetoAPP.Properties.Resources.AgroFrutal;
+            this.pictureBox1.Image = global::LabAPP.Properties.Resources.AgroFrutal;
             this.pictureBox1.Location = new System.Drawing.Point(45, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(347, 203);
@@ -136,7 +136,7 @@ namespace BetoAPP
             // 
             // pcbCarregar
             // 
-            this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.eclipse_0_6s_200px;
+            this.pcbCarregar.Image = global::LabAPP.Properties.Resources.eclipse_0_6s_200px;
             this.pcbCarregar.Location = new System.Drawing.Point(279, 84);
             this.pcbCarregar.Name = "pcbCarregar";
             this.pcbCarregar.Size = new System.Drawing.Size(147, 121);
@@ -168,7 +168,7 @@ namespace BetoAPP
             // btn_Sair
             // 
             this.btn_Sair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Sair.Image = global::BetoAPP.Properties.Resources.close_cinza_24px;
+            this.btn_Sair.Image = global::LabAPP.Properties.Resources.close_cinza_24px;
             this.btn_Sair.Location = new System.Drawing.Point(548, 0);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(61, 61);
@@ -182,7 +182,7 @@ namespace BetoAPP
             // btn_Minimiza
             // 
             this.btn_Minimiza.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Minimiza.Image = global::BetoAPP.Properties.Resources.subtract_cinza_24px;
+            this.btn_Minimiza.Image = global::LabAPP.Properties.Resources.subtract_cinza_24px;
             this.btn_Minimiza.Location = new System.Drawing.Point(498, 0);
             this.btn_Minimiza.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Minimiza.Name = "btn_Minimiza";

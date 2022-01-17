@@ -1,9 +1,9 @@
-﻿using BetoAPP.Util;
+﻿using LabAPP.Util;
 using Negocio;
 using System;
 using System.Windows.Forms;
 
-namespace BetoAPP.Visual
+namespace LabAPP.Visual
 {
     public partial class AdicionarReferenciaVisual : Form
     {

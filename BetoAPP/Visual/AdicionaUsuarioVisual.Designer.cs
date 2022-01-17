@@ -1,5 +1,5 @@
 ﻿
-namespace BetoAPP.Visual
+namespace LabAPP.Visual
 {
     partial class AdicionaUsuarioVisual
     {
@@ -215,7 +215,7 @@ namespace BetoAPP.Visual
             // pcbCarregar
             // 
             this.pcbCarregar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.eclipse_0_6s_200px;
+            this.pcbCarregar.Image = global::LabAPP.Properties.Resources.eclipse_0_6s_200px;
             this.pcbCarregar.Location = new System.Drawing.Point(4, 19);
             this.pcbCarregar.Name = "pcbCarregar";
             this.pcbCarregar.Size = new System.Drawing.Size(506, 326);
@@ -227,7 +227,7 @@ namespace BetoAPP.Visual
             // btn_Adiciona
             // 
             this.btn_Adiciona.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Adiciona.Image = global::BetoAPP.Properties.Resources.save_verde_24px;
+            this.btn_Adiciona.Image = global::LabAPP.Properties.Resources.save_verde_24px;
             this.btn_Adiciona.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Adiciona.Name = "btn_Adiciona";
             this.btn_Adiciona.Size = new System.Drawing.Size(89, 28);
@@ -249,7 +249,7 @@ namespace BetoAPP.Visual
             // btn_Fechar
             // 
             this.btn_Fechar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Fechar.Image = global::BetoAPP.Properties.Resources.close_fill_vermelho_24px;
+            this.btn_Fechar.Image = global::LabAPP.Properties.Resources.close_fill_vermelho_24px;
             this.btn_Fechar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Fechar.Name = "btn_Fechar";
             this.btn_Fechar.Size = new System.Drawing.Size(106, 28);

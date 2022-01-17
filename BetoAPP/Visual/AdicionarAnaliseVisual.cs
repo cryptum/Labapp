@@ -6,7 +6,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Environments = Repositorio.Config.Environments;
 
-namespace BetoAPP.Visual
+namespace LabAPP.Visual
 {
     public partial class AdicionarAnaliseVisual : Form
     {

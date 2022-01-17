@@ -1,5 +1,5 @@
 ﻿
-namespace BetoAPP.Visual
+namespace LabAPP.Visual
 {
     partial class PrincipalVisual
     {
@@ -71,7 +71,7 @@ namespace BetoAPP.Visual
             // proprietarioToolStripMenuItem
             // 
             this.proprietarioToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.proprietarioToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.user_fill_36px;
+            this.proprietarioToolStripMenuItem.Image = global::LabAPP.Properties.Resources.user_fill_36px;
             this.proprietarioToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.proprietarioToolStripMenuItem.Name = "proprietarioToolStripMenuItem";
             this.proprietarioToolStripMenuItem.Size = new System.Drawing.Size(169, 40);
@@ -81,7 +81,7 @@ namespace BetoAPP.Visual
             // ordemToolStripMenuItem
             // 
             this.ordemToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ordemToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.file_text_36px;
+            this.ordemToolStripMenuItem.Image = global::LabAPP.Properties.Resources.file_text_36px;
             this.ordemToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ordemToolStripMenuItem.Name = "ordemToolStripMenuItem";
             this.ordemToolStripMenuItem.Size = new System.Drawing.Size(226, 40);
@@ -91,7 +91,7 @@ namespace BetoAPP.Visual
             // analiseToolStripMenuItem
             // 
             this.analiseToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.analiseToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.microscope_fill_36px;
+            this.analiseToolStripMenuItem.Image = global::LabAPP.Properties.Resources.microscope_fill_36px;
             this.analiseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.analiseToolStripMenuItem.Name = "analiseToolStripMenuItem";
             this.analiseToolStripMenuItem.Size = new System.Drawing.Size(183, 40);
@@ -101,7 +101,7 @@ namespace BetoAPP.Visual
             // amostraToolStripMenuItem
             // 
             this.amostraToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.amostraToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.test_tube_azul_36px;
+            this.amostraToolStripMenuItem.Image = global::LabAPP.Properties.Resources.test_tube_azul_36px;
             this.amostraToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.amostraToolStripMenuItem.Name = "amostraToolStripMenuItem";
             this.amostraToolStripMenuItem.Size = new System.Drawing.Size(200, 40);
@@ -111,7 +111,7 @@ namespace BetoAPP.Visual
             // culturaToolStripMenuItem
             // 
             this.culturaToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.culturaToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.plant_fill_36px;
+            this.culturaToolStripMenuItem.Image = global::LabAPP.Properties.Resources.plant_fill_36px;
             this.culturaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.culturaToolStripMenuItem.Name = "culturaToolStripMenuItem";
             this.culturaToolStripMenuItem.Size = new System.Drawing.Size(128, 40);
@@ -121,7 +121,7 @@ namespace BetoAPP.Visual
             // referenciaToolStripMenuItem
             // 
             this.referenciaToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.referenciaToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.pin_fill_36px;
+            this.referenciaToolStripMenuItem.Image = global::LabAPP.Properties.Resources.pin_fill_36px;
             this.referenciaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.referenciaToolStripMenuItem.Name = "referenciaToolStripMenuItem";
             this.referenciaToolStripMenuItem.Size = new System.Drawing.Size(159, 40);
@@ -131,7 +131,7 @@ namespace BetoAPP.Visual
             // convenioToolStripMenuItem
             // 
             this.convenioToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.convenioToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.request_fill_36px;
+            this.convenioToolStripMenuItem.Image = global::LabAPP.Properties.Resources.request_fill_36px;
             this.convenioToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.convenioToolStripMenuItem.Name = "convenioToolStripMenuItem";
             this.convenioToolStripMenuItem.Size = new System.Drawing.Size(148, 40);
@@ -141,7 +141,7 @@ namespace BetoAPP.Visual
             // tipoanalisetoolStripMenuItem
             // 
             this.tipoanalisetoolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tipoanalisetoolStripMenuItem.Image = global::BetoAPP.Properties.Resources.flask_fill_36px;
+            this.tipoanalisetoolStripMenuItem.Image = global::LabAPP.Properties.Resources.flask_fill_36px;
             this.tipoanalisetoolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tipoanalisetoolStripMenuItem.Name = "tipoanalisetoolStripMenuItem";
             this.tipoanalisetoolStripMenuItem.Size = new System.Drawing.Size(203, 40);
@@ -151,7 +151,7 @@ namespace BetoAPP.Visual
             // colaboradoresToolStripMenuItem
             // 
             this.colaboradoresToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.colaboradoresToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.shield_user_fill;
+            this.colaboradoresToolStripMenuItem.Image = global::LabAPP.Properties.Resources.shield_user_fill;
             this.colaboradoresToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.colaboradoresToolStripMenuItem.Name = "colaboradoresToolStripMenuItem";
             this.colaboradoresToolStripMenuItem.Size = new System.Drawing.Size(195, 40);
@@ -173,7 +173,7 @@ namespace BetoAPP.Visual
             // 
             // btnDarkAndLight
             // 
-            this.btnDarkAndLight.Image = global::BetoAPP.Properties.Resources.sun_fill_Dark_36px;
+            this.btnDarkAndLight.Image = global::LabAPP.Properties.Resources.sun_fill_Dark_36px;
             this.btnDarkAndLight.Name = "btnDarkAndLight";
             this.btnDarkAndLight.Size = new System.Drawing.Size(31, 17);
             this.btnDarkAndLight.Text = "        ";
@@ -198,7 +198,7 @@ namespace BetoAPP.Visual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::BetoAPP.Properties.Resources.AgroFrutal;
+            this.BackgroundImage = global::LabAPP.Properties.Resources.AgroFrutal;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1685, 594);
             this.Controls.Add(this.statusStrip1);

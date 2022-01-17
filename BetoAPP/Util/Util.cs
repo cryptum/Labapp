@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace BetoAPP.Util
+namespace LabAPP.Util
 {
     public class Util
     {

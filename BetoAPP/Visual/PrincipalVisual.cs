@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using Environments = Repositorio.Config.Environments;
 
 
-namespace BetoAPP.Visual
+namespace LabAPP.Visual
 {
     public partial class PrincipalVisual : Form
     {

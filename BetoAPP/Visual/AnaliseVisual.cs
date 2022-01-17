@@ -1,4 +1,4 @@
-﻿using BetoAPP.Util;
+﻿using LabAPP.Util;
 using Negocio;
 using System;
 using System.Drawing;
@@ -6,7 +6,7 @@ using System.Threading;
 using System.Windows.Forms;
 using Environments = Repositorio.Config.Environments;
 
-namespace BetoAPP.Visual
+namespace LabAPP.Visual
 {
     public partial class AnaliseVisual : Form
     {

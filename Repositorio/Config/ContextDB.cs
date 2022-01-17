@@ -19,7 +19,7 @@ namespace Repositorio.Config
             switch (env.Select)
             {
                 case Environments.local:
-                    connectionString = "server=localhost;user=root;password=rootroot;database=betoapp";
+                    connectionString = "server=localhost;user=root;password=rootroot;database=LabAPP";
                     serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
                     optionsBuilder.UseMySql(connectionString, serverVersion);
                     break;

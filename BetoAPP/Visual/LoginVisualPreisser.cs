@@ -1,11 +1,11 @@
-﻿using BetoAPP.Visual;
+﻿using LabAPP.Visual;
 using Entidade.DTO;
 using Negocio;
 using System;
 using System.Windows.Forms;
 using Environments = Repositorio.Config.Environments;
 
-namespace BetoAPP
+namespace LabAPP
 {
     public partial class LoginVisualPreisser : Form
     {
