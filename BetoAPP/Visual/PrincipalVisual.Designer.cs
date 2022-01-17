@@ -31,17 +31,18 @@ namespace BetoAPP.Visual
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalVisual));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proprietarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.analiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.amostratoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.culturatoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.referenciatoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.solicitantetoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.amostraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.culturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.referenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.convenioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoanalisetoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colaboradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.btnDarkAndLight = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.txt_LogadoCom = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbl_UsuarioLogado = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -51,12 +52,13 @@ namespace BetoAPP.Visual
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.White;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clienteToolStripMenuItem,
+            this.proprietarioToolStripMenuItem,
+            this.ordemToolStripMenuItem,
             this.analiseToolStripMenuItem,
-            this.amostratoolStripMenuItem,
-            this.culturatoolStripMenuItem,
-            this.referenciatoolStripMenuItem,
-            this.solicitantetoolStripMenuItem,
+            this.amostraToolStripMenuItem,
+            this.culturaToolStripMenuItem,
+            this.referenciaToolStripMenuItem,
+            this.convenioToolStripMenuItem,
             this.tipoanalisetoolStripMenuItem,
             this.colaboradoresToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -66,15 +68,25 @@ namespace BetoAPP.Visual
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // clienteToolStripMenuItem
+            // proprietarioToolStripMenuItem
             // 
-            this.clienteToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.clienteToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.user_fill_36px;
-            this.clienteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(169, 40);
-            this.clienteToolStripMenuItem.Text = "Proprietário";
-            this.clienteToolStripMenuItem.Click += new System.EventHandler(this.solicitanteToolStripMenuItem_Click);
+            this.proprietarioToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.proprietarioToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.user_fill_36px;
+            this.proprietarioToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.proprietarioToolStripMenuItem.Name = "proprietarioToolStripMenuItem";
+            this.proprietarioToolStripMenuItem.Size = new System.Drawing.Size(169, 40);
+            this.proprietarioToolStripMenuItem.Text = "Proprietário";
+            this.proprietarioToolStripMenuItem.Click += new System.EventHandler(this.proprietarioToolStripMenuItem_Click);
+            // 
+            // ordemToolStripMenuItem
+            // 
+            this.ordemToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ordemToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.file_text_36px;
+            this.ordemToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ordemToolStripMenuItem.Name = "ordemToolStripMenuItem";
+            this.ordemToolStripMenuItem.Size = new System.Drawing.Size(226, 40);
+            this.ordemToolStripMenuItem.Text = "Ordem de Serviço";
+            this.ordemToolStripMenuItem.Click += new System.EventHandler(this.ordemToolStripMenuItem1_Click);
             // 
             // analiseToolStripMenuItem
             // 
@@ -82,49 +94,49 @@ namespace BetoAPP.Visual
             this.analiseToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.microscope_fill_36px;
             this.analiseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.analiseToolStripMenuItem.Name = "analiseToolStripMenuItem";
-            this.analiseToolStripMenuItem.Size = new System.Drawing.Size(128, 40);
-            this.analiseToolStripMenuItem.Text = "Análise";
+            this.analiseToolStripMenuItem.Size = new System.Drawing.Size(183, 40);
+            this.analiseToolStripMenuItem.Text = "Criar Pedidos";
             this.analiseToolStripMenuItem.Click += new System.EventHandler(this.analiseToolStripMenuItem_Click);
             // 
-            // amostratoolStripMenuItem
+            // amostraToolStripMenuItem
             // 
-            this.amostratoolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.amostratoolStripMenuItem.Image = global::BetoAPP.Properties.Resources.test_tube_azul_36px;
-            this.amostratoolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.amostratoolStripMenuItem.Name = "amostratoolStripMenuItem";
-            this.amostratoolStripMenuItem.Size = new System.Drawing.Size(139, 40);
-            this.amostratoolStripMenuItem.Text = "Amostra";
-            this.amostratoolStripMenuItem.Click += new System.EventHandler(this.amostratoolStripMenuItem_Click);
+            this.amostraToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.amostraToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.test_tube_azul_36px;
+            this.amostraToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.amostraToolStripMenuItem.Name = "amostraToolStripMenuItem";
+            this.amostraToolStripMenuItem.Size = new System.Drawing.Size(200, 40);
+            this.amostraToolStripMenuItem.Text = "Escrever Laudo";
+            this.amostraToolStripMenuItem.Click += new System.EventHandler(this.amostraToolStripMenuItem_Click);
             // 
-            // culturatoolStripMenuItem
+            // culturaToolStripMenuItem
             // 
-            this.culturatoolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.culturatoolStripMenuItem.Image = global::BetoAPP.Properties.Resources.plant_fill_36px;
-            this.culturatoolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.culturatoolStripMenuItem.Name = "culturatoolStripMenuItem";
-            this.culturatoolStripMenuItem.Size = new System.Drawing.Size(128, 40);
-            this.culturatoolStripMenuItem.Text = "Cultura";
-            this.culturatoolStripMenuItem.Click += new System.EventHandler(this.culturatoolStripMenuItem_Click_1);
+            this.culturaToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.culturaToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.plant_fill_36px;
+            this.culturaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.culturaToolStripMenuItem.Name = "culturaToolStripMenuItem";
+            this.culturaToolStripMenuItem.Size = new System.Drawing.Size(128, 40);
+            this.culturaToolStripMenuItem.Text = "Cultura";
+            this.culturaToolStripMenuItem.Click += new System.EventHandler(this.culturaToolStripMenuItem_Click);
             // 
-            // referenciatoolStripMenuItem
+            // referenciaToolStripMenuItem
             // 
-            this.referenciatoolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.referenciatoolStripMenuItem.Image = global::BetoAPP.Properties.Resources.pin_fill_36px;
-            this.referenciatoolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.referenciatoolStripMenuItem.Name = "referenciatoolStripMenuItem";
-            this.referenciatoolStripMenuItem.Size = new System.Drawing.Size(159, 40);
-            this.referenciatoolStripMenuItem.Text = "Referência";
-            this.referenciatoolStripMenuItem.Click += new System.EventHandler(this.referenciatoolStripMenuItem_Click_1);
+            this.referenciaToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.referenciaToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.pin_fill_36px;
+            this.referenciaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.referenciaToolStripMenuItem.Name = "referenciaToolStripMenuItem";
+            this.referenciaToolStripMenuItem.Size = new System.Drawing.Size(159, 40);
+            this.referenciaToolStripMenuItem.Text = "Referência";
+            this.referenciaToolStripMenuItem.Click += new System.EventHandler(this.referenciaToolStripMenuItem_Click);
             // 
-            // solicitantetoolStripMenuItem
+            // convenioToolStripMenuItem
             // 
-            this.solicitantetoolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.solicitantetoolStripMenuItem.Image = global::BetoAPP.Properties.Resources.request_fill_36px;
-            this.solicitantetoolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.solicitantetoolStripMenuItem.Name = "solicitantetoolStripMenuItem";
-            this.solicitantetoolStripMenuItem.Size = new System.Drawing.Size(157, 40);
-            this.solicitantetoolStripMenuItem.Text = "Solicitante";
-            this.solicitantetoolStripMenuItem.Click += new System.EventHandler(this.solicitantetoolStripMenuItem_Click_1);
+            this.convenioToolStripMenuItem.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.convenioToolStripMenuItem.Image = global::BetoAPP.Properties.Resources.request_fill_36px;
+            this.convenioToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.convenioToolStripMenuItem.Name = "convenioToolStripMenuItem";
+            this.convenioToolStripMenuItem.Size = new System.Drawing.Size(148, 40);
+            this.convenioToolStripMenuItem.Text = "Convênio";
+            this.convenioToolStripMenuItem.Click += new System.EventHandler(this.convenioToolStripMenuItem_Click);
             // 
             // tipoanalisetoolStripMenuItem
             // 
@@ -134,7 +146,7 @@ namespace BetoAPP.Visual
             this.tipoanalisetoolStripMenuItem.Name = "tipoanalisetoolStripMenuItem";
             this.tipoanalisetoolStripMenuItem.Size = new System.Drawing.Size(203, 40);
             this.tipoanalisetoolStripMenuItem.Text = "Tipo da Análise";
-            this.tipoanalisetoolStripMenuItem.Click += new System.EventHandler(this.tipoanalisetoolStripMenuItem_Click);
+            this.tipoanalisetoolStripMenuItem.Click += new System.EventHandler(this.tipoanaliseToolStripMenuItem_Click);
             // 
             // colaboradoresToolStripMenuItem
             // 
@@ -151,7 +163,7 @@ namespace BetoAPP.Visual
             this.statusStrip1.BackColor = System.Drawing.Color.White;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnDarkAndLight,
-            this.toolStripStatusLabel1,
+            this.txt_LogadoCom,
             this.lbl_UsuarioLogado});
             this.statusStrip1.Location = new System.Drawing.Point(0, 572);
             this.statusStrip1.Name = "statusStrip1";
@@ -168,12 +180,12 @@ namespace BetoAPP.Visual
             this.btnDarkAndLight.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.btnDarkAndLight.Click += new System.EventHandler(this.btnDarkAndLight_Click);
             // 
-            // toolStripStatusLabel1
+            // txt_LogadoCom
             // 
-            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(85, 17);
-            this.toolStripStatusLabel1.Text = "Logado com:";
+            this.txt_LogadoCom.Font = new System.Drawing.Font("Ebrima", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_LogadoCom.Name = "txt_LogadoCom";
+            this.txt_LogadoCom.Size = new System.Drawing.Size(85, 17);
+            this.txt_LogadoCom.Text = "Logado com:";
             // 
             // lbl_UsuarioLogado
             // 
@@ -213,15 +225,16 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem analiseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem colaboradoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem proprietarioToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel txt_LogadoCom;
         private System.Windows.Forms.ToolStripStatusLabel lbl_UsuarioLogado;
-        private System.Windows.Forms.ToolStripMenuItem solicitantetoolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem culturatoolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem referenciatoolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem convenioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem culturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem referenciaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoanalisetoolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem amostratoolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem amostraToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel btnDarkAndLight;
+        private System.Windows.Forms.ToolStripMenuItem ordemToolStripMenuItem;
     }
 }

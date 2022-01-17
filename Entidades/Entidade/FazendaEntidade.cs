@@ -2,10 +2,10 @@
 
 namespace Entidade
 {
-    public class LocalEntidade
+    public class FazendaEntidade
     {
         [Key]
-        public int IdLocal { get; set; }
+        public int IdFazenda { get; set; }
 
         [MaxLength(120)]
         public string Fazenda { get; set; }
@@ -15,6 +15,6 @@ namespace Entidade
 
         public bool Excluido { get; set; }
 
-        public SolicitanteEntidade Solicitantes { get; set; }
+        public ProprietarioEntidade Proprietarios { get; set; }
     }
 }

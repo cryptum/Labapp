@@ -11,6 +11,24 @@ namespace Repositorio
     {
         public UsuarioRepositorio() { }
 
+        public int ValidarDataBaseVazio()
+        {
+            using (var db = new ContextDB())
+            {
+                var query = db.Usuarios
+                                .Select(x => new UsuarioObterTodosDTO
+                                {
+                                    Código = x.IdUsuario
+                                })
+                                .AsNoTracking()
+                                .ToList()
+                                .Count();
+
+                return query;
+            }
+        }
+
+
         public UsuarioDTO ValidarAcesso(string Acesso, string Senha)
         {
             using (var db = new ContextDB())

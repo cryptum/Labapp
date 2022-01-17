@@ -1,7 +1,7 @@
 ﻿
 namespace BetoAPP.Visual
 {
-    partial class AdicionarTipoSolicitacaoVisual
+    partial class AdicionarConvenioVisual
     {
         /// <summary>
         /// Required designer variable.
@@ -58,9 +58,9 @@ namespace BetoAPP.Visual
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Salva,
             this.btn_Cancela});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 165);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 157);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(530, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(522, 32);
             this.menuStrip1.TabIndex = 26;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,10 +77,10 @@ namespace BetoAPP.Visual
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(21, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 26);
+            this.label1.Size = new System.Drawing.Size(70, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome";
             // 
@@ -118,20 +118,20 @@ namespace BetoAPP.Visual
             // txtTitulo
             // 
             this.txtTitulo.AutoSize = true;
-            this.txtTitulo.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTitulo.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTitulo.Location = new System.Drawing.Point(13, 9);
             this.txtTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(303, 29);
+            this.txtTitulo.Size = new System.Drawing.Size(322, 32);
             this.txtTitulo.TabIndex = 24;
             this.txtTitulo.Text = "Adicionar Tipo de Solicitação";
             // 
-            // AdicionarTipoSolicitacaoVisual
+            // AdicionarConvenioVisual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(530, 197);
+            this.ClientSize = new System.Drawing.Size(522, 189);
             this.ControlBox = false;
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
@@ -140,7 +140,7 @@ namespace BetoAPP.Visual
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AdicionarTipoSolicitacaoVisual";
+            this.Name = "AdicionarConvenioVisual";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.menuStrip1.ResumeLayout(false);

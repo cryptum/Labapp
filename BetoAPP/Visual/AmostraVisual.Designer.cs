@@ -116,7 +116,7 @@ namespace BetoAPP.Visual
             this.dataGridAnalise.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -127,7 +127,7 @@ namespace BetoAPP.Visual
             this.dataGridAnalise.Name = "dataGridAnalise";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -136,8 +136,9 @@ namespace BetoAPP.Visual
             this.dataGridAnalise.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dataGridAnalise.RowTemplate.Height = 25;
             this.dataGridAnalise.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridAnalise.Size = new System.Drawing.Size(1029, 622);
+            this.dataGridAnalise.Size = new System.Drawing.Size(1029, 494);
             this.dataGridAnalise.TabIndex = 13;
+            this.dataGridAnalise.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridAnalise_RowPrePaint);
             // 
             // pcbCarregar
             // 
@@ -145,7 +146,7 @@ namespace BetoAPP.Visual
             this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.eclipse_0_6s_200px;
             this.pcbCarregar.Location = new System.Drawing.Point(0, 0);
             this.pcbCarregar.Name = "pcbCarregar";
-            this.pcbCarregar.Size = new System.Drawing.Size(1056, 694);
+            this.pcbCarregar.Size = new System.Drawing.Size(1056, 566);
             this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pcbCarregar.TabIndex = 29;
             this.pcbCarregar.TabStop = false;
@@ -155,7 +156,7 @@ namespace BetoAPP.Visual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 694);
+            this.ClientSize = new System.Drawing.Size(1056, 566);
             this.Controls.Add(this.dataGridAnalise);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pcbCarregar);

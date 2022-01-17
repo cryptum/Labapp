@@ -2,26 +2,34 @@
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Environments = Repositorio.Config.Environments;
 
 
 namespace BetoAPP.Visual
 {
     public partial class PrincipalVisual : Form
     {
-        public PrincipalVisual(int IdUsuarioLogado, string Usuariologado, bool hierarquia)
+        Environments GlobalEnv;
+        public PrincipalVisual(Environments env, int idUsuarioLogado, string usuarioLogado, bool hierarquia)
         {
             InitializeComponent();
-            lbl_UsuarioLogado.Text = Usuariologado;
+            lbl_UsuarioLogado.Text = usuarioLogado;
             //this.menuStrip1.BackColor = Color.GhostWhite;
             this.btnDarkAndLight.Visible = false;
+            this.referenciaToolStripMenuItem.Visible = false;
+            _ = hierarquia == true ? colaboradoresToolStripMenuItem.Visible = true : colaboradoresToolStripMenuItem.Visible = false;
 
-            if (hierarquia)
+            GlobalEnv = env;
+            switch (env)
             {
-                colaboradoresToolStripMenuItem.Visible = true;
-            }
-            else
-            {
-                colaboradoresToolStripMenuItem.Visible = false;
+                case Environments.beto:
+                    ordemToolStripMenuItem.Visible = false;
+                    break;
+                case Environments.betoInMemory:
+                    ordemToolStripMenuItem.Visible = false;
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -32,23 +40,23 @@ namespace BetoAPP.Visual
 
         private void analiseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AnaliseVisual View = AnaliseVisual.Instance();
+            AnaliseVisual View = AnaliseVisual.Instance(GlobalEnv);
             View.MdiParent = this;
             View.Show();
             View.Activate();
         }
 
-        private void amostratoolStripMenuItem_Click(object sender, EventArgs e)
+        private void amostraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AmostraVisual View = AmostraVisual.Instance();
+            AmostraVisual View = AmostraVisual.Instance(GlobalEnv);
             View.MdiParent = this;
             View.Show();
             View.Activate();
         }
 
-        private void solicitanteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void proprietarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SolicitanteVisual View = SolicitanteVisual.Instance();
+            ProprietarioVisual View = ProprietarioVisual.Instance();
             View.MdiParent = this;
             View.Show();
             View.Activate();
@@ -62,15 +70,15 @@ namespace BetoAPP.Visual
             View.Activate();
         }
 
-        private void solicitantetoolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void convenioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TipoSolicitacaoVisual View = TipoSolicitacaoVisual.Instance();
+            ConvenioVisual View = ConvenioVisual.Instance();
             View.MdiParent = this;
             View.Show();
             View.Activate();
         }
 
-        private void tipoanalisetoolStripMenuItem_Click(object sender, EventArgs e)
+        private void tipoanaliseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TipoAnaliseVisual View = TipoAnaliseVisual.Instance();
             View.MdiParent = this;
@@ -78,7 +86,7 @@ namespace BetoAPP.Visual
             View.Activate();
         }
 
-        private void referenciatoolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void referenciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReferenciaVisual View = ReferenciaVisual.Instance();
             View.MdiParent = this;
@@ -86,9 +94,17 @@ namespace BetoAPP.Visual
             View.Activate();
         }
 
-        private void culturatoolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void culturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CulturaVisual View = CulturaVisual.Instance();
+            View.MdiParent = this;
+            View.Show();
+            View.Activate();
+        }
+
+        private void ordemToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            OrdemServico View = OrdemServico.Instance();
             View.MdiParent = this;
             View.Show();
             View.Activate();
@@ -108,12 +124,12 @@ namespace BetoAPP.Visual
 
                 Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.DarkSlateGray;
 
-                clienteToolStripMenuItem.Image = Properties.Resources.user_fill_Branco_36px;
+                proprietarioToolStripMenuItem.Image = Properties.Resources.user_fill_Branco_36px;
                 analiseToolStripMenuItem.Image = Properties.Resources.microscope_fill_Branco_36px;
-                amostratoolStripMenuItem.Image = Properties.Resources.test_tube_Branco_36px;
-                culturatoolStripMenuItem.Image = Properties.Resources.plant_fill_Branco_36px;
-                referenciatoolStripMenuItem.Image = Properties.Resources.pin_fill_Branco_36px;
-                solicitantetoolStripMenuItem.Image = Properties.Resources.request_fill_Branco_36px;
+                amostraToolStripMenuItem.Image = Properties.Resources.test_tube_Branco_36px;
+                culturaToolStripMenuItem.Image = Properties.Resources.plant_fill_Branco_36px;
+                referenciaToolStripMenuItem.Image = Properties.Resources.pin_fill_Branco_36px;
+                convenioToolStripMenuItem.Image = Properties.Resources.request_fill_Branco_36px;
                 tipoanalisetoolStripMenuItem.Image = Properties.Resources.flask_Branco_36px;
                 colaboradoresToolStripMenuItem.Image = Properties.Resources.shield_fill_Branco_36px;
             }
@@ -128,14 +144,14 @@ namespace BetoAPP.Visual
 
                 Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.White;
 
-                clienteToolStripMenuItem.Image = Properties.Resources.user_fill_36px;
+                proprietarioToolStripMenuItem.Image = Properties.Resources.user_fill_36px;
                 analiseToolStripMenuItem.Image = Properties.Resources.microscope_fill_36px;
-                amostratoolStripMenuItem.Image = Properties.Resources.test_tube_azul_36px;
-                culturatoolStripMenuItem.Image = Properties.Resources.plant_fill_36px;
-                referenciatoolStripMenuItem.Image = Properties.Resources.pin_fill_36px;
-                solicitantetoolStripMenuItem.Image = Properties.Resources.request_fill_36px;
+                amostraToolStripMenuItem.Image = Properties.Resources.test_tube_azul_36px;
+                culturaToolStripMenuItem.Image = Properties.Resources.plant_fill_36px;
+                referenciaToolStripMenuItem.Image = Properties.Resources.pin_fill_36px;
+                convenioToolStripMenuItem.Image = Properties.Resources.request_fill_36px;
                 tipoanalisetoolStripMenuItem.Image = Properties.Resources.flask_fill_36px;
-                colaboradoresToolStripMenuItem.Image = Properties.Resources.sheld_fill_36px;
+                colaboradoresToolStripMenuItem.Image = Properties.Resources.shield_user_fill;
 
 
             }

@@ -2,10 +2,10 @@
 
 namespace Entidade
 {
-    public class TipoSolicitacaoEntidade
+    public class ConvenioEntidade
     {
         [Key]
-        public int IdTipoSolicitacao { get; set; }
+        public int IdConvenio { get; set; }
 
         [MaxLength(100)]
         public string Nome { get; set; }

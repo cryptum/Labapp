@@ -5,18 +5,18 @@ using System.Windows.Forms;
 
 namespace BetoAPP.Visual
 {
-    public partial class TipoSolicitacaoVisual : Form
+    public partial class ConvenioVisual : Form
     {
-        private static TipoSolicitacaoVisual aForm = null;
-        public static TipoSolicitacaoVisual Instance()
+        private static ConvenioVisual aForm = null;
+        public static ConvenioVisual Instance()
         {
             if (aForm == null)
             {
-                aForm = new TipoSolicitacaoVisual();
+                aForm = new ConvenioVisual();
             }
             return aForm;
         }
-        public TipoSolicitacaoVisual()
+        public ConvenioVisual()
         {
             InitializeComponent();
             btn_Pesquisa.Select();
@@ -52,13 +52,13 @@ namespace BetoAPP.Visual
 
         void RecarregarGrid()
         {
-            dataGridTipoSolicitacao.DataSource = new TipoSolicitacaoNegocio().ObterTodos();
+            dataGridTipoSolicitacao.DataSource = new ConvenioNegocio().ObterTodos();
             AlinharGrid();
         }
 
         void Buscar(string nome)
         {
-            dataGridTipoSolicitacao.DataSource = new TipoSolicitacaoNegocio().ObterListaPorNome(nome);
+            dataGridTipoSolicitacao.DataSource = new ConvenioNegocio().ObterListaPorNome(nome);
             AlinharGrid();
         }
 
@@ -69,7 +69,7 @@ namespace BetoAPP.Visual
 
         private void btn_Adiciona_Click(object sender, EventArgs e)
         {
-            AdicionarTipoSolicitacaoVisual View = new AdicionarTipoSolicitacaoVisual("Adicionar Tipo Solicitação", 0, "");
+            AdicionarConvenioVisual View = new AdicionarConvenioVisual("Adicionar Tipo Solicitação", 0, "");
             View.ShowDialog();
             RecarregarGrid();
         }
@@ -85,7 +85,7 @@ namespace BetoAPP.Visual
 
                     if (MessageBox.Show($"Deseja editar: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        AdicionarTipoSolicitacaoVisual View = new AdicionarTipoSolicitacaoVisual("Editar Tipo Solicitação", idSelecionada, nameSelecionada);
+                        AdicionarConvenioVisual View = new AdicionarConvenioVisual("Editar Tipo Solicitação", idSelecionada, nameSelecionada);
                         View.ShowDialog();
                         RecarregarGrid();
                     }
@@ -108,7 +108,7 @@ namespace BetoAPP.Visual
 
                     if (MessageBox.Show($"Deseja Excluir: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        int result = new TipoSolicitacaoNegocio().Excluir(idSelecionada);
+                        int result = new ConvenioNegocio().Excluir(idSelecionada);
                         if (result == 0)
                         {
                             MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

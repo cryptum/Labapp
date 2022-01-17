@@ -7,23 +7,23 @@ using System.Linq;
 
 namespace Repositorio
 {
-    public class SolicitanteRepositorio
+    public class ProprietarioRepositorio
     {
-        public SolicitanteRepositorio() { }
+        public ProprietarioRepositorio() { }
 
-        public List<SolicitanteDTO> ObterTodos(bool Excluido)
+        public List<ProprietarioDTO> ObterTodos(bool excluido)
         {
             using (var db = new ContextDB())
             {
-                var query = db.Solicitantes
-                                .Where(w => w.Excluido == Excluido)
-                                .Select(x => new SolicitanteDTO
+                var query = db.Proprietarios
+                                .Where(w => w.Excluido == excluido)
+                                .Select(x => new ProprietarioDTO
                                 {
-                                    Código = x.IdSolicitante,
+                                    Código = x.IdProprietario,
                                     Nome = x.Nome,
-                                    Cpf = x.Cpf,
+                                    CPF = x.Cpf,
                                     Observação = x.Observacao,
-                                    Fazendas = x.Locais.Count()
+                                    Fazendas = x.Fazendas.Count()
                                 })
                                 .AsNoTracking()
                                 .ToList();
@@ -32,12 +32,12 @@ namespace Repositorio
             }
         }
 
-        public SolicitanteEntidade ObterUmPorCodigo(int id)
+        public ProprietarioEntidade ObterUmPorCodigo(int id)
         {
             using (var db = new ContextDB())
             {
-                var query = db.Solicitantes
-                                .Where(w => w.IdSolicitante == id)
+                var query = db.Proprietarios
+                                .Where(w => w.IdProprietario == id)
                                 .AsNoTracking()
                                 .First();
 
@@ -45,19 +45,19 @@ namespace Repositorio
             }
         }
 
-        public List<SolicitanteDTO> ObterListaPorNome(string nome)
+        public List<ProprietarioDTO> ObterListaPorNome(string nome)
         {
             using (var db = new ContextDB())
             {
-                var query = db.Solicitantes
+                var query = db.Proprietarios
                                 .Where(w => EF.Functions.Like(w.Nome, "%" + nome + "%"))
-                                .Select(x => new SolicitanteDTO
+                                .Select(x => new ProprietarioDTO
                                 {
-                                    Código = x.IdSolicitante,
+                                    Código = x.IdProprietario,
                                     Nome = x.Nome,
-                                    Cpf = x.Cpf,
+                                    CPF = x.Cpf,
                                     Observação = x.Observacao,
-                                    Fazendas = x.Locais.Count()
+                                    Fazendas = x.Fazendas.Count()
                                 })
                                 .AsNoTracking()
                                 .ToList();
@@ -66,26 +66,26 @@ namespace Repositorio
             }
         }
 
-        public int Salvar(SolicitanteEntidade solicitante)
+        public int Salvar(ProprietarioEntidade proprietario)
         {
             using (var db = new ContextDB())
             {
-                db.Solicitantes.Add(solicitante);
+                db.Proprietarios.Add(proprietario);
                 db.SaveChanges();
             }
 
-            return solicitante.IdSolicitante;
+            return proprietario.IdProprietario;
         }
 
-        public int Editar(SolicitanteEntidade solicitante)
+        public int Editar(ProprietarioEntidade proprietario)
         {
             using (var db = new ContextDB())
             {
-                db.Entry<SolicitanteEntidade>(solicitante).State = EntityState.Modified;
+                db.Entry<ProprietarioEntidade>(proprietario).State = EntityState.Modified;
                 db.SaveChanges();
             }
 
-            return solicitante.IdSolicitante;
+            return proprietario.IdProprietario;
         }
     }
 }

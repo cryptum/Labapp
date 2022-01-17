@@ -1,7 +1,7 @@
 ﻿
 namespace BetoAPP.Visual
 {
-    partial class AdicionarLocalVisual
+    partial class AdicionarFazendaVisual
     {
         /// <summary>
         /// Required designer variable.
@@ -69,10 +69,10 @@ namespace BetoAPP.Visual
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(21, 121);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 26);
+            this.label2.Size = new System.Drawing.Size(105, 30);
             this.label2.TabIndex = 2;
             this.label2.Text = "Município";
             // 
@@ -87,10 +87,10 @@ namespace BetoAPP.Visual
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(21, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 26);
+            this.label1.Size = new System.Drawing.Size(90, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Fazenda";
             // 
@@ -121,9 +121,9 @@ namespace BetoAPP.Visual
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Adiciona,
             this.btn_Cancelar});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 268);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 256);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(534, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(522, 32);
             this.menuStrip1.TabIndex = 26;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -140,20 +140,20 @@ namespace BetoAPP.Visual
             // txtTitulo
             // 
             this.txtTitulo.AutoSize = true;
-            this.txtTitulo.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTitulo.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTitulo.Location = new System.Drawing.Point(13, 9);
             this.txtTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(170, 29);
+            this.txtTitulo.Size = new System.Drawing.Size(209, 32);
             this.txtTitulo.TabIndex = 24;
-            this.txtTitulo.Text = "Adicionar Local";
+            this.txtTitulo.Text = "Adicionar Fazenda";
             // 
-            // AdicionarLocalVisual
+            // AdicionarFazendaVisual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(534, 300);
+            this.ClientSize = new System.Drawing.Size(522, 288);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
@@ -162,7 +162,7 @@ namespace BetoAPP.Visual
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AdicionarLocalVisual";
+            this.Name = "AdicionarFazendaVisual";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.groupBox1.ResumeLayout(false);

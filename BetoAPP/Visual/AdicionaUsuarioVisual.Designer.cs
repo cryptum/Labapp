@@ -57,21 +57,21 @@ namespace BetoAPP.Visual
             // txtTitulo
             // 
             this.txtTitulo.AutoSize = true;
-            this.txtTitulo.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTitulo.Location = new System.Drawing.Point(13, 3);
+            this.txtTitulo.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTitulo.Location = new System.Drawing.Point(13, 9);
             this.txtTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(191, 29);
+            this.txtTitulo.Size = new System.Drawing.Size(201, 32);
             this.txtTitulo.TabIndex = 24;
             this.txtTitulo.Text = "Adicionar Usuário";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(18, 126);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 26);
+            this.label3.Size = new System.Drawing.Size(70, 30);
             this.label3.TabIndex = 4;
             this.label3.Text = "Senha";
             // 
@@ -109,7 +109,7 @@ namespace BetoAPP.Visual
             // 
             this.radioBloqueio.AutoSize = true;
             this.radioBloqueio.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioBloqueio.Location = new System.Drawing.Point(6, 64);
+            this.radioBloqueio.Location = new System.Drawing.Point(17, 76);
             this.radioBloqueio.Name = "radioBloqueio";
             this.radioBloqueio.Size = new System.Drawing.Size(130, 34);
             this.radioBloqueio.TabIndex = 12;
@@ -122,7 +122,7 @@ namespace BetoAPP.Visual
             // 
             this.radioAcesso.AutoSize = true;
             this.radioAcesso.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioAcesso.Location = new System.Drawing.Point(6, 24);
+            this.radioAcesso.Location = new System.Drawing.Point(17, 36);
             this.radioAcesso.Name = "radioAcesso";
             this.radioAcesso.Size = new System.Drawing.Size(191, 34);
             this.radioAcesso.TabIndex = 11;
@@ -146,7 +146,7 @@ namespace BetoAPP.Visual
             // 
             this.radioColab.AutoSize = true;
             this.radioColab.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioColab.Location = new System.Drawing.Point(6, 64);
+            this.radioColab.Location = new System.Drawing.Point(40, 76);
             this.radioColab.Name = "radioColab";
             this.radioColab.Size = new System.Drawing.Size(145, 34);
             this.radioColab.TabIndex = 9;
@@ -159,7 +159,7 @@ namespace BetoAPP.Visual
             // 
             this.radioAdmin.AutoSize = true;
             this.radioAdmin.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioAdmin.Location = new System.Drawing.Point(6, 24);
+            this.radioAdmin.Location = new System.Drawing.Point(40, 36);
             this.radioAdmin.Name = "radioAdmin";
             this.radioAdmin.Size = new System.Drawing.Size(162, 34);
             this.radioAdmin.TabIndex = 10;
@@ -187,10 +187,10 @@ namespace BetoAPP.Visual
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(18, 82);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 26);
+            this.label2.Size = new System.Drawing.Size(78, 30);
             this.label2.TabIndex = 2;
             this.label2.Text = "Acesso";
             // 
@@ -205,10 +205,10 @@ namespace BetoAPP.Visual
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Corbel", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(18, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 26);
+            this.label1.Size = new System.Drawing.Size(70, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome";
             // 
@@ -240,9 +240,9 @@ namespace BetoAPP.Visual
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Adiciona,
             this.btn_Fechar});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 394);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 386);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(536, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(528, 32);
             this.menuStrip1.TabIndex = 26;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -261,7 +261,7 @@ namespace BetoAPP.Visual
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(536, 426);
+            this.ClientSize = new System.Drawing.Size(528, 418);
             this.ControlBox = false;
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.groupBox1);

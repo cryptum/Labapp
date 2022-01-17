@@ -5,23 +5,23 @@ using System.Windows.Forms;
 
 namespace BetoAPP.Visual
 {
-    public partial class LocalVisual : Form
+    public partial class FazendaVisual : Form
     {
-        private static LocalVisual aForm = null;
-        public static LocalVisual Instance(int idSolicitante)
+        private static FazendaVisual aForm = null;
+        public static FazendaVisual Instance(int idProprietario)
         {
             if (aForm == null)
             {
-                aForm = new LocalVisual(idSolicitante);
+                aForm = new FazendaVisual(idProprietario);
             }
             return aForm;
         }
 
-        int idInicialSolicitante;
-        public LocalVisual(int idSolicitante)
+        int idInicialProprietario;
+        public FazendaVisual(int idProprietario)
         {
             InitializeComponent();
-            idInicialSolicitante = idSolicitante;
+            idInicialProprietario = idProprietario;
         }
 
         //private void SetLoading(bool displayLoader)
@@ -48,23 +48,23 @@ namespace BetoAPP.Visual
 
         void AlinharGrid()
         {
-            dataGridLocal.Columns[0].Width = 100;
-            dataGridLocal.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridFazenda.Columns[0].Width = 100;
+            dataGridFazenda.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         void RecarregarGrid()
         {
-            dataGridLocal.DataSource = new LocalNegocio().ObterTodos(idInicialSolicitante);
+            dataGridFazenda.DataSource = new FazendaNegocio().ObterTodos(idInicialProprietario);
             AlinharGrid();
         }
 
         void Buscar(string nome)
         {
-            dataGridLocal.DataSource = new LocalNegocio().ObterListaPorNome(idInicialSolicitante, nome);
+            dataGridFazenda.DataSource = new FazendaNegocio().ObterListaPorNome(idInicialProprietario, nome);
             AlinharGrid();
         }
 
-        private void LocalVisual_Load(object sender, EventArgs e)
+        private void FazendaVisual_Load(object sender, EventArgs e)
         {
             RecarregarGrid();
         }
@@ -72,7 +72,7 @@ namespace BetoAPP.Visual
         private void btn_Adiciona_Click(object sender, EventArgs e)
         {
             //this.Visible = false;
-            AdicionarLocalVisual View = new AdicionarLocalVisual("Adicionar Local", 0, "", "", idInicialSolicitante);
+            AdicionarFazendaVisual View = new AdicionarFazendaVisual("Adicionar Fazenda", 0, "", "", idInicialProprietario);
             View.ShowDialog();
             //this.Visible = true;
             RecarregarGrid();
@@ -82,15 +82,15 @@ namespace BetoAPP.Visual
         {
             try
             {
-                if (dataGridLocal.CurrentRow != null)
+                if (dataGridFazenda.CurrentRow != null)
                 {
-                    int idSelecionada = Convert.ToInt32(dataGridLocal.CurrentRow.Cells[0].Value.ToString());
-                    string FazendaSelecionada = dataGridLocal.CurrentRow.Cells[1].Value.ToString();
-                    string municipioSelecionada = dataGridLocal.CurrentRow.Cells[2].Value.ToString();
+                    int idSelecionada = Convert.ToInt32(dataGridFazenda.CurrentRow.Cells[0].Value.ToString());
+                    string fazendaSelecionada = dataGridFazenda.CurrentRow.Cells[1].Value.ToString();
+                    string municipioSelecionada = dataGridFazenda.CurrentRow.Cells[2].Value.ToString();
 
-                    if (MessageBox.Show($"Deseja editar: {FazendaSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show($"Deseja editar: {fazendaSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        AdicionarLocalVisual View = new AdicionarLocalVisual("Editar Local", idSelecionada, FazendaSelecionada, municipioSelecionada, idInicialSolicitante);
+                        AdicionarFazendaVisual View = new AdicionarFazendaVisual("Editar Fazenda", idSelecionada, fazendaSelecionada, municipioSelecionada, idInicialProprietario);
                         View.ShowDialog();
                         RecarregarGrid();
                     }
@@ -106,15 +106,15 @@ namespace BetoAPP.Visual
         {
             try
             {
-                if (dataGridLocal.CurrentRow != null)
+                if (dataGridFazenda.CurrentRow != null)
                 {
-                    int idSelecionada = Convert.ToInt32(dataGridLocal.CurrentRow.Cells[0].Value.ToString());
-                    string FazendaSelecionada = dataGridLocal.CurrentRow.Cells[1].Value.ToString();
-                    string municipioSelecionada = dataGridLocal.CurrentRow.Cells[2].Value.ToString();
+                    int idSelecionada = Convert.ToInt32(dataGridFazenda.CurrentRow.Cells[0].Value.ToString());
+                    string FazendaSelecionada = dataGridFazenda.CurrentRow.Cells[1].Value.ToString();
+                    string municipioSelecionada = dataGridFazenda.CurrentRow.Cells[2].Value.ToString();
 
                     if (MessageBox.Show($"Deseja Excluir: {FazendaSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        int result = new LocalNegocio().ExcluirLogicamente(idSelecionada, true);
+                        int result = new FazendaNegocio().ExcluirLogicamente(idSelecionada, true);
                         if (result == 0)
                         {
                             MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -140,14 +140,14 @@ namespace BetoAPP.Visual
 
         private void btn_Solicitacao_Click(object sender, EventArgs e)
         {
-            Buscar(txt_Local.Text);
+            Buscar(txt_Pesquisa.Text);
         }
 
         private void txt_Solicitacao_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                Buscar(txt_Local.Text);
+                Buscar(txt_Pesquisa.Text);
                 e.Handled = e.SuppressKeyPress = true;
             }
         }

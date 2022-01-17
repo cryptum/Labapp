@@ -1,25 +1,31 @@
 ﻿using BetoAPP.Util;
 using Negocio;
 using System;
+using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
+using Environments = Repositorio.Config.Environments;
 
 namespace BetoAPP.Visual
 {
     public partial class AmostraVisual : Form
     {
         private static AmostraVisual aForm = null;
-        public static AmostraVisual Instance()
+        public static AmostraVisual Instance(Environments env)
         {
             if (aForm == null)
             {
-                aForm = new AmostraVisual();
+                aForm = new AmostraVisual(env);
             }
             return aForm;
         }
-        public AmostraVisual()
+
+        Environments GlobalEnv;
+
+        public AmostraVisual(Environments env)
         {
             InitializeComponent();
+            GlobalEnv = env;
         }
 
         private void SetLoading(bool displayLoader)
@@ -59,7 +65,7 @@ namespace BetoAPP.Visual
         public void RecarregarGrid()
         {
             dataGridAnalise.DataSource = new AnaliseNegocio().ObterTodosImcompleta();
-            AlinharGrid();
+            //AlinharGrid();
         }
 
         private void btn_Recarregar_Click(object sender, EventArgs e)
@@ -69,12 +75,15 @@ namespace BetoAPP.Visual
 
         private void btn_Adicionar_Amostra_Click(object sender, EventArgs e)
         {
-            int idSelecionada = Convert.ToInt32(dataGridAnalise.CurrentRow.Cells[0].Value.ToString());
-            this.Visible = false;
-            AdicionarAnaliseVisual View = new AdicionarAnaliseVisual("Adicionar Amostras", idSelecionada, "");
-            View.ShowDialog();
-            this.Visible = true;
-            RecarregarGrid();
+            if (dataGridAnalise.CurrentRow != null)
+            {
+                int idSelecionada = Convert.ToInt32(dataGridAnalise.CurrentRow.Cells[0].Value.ToString());
+                this.Visible = false;
+                AdicionarAnaliseVisual View = new AdicionarAnaliseVisual(GlobalEnv, "Adicionar Amostras", idSelecionada, "");
+                View.ShowDialog();
+                this.Visible = true;
+                RecarregarGrid();
+            }
         }
 
         private void btn_ImprimeQuadriculado_Click(object sender, EventArgs e)
@@ -130,6 +139,17 @@ namespace BetoAPP.Visual
         {
             RecarregarGrid();
             AlinharGrid();
+        }
+
+        private void dataGridAnalise_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridAnalise.Rows)
+            {
+                if (row.Cells[5].Value.ToString() == "Completa")
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(77, 228, 102);
+                else
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(230, 236, 63);
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace BetoAPP.Visual
 {
-    partial class TipoSolicitacaoVisual
+    partial class FazendaVisual
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,7 @@ namespace BetoAPP.Visual
             this.btn_Pesquisa = new System.Windows.Forms.Button();
             this.lbl1 = new System.Windows.Forms.Label();
             this.txt_Pesquisa = new System.Windows.Forms.TextBox();
-            this.dataGridTipoSolicitacao = new System.Windows.Forms.DataGridView();
+            this.dataGridFazenda = new System.Windows.Forms.DataGridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btn_Adiciona = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +47,7 @@ namespace BetoAPP.Visual
             this.btn_Recarrega = new System.Windows.Forms.ToolStripMenuItem();
             this.pcbCarregar = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridTipoSolicitacao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridFazenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).BeginInit();
@@ -61,10 +61,8 @@ namespace BetoAPP.Visual
             this.groupBox1.Controls.Add(this.lbl1);
             this.groupBox1.Controls.Add(this.txt_Pesquisa);
             this.groupBox1.Location = new System.Drawing.Point(13, 35);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(523, 115);
+            this.groupBox1.Size = new System.Drawing.Size(991, 115);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
@@ -72,22 +70,20 @@ namespace BetoAPP.Visual
             // 
             this.btn_Pesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Pesquisa.Image = global::BetoAPP.Properties.Resources.search_line_24px;
-            this.btn_Pesquisa.Location = new System.Drawing.Point(464, 48);
-            this.btn_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btn_Pesquisa.Location = new System.Drawing.Point(707, 48);
             this.btn_Pesquisa.Name = "btn_Pesquisa";
             this.btn_Pesquisa.Size = new System.Drawing.Size(51, 36);
             this.btn_Pesquisa.TabIndex = 6;
             this.btn_Pesquisa.UseVisualStyleBackColor = true;
-            this.btn_Pesquisa.Click += new System.EventHandler(this.btn_Pesquisa_Click);
+            this.btn_Pesquisa.Click += new System.EventHandler(this.btn_Solicitacao_Click);
             // 
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl1.Location = new System.Drawing.Point(8, 52);
-            this.lbl1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl1.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl1.Location = new System.Drawing.Point(174, 49);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(101, 29);
+            this.lbl1.Size = new System.Drawing.Size(106, 32);
             this.lbl1.TabIndex = 5;
             this.lbl1.Text = "Pesquisa";
             // 
@@ -96,21 +92,18 @@ namespace BetoAPP.Visual
             this.txt_Pesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Pesquisa.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Pesquisa.Location = new System.Drawing.Point(117, 48);
-            this.txt_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txt_Pesquisa.Location = new System.Drawing.Point(281, 48);
             this.txt_Pesquisa.Name = "txt_Pesquisa";
-            this.txt_Pesquisa.Size = new System.Drawing.Size(339, 36);
+            this.txt_Pesquisa.Size = new System.Drawing.Size(420, 36);
             this.txt_Pesquisa.TabIndex = 4;
-            this.txt_Pesquisa.Text = "    Particular, Planap,  ...";
-            this.txt_Pesquisa.Click += new System.EventHandler(this.txt_Pesquisa_Click);
-            this.txt_Pesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Pesquisa_KeyDown);
+            this.txt_Pesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Solicitacao_KeyDown);
             // 
-            // dataGridTipoSolicitacao
+            // dataGridFazenda
             // 
-            this.dataGridTipoSolicitacao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridFazenda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridTipoSolicitacao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridFazenda.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -118,32 +111,31 @@ namespace BetoAPP.Visual
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridTipoSolicitacao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridTipoSolicitacao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridFazenda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridFazenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridTipoSolicitacao.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridTipoSolicitacao.Location = new System.Drawing.Point(13, 156);
-            this.dataGridTipoSolicitacao.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dataGridTipoSolicitacao.Name = "dataGridTipoSolicitacao";
+            this.dataGridFazenda.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridFazenda.Location = new System.Drawing.Point(13, 156);
+            this.dataGridFazenda.Name = "dataGridFazenda";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridTipoSolicitacao.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridTipoSolicitacao.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dataGridTipoSolicitacao.RowTemplate.Height = 25;
-            this.dataGridTipoSolicitacao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridTipoSolicitacao.Size = new System.Drawing.Size(523, 427);
-            this.dataGridTipoSolicitacao.TabIndex = 12;
+            this.dataGridFazenda.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridFazenda.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dataGridFazenda.RowTemplate.Height = 25;
+            this.dataGridFazenda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridFazenda.Size = new System.Drawing.Size(991, 398);
+            this.dataGridFazenda.TabIndex = 12;
             // 
             // menuStrip1
             // 
@@ -155,7 +147,7 @@ namespace BetoAPP.Visual
             this.btn_Recarrega});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(549, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(1016, 32);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -205,31 +197,30 @@ namespace BetoAPP.Visual
             this.pcbCarregar.Image = global::BetoAPP.Properties.Resources.eclipse_0_6s_200px;
             this.pcbCarregar.Location = new System.Drawing.Point(0, 0);
             this.pcbCarregar.Name = "pcbCarregar";
-            this.pcbCarregar.Size = new System.Drawing.Size(549, 595);
+            this.pcbCarregar.Size = new System.Drawing.Size(1016, 566);
             this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pcbCarregar.TabIndex = 30;
+            this.pcbCarregar.TabIndex = 29;
             this.pcbCarregar.TabStop = false;
             this.pcbCarregar.Visible = false;
             // 
-            // TipoSolicitacaoVisual
+            // FazendaVisual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 595);
+            this.ClientSize = new System.Drawing.Size(1016, 566);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridTipoSolicitacao);
+            this.Controls.Add(this.dataGridFazenda);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pcbCarregar);
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.MinimumSize = new System.Drawing.Size(521, 403);
-            this.Name = "TipoSolicitacaoVisual";
+            this.MinimumSize = new System.Drawing.Size(671, 400);
+            this.Name = "FazendaVisual";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Solicitante";
-            this.Load += new System.EventHandler(this.TipoSolicitacaoVisual_Load);
+            this.Text = "Fazenda";
+            this.Load += new System.EventHandler(this.FazendaVisual_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridTipoSolicitacao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridFazenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -245,7 +236,7 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.Button btn_Pesquisa;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.TextBox txt_Pesquisa;
-        private System.Windows.Forms.DataGridView dataGridTipoSolicitacao;
+        private System.Windows.Forms.DataGridView dataGridFazenda;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btn_Adiciona;

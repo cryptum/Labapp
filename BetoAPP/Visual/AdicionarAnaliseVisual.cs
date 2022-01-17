@@ -4,20 +4,34 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Environments = Repositorio.Config.Environments;
 
 namespace BetoAPP.Visual
 {
     public partial class AdicionarAnaliseVisual : Form
     {
-        public int GlobalIdSolicitante { get; set; }
+        public int GlobalIdProprietario { get; set; }
         public int GlobalIdAnalise { get; set; }
+        Environments GlobalEnv;
 
-        public AdicionarAnaliseVisual(string titulo, int idAnalise, string nomeSolicitante)
+        public AdicionarAnaliseVisual(Environments env, string titulo, int idAnalise, string nomeProprietario)
         {
             InitializeComponent();
             txtTitulo.Text = titulo;
             GlobalIdAnalise = idAnalise;
-            tabControl1.TabPages.Remove(tabFisica);
+            GlobalEnv = env;
+
+            switch (env)
+            {
+                case Environments.preisser:
+                    tabControl1.TabPages.Remove(tabFisica);
+                    break;
+                case Environments.preisserInMemory:
+                    tabControl1.TabPages.Remove(tabFisica);
+                    break;
+                default:
+                    break;
+            }
 
             CriarAnaliseOuAdicionarAmostra();
         }
@@ -27,7 +41,7 @@ namespace BetoAPP.Visual
             if (txtTitulo.Text == "Adicionar Amostras")
             {
                 //Adicionar Amostra
-                tabControl1.TabPages.Remove(tabSolicitante);
+                tabControl1.TabPages.Remove(tabSolicitação);
             }
             else
             {
@@ -36,7 +50,7 @@ namespace BetoAPP.Visual
                 tabControl1.TabPages.Remove(tabCompleta);
                 tabControl1.TabPages.Remove(tabFisica);
                 tabControl1.TabPages.Remove(tabOpicional);
-                txtNomeAnalise.Focus();
+                txt_NumeroLaudo.Focus();
             }
         }
 
@@ -44,23 +58,23 @@ namespace BetoAPP.Visual
         {
             if (txtTitulo.Text != "Adicionar Amostras")
             {
-                var nomesReferencias = new ReferenciaNegocio().ObterTodos();
+                var nomesTipoAnalise = new TipoAnaliseNegocio().ObterTodos();
 
-                for (int i = 0; i < nomesReferencias.Count(); i++)
+                for (int i = 0; i < nomesTipoAnalise.Count(); i++)
                 {
-                    cbxReferencia.Items.Add(nomesReferencias[i].Nome);
+                    cbx_TipoAnalise.Items.Add(nomesTipoAnalise[i].Nome);
                 }
 
                 var nomesCultura = new CulturaNegocio().ObterTodos();
                 for (int i = 0; i < nomesCultura.Count(); i++)
                 {
-                    cbxCultura.Items.Add(nomesCultura[i].Nome);
+                    cbx_Cultura.Items.Add(nomesCultura[i].Nome);
                 }
 
-                var nomesSolicitacao = new TipoSolicitacaoNegocio().ObterTodos();
+                var nomesSolicitacao = new ConvenioNegocio().ObterTodos();
                 for (int i = 0; i < nomesSolicitacao.Count(); i++)
                 {
-                    cbxSolicitacao.Items.Add(nomesSolicitacao[i].Nome);
+                    cbx_Solicitacao.Items.Add(nomesSolicitacao[i].Nome);
                 }
             }
 
@@ -72,24 +86,14 @@ namespace BetoAPP.Visual
                 dataGridOpcional.Rows.Add("");
             }
 
-            var listaTipoAnalise = new TipoAnaliseNegocio().ObterTodosParaAdicinarAmostra();
-
-            for (int i = 0; i < listaTipoAnalise.Count(); i++)
-            {
-                cbx_Nome_Amostra_1.Items.Add(listaTipoAnalise[i].Nome);
-                cbx_Nome_Amostra_2.Items.Add(listaTipoAnalise[i].Nome);
-                cbx_Nome_Amostra_3.Items.Add(listaTipoAnalise[i].Nome);
-                cbx_Nome_Amostra_4.Items.Add(listaTipoAnalise[i].Nome);
-            }
-
             if (txtTitulo.Text == "Adicionar Amostras")
             {
                 var analise = new AnaliseNegocio().ObterUmPorCodigo(GlobalIdAnalise);
 
-                cbx_Nome_Amostra_1.SelectedItem = analise.NomeAmostra1;
-                cbx_Nome_Amostra_2.SelectedItem = analise.NomeAmostra2;
-                cbx_Nome_Amostra_3.SelectedItem = analise.NomeAmostra3;
-                cbx_Nome_Amostra_4.SelectedItem = analise.NomeAmostra4;
+                Nome_Amostra_2.Text = analise.NomeAmostra2;
+                Nome_Amostra_3.Text = analise.NomeAmostra3;
+                Nome_Amostra_1.Text = analise.NomeAmostra1;
+                Nome_Amostra_4.Text = analise.NomeAmostra4;
             }
 
         }
@@ -123,34 +127,22 @@ namespace BetoAPP.Visual
             this.Dispose();
         }
 
-        private void txt_Solicitante_DoubleClick(object sender, EventArgs e)
-        {
-            FormsSelecionarSolicitante();
-        }
 
-        private void txt_Solicitante_KeyDown(object sender, KeyEventArgs e)
+        void FormsSelecionarProprietario()
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                FormsSelecionarSolicitante();
-            }
-        }
-
-        void FormsSelecionarSolicitante()
-        {
-            using (var form = new BuscarSolicitanteVisual())
+            using (var form = new BuscarProprietarioVisual())
             {
                 form.ShowDialog();
 
-                if (form.NomeSolicitante != null)
+                if (form.NomeProprietario != null)
                 {
-                    txt_Solicitante.Text = form.NomeSolicitante;
-                    this.GlobalIdSolicitante = form.IdSolicitante;
-                    var locais = new LocalNegocio().ObterUmPorCodigoSolicitante(this.GlobalIdSolicitante);
+                    txt_Proprietario.Text = form.NomeProprietario;
+                    this.GlobalIdProprietario = form.IdProprietario;
+                    var locais = new FazendaNegocio().ObterUmPorCodigoDeProprietario(this.GlobalIdProprietario);
 
                     for (int i = 0; i < locais.Count(); i++)
                     {
-                        cbxFazenda.Items.Add(locais[i].Fazenda);
+                        cbx_Fazenda.Items.Add(locais[i].Fazenda);
                     }
                 }
             }
@@ -166,16 +158,20 @@ namespace BetoAPP.Visual
                     case "Criar Análise":
 
                         var idAnaliseSalva = new AnaliseNegocio().Salvar(
-                        txtNomeAnalise.Text.Trim(),
-                        this.GlobalIdSolicitante,
-                        cbxFazenda.Text,
-                        cbxReferencia.Text,
-                        cbxCultura.Text,
-                        cbxSolicitacao.Text,
-                        cbx_Nome_Amostra_1.Text,
-                        cbx_Nome_Amostra_2.Text,
-                        cbx_Nome_Amostra_3.Text,
-                        cbx_Nome_Amostra_4.Text);
+                        txt_NumeroLaudo.Text.Trim(),
+                        this.GlobalIdProprietario,
+                        cbx_Fazenda.Text,
+                        cbx_TipoAnalise.Text,
+                        cbx_Cultura.Text,
+                        cbx_Solicitacao.Text,
+                        Nome_Amostra_1.Text,
+                        Numero_Amostra_1.Text,
+                        Nome_Amostra_2.Text,
+                        Numero_Amostra_2.Text,
+                        Nome_Amostra_3.Text,
+                        Numero_Amostra_3.Text,
+                        Nome_Amostra_4.Text,
+                        Numero_Amostra_4.Text);
 
                         MessageBox.Show("Salvo!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
@@ -186,10 +182,14 @@ namespace BetoAPP.Visual
                         AnaliseEntidade analiseSalva = new AnaliseNegocio().ObterUmPorCodigo(GlobalIdAnalise);
 
                         AnaliseEntidade analiseComNomesDeAmostras = analiseSalva;
-                        analiseComNomesDeAmostras.NomeAmostra1 = cbx_Nome_Amostra_1.Text;
-                        analiseComNomesDeAmostras.NomeAmostra2 = cbx_Nome_Amostra_2.Text;
-                        analiseComNomesDeAmostras.NomeAmostra3 = cbx_Nome_Amostra_3.Text;
-                        analiseComNomesDeAmostras.NomeAmostra4 = cbx_Nome_Amostra_4.Text;
+                        analiseComNomesDeAmostras.NomeAmostra1 = Nome_Amostra_1.Text;
+                        analiseComNomesDeAmostras.NumeroAmostra1 = Numero_Amostra_1.Text;
+                        analiseComNomesDeAmostras.NomeAmostra2 = Nome_Amostra_2.Text;
+                        analiseComNomesDeAmostras.NumeroAmostra2 = Numero_Amostra_2.Text;
+                        analiseComNomesDeAmostras.NomeAmostra3 = Nome_Amostra_3.Text;
+                        analiseComNomesDeAmostras.NumeroAmostra3 = Numero_Amostra_3.Text;
+                        analiseComNomesDeAmostras.NomeAmostra4 = Nome_Amostra_4.Text;
+                        analiseComNomesDeAmostras.NumeroAmostra4 = Numero_Amostra_4.Text;
                         analiseComNomesDeAmostras.Completa = true;
 
                         new AnaliseNegocio().EditarNomesDasAmostras(analiseComNomesDeAmostras);
@@ -239,19 +239,19 @@ namespace BetoAPP.Visual
                             {
                                 case 0:
                                     {
-                                        amostra.NomeAmostra = cbx_Nome_Amostra_1.Text; break;
+                                        amostra.NomeAmostra = Nome_Amostra_1.Text; break;
                                     }
                                 case 1:
                                     {
-                                        amostra.NomeAmostra = cbx_Nome_Amostra_2.Text; break;
+                                        amostra.NomeAmostra = Nome_Amostra_2.Text; break;
                                     }
                                 case 2:
                                     {
-                                        amostra.NomeAmostra = cbx_Nome_Amostra_3.Text; break;
+                                        amostra.NomeAmostra = Nome_Amostra_3.Text; break;
                                     }
                                 case 3:
                                     {
-                                        amostra.NomeAmostra = cbx_Nome_Amostra_4.Text; break;
+                                        amostra.NomeAmostra = Nome_Amostra_4.Text; break;
                                     }
                                 default:
                                     break;
@@ -340,12 +340,11 @@ namespace BetoAPP.Visual
             amostra.Completa = Zn == 0 && Cu == 0 && Fe == 0 && Mn == 0 ? false : true;
 
 
-            amostra.Argila = "N/S";
-            amostra.Areia = "N/S";
-            amostra.Silte = "N/S";
+            amostra.Argila = ArgilaInicial == 0 ? "N/S" : new MotorDeCalculo().ProcessarArgila(ArgilaInicial, ArgilaFinal).ToString();
+            amostra.Areia = AreiaInicial == 0 ? "N/S" : new MotorDeCalculo().ProcessarAreia(AreiaInicial, AreiaFinal).ToString();
+            amostra.Silte = SilteInicial == 0 ? "N/S" : new MotorDeCalculo().ProcessarSilte(SilteInicial, SilteFinal).ToString();
 
-            amostra.Fisica = false;
-
+            amostra.Fisica = ArgilaInicial == 0 && ArgilaFinal == 0 && AreiaInicial == 0 && AreiaFinal == 0 && SilteInicial == 0;
 
             amostra.S = S == 0 ? "N/S" : new MotorDeCalculo().ProcessarEnxofre(S).ToString();
             amostra.B = B == 0 ? "N/S" : new MotorDeCalculo().ProcessarBoro(B).ToString();
@@ -361,64 +360,93 @@ namespace BetoAPP.Visual
 
         private void cbx_Nome_Amostra_1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridBasica.Rows[0].Cells[1].Value = cbx_Nome_Amostra_1.Text;
-            dataGridCompleta.Rows[0].Cells[1].Value = cbx_Nome_Amostra_1.Text;
-            dataGridFisica.Rows[0].Cells[1].Value = cbx_Nome_Amostra_1.Text;
-            dataGridOpcional.Rows[0].Cells[1].Value = cbx_Nome_Amostra_1.Text;
+            dataGridBasica.Rows[0].Cells[1].Value = Nome_Amostra_1.Text;
+            dataGridCompleta.Rows[0].Cells[1].Value = Nome_Amostra_1.Text;
+            dataGridFisica.Rows[0].Cells[1].Value = Nome_Amostra_1.Text;
+            dataGridOpcional.Rows[0].Cells[1].Value = Nome_Amostra_1.Text;
         }
 
         private void cbx_Nome_Amostra_2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridBasica.Rows[1].Cells[1].Value = cbx_Nome_Amostra_2.Text;
-            dataGridCompleta.Rows[1].Cells[1].Value = cbx_Nome_Amostra_2.Text;
-            dataGridFisica.Rows[1].Cells[1].Value = cbx_Nome_Amostra_2.Text;
-            dataGridOpcional.Rows[1].Cells[1].Value = cbx_Nome_Amostra_2.Text;
+            dataGridBasica.Rows[1].Cells[1].Value = Nome_Amostra_2.Text;
+            dataGridCompleta.Rows[1].Cells[1].Value = Nome_Amostra_2.Text;
+            dataGridFisica.Rows[1].Cells[1].Value = Nome_Amostra_2.Text;
+            dataGridOpcional.Rows[1].Cells[1].Value = Nome_Amostra_2.Text;
         }
 
         private void cbx_Nome_Amostra_3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridBasica.Rows[2].Cells[1].Value = cbx_Nome_Amostra_3.Text;
-            dataGridCompleta.Rows[2].Cells[1].Value = cbx_Nome_Amostra_3.Text;
-            dataGridFisica.Rows[2].Cells[1].Value = cbx_Nome_Amostra_3.Text;
-            dataGridOpcional.Rows[2].Cells[1].Value = cbx_Nome_Amostra_3.Text;
+            dataGridBasica.Rows[2].Cells[1].Value = Nome_Amostra_3.Text;
+            dataGridCompleta.Rows[2].Cells[1].Value = Nome_Amostra_3.Text;
+            dataGridFisica.Rows[2].Cells[1].Value = Nome_Amostra_3.Text;
+            dataGridOpcional.Rows[2].Cells[1].Value = Nome_Amostra_3.Text;
         }
 
         private void cbx_Nome_Amostra_4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridBasica.Rows[3].Cells[1].Value = cbx_Nome_Amostra_4.Text;
-            dataGridCompleta.Rows[3].Cells[1].Value = cbx_Nome_Amostra_4.Text;
-            dataGridFisica.Rows[3].Cells[1].Value = cbx_Nome_Amostra_4.Text;
-            dataGridOpcional.Rows[3].Cells[1].Value = cbx_Nome_Amostra_4.Text;
+            dataGridBasica.Rows[3].Cells[1].Value = Nome_Amostra_4.Text;
+            dataGridCompleta.Rows[3].Cells[1].Value = Nome_Amostra_4.Text;
+            dataGridFisica.Rows[3].Cells[1].Value = Nome_Amostra_4.Text;
+            dataGridOpcional.Rows[3].Cells[1].Value = Nome_Amostra_4.Text;
         }
 
         private void btn_Salvar_MouseHover(object sender, EventArgs e)
         {
-            txtNomeAnalise.Focus();
+            txt_NumeroLaudo.Focus();
         }
 
         private void btn_Cancelar_MouseHover(object sender, EventArgs e)
         {
-            txtNomeAnalise.Focus();
+            txt_NumeroLaudo.Focus();
         }
 
         private void btn_Salvar_MouseEnter(object sender, EventArgs e)
         {
-            txtNomeAnalise.Focus();
+            txt_NumeroLaudo.Focus();
         }
 
         private void btn_Cancelar_MouseEnter(object sender, EventArgs e)
         {
-            txtNomeAnalise.Focus();
+            txt_NumeroLaudo.Focus();
         }
 
         private void menuStrip1_MouseEnter(object sender, EventArgs e)
         {
-            txtNomeAnalise.Focus();
+            txt_NumeroLaudo.Focus();
         }
 
         private void menuStrip1_MouseHover(object sender, EventArgs e)
         {
-            txtNomeAnalise.Focus();
+            txt_NumeroLaudo.Focus();
+        }
+
+        private void Nome_Amostra_1_TextChanged(object sender, EventArgs e)
+        {
+            dataGridBasica.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
+            dataGridCompleta.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
+            dataGridFisica.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
+            dataGridOpcional.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
+        }
+
+        private void Numero_Amostra_1_TextChanged(object sender, EventArgs e)
+        {
+            dataGridBasica.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
+            dataGridCompleta.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
+            dataGridFisica.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
+            dataGridOpcional.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
+        }
+
+        private void txt_Proprietario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                FormsSelecionarProprietario();
+            }
+        }
+
+        private void txt_Proprietario_DoubleClick(object sender, EventArgs e)
+        {
+            FormsSelecionarProprietario();
         }
     }
 }

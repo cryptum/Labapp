@@ -7,19 +7,19 @@ using System.Linq;
 
 namespace Repositorio
 {
-    public class LocalRepositorio
+    public class FazendaRepositorio
     {
-        public LocalRepositorio() { }
+        public FazendaRepositorio() { }
 
-        public List<LocalDTO> ObterTodos(int idSolicitante, bool Excluido)
+        public List<FazendaDTO> ObterTodos(int idProprietario, bool Excluido)
         {
             using (var db = new ContextDB())
             {
-                var query = db.Locais
-                                .Where(w => w.Excluido == Excluido && w.Solicitantes.IdSolicitante == idSolicitante)
-                                .Select(x => new LocalDTO
+                var query = db.Fazendas
+                                .Where(w => w.Excluido == Excluido && w.Proprietarios.IdProprietario == idProprietario)
+                                .Select(x => new FazendaDTO
                                 {
-                                    Código = x.IdLocal,
+                                    Código = x.IdFazenda,
                                     Fazenda = x.Fazenda,
                                     Município = x.Municipio
                                 })
@@ -30,12 +30,12 @@ namespace Repositorio
             }
         }
 
-        public LocalEntidade ObterUmPorCodigo(int id)
+        public FazendaEntidade ObterUmPorCodigo(int id)
         {
             using (var db = new ContextDB())
             {
-                var query = db.Locais
-                                .Where(w => w.IdLocal == id)
+                var query = db.Fazendas
+                                .Where(w => w.IdFazenda == id)
                                 .AsNoTracking()
                                 .FirstOrDefault();
 
@@ -43,12 +43,12 @@ namespace Repositorio
             }
         }
 
-        public List<LocalEntidade> ObterUmPorCodigoSolicitante(int id)
+        public List<FazendaEntidade> ObterUmPorCodigoDeProprietario(int id)
         {
             using (var db = new ContextDB())
             {
-                var query = db.Locais
-                                .Where(w => w.Solicitantes.IdSolicitante == id)
+                var query = db.Fazendas
+                                .Where(w => w.Proprietarios.IdProprietario == id)
                                 .AsNoTracking()
                                 .ToList();
 
@@ -56,16 +56,16 @@ namespace Repositorio
             }
         }
 
-        public List<LocalDTO> ObterListaPorNome(int idSolicitante, string nome, bool Excluido)
+        public List<FazendaDTO> ObterListaPorNome(int idProprietario, string nome, bool Excluido)
         {
             using (var db = new ContextDB())
             {
-                var query = db.Locais
+                var query = db.Fazendas
                                 .Where(w => EF.Functions.Like(w.Fazenda, "%" + nome + "%"))
-                                .Where(w => w.Excluido == Excluido && w.Solicitantes.IdSolicitante == idSolicitante)
-                                .Select(x => new LocalDTO
+                                .Where(w => w.Excluido == Excluido && w.Proprietarios.IdProprietario == idProprietario)
+                                .Select(x => new FazendaDTO
                                 {
-                                    Código = x.IdLocal,
+                                    Código = x.IdFazenda,
                                     Fazenda = x.Fazenda,
                                     Município = x.Municipio
                                 })
@@ -76,28 +76,28 @@ namespace Repositorio
             }
         }
 
-        public int Salvar(LocalEntidade local)
+        public int Salvar(FazendaEntidade fazenda)
         {
-            //local.Solicitantes = new SolicitanteRepositorio().ObterUmPorCodigo(idSolicitante);
+            //local.Proprietarios = new ProprietarioRepositorio().ObterUmPorCodigo(idProprietario);
 
             using (var db = new ContextDB())
             {
-                db.Entry<LocalEntidade>(local).State = EntityState.Added;
+                db.Entry<FazendaEntidade>(fazenda).State = EntityState.Added;
                 db.SaveChanges();
             }
 
-            return local.IdLocal;
+            return fazenda.IdFazenda;
         }
 
-        public int Editar(LocalEntidade local)
+        public int Editar(FazendaEntidade fazenda)
         {
             using (var db = new ContextDB())
             {
-                db.Entry<LocalEntidade>(local).State = EntityState.Modified;
+                db.Entry<FazendaEntidade>(fazenda).State = EntityState.Modified;
                 db.SaveChanges();
             }
 
-            return local.IdLocal;
+            return fazenda.IdFazenda;
         }
     }
 }

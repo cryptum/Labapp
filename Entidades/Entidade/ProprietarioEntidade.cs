@@ -3,10 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Entidade
 {
-    public class SolicitanteEntidade
+    public class ProprietarioEntidade
     {
         [Key]
-        public int IdSolicitante { get; set; }
+        public int IdProprietario { get; set; }
 
         [Required]
         [MaxLength(150)]
@@ -20,7 +20,7 @@ namespace Entidade
 
         public bool Excluido { get; set; }
 
-        public ICollection<LocalEntidade> Locais { get; set; }
+        public ICollection<FazendaEntidade> Fazendas { get; set; }
 
         public ICollection<AnaliseEntidade> Analises { get; set; }
 

@@ -1,7 +1,7 @@
 ﻿
 namespace BetoAPP.Visual
 {
-    partial class SolicitanteVisual
+    partial class ProprietarioVisual
     {
         /// <summary>
         /// Required designer variable.
@@ -30,9 +30,9 @@ namespace BetoAPP.Visual
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btn_Adiciona = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_Edita = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,13 +42,13 @@ namespace BetoAPP.Visual
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_Pesquisa = new System.Windows.Forms.Button();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.txt_Solicitante = new System.Windows.Forms.TextBox();
+            this.txt_Proprietario = new System.Windows.Forms.TextBox();
             this.pcbCarregar = new System.Windows.Forms.PictureBox();
-            this.dataGridSolicitante = new System.Windows.Forms.DataGridView();
+            this.dataGridProprietario = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridSolicitante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProprietario)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -122,7 +122,7 @@ namespace BetoAPP.Visual
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btn_Pesquisa);
             this.groupBox1.Controls.Add(this.lbl1);
-            this.groupBox1.Controls.Add(this.txt_Solicitante);
+            this.groupBox1.Controls.Add(this.txt_Proprietario);
             this.groupBox1.Location = new System.Drawing.Point(13, 35);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(991, 115);
@@ -143,23 +143,23 @@ namespace BetoAPP.Visual
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.Font = new System.Drawing.Font("Corbel", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl1.Location = new System.Drawing.Point(174, 52);
+            this.lbl1.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl1.Location = new System.Drawing.Point(174, 49);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(101, 29);
+            this.lbl1.Size = new System.Drawing.Size(106, 32);
             this.lbl1.TabIndex = 5;
             this.lbl1.Text = "Pesquisa";
             // 
-            // txt_Solicitante
+            // txt_Proprietario
             // 
-            this.txt_Solicitante.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txt_Proprietario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_Solicitante.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Solicitante.Location = new System.Drawing.Point(281, 48);
-            this.txt_Solicitante.Name = "txt_Solicitante";
-            this.txt_Solicitante.Size = new System.Drawing.Size(420, 36);
-            this.txt_Solicitante.TabIndex = 4;
-            this.txt_Solicitante.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Solicitante_KeyDown);
+            this.txt_Proprietario.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_Proprietario.Location = new System.Drawing.Point(281, 48);
+            this.txt_Proprietario.Name = "txt_Proprietario";
+            this.txt_Proprietario.Size = new System.Drawing.Size(420, 36);
+            this.txt_Proprietario.TabIndex = 4;
+            this.txt_Proprietario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Proprietario_KeyDown);
             // 
             // pcbCarregar
             // 
@@ -173,70 +173,70 @@ namespace BetoAPP.Visual
             this.pcbCarregar.TabStop = false;
             this.pcbCarregar.Visible = false;
             // 
-            // dataGridSolicitante
+            // dataGridProprietario
             // 
-            this.dataGridSolicitante.AllowUserToAddRows = false;
-            this.dataGridSolicitante.AllowUserToDeleteRows = false;
-            this.dataGridSolicitante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridProprietario.AllowUserToAddRows = false;
+            this.dataGridProprietario.AllowUserToDeleteRows = false;
+            this.dataGridProprietario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridSolicitante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridSolicitante.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridSolicitante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridSolicitante.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridSolicitante.Location = new System.Drawing.Point(13, 156);
-            this.dataGridSolicitante.Name = "dataGridSolicitante";
-            this.dataGridSolicitante.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridSolicitante.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridSolicitante.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dataGridSolicitante.RowTemplate.Height = 25;
-            this.dataGridSolicitante.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridSolicitante.Size = new System.Drawing.Size(991, 398);
-            this.dataGridSolicitante.TabIndex = 13;
-            this.dataGridSolicitante.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridSolicitante_CellMouseClick);
+            this.dataGridProprietario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridProprietario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridProprietario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridProprietario.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridProprietario.Location = new System.Drawing.Point(13, 156);
+            this.dataGridProprietario.Name = "dataGridProprietario";
+            this.dataGridProprietario.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridProprietario.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridProprietario.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dataGridProprietario.RowTemplate.Height = 25;
+            this.dataGridProprietario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridProprietario.Size = new System.Drawing.Size(991, 398);
+            this.dataGridProprietario.TabIndex = 13;
+            this.dataGridProprietario.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridProprietario_CellMouseClick);
             // 
-            // SolicitanteVisual
+            // ProprietarioVisual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 566);
-            this.Controls.Add(this.dataGridSolicitante);
+            this.Controls.Add(this.dataGridProprietario);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pcbCarregar);
             this.MinimumSize = new System.Drawing.Size(671, 400);
-            this.Name = "SolicitanteVisual";
+            this.Name = "ProprietarioVisual";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proprietário";
-            this.Load += new System.EventHandler(this.SolicitanteVisual_Load);
+            this.Load += new System.EventHandler(this.ProprietarioVisual_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridSolicitante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProprietario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,9 +252,9 @@ namespace BetoAPP.Visual
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_Pesquisa;
         private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.TextBox txt_Solicitante;
+        private System.Windows.Forms.TextBox txt_Proprietario;
         private System.Windows.Forms.PictureBox pcbCarregar;
-        private System.Windows.Forms.DataGridView dataGridSolicitante;
+        private System.Windows.Forms.DataGridView dataGridProprietario;
         private System.Windows.Forms.ToolStripMenuItem btn_Fazendas;
     }
 }

@@ -6,9 +6,9 @@ namespace Entidade.DTO
     {
         public int Código { get; set; }
 
-        public SolicitanteEntidade Proprietário { get; set; }
+        public ProprietarioEntidade Proprietário { get; set; }
 
-        public string Local { get; set; }
+        public string Fazenda { get; set; }
 
         public string Município { get; set; }
 
@@ -31,7 +31,7 @@ namespace Entidade.DTO
 
         public string Proprietário { get; set; }
 
-        public string Local { get; set; }
+        public string Fazenda { get; set; }
 
         public string Referência { get; set; }
 
@@ -46,11 +46,12 @@ namespace Entidade.DTO
 
         public string Análise { get; set; }
 
-        public string Local { get; set; }
+        public string Fazenda { get; set; }
 
         public string Referência { get; set; }
 
         public string Cultura { get; set; }
+        public string Completo { get; set; }
     }
 
     public class AnaliseObterTodosCompletoDTO
@@ -61,12 +62,14 @@ namespace Entidade.DTO
 
         public string Proprietário { get; set; }
 
-        public string Local { get; set; }
+        public string Fazenda { get; set; }
 
         public string Referência { get; set; }
 
         public string Cultura { get; set; }
 
         public string Solicitação { get; set; }
+
+        public string Completo { get; set; }
     }
 }

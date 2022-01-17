@@ -1,14 +1,58 @@
 ﻿using Entidade;
 using Entidade.DTO;
 using Repositorio;
+using Repositorio.Config;
 using System;
 using System.Collections.Generic;
+
 
 namespace Negocio
 {
     public class UsuarioNegocio
     {
         public UsuarioNegocio() { }
+
+        public void ValidarDataBaseVazio()
+        {
+            int quantidadeUsuariosSalvos = new UsuarioRepositorio().ValidarDataBaseVazio();
+            if (quantidadeUsuariosSalvos <= 0)
+            {
+                UsuarioEntidade usuario = new();
+                Env env = new();
+
+                switch (env.Select)
+                {
+                    case Environments.local:
+                        usuario.Nome = "admin";
+                        usuario.Acesso = "admin";
+                        break;
+                    case Environments.beto:
+                        usuario.Nome = "Beto";
+                        usuario.Acesso = "beto";
+                        break;
+                    case Environments.preisser:
+                        usuario.Nome = "Preisser";
+                        usuario.Acesso = "preisser";
+                        break;
+                    case Environments.betoInMemory:
+                        usuario.Nome = "admin";
+                        usuario.Acesso = "admin";
+                        break;
+                    case Environments.preisserInMemory:
+                        usuario.Nome = "admin";
+                        usuario.Acesso = "admin";
+                        break;
+                    default:
+                        break;
+                }
+
+                usuario.Senha = "123";
+                usuario.Administrador = true;
+                usuario.Bloqueado = false;
+                usuario.DataCriado = DateTime.Now;
+                new UsuarioRepositorio().Salvar(usuario);
+            }
+        }
 
         public UsuarioDTO ValidarAcesso(string Acesso, string Senha)
         {

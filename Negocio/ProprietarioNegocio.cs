@@ -6,36 +6,36 @@ using System.Collections.Generic;
 
 namespace Negocio
 {
-    public class SolicitanteNegocio
+    public class ProprietarioNegocio
     {
-        public List<SolicitanteDTO> ObterTodos()
+        public List<ProprietarioDTO> ObterTodos()
         {
-            return new SolicitanteRepositorio().ObterTodos(false);
+            return new ProprietarioRepositorio().ObterTodos(false);
         }
 
-        public List<SolicitanteDTO> ObterListaPorNome(string nome)
+        public List<ProprietarioDTO> ObterListaPorNome(string nome)
         {
-            return new SolicitanteRepositorio().ObterListaPorNome(nome);
+            return new ProprietarioRepositorio().ObterListaPorNome(nome);
         }
 
-        public SolicitanteEntidade ObterUmPorCodigo(int id)
+        public ProprietarioEntidade ObterUmPorCodigo(int id)
         {
-            return new SolicitanteRepositorio().ObterUmPorCodigo(id);
+            return new ProprietarioRepositorio().ObterUmPorCodigo(id);
         }
 
         public int Salvar(String Nome, String Cpf, String Observacao)
         {
-            SolicitanteEntidade Solicitante = new SolicitanteEntidade();
+            ProprietarioEntidade Solicitante = new ProprietarioEntidade();
             Solicitante.Nome = Nome.Trim();
             Solicitante.Cpf = Cpf;
             Solicitante.Observacao = Observacao.Trim();
             Solicitante.Excluido = false;
-            return new SolicitanteRepositorio().Salvar(Solicitante);
+            return new ProprietarioRepositorio().Salvar(Solicitante);
         }
 
         public int Editar(int Id, String Nome, String Cpf, String Observacao)
         {
-            SolicitanteEntidade Solicitante = new SolicitanteRepositorio().ObterUmPorCodigo(Id);
+            ProprietarioEntidade Solicitante = new ProprietarioRepositorio().ObterUmPorCodigo(Id);
             if (Solicitante == null)
             {
                 return 0;
@@ -43,18 +43,18 @@ namespace Negocio
             Solicitante.Nome = Nome.Trim();
             Solicitante.Cpf = Cpf;
             Solicitante.Observacao = Observacao.Trim();
-            return new SolicitanteRepositorio().Editar(Solicitante);
+            return new ProprietarioRepositorio().Editar(Solicitante);
         }
 
         public int ExcluirLogicamente(int Id, bool Excluido)
         {
-            SolicitanteEntidade Solicitante = new SolicitanteRepositorio().ObterUmPorCodigo(Id);
+            ProprietarioEntidade Solicitante = new ProprietarioRepositorio().ObterUmPorCodigo(Id);
             if (Solicitante == null)
             {
                 return 0;
             }
             Solicitante.Excluido = true;
-            return new SolicitanteRepositorio().Editar(Solicitante);
+            return new ProprietarioRepositorio().Editar(Solicitante);
         }
     }
 }

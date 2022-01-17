@@ -17,11 +17,11 @@ namespace Negocio
     public class GerarPDF
     {
         public GerarPDF()
-        {}
+        { }
 
         public string Gerar(AnaliseEntidade Analise, List<AmostraEntidade> Amostra)
         {
-            var caminho = ValidarCaminhoPDF(Analise.Solicitantes.Nome);
+            var caminho = ValidarCaminhoPDF(Analise.Proprietarios.Nome);
 
             using (PdfWriter wPdf = new PdfWriter(caminho, new WriterProperties().SetPdfVersion(PdfVersion.PDF_2_0)))
             {
@@ -52,19 +52,19 @@ namespace Negocio
                 document.Add(tableNomeLaudo);
 
 
-                Table tableNomeSolicitante = new Table(UnitValue.CreatePercentArray(1)).UseAllAvailableWidth().SetBorder(Border.NO_BORDER);
-                tableNomeSolicitante.AddCell("Proprietário: " + Analise.Solicitantes.Nome).AddStyle(normalInfo).SetBorder(Border.NO_BORDER);
-                document.Add(tableNomeSolicitante);
+                Table tableNomeProprietario = new Table(UnitValue.CreatePercentArray(1)).UseAllAvailableWidth().SetBorder(Border.NO_BORDER);
+                tableNomeProprietario.AddCell("Proprietário: " + Analise.Proprietarios.Nome).AddStyle(normalInfo).SetBorder(Border.NO_BORDER);
+                document.Add(tableNomeProprietario);
 
 
-                Table tableInfoSolicitante = new Table(UnitValue.CreatePercentArray(2)).UseAllAvailableWidth().SetBorder(Border.NO_BORDER);
-                tableInfoSolicitante.AddCell("Data: " + Analise.DataCriado).AddStyle(normal).SetBorder(Border.NO_BORDER);
-                tableInfoSolicitante.AddCell("Solicitante: " + Analise.TipoSolicitacao).SetBorder(Border.NO_BORDER);
-                tableInfoSolicitante.AddCell("Laudo: " + Analise.NomeAnalise).AddStyle(normal).SetBorder(Border.NO_BORDER);
-                tableInfoSolicitante.AddCell("Cultura: " + Analise.Cultura).AddStyle(normal).SetBorder(Border.NO_BORDER);
-                tableInfoSolicitante.AddCell("Fazenda: " + Analise.Local).AddStyle(normal).SetBorder(Border.NO_BORDER);
-                tableInfoSolicitante.AddCell("Referência: " + Analise.Referencia).AddStyle(normal).SetBorder(Border.NO_BORDER);
-                document.Add(tableInfoSolicitante);
+                Table tableInfoProprietario = new Table(UnitValue.CreatePercentArray(2)).UseAllAvailableWidth().SetBorder(Border.NO_BORDER);
+                tableInfoProprietario.AddCell("Data: " + Analise.DataCriado).AddStyle(normal).SetBorder(Border.NO_BORDER);
+                tableInfoProprietario.AddCell("Solicitante: " + Analise.Convenio).SetBorder(Border.NO_BORDER);
+                tableInfoProprietario.AddCell("Laudo: " + Analise.NomeAnalise).AddStyle(normal).SetBorder(Border.NO_BORDER);
+                tableInfoProprietario.AddCell("Cultura: " + Analise.Cultura).AddStyle(normal).SetBorder(Border.NO_BORDER);
+                tableInfoProprietario.AddCell("Fazenda: " + Analise.Fazenda).AddStyle(normal).SetBorder(Border.NO_BORDER);
+                tableInfoProprietario.AddCell("Referência: " + Analise.Referencia).AddStyle(normal).SetBorder(Border.NO_BORDER);
+                document.Add(tableInfoProprietario);
 
                 document.Add(new Paragraph("\n"));
 
@@ -325,36 +325,36 @@ namespace Negocio
                 return "Laudo Gerado!";
             };
         }
-        string ValidarCaminhoPDF(string nomeSolicitante)
+        string ValidarCaminhoPDF(string nomeProprietario)
         {
             string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             var caminho = $"{desktop}\\Laudo";
-            var caminhoSolicitante = $"{desktop}\\Laudo\\{nomeSolicitante}";
+            var caminhoProprietario = $"{desktop}\\Laudo\\{nomeProprietario}";
 
             if (!Directory.Exists(caminho))
             {
                 Directory.CreateDirectory(caminho);
             }
 
-            if (!Directory.Exists(caminhoSolicitante))
+            if (!Directory.Exists(caminhoProprietario))
             {
-                Directory.CreateDirectory(caminhoSolicitante);
+                Directory.CreateDirectory(caminhoProprietario);
             }
 
 
-            caminhoSolicitante += MontaNomeArquivoPDF(caminhoSolicitante, nomeSolicitante);
+            caminhoProprietario += MontaNomeArquivoPDF(caminhoProprietario, nomeProprietario);
 
-            return caminhoSolicitante;
+            return caminhoProprietario;
         }
 
-        string MontaNomeArquivoPDF(string caminhoDestino, string SolicitantesNome)
+        string MontaNomeArquivoPDF(string caminhoDestino, string ProprietarioNome)
         {
             bool loop = true;
             string caminho = "";
             int n = 0;
             while (loop)
             {
-                caminho = $"\\ {DateTime.Now.Day}-{DateTime.Now.Month}-{DateTime.Now.Year} - {SolicitantesNome} - {n} " + ".pdf";
+                caminho = $"\\ {DateTime.Now.Day}-{DateTime.Now.Month}-{DateTime.Now.Year} - {ProprietarioNome} - {n} " + ".pdf";
 
                 if (!File.Exists(caminhoDestino + caminho))
                 {

@@ -5,18 +5,18 @@ using System.Windows.Forms;
 
 namespace BetoAPP.Visual
 {
-    public partial class SolicitanteVisual : Form
+    public partial class ProprietarioVisual : Form
     {
-        private static SolicitanteVisual aForm = null;
-        public static SolicitanteVisual Instance()
+        private static ProprietarioVisual aForm = null;
+        public static ProprietarioVisual Instance()
         {
             if (aForm == null)
             {
-                aForm = new SolicitanteVisual();
+                aForm = new ProprietarioVisual();
             }
             return aForm;
         }
-        public SolicitanteVisual()
+        public ProprietarioVisual()
         {
             InitializeComponent();
             btn_Pesquisa.Select();
@@ -48,39 +48,33 @@ namespace BetoAPP.Visual
 
         void AlinharGrid()
         {
-            dataGridSolicitante.Columns[0].Width = 100;
-            dataGridSolicitante.Columns[2].Width = 160;
-            dataGridSolicitante.Columns[3].Width = 180;
-            dataGridSolicitante.Columns[4].Width = 110;
-            dataGridSolicitante.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridSolicitante.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridSolicitante.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridSolicitante.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridSolicitante.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridProprietario.Columns[0].Width = 100;
+            dataGridProprietario.Columns[2].Width = 160;
+            dataGridProprietario.Columns[3].Width = 180;
+            dataGridProprietario.Columns[4].Width = 110;
+            dataGridProprietario.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridProprietario.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridProprietario.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridProprietario.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridProprietario.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
 
         void RecarregarGrid()
         {
-            dataGridSolicitante.DataSource = new SolicitanteNegocio().ObterTodos();
+            dataGridProprietario.DataSource = new ProprietarioNegocio().ObterTodos();
             AlinharGrid();
         }
 
         void Buscar(string nome)
         {
-            dataGridSolicitante.DataSource = new SolicitanteNegocio().ObterListaPorNome(nome);
-            AlinharGrid();
-        }
-
-        private void SolicitanteVisual_Load(object sender, EventArgs e)
-        {
-            RecarregarGrid();
+            dataGridProprietario.DataSource = new ProprietarioNegocio().ObterListaPorNome(nome);
             AlinharGrid();
         }
 
         private void btn_Adiciona_Click(object sender, EventArgs e)
         {
-            AdicionarSolicitanteVisual View = new AdicionarSolicitanteVisual("Adicionar Cliente", 0, "");
+            AdicionarProprietarioVisual View = new AdicionarProprietarioVisual("Adicionar Proprietário", 0, "", "", "");
             View.ShowDialog();
             RecarregarGrid();
         }
@@ -89,14 +83,16 @@ namespace BetoAPP.Visual
         {
             try
             {
-                if (dataGridSolicitante.CurrentRow != null)
+                if (dataGridProprietario.CurrentRow != null)
                 {
-                    int idSelecionada = Convert.ToInt32(dataGridSolicitante.CurrentRow.Cells[0].Value.ToString());
-                    string nameSelecionada = dataGridSolicitante.CurrentRow.Cells[1].Value.ToString();
+                    int idSelecionada = Convert.ToInt32(dataGridProprietario.CurrentRow.Cells[0].Value.ToString());
+                    string nameSelecionada = dataGridProprietario.CurrentRow.Cells[1].Value.ToString();
+                    string cpfCnpjSelecionada = dataGridProprietario.CurrentRow.Cells[2].Value.ToString();
+                    string obsSelecionada = dataGridProprietario.CurrentRow.Cells[3].Value.ToString();
 
                     if (MessageBox.Show($"Deseja editar: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        AdicionarSolicitanteVisual View = new AdicionarSolicitanteVisual("Editar Cliente", idSelecionada, nameSelecionada);
+                        AdicionarProprietarioVisual View = new AdicionarProprietarioVisual("Editar Proprietário", idSelecionada, nameSelecionada, cpfCnpjSelecionada, obsSelecionada);
                         View.ShowDialog();
                         RecarregarGrid();
                     }
@@ -112,14 +108,14 @@ namespace BetoAPP.Visual
         {
             try
             {
-                if (dataGridSolicitante.CurrentRow != null)
+                if (dataGridProprietario.CurrentRow != null)
                 {
-                    int idSelecionada = Convert.ToInt32(dataGridSolicitante.CurrentRow.Cells[0].Value.ToString());
-                    string nameSelecionada = dataGridSolicitante.CurrentRow.Cells[1].Value.ToString();
+                    int idSelecionada = Convert.ToInt32(dataGridProprietario.CurrentRow.Cells[0].Value.ToString());
+                    string nameSelecionada = dataGridProprietario.CurrentRow.Cells[1].Value.ToString();
 
                     if (MessageBox.Show($"Deseja Excluir: {nameSelecionada}?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        int result = new SolicitanteNegocio().ExcluirLogicamente(idSelecionada, true);
+                        int result = new ProprietarioNegocio().ExcluirLogicamente(idSelecionada, true);
                         if (result == 0)
                         {
                             MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -145,47 +141,53 @@ namespace BetoAPP.Visual
 
         private void btn_Pesquisa_Click(object sender, EventArgs e)
         {
-            Buscar(txt_Solicitante.Text);
+            Buscar(txt_Proprietario.Text);
         }
 
-        private void txt_Solicitante_KeyDown(object sender, KeyEventArgs e)
+        private void btn_Fazendas_Click(object sender, EventArgs e)
+        {
+            if (dataGridProprietario.CurrentRow != null)
+            {
+                int idProprietario = Convert.ToInt32(dataGridProprietario.CurrentRow.Cells[0].Value);
+
+                FazendaVisual View = new FazendaVisual(idProprietario);
+                View.ShowDialog();
+                RecarregarGrid();
+            }
+        }
+
+        private void ProprietarioVisual_Load(object sender, EventArgs e)
+        {
+            RecarregarGrid();
+            AlinharGrid();
+        }
+
+        private void txt_Proprietario_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                Buscar(txt_Solicitante.Text);
+                Buscar(txt_Proprietario.Text);
                 e.Handled = e.SuppressKeyPress = true;
             }
         }
 
-        private void dataGridSolicitante_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dataGridProprietario_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 if (e.ColumnIndex >= 0)
                 {
-                    var nomeCabecalho = dataGridSolicitante.Columns[e.ColumnIndex].Name;
-                    int IdSolicitante = Convert.ToInt32(dataGridSolicitante.CurrentRow.Cells[0].Value);
+                    var nomeCabecalho = dataGridProprietario.Columns[e.ColumnIndex].Name;
+                    int idProprietario = Convert.ToInt32(dataGridProprietario.CurrentRow.Cells[0].Value);
 
 
                     if (nomeCabecalho == "Fazendas")
                     {
-                        LocalVisual View = new LocalVisual(IdSolicitante);
+                        FazendaVisual View = new FazendaVisual(idProprietario);
                         View.ShowDialog();
                         RecarregarGrid();
                     }
                 }
-            }
-        }
-
-        private void btn_Fazendas_Click(object sender, EventArgs e)
-        {
-            if (dataGridSolicitante.CurrentRow != null)
-            {
-                int IdSolicitante = Convert.ToInt32(dataGridSolicitante.CurrentRow.Cells[0].Value);
-
-                LocalVisual View = new LocalVisual(IdSolicitante);
-                View.ShowDialog();
-                RecarregarGrid();
             }
         }
     }

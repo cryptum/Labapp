@@ -5,14 +5,17 @@ using System.Windows.Forms;
 
 namespace BetoAPP.Visual
 {
-    public partial class AdicionarSolicitanteVisual : Form
+    public partial class AdicionarFazendaVisual : Form
     {
         public int IdInicial { get; set; }
-        public AdicionarSolicitanteVisual(string titulo, int idInicial, string valorInicial)
+        public int idProprietario { get; set; }
+        public AdicionarFazendaVisual(string titulo, int idInicial, string valorFazenda, string valorMunicipio, int idProprietario)
         {
             InitializeComponent();
             txtTitulo.Text = titulo;
-            txtNome.Text = valorInicial;
+            txtFazenda.Text = valorFazenda;
+            txtMunicipio.Text = valorMunicipio;
+            this.idProprietario = idProprietario;
             IdInicial = idInicial;
         }
 
@@ -38,6 +41,7 @@ namespace BetoAPP.Visual
         //    }
         //}
 
+
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -45,12 +49,26 @@ namespace BetoAPP.Visual
 
         private void btn_Adiciona_Click(object sender, EventArgs e)
         {
-
             try
             {
-                if (txtTitulo.Text == "Adicionar Cliente")
+                if (txtTitulo.Text == "Adicionar Fazenda")
                 {
-                    var result = new SolicitanteNegocio().Salvar(txtNome.Text, txtCpf.Text, txtObservacao.Text);
+                    var result = new FazendaNegocio().Salvar(txtFazenda.Text, txtMunicipio.Text, idProprietario);
+                    if (result == 0)
+                    {
+                        MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        txtFazenda.Text = "";
+                        txtMunicipio.Text = "";
+                        txtFazenda.Focus();
+                        MessageBox.Show("Salvo!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                else if (txtTitulo.Text == "Editar Fazenda")
+                {
+                    var result = new FazendaNegocio().Editar(this.IdInicial, txtFazenda.Text, txtMunicipio.Text, idProprietario);
                     if (result == 0)
                     {
                         MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -60,23 +78,11 @@ namespace BetoAPP.Visual
                         MessageBox.Show("Salvo!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
-                else if (txtTitulo.Text == "Editar Cliente")
-                {
-                    var result = new SolicitanteNegocio().Editar(this.IdInicial, txtNome.Text, txtCpf.Text, txtObservacao.Text);
-                    if (result == 0)
-                    {
-                        MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Salvo!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                    this.Dispose();
-                }
+                this.Dispose();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }

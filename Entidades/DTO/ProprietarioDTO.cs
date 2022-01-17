@@ -2,7 +2,7 @@
 
 namespace Entidade.DTO
 {
-    public class SolicitanteDTO
+    public class ProprietarioDTO
     {
         [Key]
         public int Código { get; set; }
@@ -10,7 +10,7 @@ namespace Entidade.DTO
         [Required(ErrorMessage = "O campo 'Nome' está vazio")]
         public string Nome { get; set; }
 
-        public string Cpf { get; set; }
+        public string CPF { get; set; }
 
         public string Observação { get; set; }
 

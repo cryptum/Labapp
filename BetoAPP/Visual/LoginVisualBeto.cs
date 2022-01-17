@@ -7,11 +7,11 @@ using Environments = Repositorio.Config.Environments;
 
 namespace BetoAPP
 {
-    public partial class LoginVisualPreisser : Form
+    public partial class LoginVisualBeto : Form
     {
-        readonly Environments GlobalEnv;
+        Environments GlobalEnv;
 
-        public LoginVisualPreisser(Environments env)
+        public LoginVisualBeto(Environments env)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -27,11 +27,11 @@ namespace BetoAPP
                     txt_Usuario.Text = "admin";
                     txt_Senha.Text = "123";
                     break;
-                case Environments.preisser:
-                    txt_Usuario.Text = "preisser";
+                case Environments.beto:
+                    txt_Usuario.Text = "beto";
                     txt_Senha.Text = "123";
                     break;
-                case Environments.preisserInMemory:
+                case Environments.betoInMemory:
                     txt_Usuario.Text = "admin";
                     txt_Senha.Text = "123";
                     break;
@@ -83,6 +83,11 @@ namespace BetoAPP
 
         public void Login()
         {
+            if (DateTime.Now.Month >= 12 || DateTime.Now.Year > 2021)
+            {
+                MessageBox.Show("Tem algum problema! contate o desenvolvedor.");
+                this.Dispose();
+            }
             try
             {
                 UsuarioDTO resultado = new UsuarioNegocio().ValidarAcesso(txt_Usuario.Text.Trim(), txt_Senha.Text.Trim());

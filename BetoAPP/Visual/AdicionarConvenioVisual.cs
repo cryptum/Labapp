@@ -5,10 +5,10 @@ using System.Windows.Forms;
 
 namespace BetoAPP.Visual
 {
-    public partial class AdicionarTipoSolicitacaoVisual : Form
+    public partial class AdicionarConvenioVisual : Form
     {
         public int IdInicial { get; set; }
-        public AdicionarTipoSolicitacaoVisual(string titulo, int idInicial, string valorInicial)
+        public AdicionarConvenioVisual(string titulo, int idInicial, string valorInicial)
         {
             InitializeComponent();
             txtTitulo.Text = titulo;
@@ -50,7 +50,7 @@ namespace BetoAPP.Visual
             {
                 if (txtTitulo.Text == "Adicionar Tipo Solicitação")
                 {
-                    var result = new TipoSolicitacaoNegocio().Salvar(txtNome.Text);
+                    var result = new ConvenioNegocio().Salvar(txtNome.Text);
                     if (result == 0)
                     {
                         MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -64,7 +64,7 @@ namespace BetoAPP.Visual
                 }
                 else if (txtTitulo.Text == "Editar Tipo Solicitação")
                 {
-                    var result = new TipoSolicitacaoNegocio().Editar(this.IdInicial, txtNome.Text);
+                    var result = new ConvenioNegocio().Editar(this.IdInicial, txtNome.Text);
                     if (result == 0)
                     {
                         MessageBox.Show(Mensagem.NDeuCerto.Value, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -73,9 +73,8 @@ namespace BetoAPP.Visual
                     {
                         MessageBox.Show("Salvo!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-
-                    this.Dispose();
                 }
+                this.Dispose();
             }
             catch (Exception)
             {

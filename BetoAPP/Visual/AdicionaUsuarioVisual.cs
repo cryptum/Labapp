@@ -78,10 +78,8 @@ namespace BetoAPP.Visual
                     {
                         MessageBox.Show("Salvo!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-
-                    this.Dispose();
                 }
-
+                this.Dispose();
             }
             catch (Exception)
             {

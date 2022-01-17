@@ -7,19 +7,19 @@ using System.Linq;
 
 namespace Repositorio
 {
-    public class TipoSolicitacaoRepositorio
+    public class ConvenioRepositorio
     {
 
-        public TipoSolicitacaoRepositorio() { }
+        public ConvenioRepositorio() { }
 
         public List<TipoSolicitacaoDTO> ObterTodos()
         {
             using (var db = new ContextDB())
             {
-                var query = db.TipoSolicitacaos
+                var query = db.Convenios
                                 .Select(x => new TipoSolicitacaoDTO
                                 {
-                                    Código = x.IdTipoSolicitacao,
+                                    Código = x.IdConvenio,
                                     Nome = x.Nome
                                 })
                                 .AsNoTracking()
@@ -33,7 +33,7 @@ namespace Repositorio
         {
             using (var db = new ContextDB())
             {
-                var query = db.TipoSolicitacaos
+                var query = db.Convenios
                                 .Select(x => new TipoSolicitacaoNomesDTO
                                 {
                                     Nome = x.Nome
@@ -45,12 +45,12 @@ namespace Repositorio
             }
         }
 
-        public TipoSolicitacaoEntidade ObterUmPorCodigo(int id)
+        public ConvenioEntidade ObterUmPorCodigo(int id)
         {
             using (var db = new ContextDB())
             {
-                var query = db.TipoSolicitacaos
-                                .Where(w => w.IdTipoSolicitacao == id)
+                var query = db.Convenios
+                                .Where(w => w.IdConvenio == id)
                                 .AsNoTracking()
                                 .FirstOrDefault();
 
@@ -62,11 +62,11 @@ namespace Repositorio
         {
             using (var db = new ContextDB())
             {
-                var query = db.TipoSolicitacaos
+                var query = db.Convenios
                                 .Where(w => EF.Functions.Like(w.Nome, "%" + nome + "%"))
                                 .Select(x => new TipoSolicitacaoDTO
                                 {
-                                    Código = x.IdTipoSolicitacao,
+                                    Código = x.IdConvenio,
                                     Nome = x.Nome
                                 })
                                 .AsNoTracking()
@@ -76,29 +76,29 @@ namespace Repositorio
             }
         }
 
-        public int Salvar(TipoSolicitacaoEntidade TipoSolicitacao)
+        public int Salvar(ConvenioEntidade TipoSolicitacao)
         {
             using (var db = new ContextDB())
             {
-                db.TipoSolicitacaos.Add(TipoSolicitacao);
+                db.Convenios.Add(TipoSolicitacao);
                 db.SaveChanges();
             }
 
-            return TipoSolicitacao.IdTipoSolicitacao;
+            return TipoSolicitacao.IdConvenio;
         }
 
-        public int Editar(TipoSolicitacaoEntidade TipoSolicitacao)
+        public int Editar(ConvenioEntidade TipoSolicitacao)
         {
             using (var db = new ContextDB())
             {
-                db.Entry<TipoSolicitacaoEntidade>(TipoSolicitacao).State = EntityState.Modified;
+                db.Entry<ConvenioEntidade>(TipoSolicitacao).State = EntityState.Modified;
                 db.SaveChanges();
             }
 
-            return TipoSolicitacao.IdTipoSolicitacao;
+            return TipoSolicitacao.IdConvenio;
         }
 
-        public int Excluir(TipoSolicitacaoEntidade TipoSolicitacao)
+        public int Excluir(ConvenioEntidade TipoSolicitacao)
         {
             using (var db = new ContextDB())
             {
@@ -106,7 +106,7 @@ namespace Repositorio
                 db.SaveChanges();
             }
 
-            return TipoSolicitacao.IdTipoSolicitacao;
+            return TipoSolicitacao.IdConvenio;
         }
     }
 }

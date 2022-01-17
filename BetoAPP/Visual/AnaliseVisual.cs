@@ -1,29 +1,35 @@
 ﻿using BetoAPP.Util;
 using Negocio;
 using System;
+using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
+using Environments = Repositorio.Config.Environments;
 
 namespace BetoAPP.Visual
 {
     public partial class AnaliseVisual : Form
     {
         private static AnaliseVisual aForm = null;
-        public static AnaliseVisual Instance()
+        public static AnaliseVisual Instance(Environments env)
         {
             if (aForm == null)
             {
-                aForm = new AnaliseVisual();
+                aForm = new AnaliseVisual(env);
             }
             return aForm;
         }
-        public AnaliseVisual()
+
+        Environments GlobalEnv;
+
+        public AnaliseVisual(Environments env)
         {
             InitializeComponent();
             btn_Pesquisa.Select();
-            cbx_Pesquisa.Items.Add("Nome do Cliente");
-            cbx_Pesquisa.Items.Add("CPF do Cliente");
+            cbx_Pesquisa.Items.Add("Nome do Proprietário");
+            cbx_Pesquisa.Items.Add("CPF/CNPJ do Proprietário");
             cbx_Pesquisa.SelectedIndex = 0;
+            GlobalEnv = env;
         }
 
         private void SetLoading(bool displayLoader)
@@ -68,15 +74,15 @@ namespace BetoAPP.Visual
         {
             switch (cbx_Pesquisa.SelectedItem)
             {
-                case "Nome do Cliente":
+                case "Nome do Proprietário":
                     {
-                        dataGridAnalise.DataSource = new AnaliseNegocio().ObterListaPorSolicitanteNome(nomeOuCpf);
+                        dataGridAnalise.DataSource = new AnaliseNegocio().ObterListaPorNomeProprietario(nomeOuCpf);
                         AlinharGrid();
                         break;
                     }
-                case "CPF do Cliente":
+                case "CPF/CNPJ do Proprietário":
                     {
-                        dataGridAnalise.DataSource = new AnaliseNegocio().ObterListaPorSolicitanteCpf(nomeOuCpf);
+                        dataGridAnalise.DataSource = new AnaliseNegocio().ObterListaPorCpfProprietario(nomeOuCpf.Replace(".", "").Replace(",", "").Replace("\\", "").Replace("/", ""));
                         AlinharGrid();
                         break;
                     }
@@ -94,7 +100,7 @@ namespace BetoAPP.Visual
         private void btn_Adiciona_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            AdicionarAnaliseVisual View = new AdicionarAnaliseVisual("Criar Análise", 0, "");
+            AdicionarAnaliseVisual View = new AdicionarAnaliseVisual(GlobalEnv, "Criar Análise", 0, "");
             View.ShowDialog();
             this.Visible = true;
             RecarregarGrid();
@@ -239,6 +245,17 @@ namespace BetoAPP.Visual
                     }
                 default:
                     break;
+            }
+        }
+
+        private void dataGridAnalise_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridAnalise.Rows)
+            {
+                if (row.Cells[7].Value.ToString() == "Completa")
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(77, 228, 102);
+                else
+                    row.DefaultCellStyle.BackColor = Color.FromArgb(230, 236, 63);
             }
         }
     }

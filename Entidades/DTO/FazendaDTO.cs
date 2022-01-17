@@ -2,7 +2,7 @@
 
 namespace Entidade.DTO
 {
-    public class LocalDTO
+    public class FazendaDTO
     {
         [Key]
         public int Código { get; set; }
