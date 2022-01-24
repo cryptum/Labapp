@@ -83,11 +83,6 @@ namespace LabAPP
 
         public void Login()
         {
-            if (DateTime.Now.Month >= 12 || DateTime.Now.Year > 2021)
-            {
-                MessageBox.Show("Tem algum problema! contate o desenvolvedor.");
-                this.Dispose();
-            }
             try
             {
                 UsuarioDTO resultado = new UsuarioNegocio().ValidarAcesso(txt_Usuario.Text.Trim(), txt_Senha.Text.Trim());

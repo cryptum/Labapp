@@ -58,8 +58,8 @@ namespace Repositorio
                                     Código = x.IdUsuario,
                                     Nome = x.Nome,
                                     Acesso = x.Acesso,
-                                    Bloqueado = x.Bloqueado,
-                                    Administrador = x.Administrador
+                                    Bloqueado = x.Bloqueado == true ? "Bloqueado" : "Com Acesso",
+                                    Administrador = x.Administrador == true ? "Administrador" : "Colaborador",
                                 })
                                 .AsNoTracking()
                                 .ToList();
@@ -92,8 +92,8 @@ namespace Repositorio
                                     Código = x.IdUsuario,
                                     Nome = x.Nome,
                                     Acesso = x.Acesso,
-                                    Bloqueado = x.Bloqueado,
-                                    Administrador = x.Administrador
+                                    Bloqueado = x.Bloqueado == true ? "Bloqueado" : "Com Acesso",
+                                    Administrador = x.Administrador == true ? "Administrador" : "Colaborador",
                                 })
                                 .AsNoTracking()
                                 .ToList();

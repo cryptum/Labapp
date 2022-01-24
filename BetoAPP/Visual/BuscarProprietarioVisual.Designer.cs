@@ -64,7 +64,7 @@ namespace LabAPP.Visual
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridProprietario.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridProprietario.Location = new System.Drawing.Point(12, 12);
+            this.dataGridProprietario.Location = new System.Drawing.Point(0, -1);
             this.dataGridProprietario.Name = "dataGridProprietario";
             this.dataGridProprietario.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -78,7 +78,7 @@ namespace LabAPP.Visual
             this.dataGridProprietario.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dataGridProprietario.RowTemplate.Height = 25;
             this.dataGridProprietario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridProprietario.Size = new System.Drawing.Size(856, 512);
+            this.dataGridProprietario.Size = new System.Drawing.Size(868, 513);
             this.dataGridProprietario.TabIndex = 14;
             this.dataGridProprietario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridProprietario_CellDoubleClick);
             this.dataGridProprietario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridProprietario_KeyDown);
@@ -88,9 +88,9 @@ namespace LabAPP.Visual
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Cancelar});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 519);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 515);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(872, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(868, 32);
             this.menuStrip1.TabIndex = 27;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -108,7 +108,7 @@ namespace LabAPP.Visual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 551);
+            this.ClientSize = new System.Drawing.Size(868, 547);
             this.ControlBox = false;
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.dataGridProprietario);

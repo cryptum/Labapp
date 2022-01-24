@@ -15,7 +15,7 @@
         {
             get
             {
-                return Environments.local;
+                return Environments.preisserInMemory;
             }
         }
     }

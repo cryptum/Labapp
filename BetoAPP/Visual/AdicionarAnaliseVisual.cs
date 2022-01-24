@@ -420,22 +420,6 @@ namespace LabAPP.Visual
             txt_NumeroLaudo.Focus();
         }
 
-        private void Nome_Amostra_1_TextChanged(object sender, EventArgs e)
-        {
-            dataGridBasica.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
-            dataGridCompleta.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
-            dataGridFisica.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
-            dataGridOpcional.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
-        }
-
-        private void Numero_Amostra_1_TextChanged(object sender, EventArgs e)
-        {
-            dataGridBasica.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
-            dataGridCompleta.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
-            dataGridFisica.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
-            dataGridOpcional.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
-        }
-
         private void txt_Proprietario_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -447,6 +431,38 @@ namespace LabAPP.Visual
         private void txt_Proprietario_DoubleClick(object sender, EventArgs e)
         {
             FormsSelecionarProprietario();
+        }
+
+        private void Amostra_1_TextChanged(object sender, EventArgs e)
+        {
+            dataGridBasica.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
+            dataGridCompleta.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
+            dataGridFisica.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
+            dataGridOpcional.Rows[0].Cells[1].Value = $"{Numero_Amostra_1.Text} - {Nome_Amostra_1.Text}";
+        }
+
+        private void Amostra_2_TextChanged(object sender, EventArgs e)
+        {
+            dataGridBasica.Rows[1].Cells[1].Value = $"{Numero_Amostra_2.Text} - {Nome_Amostra_2.Text}";
+            dataGridCompleta.Rows[1].Cells[1].Value = $"{Numero_Amostra_2.Text} - {Nome_Amostra_2.Text}";
+            dataGridFisica.Rows[1].Cells[1].Value = $"{Numero_Amostra_2.Text} - {Nome_Amostra_2.Text}";
+            dataGridOpcional.Rows[1].Cells[1].Value = $"{Numero_Amostra_2.Text} - {Nome_Amostra_2.Text}";
+        }
+
+        private void Amostra_3_TextChanged(object sender, EventArgs e)
+        {
+            dataGridBasica.Rows[2].Cells[1].Value = $"{Numero_Amostra_3.Text} - {Nome_Amostra_3.Text}";
+            dataGridCompleta.Rows[2].Cells[1].Value = $"{Numero_Amostra_3.Text} - {Nome_Amostra_3.Text}";
+            dataGridFisica.Rows[2].Cells[1].Value = $"{Numero_Amostra_3.Text} - {Nome_Amostra_3.Text}";
+            dataGridOpcional.Rows[2].Cells[1].Value = $"{Numero_Amostra_3.Text} - {Nome_Amostra_3.Text}";
+        }
+
+        private void Amostra_4_TextChanged(object sender, EventArgs e)
+        {
+            dataGridBasica.Rows[2].Cells[1].Value = $"{Numero_Amostra_4.Text} - {Nome_Amostra_4.Text}";
+            dataGridCompleta.Rows[2].Cells[1].Value = $"{Numero_Amostra_4.Text} - {Nome_Amostra_4.Text}";
+            dataGridFisica.Rows[2].Cells[1].Value = $"{Numero_Amostra_4.Text} - {Nome_Amostra_4.Text}";
+            dataGridOpcional.Rows[2].Cells[1].Value = $"{Numero_Amostra_4.Text} - {Nome_Amostra_4.Text}";
         }
     }
 }
