@@ -56,6 +56,21 @@ namespace Repositorio
             }
         }
 
+        public FazendaEntidade ObterUmPorNomeEProprietario(string fazenda, string nomeProprietario)
+        {
+            using (var db = new ContextDB())
+            {
+                var query = db.Fazendas
+                                .Where(w => w.Fazenda == fazenda)
+                                .Where(w => w.Proprietarios.Nome == nomeProprietario)
+                                .AsNoTracking()
+                                .First();
+
+                return query;
+            }
+        }
+
+
         public List<FazendaDTO> ObterListaPorNome(int idProprietario, string nome, bool Excluido)
         {
             using (var db = new ContextDB())

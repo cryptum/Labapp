@@ -44,6 +44,12 @@ namespace Repositorio.Config
                     optionsBuilder.UseInMemoryDatabase("preisserInMemory");
                     break;
 
+                case Environments.paginaUnica:
+                    connectionString = "server=localhost;user=root;password=root;database=LabAPP";
+                    serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
+                    optionsBuilder.UseMySql(connectionString, serverVersion);
+                    break;
+
                 default:
                     this.Dispose();
                     break;

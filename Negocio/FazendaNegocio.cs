@@ -16,6 +16,12 @@ namespace Negocio
         {
             return new FazendaRepositorio().ObterUmPorCodigoDeProprietario(idProprietario);
         }
+        
+        
+        public FazendaEntidade ObterUmPorNomeEProprietario(string fazenda, string nomeProprietario)
+        {
+            return new FazendaRepositorio().ObterUmPorNomeEProprietario(fazenda, nomeProprietario);
+        }
 
         public List<FazendaDTO> ObterListaPorNome(int idProprietario, string nome)
         {

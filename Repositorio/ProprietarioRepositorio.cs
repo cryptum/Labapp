@@ -45,6 +45,20 @@ namespace Repositorio
             }
         }
 
+        public ProprietarioEntidade ObterUmPorNome(string nome)
+        {
+            using (var db = new ContextDB())
+            {
+                var query = db.Proprietarios
+                                .Include(i => i.Fazendas)
+                                .Where(w => w.Nome == nome)
+                                .AsNoTracking()
+                                .First();
+
+                return query;
+            }
+        }
+
         public List<ProprietarioDTO> ObterListaPorNome(string nome)
         {
             using (var db = new ContextDB())

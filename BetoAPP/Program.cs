@@ -1,3 +1,4 @@
+using LabAPP.Visual;
 using Negocio;
 using Repositorio.Config;
 using System;
@@ -41,6 +42,10 @@ namespace LabAPP
 
                 case Environments.preisserInMemory:
                     Application.Run(new LoginVisualPreisser(Environments.preisserInMemory));
+                    break;
+
+                case Environments.paginaUnica:
+                    Application.Run(new PaginaUnicaVisual());
                     break;
 
                 default:

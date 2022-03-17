@@ -23,6 +23,11 @@ namespace Negocio
             return new ProprietarioRepositorio().ObterUmPorCodigo(id);
         }
 
+        public ProprietarioEntidade ObterUmPorNome(string nome)
+        {
+            return new ProprietarioRepositorio().ObterUmPorNome(nome);
+        }
+
         public int Salvar(String Nome, String Cpf, String Observacao)
         {
             ProprietarioEntidade Solicitante = new ProprietarioEntidade();

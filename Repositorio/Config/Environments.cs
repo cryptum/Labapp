@@ -6,7 +6,8 @@
         beto,
         preisser,
         betoInMemory,
-        preisserInMemory
+        preisserInMemory,
+        paginaUnica
     }
 
     public class Env
@@ -15,7 +16,7 @@
         {
             get
             {
-                return Environments.preisserInMemory;
+                return Environments.paginaUnica;
             }
         }
     }
