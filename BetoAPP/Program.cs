@@ -1,4 +1,4 @@
-using LabAPP.Visual;
+using LabAPP.Visual.PaginaUnica;
 using Negocio;
 using Repositorio.Config;
 using System;
@@ -45,7 +45,7 @@ namespace LabAPP
                     break;
 
                 case Environments.paginaUnica:
-                    Application.Run(new PaginaUnicaVisual());
+                    Application.Run(new PrincipalUnicoVisual());
                     break;
 
                 default:

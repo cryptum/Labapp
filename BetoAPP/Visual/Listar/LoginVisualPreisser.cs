@@ -1,5 +1,5 @@
-﻿using LabAPP.Visual;
-using Entidade.DTO;
+﻿using Entidade.DTO;
+using LabAPP.Visual;
 using Negocio;
 using System;
 using System.Windows.Forms;

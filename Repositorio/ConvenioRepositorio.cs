@@ -58,6 +58,20 @@ namespace Repositorio
             }
         }
 
+
+        public ConvenioEntidade ObterUmPorNome(string nome)
+        {
+            using (var db = new ContextDB())
+            {
+                var query = db.Convenios
+                                .Where(w => w.Nome == nome)
+                                .AsNoTracking()
+                                .FirstOrDefault();
+
+                return query;
+            }
+        }
+
         public List<TipoSolicitacaoDTO> ObterListaPorNome(string nome)
         {
             using (var db = new ContextDB())

@@ -23,6 +23,12 @@ namespace Negocio
         {
             return new ConvenioRepositorio().ObterListaPorNome(nome);
         }
+        
+        
+        public ConvenioEntidade ObterUmPorNome(string nome)
+        {
+            return new ConvenioRepositorio().ObterUmPorNome(nome);
+        }
 
         public int Salvar(string Nome)
         {

@@ -93,8 +93,6 @@ namespace Repositorio
 
         public int Salvar(FazendaEntidade fazenda)
         {
-            //local.Proprietarios = new ProprietarioRepositorio().ObterUmPorCodigo(idProprietario);
-
             using (var db = new ContextDB())
             {
                 db.Entry<FazendaEntidade>(fazenda).State = EntityState.Added;

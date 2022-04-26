@@ -23,7 +23,7 @@ namespace Repositorio
                                     Fazenda = x.Fazenda,
                                     Referência = x.Referencia,
                                     Cultura = x.Cultura,
-                                    Completo = x.Completa == true ? "Completa" : "Em Aberto"
+                                    Completo = x.Finalizada == true ? "Completa" : "Em Aberto"
                                 })
                                 .AsNoTracking()
                                 .OrderByDescending(o => o.Código)
@@ -47,7 +47,7 @@ namespace Repositorio
                                     Referência = x.Referencia,
                                     Cultura = x.Cultura,
                                     Solicitação = x.Convenio,
-                                    Completo = x.Completa == true ? "Completa" : "Em Aberto"
+                                    Completo = x.Finalizada == true ? "Completa" : "Em Aberto"
                                 })
                                 .AsNoTracking()
                                 .OrderByDescending(o => o.Código)

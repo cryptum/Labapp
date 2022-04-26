@@ -29,31 +29,7 @@ namespace Entidade
         [MaxLength(100)]
         public string Convenio { get; set; }
 
-        [MaxLength(100)]
-        public string NomeAmostra1 { get; set; }
-
-        [MaxLength(100)]
-        public string NumeroAmostra1 { get; set; }
-
-        [MaxLength(100)]
-        public string NomeAmostra2 { get; set; }
-
-        [MaxLength(100)]
-        public string NumeroAmostra2 { get; set; }
-
-        [MaxLength(100)]
-        public string NomeAmostra3 { get; set; }
-
-        [MaxLength(100)]
-        public string NumeroAmostra3 { get; set; }
-
-        [MaxLength(100)]
-        public string NomeAmostra4 { get; set; }
-
-        [MaxLength(100)]
-        public string NumeroAmostra4 { get; set; }
-
-        public bool? Completa { get; set; }
+        public bool? Finalizada { get; set; }
 
         public ICollection<AmostraEntidade> Amostras { get; set; }
 

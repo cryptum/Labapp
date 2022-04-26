@@ -35,7 +35,7 @@ namespace Negocio
         }
 
 
-        public int Salvar(string nomeAnalise, int idProprietario, string local, string referencia, string cultura, string tipoSolicitacao, string nomeAmostra1, string numeroAmostra1, string nomeAmostra2, string numeroAmostra2, string nomeAmostra3, string numeroAmostra3, string nomeAmostra4, string numeroAmostra4)
+        public int Salvar(string nomeAnalise, int idProprietario, string local, string referencia, string cultura, string tipoSolicitacao)
         {
             AnaliseEntidade analise = new AnaliseEntidade();
             analise.NomeAnalise = nomeAnalise.Trim();
@@ -44,15 +44,7 @@ namespace Negocio
             analise.Cultura = cultura;
             analise.Convenio = tipoSolicitacao;
             analise.DataCriado = DateTime.Now;
-            analise.NomeAmostra1 = nomeAmostra1;
-            analise.NumeroAmostra1 = numeroAmostra1;
-            analise.NomeAmostra2 = nomeAmostra2;
-            analise.NumeroAmostra2 = numeroAmostra2;
-            analise.NomeAmostra3 = nomeAmostra3;
-            analise.NumeroAmostra3 = numeroAmostra3;
-            analise.NomeAmostra4 = nomeAmostra4;
-            analise.NumeroAmostra4 = numeroAmostra4;
-            analise.Completa = false;
+            analise.Finalizada = false;
             return new AnaliseRepositorio().Salvar(analise, idProprietario);
         }
 

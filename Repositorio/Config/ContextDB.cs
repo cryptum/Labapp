@@ -48,6 +48,9 @@ namespace Repositorio.Config
                     connectionString = "server=localhost;user=root;password=root;database=LabAPP";
                     serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
                     optionsBuilder.UseMySql(connectionString, serverVersion);
+
+
+                    //optionsBuilder.UseInMemoryDatabase("preisserInMemory");
                     break;
 
                 default:

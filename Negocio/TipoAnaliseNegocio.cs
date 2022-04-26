@@ -24,6 +24,13 @@ namespace Negocio
             return new TipoAnaliseRepositorio().ObterListaPorNome(nome);
         }
 
+
+        public TipoAnaliseEntidade ObterUmPorNome(string nome)
+        {
+            return new TipoAnaliseRepositorio().ObterUmPorNome(nome);
+        }
+
+
         public int Salvar(string Nome)
         {
             TipoAnaliseEntidade TipoAnalise = new TipoAnaliseEntidade();
