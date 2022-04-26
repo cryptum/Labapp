@@ -7,6 +7,7 @@
       "start": "cd BetoAPP && dotnet run .\\BetoAPP.csproj",
       "add": "cd Repositorio && dotnet-ef migrations add",
       "run": "cd Repositorio && dotnet-ef database update",
-      "rem": "cd Repositorio &&  dotnet-ef  migrations remove"
+      "rem": "cd Repositorio &&  dotnet-ef  migrations remove",
+      "drop": "cd Repositorio &&  dotnet-ef  database drop &&  dotnet-ef  migrations remove"
     }
   }

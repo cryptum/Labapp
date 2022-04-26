@@ -54,6 +54,19 @@ namespace Repositorio
             }
         }
 
+        public TipoAnaliseEntidade ObterUmPorNome(string nome)
+        {
+            using (var db = new ContextDB())
+            {
+                var query = db.TipoAnalises
+                                .Where(w => w.Nome == nome)
+                                .AsNoTracking()
+                                .FirstOrDefault();
+
+                return query;
+            }
+        }
+
         public List<TipoAnaliseDTO> ObterListaPorNome(string nome)
         {
             using (var db = new ContextDB())

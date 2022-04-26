@@ -12,10 +12,10 @@ namespace Entidade
         [MaxLength(50)]
         public string NomeAnalise { get; set; }
 
-        public SolicitanteEntidade Solicitantes { get; set; }
+        public ProprietarioEntidade Proprietarios { get; set; }
 
         [MaxLength(120)]
-        public string Local { get; set; }
+        public string Fazenda { get; set; }
 
         [MaxLength(120)]
         public string Municipio { get; set; }
@@ -27,21 +27,9 @@ namespace Entidade
         public string Cultura { get; set; }
 
         [MaxLength(100)]
-        public string TipoSolicitacao { get; set; }
+        public string Convenio { get; set; }
 
-        [MaxLength(100)]
-        public string NomeAmostra1 { get; set; }
-
-        [MaxLength(100)]
-        public string NomeAmostra2 { get; set; }
-
-        [MaxLength(100)]
-        public string NomeAmostra3 { get; set; }
-
-        [MaxLength(100)]
-        public string NomeAmostra4 { get; set; }
-
-        public bool? Completa { get; set; }
+        public bool? Finalizada { get; set; }
 
         public ICollection<AmostraEntidade> Amostras { get; set; }
 

@@ -16,14 +16,14 @@ namespace Repositorio
             using (var db = new ContextDB())
             {
                 var query = db.Analises
-                                .Where(w => w.Completa == false)
                                 .Select(x => new AnaliseObterTodosImcompletoDTO
                                 {
                                     Código = x.IdAnalise,
                                     Análise = x.NomeAnalise,
-                                    Local = x.Local,
+                                    Fazenda = x.Fazenda,
                                     Referência = x.Referencia,
-                                    Cultura = x.Cultura
+                                    Cultura = x.Cultura,
+                                    Completo = x.Finalizada == true ? "Completa" : "Em Aberto"
                                 })
                                 .AsNoTracking()
                                 .OrderByDescending(o => o.Código)
@@ -38,16 +38,16 @@ namespace Repositorio
             using (var db = new ContextDB())
             {
                 var query = db.Analises
-                                .Where(w => w.Completa == true)
                                 .Select(x => new AnaliseObterTodosCompletoDTO
                                 {
                                     Código = x.IdAnalise,
                                     Análise = x.NomeAnalise,
-                                    Proprietário = x.Solicitantes.Nome,
-                                    Local = x.Local,
+                                    Proprietário = x.Proprietarios.Nome,
+                                    Fazenda = x.Fazenda,
                                     Referência = x.Referencia,
                                     Cultura = x.Cultura,
-                                    Solicitação = x.TipoSolicitacao
+                                    Solicitação = x.Convenio,
+                                    Completo = x.Finalizada == true ? "Completa" : "Em Aberto"
                                 })
                                 .AsNoTracking()
                                 .OrderByDescending(o => o.Código)
@@ -63,7 +63,7 @@ namespace Repositorio
             {
                 var query = db.Analises
                                 .Where(w => w.IdAnalise == id)
-                                .Include(i => i.Solicitantes)
+                                .Include(i => i.Proprietarios)
                                 .FirstOrDefault();
 
                 return query;
@@ -71,20 +71,20 @@ namespace Repositorio
 
         }
 
-        public List<AnaliseObterTodosDTO> ObterListaPorSolicitanteNome(string nome)
+        public List<AnaliseObterTodosDTO> ObterListaPorNomeProprietario(string nome)
         {
             using (var db = new ContextDB())
             {
                 var query = db.Analises
-                                .Where(w => EF.Functions.Like(w.Solicitantes.Nome, "%" + nome + "%"))
+                                .Where(w => EF.Functions.Like(w.Proprietarios.Nome, "%" + nome + "%"))
                                 .Select(x => new AnaliseObterTodosDTO
                                 {
                                     Código = x.IdAnalise,
-                                    Proprietário = x.Solicitantes.Nome,
-                                    Local = x.Local,
+                                    Proprietário = x.Proprietarios.Nome,
+                                    Fazenda = x.Fazenda,
                                     Referência = x.Referencia,
                                     Cultura = x.Cultura,
-                                    Solicitação = x.TipoSolicitacao
+                                    Solicitação = x.Convenio
                                 })
                                 .AsNoTracking()
                                 .ToList();
@@ -93,20 +93,20 @@ namespace Repositorio
             }
         }
 
-        public List<AnaliseObterTodosDTO> ObterListaPorSolicitanteCpf(string cpf)
+        public List<AnaliseObterTodosDTO> ObterListaPorCpfProprietario(string cpf)
         {
             using (var db = new ContextDB())
             {
                 var query = db.Analises
-                                .Where(w => EF.Functions.Like(w.Solicitantes.Cpf, "%" + cpf + "%"))
+                                .Where(w => EF.Functions.Like(w.Proprietarios.Cpf.Replace(".", "").Replace(",", "").Replace("\\", "").Replace("/", ""), "%" + cpf + "%"))
                                 .Select(x => new AnaliseObterTodosDTO
                                 {
                                     Código = x.IdAnalise,
-                                    Proprietário = x.Solicitantes.Nome,
-                                    Local = x.Local,
+                                    Proprietário = x.Proprietarios.Nome,
+                                    Fazenda = x.Fazenda,
                                     Referência = x.Referencia,
                                     Cultura = x.Cultura,
-                                    Solicitação = x.TipoSolicitacao
+                                    Solicitação = x.Convenio
                                 })
                                 .AsNoTracking()
                                 .ToList();
@@ -115,9 +115,9 @@ namespace Repositorio
             }
         }
 
-        public int Salvar(AnaliseEntidade Analise, int idSolicitante)
+        public int Salvar(AnaliseEntidade Analise, int idProprietario)
         {
-            Analise.Solicitantes = new SolicitanteRepositorio().ObterUmPorCodigo(idSolicitante);
+            Analise.Proprietarios = new ProprietarioRepositorio().ObterUmPorCodigo(idProprietario);
 
             using (var db = new ContextDB())
             {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BetoAPP.Properties {
+namespace LabAPP.Properties {
     using System;
     
     
@@ -19,7 +19,7 @@ namespace BetoAPP.Properties {
     // através de uma ferramenta como ResGen ou Visual Studio.
     // Para adicionar ou remover um associado, edite o arquivo .ResX e execute ResGen novamente
     // com a opção /str, ou recrie o projeto do VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -39,7 +39,7 @@ namespace BetoAPP.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BetoAPP.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LabAPP.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -76,6 +76,26 @@ namespace BetoAPP.Properties {
         internal static System.Drawing.Bitmap AgroFrutal {
             get {
                 object obj = ResourceManager.GetObject("AgroFrutal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_drop_down_line {
+            get {
+                object obj = ResourceManager.GetObject("arrow-drop-down-line", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_drop_down_line1 {
+            get {
+                object obj = ResourceManager.GetObject("arrow-drop-down-line1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,6 +193,26 @@ namespace BetoAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap file_add_fill_azul_32px {
+            get {
+                object obj = ResourceManager.GetObject("file-add-fill azul 32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_text_36px {
+            get {
+                object obj = ResourceManager.GetObject("file-text-36px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fileadd_verde_24px {
             get {
                 object obj = ResourceManager.GetObject("fileadd-verde-24px", resourceCulture);
@@ -233,9 +273,49 @@ namespace BetoAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap grid_line_azul_32px {
+            get {
+                object obj = ResourceManager.GetObject("grid-line azul 32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LAB1 {
             get {
                 object obj = ResourceManager.GetObject("LAB1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoPreisser {
+            get {
+                object obj = ResourceManager.GetObject("LogoPreisser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menu_left_fill_azul_24px {
+            get {
+                object obj = ResourceManager.GetObject("menu-left-fill azul 24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menu_right_fill_azul_24px {
+            get {
+                object obj = ResourceManager.GetObject("menu-right-fill azul 24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -256,6 +336,16 @@ namespace BetoAPP.Properties {
         internal static System.Drawing.Bitmap microscope_fill_Branco_36px {
             get {
                 object obj = ResourceManager.GetObject("microscope-fill-Branco-36px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap number_1 {
+            get {
+                object obj = ResourceManager.GetObject("number-1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,6 +473,16 @@ namespace BetoAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap refresh_line_azul_32px {
+            get {
+                object obj = ResourceManager.GetObject("refresh-line azul 32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap request_fill_36px {
             get {
                 object obj = ResourceManager.GetObject("request-fill-36px", resourceCulture);
@@ -433,9 +533,9 @@ namespace BetoAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sheld_fill_36px {
+        internal static System.Drawing.Bitmap shield_fill_Branco_36px {
             get {
-                object obj = ResourceManager.GetObject("sheld-fill-36px", resourceCulture);
+                object obj = ResourceManager.GetObject("shield-fill-Branco-36px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -443,9 +543,9 @@ namespace BetoAPP.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap shield_fill_Branco_36px {
+        internal static System.Drawing.Bitmap shield_user_fill {
             get {
-                object obj = ResourceManager.GetObject("shield-fill-Branco-36px", resourceCulture);
+                object obj = ResourceManager.GetObject("shield-user-fill", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

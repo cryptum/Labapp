@@ -10,7 +10,7 @@ namespace Negocio
             return Math.Round(pH, 2);
         }
 
-        public double ProcessarFosforo(double P)
+        public double ProcessarFosforo(double P, double Diluicao)
         {
             // carregando dados
             double[] xValues = { 0.4, 0.8, 1.2, 1.6 };  // Concentração de P
@@ -47,7 +47,7 @@ namespace Negocio
             a = Math.Round(a, 4);
             b = Math.Round(b, 4);
 
-            double DiluicaoP = 2;
+            double DiluicaoP = Diluicao == null || Diluicao == 0 ? 2 : Diluicao;
 
             double conc = (P - b) / a;
 

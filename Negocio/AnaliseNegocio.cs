@@ -24,33 +24,28 @@ namespace Negocio
             return new AnaliseRepositorio().ObterUmPorCodigo(id);
         }
 
-        public List<AnaliseObterTodosDTO> ObterListaPorSolicitanteNome(string nome)
+        public List<AnaliseObterTodosDTO> ObterListaPorNomeProprietario(string nome)
         {
-            return new AnaliseRepositorio().ObterListaPorSolicitanteNome(nome);
+            return new AnaliseRepositorio().ObterListaPorNomeProprietario(nome);
         }
 
-        public List<AnaliseObterTodosDTO> ObterListaPorSolicitanteCpf(string nome)
+        public List<AnaliseObterTodosDTO> ObterListaPorCpfProprietario(string nome)
         {
-            return new AnaliseRepositorio().ObterListaPorSolicitanteCpf(nome);
+            return new AnaliseRepositorio().ObterListaPorCpfProprietario(nome);
         }
 
 
-        public int Salvar(string nomeAnalise, int idSolicitante, string Local, string Referencia, string cultura, string tipoSolicitacao, string NomeAmostra1, string NomeAmostra2, string NomeAmostra3, string NomeAmostra4)
+        public int Salvar(string nomeAnalise, int idProprietario, string local, string referencia, string cultura, string tipoSolicitacao)
         {
-            AnaliseEntidade Analise = new AnaliseEntidade();
-            Analise.NomeAnalise = nomeAnalise.Trim();
-            //Analise.Solicitantes = Solicitante;
-            Analise.Local = Local;
-            Analise.Referencia = Referencia;
-            Analise.Cultura = cultura;
-            Analise.TipoSolicitacao = tipoSolicitacao;
-            Analise.DataCriado = DateTime.Now;
-            Analise.NomeAmostra1 = NomeAmostra1;
-            Analise.NomeAmostra2 = NomeAmostra2;
-            Analise.NomeAmostra3 = NomeAmostra3;
-            Analise.NomeAmostra4 = NomeAmostra4;
-            Analise.Completa = false;
-            return new AnaliseRepositorio().Salvar(Analise, idSolicitante);
+            AnaliseEntidade analise = new AnaliseEntidade();
+            analise.NomeAnalise = nomeAnalise.Trim();
+            analise.Fazenda = local;
+            analise.Referencia = referencia;
+            analise.Cultura = cultura;
+            analise.Convenio = tipoSolicitacao;
+            analise.DataCriado = DateTime.Now;
+            analise.Finalizada = false;
+            return new AnaliseRepositorio().Salvar(analise, idProprietario);
         }
 
         public int EditarNomesDasAmostras(AnaliseEntidade analise)

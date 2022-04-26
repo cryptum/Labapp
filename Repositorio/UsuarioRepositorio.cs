@@ -11,6 +11,24 @@ namespace Repositorio
     {
         public UsuarioRepositorio() { }
 
+        public int ValidarDataBaseVazio()
+        {
+            using (var db = new ContextDB())
+            {
+                var query = db.Usuarios
+                                .Select(x => new UsuarioObterTodosDTO
+                                {
+                                    Código = x.IdUsuario
+                                })
+                                .AsNoTracking()
+                                .ToList()
+                                .Count();
+
+                return query;
+            }
+        }
+
+
         public UsuarioDTO ValidarAcesso(string Acesso, string Senha)
         {
             using (var db = new ContextDB())
@@ -40,8 +58,8 @@ namespace Repositorio
                                     Código = x.IdUsuario,
                                     Nome = x.Nome,
                                     Acesso = x.Acesso,
-                                    Bloqueado = x.Bloqueado,
-                                    Administrador = x.Administrador
+                                    Bloqueado = x.Bloqueado == true ? "Bloqueado" : "Com Acesso",
+                                    Administrador = x.Administrador == true ? "Administrador" : "Colaborador",
                                 })
                                 .AsNoTracking()
                                 .ToList();
@@ -74,8 +92,8 @@ namespace Repositorio
                                     Código = x.IdUsuario,
                                     Nome = x.Nome,
                                     Acesso = x.Acesso,
-                                    Bloqueado = x.Bloqueado,
-                                    Administrador = x.Administrador
+                                    Bloqueado = x.Bloqueado == true ? "Bloqueado" : "Com Acesso",
+                                    Administrador = x.Administrador == true ? "Administrador" : "Colaborador",
                                 })
                                 .AsNoTracking()
                                 .ToList();

@@ -23,6 +23,11 @@ namespace Negocio
             return new CulturaRepositorio().ObterListaPorNome(nome);
         }
 
+        public CulturaEntidade ObterUmPorNome(string nome)
+        {
+            return new CulturaRepositorio().ObterUmPorNome(nome);
+        }
+
         public int Salvar(String Nome)
         {
             CulturaEntidade cultura = new CulturaEntidade();

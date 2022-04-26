@@ -33,8 +33,8 @@ namespace Entidade.DTO
 
         public string Acesso { get; set; }
 
-        public bool Bloqueado { get; set; }
+        public string Bloqueado { get; set; }
 
-        public bool Administrador { get; set; }
+        public string Administrador { get; set; }
     }
 }

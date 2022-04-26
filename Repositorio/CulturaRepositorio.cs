@@ -57,6 +57,19 @@ namespace Repositorio
             }
         }
 
+        public CulturaEntidade ObterUmPorNome(string nome)
+        {
+            using (var db = new ContextDB())
+            {
+                var query = db.Culturas
+                                .Where(w => w.Nome == nome)
+                                .AsNoTracking()
+                                .FirstOrDefault();
+
+                return query;
+            }
+        }
+
         public List<CulturaDTO> ObterListaPorNome(string nome)
         {
             using (var db = new ContextDB())
