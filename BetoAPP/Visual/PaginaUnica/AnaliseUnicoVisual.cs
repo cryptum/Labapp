@@ -20,6 +20,45 @@ namespace LabAPP.Visual
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             panel1.BringToFront();
+            
+        }
+
+        void PopularGrid()
+        {
+            txt_NumeroLaudo.Text = "NUMERO LAUDO";
+            txt_Municipio.Text = "MUNICIPIO";
+            txt_CpfCnpj.Text = "CPF";
+            txt_Anotacao.Text = "ANOTAÇÃO";
+            cbx_Convenio.Text = "CONVENIO";
+            cbx_Cultura.Text = "CULTURA";
+            cbx_Fazenda.Text = "FAZENDA";
+            cbx_NomeCliente.Text = "CLIENTE";
+            cbx_TipoAnalise.Text = "TIPO ANALISE";
+            
+            AdicionarNaGridLinhas();
+            AdicionarNaGridAmostra(
+                new AmostraEntidade(
+                    "Numero 1", "Nome 1", "1","1","1","1","1","1","1","1","1","1",
+                    "1","1","1","1","1","1","1","1","1","1","1"
+                    ));
+            AdicionarNaGridLinhas();
+            AdicionarNaGridAmostra(
+                new AmostraEntidade(
+                    "Numero 2", "Nome 2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+                    "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2"
+                    ));
+            AdicionarNaGridLinhas();
+            AdicionarNaGridAmostra(
+                new AmostraEntidade(
+                    "Numero 3", "Nome 3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3",
+                    "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3"
+                    ));
+            //AdicionarNaGridLinhas();
+            //AdicionarNaGridAmostra(
+            //    new AmostraEntidade(
+            //        "Numero 4", "Nome 4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4",
+            //        "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4"
+            //        ));
         }
 
         void AdicionarNaGridLinhas()
@@ -95,8 +134,50 @@ namespace LabAPP.Visual
 
         }
 
+        int VerificaCamposVazios()
+        {
+
+            if (txt_NumeroLaudo.Text.Trim() == "")
+            {
+                MessageBox.Show("Número está vazio!");
+                return 1;
+            }
+            if (cbx_TipoAnalise.Text.Trim() == "")
+            {
+                MessageBox.Show("Tipo da análise está vazio!");
+                return 1;
+            }
+            if (cbx_Cultura.Text.Trim() == "")
+            {
+                MessageBox.Show("Cultura está vazio!");
+                return 1;
+            }
+            if (cbx_Convenio.Text.Trim() == "")
+            {
+                MessageBox.Show("Convênio está vazio!");
+                return 1;
+            }
+            if (cbx_NomeCliente.Text.Trim() == "")
+            {
+                MessageBox.Show("Nome do cliente está vazio!");
+                return 1;
+            }
+            if (cbx_Fazenda.Text.Trim() == "")
+            {
+                MessageBox.Show("Fazenda está vazio!");
+                return 1;
+            }
+            return 0;
+        }
+
         private void button1_Click(object sender, System.EventArgs e)
         {
+
+            if (VerificaCamposVazios() == 1)
+            {
+                return;
+            }
+
             TipoAnaliseEntidade tipoAnalise = new TipoAnaliseEntidade();
             ////tipoanalise
             if (!cbx_TipoAnalise.Items.Contains(cbx_TipoAnalise.Text))
@@ -111,7 +192,7 @@ namespace LabAPP.Visual
             {
                 new CulturaNegocio().Salvar(cbx_Cultura.Text);
             }
-            new CulturaNegocio().ObterUmPorNome(cbx_Cultura.Text);
+            cultura = new CulturaNegocio().ObterUmPorNome(cbx_Cultura.Text);
 
             ConvenioEntidade convenio = new ConvenioEntidade();
             ////Convênio
@@ -119,16 +200,27 @@ namespace LabAPP.Visual
             {
                 new ConvenioNegocio().Salvar(cbx_Convenio.Text);
             }
-            new ConvenioNegocio().ObterUmPorNome(cbx_Convenio.Text);
+            convenio = new ConvenioNegocio().ObterUmPorNome(cbx_Convenio.Text);
 
 
             ProprietarioEntidade proprietario = new ProprietarioEntidade();
             if (!cbx_NomeCliente.Items.Contains(cbx_NomeCliente.Text))
             {
 
-                int idsalvo = new ProprietarioNegocio().Salvar(cbx_NomeCliente.Text, txt_CpfCnpj.Text, txt_Anotacao.Text);
-                proprietario = new ProprietarioNegocio().ObterUmPorCodigo(idsalvo); 
+                new ProprietarioNegocio().Salvar(cbx_NomeCliente.Text, txt_CpfCnpj.Text, txt_Anotacao.Text);
+                 
             }
+            proprietario = new ProprietarioNegocio().ObterUmPorNome(cbx_NomeCliente.Text);
+
+
+            FazendaEntidade fazenda = new FazendaEntidade();
+            if (!cbx_Fazenda.Items.Contains(cbx_Fazenda.Text))
+            {
+
+                new FazendaNegocio().Salvar(cbx_Fazenda.Text, txt_Municipio.Text, proprietario.IdProprietario);
+                
+            }
+            fazenda = new FazendaNegocio().ObterUmPorNome(cbx_Fazenda.Text);
 
             LerGrid();
 
@@ -141,12 +233,18 @@ namespace LabAPP.Visual
                        cbx_Cultura.Text,
                        cbx_Convenio.Text);
 
-            MessageBox.Show("Salvo!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //MessageBox.Show("Salvo!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             var analiseSalva = new AnaliseNegocio().ObterUmPorCodigo(idAnalise);
 
-            new RelatorioNegocio().Gerar(analiseSalva, listaAmostra);
+            if (listaAmostra.Count == 0)
+            {
+                MessageBox.Show("Salvo!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
+            new RelatorioNegocio().Gerar(analiseSalva, listaAmostra);
+            MessageBox.Show("Laudo Gerado!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         private void cbxNomeCliente_SelectedIndexChanged(object sender, System.EventArgs e)
@@ -262,6 +360,8 @@ namespace LabAPP.Visual
             }
 
             AdicionarNaGridAmostra(new AmostraEntidade("Número", "Nome", "pH Água", "Diluição", "Fósforo", "Potássio", "Cálcio", "Alumínio", "Magnésio", "Acidez Potêncial", "Zinco", "Cobre", "Ferro", "Manganes", "Argila I.", "Argila F.", "Areia I.", "Areia F.", "Silte I.", "Silte F.", "Boro", "Enxofre", "Materia Organica"));
+            PopularGrid();
+            PopularGrid();
         }
 
         private void btn_Sair_Click(object sender, EventArgs e)

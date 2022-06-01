@@ -48,6 +48,10 @@ namespace LabAPP
                     Application.Run(new PrincipalUnicoVisual());
                     break;
 
+                case Environments.paginaUnicaInMemory:
+                    Application.Run(new PrincipalUnicoVisual());
+                    break;
+
                 default:
                     MessageBox.Show("A aplicação fechou de forma repentina");
                     Application.Exit();

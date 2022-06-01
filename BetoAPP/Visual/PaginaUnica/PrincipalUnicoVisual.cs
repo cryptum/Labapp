@@ -9,11 +9,12 @@ namespace LabAPP.Visual.PaginaUnica
         public PrincipalUnicoVisual()
         {
             InitializeComponent();
+            RecarregarGrid();
         }
 
         public void RecarregarGrid()
         {
-            dataGridView.DataSource = new AnaliseNegocio().ObterTodosImcompleta();
+            dataGridView.DataSource = new AnaliseNegocio().ObterTodosPaginaUnica();
         }
 
         private void btn_Novo_Click(object sender, EventArgs e)
@@ -32,7 +33,15 @@ namespace LabAPP.Visual.PaginaUnica
 
         private void btn_Quadriculado_Click(object sender, EventArgs e)
         {
-            new GerarQuardriculado().Gerar();
+            var caminho = new GerarQuardriculado().Gerar();
+            new GerarQuardriculado().AbreVisualizadorPadrao(caminho);
+            using (var pd = new System.Drawing.Printing.PrintDocument())
+            {
+                pd.PrinterSettings.PrinterName = impressoraComboBox.SelectedItem.ToString();
+                pd.PrinterSettings.
+                pd.PrintPage += Pd_PrintPage;
+                pd.Print();
+            }
         }
     }
 }

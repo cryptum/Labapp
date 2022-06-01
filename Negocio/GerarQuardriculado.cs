@@ -6,6 +6,7 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using System;
+using System.Diagnostics;
 using System.IO;
 
 namespace Negocio
@@ -13,7 +14,7 @@ namespace Negocio
     public class GerarQuardriculado
     {
 
-        public void Gerar()
+        public string Gerar()
         {
             string caminho = ValidarCaminhoPDF();
             caminho += "\\Quadriculado - " + DateTime.Now.Month + "-" + DateTime.Now.Year + ".pdf";
@@ -52,6 +53,8 @@ namespace Negocio
                 document.Add(table);
                 document.Close();
                 pdfDocument.Close();
+
+                return caminho;
             };
         }
 
@@ -66,6 +69,19 @@ namespace Negocio
             }
 
             return caminho;
+        }
+
+        public void AbreVisualizadorPadrao(string caminho)
+        {  
+            Process process = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    Verb = "open",
+                    FileName = caminho,
+                },
+            };
+            process.Start();
         }
     }
 }

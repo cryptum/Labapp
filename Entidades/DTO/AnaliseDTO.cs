@@ -23,6 +23,25 @@ namespace Entidade.DTO
         public DateTime DataUltimaAtualizacao { get; set; }
     }
 
+    public class AnalisePaginaUnicaDTO
+    {
+        public int Código { get; set; }
+
+        public string Análise { get; set; }
+
+        public string Proprietário { get; set; }
+
+        public string Fazenda { get; set; }
+
+        public string Referência { get; set; }
+
+        public string Cultura { get; set; }
+
+        public string Solicitação { get; set; }
+        public DateTime Data { get; set; }
+        public string Hora { get; set; }
+    }
+
     public class AnaliseObterTodosDTO
     {
         public int Código { get; set; }

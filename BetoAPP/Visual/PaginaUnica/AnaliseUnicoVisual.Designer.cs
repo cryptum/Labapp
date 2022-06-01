@@ -118,7 +118,7 @@ namespace LabAPP.Visual
             // button1
             // 
             this.button1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.button1.Location = new System.Drawing.Point(2, 6);
+            this.button1.Location = new System.Drawing.Point(15, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(191, 54);
             this.button1.TabIndex = 9;
@@ -468,9 +468,9 @@ namespace LabAPP.Visual
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(776, 737);
             this.Controls.Add(this.btn_Sair);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Navy;

@@ -43,6 +43,19 @@ namespace Repositorio
             }
         }
 
+        public FazendaEntidade ObterUmPorNome(string fazenda)
+        {
+            using (var db = new ContextDB())
+            {
+                var query = db.Fazendas
+                                .Where(w => w.Fazenda == fazenda)
+                                .AsNoTracking()
+                                .FirstOrDefault();
+
+                return query;
+            }
+        }
+
         public List<FazendaEntidade> ObterUmPorCodigoDeProprietario(int id)
         {
             using (var db = new ContextDB())

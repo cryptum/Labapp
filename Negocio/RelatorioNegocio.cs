@@ -14,11 +14,13 @@ namespace Negocio
         {
             List<AmostraImpressaoLaudoDTO> AmostraSalva = new List<AmostraImpressaoLaudoDTO>();
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 1; i < listaAmostra.Count; i++)
             {
                 AmostraImpressaoLaudoDTO amostra = new();
 
                 amostra = new PreencherAmostra().Preencher(
+                         listaAmostra[i].NumeroAmostra,
+                         listaAmostra[i].NomeAmostra,
                          Convert.ToDouble(listaAmostra[i].Ph_Agua),
                          Convert.ToDouble(listaAmostra[i].Diluicao),
                          Convert.ToDouble(listaAmostra[i].P_Fosforo),

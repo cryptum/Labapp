@@ -11,6 +11,31 @@ namespace Repositorio
     {
         public AnaliseRepositorio() { }
 
+        public List<AnalisePaginaUnicaDTO> ObterTodosPaginaUnica()
+        {
+            using (var db = new ContextDB())
+            {
+                var query = db.Analises
+                                .Select(x => new AnalisePaginaUnicaDTO
+                                {
+                                    Código = x.IdAnalise,
+                                    Análise = x.NomeAnalise,
+                                    Proprietário = x.Proprietarios.Nome,
+                                    Fazenda = x.Fazenda,
+                                    Referência = x.Referencia,
+                                    Cultura = x.Cultura,
+                                    Solicitação = x.Convenio,
+                                    Data = x.DataCriado.Date,
+                                    Hora = x.DataCriado.ToShortTimeString(),
+                                })
+                                .AsNoTracking()
+                                .OrderByDescending(o => o.Código)
+                                .ToList();
+
+                return query;
+            }
+        }
+
         public List<AnaliseObterTodosImcompletoDTO> ObterTodosImcompleta()
         {
             using (var db = new ContextDB())

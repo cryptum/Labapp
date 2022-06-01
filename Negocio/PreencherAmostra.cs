@@ -11,8 +11,10 @@ namespace Negocio
     {
 
         public AmostraImpressaoLaudoDTO Preencher(
-            double pH,
-            double diluicao,
+            string Numero,
+            string Nome,
+            double PH,
+            double Diluicao,
             double P,
             double K,
             double Ca,
@@ -35,9 +37,11 @@ namespace Negocio
             )
         {
             AmostraImpressaoLaudoDTO amostra = new AmostraImpressaoLaudoDTO();
+            amostra.Numero = Numero;
+            amostra.Nome = Nome;
             amostra.Basica = true;
-            amostra.PhAgua = new MotorDeCalculo().ProcessarPH(pH).ToString();
-            amostra.Fosforo = new MotorDeCalculo().ProcessarFosforo(P, diluicao).ToString();
+            amostra.PhAgua = new MotorDeCalculo().ProcessarPH(PH).ToString();
+            amostra.Fosforo = new MotorDeCalculo().ProcessarFosforo(P, Diluicao).ToString();
 
             double k = new MotorDeCalculo().ProcessarPotassio(K);
             amostra.Potassio = k.ToString();

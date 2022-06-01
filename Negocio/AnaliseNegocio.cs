@@ -10,6 +10,10 @@ namespace Negocio
     {
         public AnaliseNegocio() { }
 
+        public List<AnalisePaginaUnicaDTO> ObterTodosPaginaUnica()
+        {
+            return new AnaliseRepositorio().ObterTodosPaginaUnica();
+        }
         public List<AnaliseObterTodosImcompletoDTO> ObterTodosImcompleta()
         {
             return new AnaliseRepositorio().ObterTodosImcompleta();
