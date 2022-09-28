@@ -15,6 +15,18 @@ namespace LabAPP.Visual.PaginaUnica
 
         private void btn_Adicionar_Click(object sender, EventArgs e)
         {
+            if (txt_Nome.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Preencha o campo 'Nome'");
+                return;
+            }
+
+            if (txt_numero.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Preencha o campo 'Número'");
+                return;
+            }
+
             AmostraEntidade amostra = new AmostraEntidade();
 
             amostra.NumeroAmostra = txt_numero.Text;

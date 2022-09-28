@@ -71,17 +71,17 @@ namespace Negocio
             return caminho;
         }
 
-        public void AbreVisualizadorPadrao(string caminho)
-        {  
-            Process process = new Process
-            {
-                StartInfo = new ProcessStartInfo
-                {
-                    Verb = "open",
-                    FileName = caminho,
-                },
-            };
-            process.Start();
-        }
+        //public void AbreVisualizadorPadrao(string caminho)
+        //{  
+        //    Process process = new Process
+        //    {
+        //        StartInfo = new ProcessStartInfo
+        //        {
+        //            Verb = "open",
+        //            FileName = caminho,
+        //        },
+        //    };
+        //    process.Start();
+        //}
     }
 }

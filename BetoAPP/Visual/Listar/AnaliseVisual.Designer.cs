@@ -55,6 +55,7 @@ namespace LabAPP.Visual
             // menuStrip1
             // 
             this.menuStrip1.AllowMerge = false;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Adiciona,
             this.btn_Exclui,
@@ -63,7 +64,8 @@ namespace LabAPP.Visual
             this.btn_ImprimeLaudo});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1307, 32);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(1867, 42);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -73,7 +75,7 @@ namespace LabAPP.Visual
             this.btn_Adiciona.Image = global::LabAPP.Properties.Resources.fileadd_verde_24px;
             this.btn_Adiciona.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Adiciona.Name = "btn_Adiciona";
-            this.btn_Adiciona.Size = new System.Drawing.Size(134, 28);
+            this.btn_Adiciona.Size = new System.Drawing.Size(186, 36);
             this.btn_Adiciona.Text = "Criar Análise";
             this.btn_Adiciona.Click += new System.EventHandler(this.btn_Adiciona_Click);
             // 
@@ -83,7 +85,7 @@ namespace LabAPP.Visual
             this.btn_Exclui.Image = global::LabAPP.Properties.Resources.delete_vermelho_24px;
             this.btn_Exclui.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Exclui.Name = "btn_Exclui";
-            this.btn_Exclui.Size = new System.Drawing.Size(91, 28);
+            this.btn_Exclui.Size = new System.Drawing.Size(122, 36);
             this.btn_Exclui.Text = "Excluir";
             this.btn_Exclui.Click += new System.EventHandler(this.btn_Exclui_Click);
             // 
@@ -93,7 +95,7 @@ namespace LabAPP.Visual
             this.btn_Recarregar.Image = global::LabAPP.Properties.Resources.refresh_amarelo_24px;
             this.btn_Recarregar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Recarregar.Name = "btn_Recarregar";
-            this.btn_Recarregar.Size = new System.Drawing.Size(169, 28);
+            this.btn_Recarregar.Size = new System.Drawing.Size(240, 36);
             this.btn_Recarregar.Text = "Recarregar Tabela";
             this.btn_Recarregar.Click += new System.EventHandler(this.btn_Recarregar_Click);
             // 
@@ -103,7 +105,7 @@ namespace LabAPP.Visual
             this.btn_ImprimeQuadriculado.Image = global::LabAPP.Properties.Resources.grid_azul_24px;
             this.btn_ImprimeQuadriculado.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_ImprimeQuadriculado.Name = "btn_ImprimeQuadriculado";
-            this.btn_ImprimeQuadriculado.Size = new System.Drawing.Size(205, 28);
+            this.btn_ImprimeQuadriculado.Size = new System.Drawing.Size(294, 36);
             this.btn_ImprimeQuadriculado.Text = "Imprimir Quadriculado";
             this.btn_ImprimeQuadriculado.Click += new System.EventHandler(this.btn_ImprimeQuadriculado_Click);
             // 
@@ -113,7 +115,7 @@ namespace LabAPP.Visual
             this.btn_ImprimeLaudo.Image = global::LabAPP.Properties.Resources.printer_fill_24px;
             this.btn_ImprimeLaudo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_ImprimeLaudo.Name = "btn_ImprimeLaudo";
-            this.btn_ImprimeLaudo.Size = new System.Drawing.Size(154, 28);
+            this.btn_ImprimeLaudo.Size = new System.Drawing.Size(216, 36);
             this.btn_ImprimeLaudo.Text = "Imprimir Laudo";
             this.btn_ImprimeLaudo.Click += new System.EventHandler(this.btn_ImprimeLaudo_Click);
             // 
@@ -125,11 +127,11 @@ namespace LabAPP.Visual
             this.groupBox1.Controls.Add(this.cbx_Pesquisa);
             this.groupBox1.Controls.Add(this.btn_Pesquisa);
             this.groupBox1.Controls.Add(this.lbl1);
-            this.groupBox1.Location = new System.Drawing.Point(13, 35);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox1.Location = new System.Drawing.Point(19, 58);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(1281, 99);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.groupBox1.Size = new System.Drawing.Size(1830, 165);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             // 
@@ -138,9 +140,10 @@ namespace LabAPP.Visual
             this.txt_Pesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Pesquisa.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Pesquisa.Location = new System.Drawing.Point(447, 42);
+            this.txt_Pesquisa.Location = new System.Drawing.Point(639, 70);
+            this.txt_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Pesquisa.Name = "txt_Pesquisa";
-            this.txt_Pesquisa.Size = new System.Drawing.Size(592, 36);
+            this.txt_Pesquisa.Size = new System.Drawing.Size(844, 50);
             this.txt_Pesquisa.TabIndex = 6;
             this.txt_Pesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Pesquisa_KeyDown);
             // 
@@ -149,9 +152,10 @@ namespace LabAPP.Visual
             this.cbx_Pesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_Pesquisa.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbx_Pesquisa.FormattingEnabled = true;
-            this.cbx_Pesquisa.Location = new System.Drawing.Point(195, 42);
+            this.cbx_Pesquisa.Location = new System.Drawing.Point(279, 70);
+            this.cbx_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbx_Pesquisa.Name = "cbx_Pesquisa";
-            this.cbx_Pesquisa.Size = new System.Drawing.Size(246, 38);
+            this.cbx_Pesquisa.Size = new System.Drawing.Size(350, 53);
             this.cbx_Pesquisa.TabIndex = 1;
             this.cbx_Pesquisa.SelectedIndexChanged += new System.EventHandler(this.cbx_Pesquisa_SelectedIndexChanged);
             // 
@@ -159,10 +163,10 @@ namespace LabAPP.Visual
             // 
             this.btn_Pesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Pesquisa.Image = global::LabAPP.Properties.Resources.search_line_24px;
-            this.btn_Pesquisa.Location = new System.Drawing.Point(1046, 42);
-            this.btn_Pesquisa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btn_Pesquisa.Location = new System.Drawing.Point(1494, 70);
+            this.btn_Pesquisa.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btn_Pesquisa.Name = "btn_Pesquisa";
-            this.btn_Pesquisa.Size = new System.Drawing.Size(51, 36);
+            this.btn_Pesquisa.Size = new System.Drawing.Size(73, 60);
             this.btn_Pesquisa.TabIndex = 3;
             this.btn_Pesquisa.UseVisualStyleBackColor = true;
             this.btn_Pesquisa.Click += new System.EventHandler(this.btn_Pesquisa_Click);
@@ -171,10 +175,10 @@ namespace LabAPP.Visual
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl1.Location = new System.Drawing.Point(87, 43);
-            this.lbl1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl1.Location = new System.Drawing.Point(124, 72);
+            this.lbl1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(106, 32);
+            this.lbl1.Size = new System.Drawing.Size(157, 48);
             this.lbl1.TabIndex = 5;
             this.lbl1.Text = "Pesquisa";
             // 
@@ -201,8 +205,8 @@ namespace LabAPP.Visual
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridAnalise.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridAnalise.Location = new System.Drawing.Point(14, 155);
-            this.dataGridAnalise.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dataGridAnalise.Location = new System.Drawing.Point(20, 258);
+            this.dataGridAnalise.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.dataGridAnalise.Name = "dataGridAnalise";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -212,10 +216,11 @@ namespace LabAPP.Visual
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridAnalise.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridAnalise.RowHeadersWidth = 62;
             this.dataGridAnalise.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dataGridAnalise.RowTemplate.Height = 25;
+            this.dataGridAnalise.RowTemplate.Height = 50;
             this.dataGridAnalise.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridAnalise.Size = new System.Drawing.Size(1280, 399);
+            this.dataGridAnalise.Size = new System.Drawing.Size(1829, 665);
             this.dataGridAnalise.TabIndex = 4;
             this.dataGridAnalise.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridAnalise_RowPrePaint);
             // 
@@ -224,8 +229,9 @@ namespace LabAPP.Visual
             this.pcbCarregar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pcbCarregar.Image = global::LabAPP.Properties.Resources.eclipse_0_6s_200px;
             this.pcbCarregar.Location = new System.Drawing.Point(0, 0);
+            this.pcbCarregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pcbCarregar.Name = "pcbCarregar";
-            this.pcbCarregar.Size = new System.Drawing.Size(1307, 566);
+            this.pcbCarregar.Size = new System.Drawing.Size(1867, 943);
             this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pcbCarregar.TabIndex = 28;
             this.pcbCarregar.TabStop = false;
@@ -233,14 +239,15 @@ namespace LabAPP.Visual
             // 
             // AnaliseVisual
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1307, 566);
+            this.ClientSize = new System.Drawing.Size(1867, 943);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridAnalise);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pcbCarregar);
-            this.MinimumSize = new System.Drawing.Size(671, 400);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(949, 629);
             this.Name = "AnaliseVisual";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

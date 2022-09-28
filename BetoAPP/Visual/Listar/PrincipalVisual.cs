@@ -17,7 +17,8 @@ namespace LabAPP.Visual
             //this.menuStrip1.BackColor = Color.GhostWhite;
             this.btnDarkAndLight.Visible = false;
             this.referenciaToolStripMenuItem.Visible = false;
-            _ = hierarquia == true ? colaboradoresToolStripMenuItem.Visible = true : colaboradoresToolStripMenuItem.Visible = false;
+            this.colaboradoresToolStripMenuItem.Visible = false;
+            //_ = hierarquia == true ? colaboradoresToolStripMenuItem.Visible = true : colaboradoresToolStripMenuItem.Visible = false;
 
             GlobalEnv = env;
             switch (env)
@@ -163,8 +164,21 @@ namespace LabAPP.Visual
             {
                 if (ctrlControl is MdiClient)
                 {
-                    BackgroundImage = Properties.Resources.Preisser;
-                    BackgroundImageLayout = ImageLayout.Stretch;
+                    switch (GlobalEnv)
+                    {
+                        case Environments.beto:
+                            BackgroundImage = Properties.Resources.AgroFrutal;
+                            BackgroundImageLayout = ImageLayout.Center;
+                            break;
+                        case Environments.preisser:
+                            BackgroundImage = Properties.Resources.Preisser;
+                            BackgroundImageLayout = ImageLayout.Stretch;
+                            break;
+                        default:
+                            BackgroundImage = Properties.Resources.AgroFrutal;
+                            BackgroundImageLayout = ImageLayout.Center;
+                            break;
+                    }
                 }
             }
         }

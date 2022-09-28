@@ -30,96 +30,17 @@ namespace LabAPP
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginVisualBeto));
-            this.btn_Acessar = new System.Windows.Forms.Button();
-            this.txt_Usuario = new System.Windows.Forms.TextBox();
-            this.txt_Senha = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pcbCarregar = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_PaginaUnica = new System.Windows.Forms.Button();
             this.btn_Sair = new System.Windows.Forms.PictureBox();
             this.btn_Minimiza = new System.Windows.Forms.PictureBox();
-            this.pnl_Usuario = new System.Windows.Forms.Panel();
-            this.pnl_Senha = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_LabApp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Sair)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Minimiza)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btn_Acessar
-            // 
-            this.btn_Acessar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Acessar.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btn_Acessar.FlatAppearance.BorderSize = 0;
-            this.btn_Acessar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Acessar.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Acessar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_Acessar.Location = new System.Drawing.Point(383, 96);
-            this.btn_Acessar.Name = "btn_Acessar";
-            this.btn_Acessar.Size = new System.Drawing.Size(116, 45);
-            this.btn_Acessar.TabIndex = 0;
-            this.btn_Acessar.Text = "Acessar";
-            this.btn_Acessar.UseVisualStyleBackColor = false;
-            this.btn_Acessar.Click += new System.EventHandler(this.btn_Acessar_Click);
-            this.btn_Acessar.Paint += new System.Windows.Forms.PaintEventHandler(this.btn_Acessar_Paint);
-            // 
-            // txt_Usuario
-            // 
-            this.txt_Usuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_Usuario.BackColor = System.Drawing.Color.GhostWhite;
-            this.txt_Usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_Usuario.Font = new System.Drawing.Font("Ebrima", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Usuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_Usuario.Location = new System.Drawing.Point(159, 42);
-            this.txt_Usuario.Name = "txt_Usuario";
-            this.txt_Usuario.Size = new System.Drawing.Size(190, 37);
-            this.txt_Usuario.TabIndex = 1;
-            this.txt_Usuario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Usuario_KeyDown);
-            // 
-            // txt_Senha
-            // 
-            this.txt_Senha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_Senha.BackColor = System.Drawing.Color.GhostWhite;
-            this.txt_Senha.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_Senha.Font = new System.Drawing.Font("Ebrima", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Senha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_Senha.Location = new System.Drawing.Point(159, 122);
-            this.txt_Senha.Name = "txt_Senha";
-            this.txt_Senha.PasswordChar = '*';
-            this.txt_Senha.Size = new System.Drawing.Size(190, 37);
-            this.txt_Senha.TabIndex = 2;
-            this.txt_Senha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_Senha_KeyDown);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.GhostWhite;
-            this.label1.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(30, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 33);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Usuário";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.GhostWhite;
-            this.label2.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(46, 126);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 33);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Senha";
             // 
             // pictureBox1
             // 
@@ -127,145 +48,117 @@ namespace LabAPP
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::LabAPP.Properties.Resources.AgroFrutal;
-            this.pictureBox1.Location = new System.Drawing.Point(45, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 125);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(347, 203);
+            this.pictureBox1.Size = new System.Drawing.Size(688, 185);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // pcbCarregar
+            // panel3
             // 
-            this.pcbCarregar.Image = global::LabAPP.Properties.Resources.eclipse_0_6s_200px;
-            this.pcbCarregar.Location = new System.Drawing.Point(279, 84);
-            this.pcbCarregar.Name = "pcbCarregar";
-            this.pcbCarregar.Size = new System.Drawing.Size(147, 121);
-            this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbCarregar.TabIndex = 7;
-            this.pcbCarregar.TabStop = false;
-            this.pcbCarregar.Visible = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel2.Controls.Add(this.btn_Sair);
-            this.panel2.Controls.Add(this.btn_Minimiza);
-            this.panel2.Controls.Add(this.btn_Acessar);
-            this.panel2.Controls.Add(this.pnl_Usuario);
-            this.panel2.Controls.Add(this.txt_Usuario);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.pnl_Senha);
-            this.panel2.Controls.Add(this.txt_Senha);
-            this.panel2.Location = new System.Drawing.Point(432, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(609, 218);
-            this.panel2.TabIndex = 6;
+            this.panel3.BackColor = System.Drawing.Color.Silver;
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Controls.Add(this.btn_PaginaUnica);
+            this.panel3.Controls.Add(this.btn_Sair);
+            this.panel3.Controls.Add(this.btn_Minimiza);
+            this.panel3.Controls.Add(this.btn_LabApp);
+            this.panel3.Location = new System.Drawing.Point(-1, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(696, 490);
+            this.panel3.TabIndex = 7;
+            // 
+            // btn_PaginaUnica
+            // 
+            this.btn_PaginaUnica.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_PaginaUnica.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_PaginaUnica.FlatAppearance.BorderSize = 0;
+            this.btn_PaginaUnica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_PaginaUnica.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_PaginaUnica.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_PaginaUnica.Location = new System.Drawing.Point(370, 400);
+            this.btn_PaginaUnica.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_PaginaUnica.Name = "btn_PaginaUnica";
+            this.btn_PaginaUnica.Size = new System.Drawing.Size(313, 75);
+            this.btn_PaginaUnica.TabIndex = 9;
+            this.btn_PaginaUnica.Text = "Página Única";
+            this.btn_PaginaUnica.UseVisualStyleBackColor = false;
+            this.btn_PaginaUnica.Click += new System.EventHandler(this.btn_PaginaUnica_Click);
             // 
             // btn_Sair
             // 
             this.btn_Sair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Sair.Image = global::LabAPP.Properties.Resources.close_cinza_24px;
-            this.btn_Sair.Location = new System.Drawing.Point(548, 0);
+            this.btn_Sair.Location = new System.Drawing.Point(605, 0);
+            this.btn_Sair.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Sair.Name = "btn_Sair";
-            this.btn_Sair.Size = new System.Drawing.Size(61, 61);
+            this.btn_Sair.Size = new System.Drawing.Size(87, 102);
             this.btn_Sair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btn_Sair.TabIndex = 5;
+            this.btn_Sair.TabIndex = 8;
             this.btn_Sair.TabStop = false;
-            this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
-            this.btn_Sair.MouseLeave += new System.EventHandler(this.btn_Sair_MouseLeave);
-            this.btn_Sair.MouseHover += new System.EventHandler(this.btn_Sair_MouseHover);
             // 
             // btn_Minimiza
             // 
             this.btn_Minimiza.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Minimiza.Image = global::LabAPP.Properties.Resources.subtract_cinza_24px;
-            this.btn_Minimiza.Location = new System.Drawing.Point(498, 0);
+            this.btn_Minimiza.Location = new System.Drawing.Point(518, 0);
             this.btn_Minimiza.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Minimiza.Name = "btn_Minimiza";
-            this.btn_Minimiza.Size = new System.Drawing.Size(60, 61);
+            this.btn_Minimiza.Size = new System.Drawing.Size(86, 102);
             this.btn_Minimiza.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btn_Minimiza.TabIndex = 6;
+            this.btn_Minimiza.TabIndex = 7;
             this.btn_Minimiza.TabStop = false;
-            this.btn_Minimiza.Click += new System.EventHandler(this.btn_Minimiza_Click);
-            this.btn_Minimiza.MouseLeave += new System.EventHandler(this.btn_Minimiza_MouseLeave);
-            this.btn_Minimiza.MouseHover += new System.EventHandler(this.btn_Minimiza_MouseHover);
             // 
-            // pnl_Usuario
+            // btn_LabApp
             // 
-            this.pnl_Usuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnl_Usuario.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pnl_Usuario.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnl_Usuario.Location = new System.Drawing.Point(159, 76);
-            this.pnl_Usuario.Name = "pnl_Usuario";
-            this.pnl_Usuario.Size = new System.Drawing.Size(190, 5);
-            this.pnl_Usuario.TabIndex = 1;
-            // 
-            // pnl_Senha
-            // 
-            this.pnl_Senha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnl_Senha.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.pnl_Senha.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnl_Senha.Location = new System.Drawing.Point(159, 156);
-            this.pnl_Senha.Margin = new System.Windows.Forms.Padding(2);
-            this.pnl_Senha.Name = "pnl_Senha";
-            this.pnl_Senha.Size = new System.Drawing.Size(190, 5);
-            this.pnl_Senha.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.panel1.Controls.Add(this.pcbCarregar);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(436, 218);
-            this.panel1.TabIndex = 5;
+            this.btn_LabApp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_LabApp.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_LabApp.FlatAppearance.BorderSize = 0;
+            this.btn_LabApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_LabApp.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_LabApp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_LabApp.Location = new System.Drawing.Point(14, 400);
+            this.btn_LabApp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_LabApp.Name = "btn_LabApp";
+            this.btn_LabApp.Size = new System.Drawing.Size(184, 75);
+            this.btn_LabApp.TabIndex = 0;
+            this.btn_LabApp.Text = "LabApp";
+            this.btn_LabApp.UseVisualStyleBackColor = false;
+            this.btn_LabApp.Click += new System.EventHandler(this.btn_LabApp_Click);
             // 
             // LoginVisualBeto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 217);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(695, 489);
+            this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LoginVisualBeto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Acesso";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbCarregar)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_Sair)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Minimiza)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_Acessar;
-        private System.Windows.Forms.TextBox txt_Usuario;
-        private System.Windows.Forms.TextBox txt_Senha;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel pnl_Usuario;
-        private System.Windows.Forms.Panel pnl_Senha;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btn_PaginaUnica;
         private System.Windows.Forms.PictureBox btn_Sair;
         private System.Windows.Forms.PictureBox btn_Minimiza;
-        private System.Windows.Forms.PictureBox pcbCarregar;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_LabApp;
     }
 }
 

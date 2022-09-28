@@ -48,6 +48,7 @@ namespace LabAPP.Visual
             // menuStrip1
             // 
             this.menuStrip1.AllowMerge = false;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Adicionar_Amostra,
             this.btn_Recarregar,
@@ -55,7 +56,8 @@ namespace LabAPP.Visual
             this.btn_ImprimeLaudo});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1056, 32);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(1509, 42);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,7 +67,7 @@ namespace LabAPP.Visual
             this.btn_Adicionar_Amostra.Image = global::LabAPP.Properties.Resources.test_tube_fill;
             this.btn_Adicionar_Amostra.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Adicionar_Amostra.Name = "btn_Adicionar_Amostra";
-            this.btn_Adicionar_Amostra.Size = new System.Drawing.Size(175, 28);
+            this.btn_Adicionar_Amostra.Size = new System.Drawing.Size(249, 36);
             this.btn_Adicionar_Amostra.Text = "Adicionar Amostra";
             this.btn_Adicionar_Amostra.Click += new System.EventHandler(this.btn_Adicionar_Amostra_Click);
             // 
@@ -75,7 +77,7 @@ namespace LabAPP.Visual
             this.btn_Recarregar.Image = global::LabAPP.Properties.Resources.refresh_amarelo_24px;
             this.btn_Recarregar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_Recarregar.Name = "btn_Recarregar";
-            this.btn_Recarregar.Size = new System.Drawing.Size(169, 28);
+            this.btn_Recarregar.Size = new System.Drawing.Size(240, 36);
             this.btn_Recarregar.Text = "Recarregar Tabela";
             this.btn_Recarregar.Click += new System.EventHandler(this.btn_Recarregar_Click);
             // 
@@ -85,7 +87,7 @@ namespace LabAPP.Visual
             this.btn_ImprimeQuadriculado.Image = global::LabAPP.Properties.Resources.grid_azul_24px;
             this.btn_ImprimeQuadriculado.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_ImprimeQuadriculado.Name = "btn_ImprimeQuadriculado";
-            this.btn_ImprimeQuadriculado.Size = new System.Drawing.Size(205, 28);
+            this.btn_ImprimeQuadriculado.Size = new System.Drawing.Size(294, 36);
             this.btn_ImprimeQuadriculado.Text = "Imprimir Quadriculado";
             this.btn_ImprimeQuadriculado.Click += new System.EventHandler(this.btn_ImprimeQuadriculado_Click);
             // 
@@ -95,7 +97,7 @@ namespace LabAPP.Visual
             this.btn_ImprimeLaudo.Image = global::LabAPP.Properties.Resources.printer_fill_24px;
             this.btn_ImprimeLaudo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btn_ImprimeLaudo.Name = "btn_ImprimeLaudo";
-            this.btn_ImprimeLaudo.Size = new System.Drawing.Size(154, 28);
+            this.btn_ImprimeLaudo.Size = new System.Drawing.Size(216, 36);
             this.btn_ImprimeLaudo.Text = "Imprimir Laudo";
             this.btn_ImprimeLaudo.Click += new System.EventHandler(this.btn_ImprimeLaudo_Click);
             // 
@@ -122,8 +124,8 @@ namespace LabAPP.Visual
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridAnalise.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridAnalise.Location = new System.Drawing.Point(14, 50);
-            this.dataGridAnalise.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dataGridAnalise.Location = new System.Drawing.Point(20, 83);
+            this.dataGridAnalise.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.dataGridAnalise.Name = "dataGridAnalise";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -133,10 +135,11 @@ namespace LabAPP.Visual
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridAnalise.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridAnalise.RowHeadersWidth = 62;
             this.dataGridAnalise.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dataGridAnalise.RowTemplate.Height = 25;
+            this.dataGridAnalise.RowTemplate.Height = 50;
             this.dataGridAnalise.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridAnalise.Size = new System.Drawing.Size(1029, 494);
+            this.dataGridAnalise.Size = new System.Drawing.Size(1470, 823);
             this.dataGridAnalise.TabIndex = 13;
             this.dataGridAnalise.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridAnalise_RowPrePaint);
             // 
@@ -145,8 +148,9 @@ namespace LabAPP.Visual
             this.pcbCarregar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pcbCarregar.Image = global::LabAPP.Properties.Resources.eclipse_0_6s_200px;
             this.pcbCarregar.Location = new System.Drawing.Point(0, 0);
+            this.pcbCarregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pcbCarregar.Name = "pcbCarregar";
-            this.pcbCarregar.Size = new System.Drawing.Size(1056, 566);
+            this.pcbCarregar.Size = new System.Drawing.Size(1509, 943);
             this.pcbCarregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pcbCarregar.TabIndex = 29;
             this.pcbCarregar.TabStop = false;
@@ -154,13 +158,14 @@ namespace LabAPP.Visual
             // 
             // AmostraVisual
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 566);
+            this.ClientSize = new System.Drawing.Size(1509, 943);
             this.Controls.Add(this.dataGridAnalise);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pcbCarregar);
-            this.MinimumSize = new System.Drawing.Size(671, 400);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(949, 629);
             this.Name = "AmostraVisual";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

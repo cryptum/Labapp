@@ -64,6 +64,7 @@ namespace LabAPP.Visual
             this.btn_AdicionarAmostra = new System.Windows.Forms.PictureBox();
             this.Pagina_3_Left = new System.Windows.Forms.PictureBox();
             this.btn_Sair = new System.Windows.Forms.PictureBox();
+            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pagina_1_Right)).BeginInit();
@@ -83,9 +84,10 @@ namespace LabAPP.Visual
             this.cbx_NomeCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbx_NomeCliente.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbx_NomeCliente.FormattingEnabled = true;
-            this.cbx_NomeCliente.Location = new System.Drawing.Point(164, 121);
+            this.cbx_NomeCliente.Location = new System.Drawing.Point(234, 112);
+            this.cbx_NomeCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbx_NomeCliente.Name = "cbx_NomeCliente";
-            this.cbx_NomeCliente.Size = new System.Drawing.Size(457, 38);
+            this.cbx_NomeCliente.Size = new System.Drawing.Size(651, 53);
             this.cbx_NomeCliente.TabIndex = 3;
             this.cbx_NomeCliente.SelectedIndexChanged += new System.EventHandler(this.cbxNomeCliente_SelectedIndexChanged);
             this.cbx_NomeCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbxNomeCliente_KeyDown);
@@ -93,34 +95,38 @@ namespace LabAPP.Visual
             // txt_Municipio
             // 
             this.txt_Municipio.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Municipio.Location = new System.Drawing.Point(164, 461);
+            this.txt_Municipio.Location = new System.Drawing.Point(234, 620);
+            this.txt_Municipio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Municipio.Name = "txt_Municipio";
-            this.txt_Municipio.Size = new System.Drawing.Size(457, 36);
+            this.txt_Municipio.Size = new System.Drawing.Size(651, 50);
             this.txt_Municipio.TabIndex = 1;
             // 
             // cbx_CpfCnpj
             // 
             this.cbx_CpfCnpj.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbx_CpfCnpj.FormattingEnabled = true;
-            this.cbx_CpfCnpj.Location = new System.Drawing.Point(164, 234);
+            this.cbx_CpfCnpj.Location = new System.Drawing.Point(234, 280);
+            this.cbx_CpfCnpj.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbx_CpfCnpj.Name = "cbx_CpfCnpj";
-            this.cbx_CpfCnpj.Size = new System.Drawing.Size(143, 38);
+            this.cbx_CpfCnpj.Size = new System.Drawing.Size(203, 53);
             this.cbx_CpfCnpj.TabIndex = 2;
             // 
             // txt_CpfCnpj
             // 
             this.txt_CpfCnpj.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_CpfCnpj.Location = new System.Drawing.Point(326, 234);
+            this.txt_CpfCnpj.Location = new System.Drawing.Point(466, 280);
+            this.txt_CpfCnpj.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_CpfCnpj.Name = "txt_CpfCnpj";
-            this.txt_CpfCnpj.Size = new System.Drawing.Size(295, 40);
+            this.txt_CpfCnpj.Size = new System.Drawing.Size(420, 56);
             this.txt_CpfCnpj.TabIndex = 1;
             // 
             // button1
             // 
             this.button1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.button1.Location = new System.Drawing.Point(15, 12);
+            this.button1.Location = new System.Drawing.Point(21, 20);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 54);
+            this.button1.Size = new System.Drawing.Size(273, 90);
             this.button1.TabIndex = 9;
             this.button1.Text = "Salvar";
             this.button1.UseVisualStyleBackColor = true;
@@ -131,9 +137,10 @@ namespace LabAPP.Visual
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Ebrima", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(302, 23);
+            this.label1.Location = new System.Drawing.Point(431, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 37);
+            this.label1.Size = new System.Drawing.Size(257, 55);
             this.label1.TabIndex = 0;
             this.label1.Text = "Novo Laudo";
             // 
@@ -156,7 +163,8 @@ namespace LabAPP.Visual
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 3);
+            this.dataGridView1.Location = new System.Drawing.Point(47, 3);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -166,8 +174,9 @@ namespace LabAPP.Visual
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(716, 639);
+            this.dataGridView1.Size = new System.Drawing.Size(1023, 841);
             this.dataGridView1.TabIndex = 10;
             // 
             // label2
@@ -175,9 +184,10 @@ namespace LabAPP.Visual
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label2.Location = new System.Drawing.Point(164, 122);
+            this.label2.Location = new System.Drawing.Point(234, 80);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 30);
+            this.label2.Size = new System.Drawing.Size(280, 45);
             this.label2.TabIndex = 11;
             this.label2.Text = "Número do Laudo";
             // 
@@ -186,9 +196,10 @@ namespace LabAPP.Visual
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label3.Location = new System.Drawing.Point(164, 235);
+            this.label3.Location = new System.Drawing.Point(234, 269);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(155, 30);
+            this.label3.Size = new System.Drawing.Size(239, 45);
             this.label3.TabIndex = 13;
             this.label3.Text = "Tipo de Análise";
             // 
@@ -199,9 +210,10 @@ namespace LabAPP.Visual
             this.cbx_TipoAnalise.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbx_TipoAnalise.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cbx_TipoAnalise.FormattingEnabled = true;
-            this.cbx_TipoAnalise.Location = new System.Drawing.Point(164, 277);
+            this.cbx_TipoAnalise.Location = new System.Drawing.Point(234, 339);
+            this.cbx_TipoAnalise.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbx_TipoAnalise.Name = "cbx_TipoAnalise";
-            this.cbx_TipoAnalise.Size = new System.Drawing.Size(457, 38);
+            this.cbx_TipoAnalise.Size = new System.Drawing.Size(651, 53);
             this.cbx_TipoAnalise.TabIndex = 12;
             // 
             // label4
@@ -209,9 +221,10 @@ namespace LabAPP.Visual
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label4.Location = new System.Drawing.Point(164, 460);
+            this.label4.Location = new System.Drawing.Point(234, 644);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 30);
+            this.label4.Size = new System.Drawing.Size(154, 45);
             this.label4.TabIndex = 17;
             this.label4.Text = "Convênio";
             // 
@@ -222,9 +235,10 @@ namespace LabAPP.Visual
             this.cbx_Convenio.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbx_Convenio.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cbx_Convenio.FormattingEnabled = true;
-            this.cbx_Convenio.Location = new System.Drawing.Point(164, 502);
+            this.cbx_Convenio.Location = new System.Drawing.Point(234, 714);
+            this.cbx_Convenio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbx_Convenio.Name = "cbx_Convenio";
-            this.cbx_Convenio.Size = new System.Drawing.Size(457, 38);
+            this.cbx_Convenio.Size = new System.Drawing.Size(651, 53);
             this.cbx_Convenio.TabIndex = 16;
             // 
             // label5
@@ -232,9 +246,10 @@ namespace LabAPP.Visual
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label5.Location = new System.Drawing.Point(164, 347);
+            this.label5.Location = new System.Drawing.Point(234, 455);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 30);
+            this.label5.Size = new System.Drawing.Size(122, 45);
             this.label5.TabIndex = 15;
             this.label5.Text = "Cultura";
             // 
@@ -245,18 +260,20 @@ namespace LabAPP.Visual
             this.cbx_Cultura.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbx_Cultura.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cbx_Cultura.FormattingEnabled = true;
-            this.cbx_Cultura.Location = new System.Drawing.Point(164, 389);
+            this.cbx_Cultura.Location = new System.Drawing.Point(234, 525);
+            this.cbx_Cultura.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbx_Cultura.Name = "cbx_Cultura";
-            this.cbx_Cultura.Size = new System.Drawing.Size(457, 38);
+            this.cbx_Cultura.Size = new System.Drawing.Size(651, 53);
             this.cbx_Cultura.TabIndex = 14;
             // 
             // txt_NumeroLaudo
             // 
             this.txt_NumeroLaudo.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_NumeroLaudo.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txt_NumeroLaudo.Location = new System.Drawing.Point(164, 166);
+            this.txt_NumeroLaudo.Location = new System.Drawing.Point(234, 154);
+            this.txt_NumeroLaudo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_NumeroLaudo.Name = "txt_NumeroLaudo";
-            this.txt_NumeroLaudo.Size = new System.Drawing.Size(457, 36);
+            this.txt_NumeroLaudo.Size = new System.Drawing.Size(651, 50);
             this.txt_NumeroLaudo.TabIndex = 18;
             // 
             // label6
@@ -264,9 +281,10 @@ namespace LabAPP.Visual
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label6.Location = new System.Drawing.Point(164, 79);
+            this.label6.Location = new System.Drawing.Point(234, 42);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 30);
+            this.label6.Size = new System.Drawing.Size(119, 45);
             this.label6.TabIndex = 20;
             this.label6.Text = "Cliente";
             // 
@@ -282,15 +300,17 @@ namespace LabAPP.Visual
             this.panel1.Controls.Add(this.cbx_Cultura);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.cbx_Convenio);
-            this.panel1.Location = new System.Drawing.Point(12, 72);
+            this.panel1.Location = new System.Drawing.Point(17, 120);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(752, 659);
+            this.panel1.Size = new System.Drawing.Size(1074, 850);
             this.panel1.TabIndex = 24;
             // 
             // Pagina_1_Right
             // 
             this.Pagina_1_Right.Image = global::LabAPP.Properties.Resources.menu_right_fill_azul_24px;
-            this.Pagina_1_Right.Location = new System.Drawing.Point(725, 3);
+            this.Pagina_1_Right.Location = new System.Drawing.Point(1036, 5);
+            this.Pagina_1_Right.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Pagina_1_Right.Name = "Pagina_1_Right";
             this.Pagina_1_Right.Size = new System.Drawing.Size(24, 24);
             this.Pagina_1_Right.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -300,7 +320,8 @@ namespace LabAPP.Visual
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Location = new System.Drawing.Point(30, 606);
+            this.pictureBox11.Location = new System.Drawing.Point(43, 1010);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(36, 36);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -323,15 +344,17 @@ namespace LabAPP.Visual
             this.panel2.Controls.Add(this.txt_CpfCnpj);
             this.panel2.Controls.Add(this.cbx_CpfCnpj);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(12, 72);
+            this.panel2.Location = new System.Drawing.Point(17, 120);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(752, 659);
+            this.panel2.Size = new System.Drawing.Size(1074, 850);
             this.panel2.TabIndex = 25;
             // 
             // Pagina_2_Left
             // 
             this.Pagina_2_Left.Image = global::LabAPP.Properties.Resources.menu_left_fill_azul_24px;
-            this.Pagina_2_Left.Location = new System.Drawing.Point(3, 3);
+            this.Pagina_2_Left.Location = new System.Drawing.Point(4, 5);
+            this.Pagina_2_Left.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Pagina_2_Left.Name = "Pagina_2_Left";
             this.Pagina_2_Left.Size = new System.Drawing.Size(24, 24);
             this.Pagina_2_Left.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -342,7 +365,8 @@ namespace LabAPP.Visual
             // Pagina_2_Right
             // 
             this.Pagina_2_Right.Image = global::LabAPP.Properties.Resources.menu_right_fill_azul_24px;
-            this.Pagina_2_Right.Location = new System.Drawing.Point(725, 3);
+            this.Pagina_2_Right.Location = new System.Drawing.Point(1036, 5);
+            this.Pagina_2_Right.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Pagina_2_Right.Name = "Pagina_2_Right";
             this.Pagina_2_Right.Size = new System.Drawing.Size(24, 24);
             this.Pagina_2_Right.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -353,9 +377,10 @@ namespace LabAPP.Visual
             // txt_Anotacao
             // 
             this.txt_Anotacao.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_Anotacao.Location = new System.Drawing.Point(164, 574);
+            this.txt_Anotacao.Location = new System.Drawing.Point(234, 786);
+            this.txt_Anotacao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Anotacao.Name = "txt_Anotacao";
-            this.txt_Anotacao.Size = new System.Drawing.Size(457, 36);
+            this.txt_Anotacao.Size = new System.Drawing.Size(651, 50);
             this.txt_Anotacao.TabIndex = 21;
             // 
             // label8
@@ -363,9 +388,10 @@ namespace LabAPP.Visual
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label8.Location = new System.Drawing.Point(164, 530);
+            this.label8.Location = new System.Drawing.Point(234, 709);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 30);
+            this.label8.Size = new System.Drawing.Size(155, 45);
             this.label8.TabIndex = 24;
             this.label8.Text = "Anotação";
             // 
@@ -374,9 +400,10 @@ namespace LabAPP.Visual
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label10.Location = new System.Drawing.Point(164, 192);
+            this.label10.Location = new System.Drawing.Point(234, 210);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(133, 30);
+            this.label10.Size = new System.Drawing.Size(202, 45);
             this.label10.TabIndex = 13;
             this.label10.Text = "CPF ou CNPJ";
             // 
@@ -385,9 +412,10 @@ namespace LabAPP.Visual
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label11.Location = new System.Drawing.Point(164, 304);
+            this.label11.Location = new System.Drawing.Point(234, 386);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(90, 30);
+            this.label11.Size = new System.Drawing.Size(136, 45);
             this.label11.TabIndex = 15;
             this.label11.Text = "Fazenda";
             // 
@@ -398,9 +426,10 @@ namespace LabAPP.Visual
             this.cbx_Fazenda.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbx_Fazenda.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cbx_Fazenda.FormattingEnabled = true;
-            this.cbx_Fazenda.Location = new System.Drawing.Point(164, 346);
+            this.cbx_Fazenda.Location = new System.Drawing.Point(234, 456);
+            this.cbx_Fazenda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbx_Fazenda.Name = "cbx_Fazenda";
-            this.cbx_Fazenda.Size = new System.Drawing.Size(457, 38);
+            this.cbx_Fazenda.Size = new System.Drawing.Size(651, 53);
             this.cbx_Fazenda.TabIndex = 14;
             this.cbx_Fazenda.SelectedIndexChanged += new System.EventHandler(this.cbx_Fazenda_SelectedIndexChanged);
             // 
@@ -409,26 +438,30 @@ namespace LabAPP.Visual
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label12.Location = new System.Drawing.Point(164, 417);
+            this.label12.Location = new System.Drawing.Point(234, 547);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(105, 30);
+            this.label12.Size = new System.Drawing.Size(162, 45);
             this.label12.TabIndex = 17;
             this.label12.Text = "Município";
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.hScrollBar1);
             this.panel3.Controls.Add(this.btn_AdicionarAmostra);
             this.panel3.Controls.Add(this.Pagina_3_Left);
             this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Location = new System.Drawing.Point(12, 72);
+            this.panel3.Location = new System.Drawing.Point(17, 120);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(752, 659);
+            this.panel3.Size = new System.Drawing.Size(1074, 850);
             this.panel3.TabIndex = 26;
             // 
             // btn_AdicionarAmostra
             // 
             this.btn_AdicionarAmostra.Image = global::LabAPP.Properties.Resources.fileadd_verde_24px;
-            this.btn_AdicionarAmostra.Location = new System.Drawing.Point(42, 6);
+            this.btn_AdicionarAmostra.Location = new System.Drawing.Point(60, 10);
+            this.btn_AdicionarAmostra.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_AdicionarAmostra.Name = "btn_AdicionarAmostra";
             this.btn_AdicionarAmostra.Size = new System.Drawing.Size(24, 24);
             this.btn_AdicionarAmostra.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -439,7 +472,8 @@ namespace LabAPP.Visual
             // Pagina_3_Left
             // 
             this.Pagina_3_Left.Image = global::LabAPP.Properties.Resources.menu_left_fill_azul_24px;
-            this.Pagina_3_Left.Location = new System.Drawing.Point(3, 3);
+            this.Pagina_3_Left.Location = new System.Drawing.Point(4, 5);
+            this.Pagina_3_Left.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Pagina_3_Left.Name = "Pagina_3_Left";
             this.Pagina_3_Left.Size = new System.Drawing.Size(24, 24);
             this.Pagina_3_Left.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -451,9 +485,10 @@ namespace LabAPP.Visual
             // 
             this.btn_Sair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Sair.Image = global::LabAPP.Properties.Resources.close_cinza_24px;
-            this.btn_Sair.Location = new System.Drawing.Point(715, -1);
+            this.btn_Sair.Location = new System.Drawing.Point(1021, -2);
+            this.btn_Sair.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Sair.Name = "btn_Sair";
-            this.btn_Sair.Size = new System.Drawing.Size(61, 61);
+            this.btn_Sair.Size = new System.Drawing.Size(87, 102);
             this.btn_Sair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btn_Sair.TabIndex = 27;
             this.btn_Sair.TabStop = false;
@@ -461,19 +496,27 @@ namespace LabAPP.Visual
             this.btn_Sair.MouseLeave += new System.EventHandler(this.btn_Sair_MouseLeave);
             this.btn_Sair.MouseHover += new System.EventHandler(this.btn_Sair_MouseHover);
             // 
+            // hScrollBar1
+            // 
+            this.hScrollBar1.Location = new System.Drawing.Point(47, 805);
+            this.hScrollBar1.Name = "hScrollBar1";
+            this.hScrollBar1.Size = new System.Drawing.Size(1023, 39);
+            this.hScrollBar1.TabIndex = 58;
+            // 
             // AnaliseUnicoVisual
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(776, 737);
+            this.ClientSize = new System.Drawing.Size(1109, 984);
             this.Controls.Add(this.btn_Sair);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Navy;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AnaliseUnicoVisual";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PaginaUnica";
@@ -530,5 +573,6 @@ namespace LabAPP.Visual
         private System.Windows.Forms.PictureBox Pagina_2_Right;
         private System.Windows.Forms.PictureBox Pagina_1_Right;
         private System.Windows.Forms.PictureBox btn_AdicionarAmostra;
+        private System.Windows.Forms.HScrollBar hScrollBar1;
     }
 }

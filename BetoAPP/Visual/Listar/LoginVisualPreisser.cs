@@ -1,5 +1,6 @@
 ﻿using Entidade.DTO;
 using LabAPP.Visual;
+using LabAPP.Visual.PaginaUnica;
 using Negocio;
 using System;
 using System.Windows.Forms;
@@ -16,28 +17,9 @@ namespace LabAPP
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            pnl_Usuario.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, pnl_Usuario.Width, pnl_Usuario.Height, 5, 5));
-            pnl_Senha.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, pnl_Senha.Width, pnl_Senha.Height, 5, 5));
-            txt_Usuario.Focus();
+            btn_LabApp.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, btn_LabApp.Width, btn_LabApp.Height, 5, 5));
+            btn_PaginaUnica.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, btn_PaginaUnica.Width, btn_PaginaUnica.Height, 5, 5));
             GlobalEnv = env;
-
-            switch (env)
-            {
-                case Environments.local:
-                    txt_Usuario.Text = "admin";
-                    txt_Senha.Text = "123";
-                    break;
-                case Environments.preisser:
-                    txt_Usuario.Text = "preisser";
-                    txt_Senha.Text = "123";
-                    break;
-                case Environments.preisserInMemory:
-                    txt_Usuario.Text = "admin";
-                    txt_Senha.Text = "123";
-                    break;
-                default:
-                    break;
-            }
         }
 
         private void btn_Sair_Click(object sender, EventArgs e)
@@ -58,28 +40,6 @@ namespace LabAPP
         {
             Login();
         }
-
-        //private void SetLoading(bool displayLoader)
-        //{
-        //    if (displayLoader)
-        //    {
-        //        this.Invoke((MethodInvoker)delegate
-        //        {
-        //            pcbCarregar.Visible = true;
-        //            pcbCarregar.BringToFront();
-        //            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-        //        });
-        //    }
-        //    else
-        //    {
-        //        this.Invoke((MethodInvoker)delegate
-        //        {
-        //            pcbCarregar.Visible = false;
-        //            pcbCarregar.SendToBack();
-        //            this.Cursor = System.Windows.Forms.Cursors.Default;
-        //        });
-        //    }
-        //}
 
         public void Login()
         {
@@ -103,29 +63,6 @@ namespace LabAPP
             }
         }
 
-        private void txt_Usuario_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                txt_Senha.Focus();
-                e.Handled = e.SuppressKeyPress = true;
-            }
-        }
-
-        private void txt_Senha_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                Login();
-                e.Handled = e.SuppressKeyPress = true;
-            }
-        }
-
-        private void btn_Acessar_Paint(object sender, PaintEventArgs e)
-        {
-            btn_Acessar.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, btn_Acessar.Width, btn_Acessar.Height, 15, 15));
-        }
-
         private void btn_Minimiza_MouseHover(object sender, EventArgs e)
         {
             btn_Minimiza.Image = Properties.Resources.subtract_vermelho_24px;
@@ -139,6 +76,20 @@ namespace LabAPP
         private void btn_Minimiza_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btn_LabApp_Click(object sender, EventArgs e)
+        {
+            PrincipalVisual ViewPrincipal = new PrincipalVisual(GlobalEnv, 0, "user", true);
+            this.Hide();
+            ViewPrincipal.Show();
+        }
+
+        private void btn_PaginaUnica_Click(object sender, EventArgs e)
+        {
+            PrincipalUnicoVisual ViewPrincipal = new PrincipalUnicoVisual();
+            this.Hide();
+            ViewPrincipal.Show();
         }
     }
 }
