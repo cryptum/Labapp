@@ -22,28 +22,6 @@ namespace LabAPP.Visual
             btn_Pesquisa.Select();
         }
 
-        //private void SetLoading(bool displayLoader)
-        //{
-        //    if (displayLoader)
-        //    {
-        //        this.Invoke((MethodInvoker)delegate
-        //        {
-        //            pcbCarregar.Visible = true;
-        //            pcbCarregar.BringToFront();
-        //            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-        //        });
-        //    }
-        //    else
-        //    {
-        //        this.Invoke((MethodInvoker)delegate
-        //        {
-        //            pcbCarregar.Visible = false;
-        //            pcbCarregar.SendToBack();
-        //            this.Cursor = System.Windows.Forms.Cursors.Default;
-        //        });
-        //    }
-        //}
-
         void AlinharGrid()
         {
             dataGridTipoSolicitacao.Columns[0].Width = 100;

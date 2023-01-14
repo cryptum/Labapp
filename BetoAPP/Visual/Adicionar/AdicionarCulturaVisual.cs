@@ -16,29 +16,6 @@ namespace LabAPP.Visual
             IdInicial = idInicial;
         }
 
-        //private void SetLoading(bool displayLoader)
-        //{
-        //    if (displayLoader)
-        //    {
-        //        this.Invoke((MethodInvoker)delegate
-        //        {
-        //            pcbCarregar.Visible = true;
-        //            pcbCarregar.BringToFront();
-        //            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-        //        });
-        //    }
-        //    else
-        //    {
-        //        this.Invoke((MethodInvoker)delegate
-        //        {
-        //            pcbCarregar.Visible = false;
-        //            pcbCarregar.SendToBack();
-        //            this.Cursor = System.Windows.Forms.Cursors.Default;
-        //        });
-        //    }
-        //}
-
-
         private void btn_Salva_Click(object sender, EventArgs e)
         {
             try

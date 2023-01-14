@@ -61,7 +61,7 @@ namespace LabAPP
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.Silver;
+            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.btn_PaginaUnica);
             this.panel3.Controls.Add(this.btn_Sair);
@@ -101,6 +101,9 @@ namespace LabAPP
             this.btn_Sair.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btn_Sair.TabIndex = 8;
             this.btn_Sair.TabStop = false;
+            this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
+            this.btn_Sair.MouseLeave += new System.EventHandler(this.btn_Sair_MouseLeave);
+            this.btn_Sair.MouseHover += new System.EventHandler(this.btn_Sair_MouseHover);
             // 
             // btn_Minimiza
             // 
@@ -113,6 +116,9 @@ namespace LabAPP
             this.btn_Minimiza.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btn_Minimiza.TabIndex = 7;
             this.btn_Minimiza.TabStop = false;
+            this.btn_Minimiza.Click += new System.EventHandler(this.btn_Minimiza_Click);
+            this.btn_Minimiza.MouseLeave += new System.EventHandler(this.btn_Minimiza_MouseLeave);
+            this.btn_Minimiza.MouseHover += new System.EventHandler(this.btn_Minimiza_MouseHover);
             // 
             // btn_LabApp
             // 

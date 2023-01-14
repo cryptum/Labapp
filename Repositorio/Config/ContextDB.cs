@@ -19,7 +19,7 @@ namespace Repositorio.Config
             switch (env.Select)
             {
                 case Environments.local:
-                    connectionString = "server=localhost;user=root;password=rootroot;database=LabAPP";
+                    connectionString = "server=localhost;user=root;password=root;database=LabAPP";
                     serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
                     optionsBuilder.UseMySql(connectionString, serverVersion);
                     break;
@@ -42,16 +42,6 @@ namespace Repositorio.Config
 
                 case Environments.preisserInMemory:
                     optionsBuilder.UseInMemoryDatabase("preisserInMemory");
-                    break;
-
-                case Environments.paginaUnica:
-                    connectionString = "server=localhost;user=root;password=root;database=LabAPP";
-                    serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
-                    optionsBuilder.UseMySql(connectionString, serverVersion);
-                    break;
-
-                case Environments.paginaUnicaInMemory:
-                    optionsBuilder.UseInMemoryDatabase("PUInMemory");
                     break;
 
                 default:

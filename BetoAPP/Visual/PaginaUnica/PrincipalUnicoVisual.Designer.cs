@@ -43,12 +43,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(12, 106);
+            this.dataGridView.Location = new System.Drawing.Point(17, 177);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 62;
             this.dataGridView.RowTemplate.Height = 25;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(1062, 499);
+            this.dataGridView.Size = new System.Drawing.Size(1517, 832);
             this.dataGridView.TabIndex = 4;
             // 
             // btn_Novo
@@ -57,9 +58,10 @@
             this.btn_Novo.ForeColor = System.Drawing.Color.MidnightBlue;
             this.btn_Novo.Image = global::LabAPP.Properties.Resources.file_add_fill_azul_32px;
             this.btn_Novo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Novo.Location = new System.Drawing.Point(12, 12);
+            this.btn_Novo.Location = new System.Drawing.Point(17, 20);
+            this.btn_Novo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Novo.Name = "btn_Novo";
-            this.btn_Novo.Size = new System.Drawing.Size(191, 54);
+            this.btn_Novo.Size = new System.Drawing.Size(273, 90);
             this.btn_Novo.TabIndex = 10;
             this.btn_Novo.Text = "Criar";
             this.btn_Novo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -72,9 +74,10 @@
             this.btn_Recarregar.ForeColor = System.Drawing.Color.MidnightBlue;
             this.btn_Recarregar.Image = global::LabAPP.Properties.Resources.refresh_line_azul_32px;
             this.btn_Recarregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Recarregar.Location = new System.Drawing.Point(240, 12);
+            this.btn_Recarregar.Location = new System.Drawing.Point(343, 20);
+            this.btn_Recarregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Recarregar.Name = "btn_Recarregar";
-            this.btn_Recarregar.Size = new System.Drawing.Size(191, 54);
+            this.btn_Recarregar.Size = new System.Drawing.Size(273, 90);
             this.btn_Recarregar.TabIndex = 11;
             this.btn_Recarregar.Text = "Recarregar";
             this.btn_Recarregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -87,9 +90,10 @@
             this.btn_Quadriculado.ForeColor = System.Drawing.Color.MidnightBlue;
             this.btn_Quadriculado.Image = global::LabAPP.Properties.Resources.grid_line_azul_32px;
             this.btn_Quadriculado.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Quadriculado.Location = new System.Drawing.Point(468, 12);
+            this.btn_Quadriculado.Location = new System.Drawing.Point(669, 20);
+            this.btn_Quadriculado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Quadriculado.Name = "btn_Quadriculado";
-            this.btn_Quadriculado.Size = new System.Drawing.Size(191, 54);
+            this.btn_Quadriculado.Size = new System.Drawing.Size(273, 90);
             this.btn_Quadriculado.TabIndex = 13;
             this.btn_Quadriculado.Text = "Quadriculado";
             this.btn_Quadriculado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -102,9 +106,10 @@
             this.button1.ForeColor = System.Drawing.Color.MidnightBlue;
             this.button1.Image = global::LabAPP.Properties.Resources.grid_line_azul_32px;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(696, 12);
+            this.button1.Location = new System.Drawing.Point(994, 20);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 54);
+            this.button1.Size = new System.Drawing.Size(273, 90);
             this.button1.TabIndex = 14;
             this.button1.Text = "Laudo";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -112,18 +117,20 @@
             // 
             // PrincipalUnicoVisual
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 421);
+            this.ClientSize = new System.Drawing.Size(1284, 702);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_Quadriculado);
             this.Controls.Add(this.btn_Recarregar);
             this.Controls.Add(this.btn_Novo);
             this.Controls.Add(this.dataGridView);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PrincipalUnicoVisual";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PrincipalUnicoVisual";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PrincipalUnicoVisual_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 

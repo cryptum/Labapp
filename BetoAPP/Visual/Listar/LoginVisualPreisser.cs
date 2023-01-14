@@ -17,8 +17,10 @@ namespace LabAPP
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            btn_LabApp.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, btn_LabApp.Width, btn_LabApp.Height, 5, 5));
-            btn_PaginaUnica.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, btn_PaginaUnica.Width, btn_PaginaUnica.Height, 5, 5));
+            btn_LabApp.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, btn_LabApp.Width, btn_LabApp.Height, 20, 20));
+            btn_PaginaUnica.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, btn_PaginaUnica.Width, btn_PaginaUnica.Height, 20, 20));
+            btn_Minimiza.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, btn_Minimiza.Width, btn_Minimiza.Height, 20, 20));
+            btn_Sair.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, btn_Sair.Width, btn_Sair.Height, 20, 20));
             GlobalEnv = env;
         }
 
@@ -43,24 +45,24 @@ namespace LabAPP
 
         public void Login()
         {
-            try
-            {
-                UsuarioDTO resultado = new UsuarioNegocio().ValidarAcesso(txt_Usuario.Text.Trim(), txt_Senha.Text.Trim());
-                if (resultado.AcessoPermitido == true)
-                {
-                    PrincipalVisual ViewPrincipal = new PrincipalVisual(GlobalEnv, resultado.Código, resultado.Nome, resultado.Administrador);
-                    this.Hide();
-                    ViewPrincipal.Show();
-                }
-                else
-                {
-                    MessageBox.Show(resultado.AcessoMessagem);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    UsuarioDTO resultado = new UsuarioNegocio().ValidarAcesso(txt_Usuario.Text.Trim(), txt_Senha.Text.Trim());
+            //    if (resultado.AcessoPermitido == true)
+            //    {
+            //        PrincipalVisual ViewPrincipal = new PrincipalVisual(GlobalEnv, resultado.Código, resultado.Nome, resultado.Administrador);
+            //        this.Hide();
+            //        ViewPrincipal.Show();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show(resultado.AcessoMessagem);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void btn_Minimiza_MouseHover(object sender, EventArgs e)

@@ -24,28 +24,6 @@ namespace LabAPP.Visual
             //this.menuStrip1.ForeColor = Color.WhiteSmoke;
         }
 
-        //private void SetLoading(bool displayLoader)
-        //{
-        //    if (displayLoader)
-        //    {
-        //        this.Invoke((MethodInvoker)delegate
-        //        {
-        //            pcbCarregar.Visible = true;
-        //            pcbCarregar.BringToFront();
-        //            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-        //        });
-        //    }
-        //    else
-        //    {
-        //        this.Invoke((MethodInvoker)delegate
-        //        {
-        //            pcbCarregar.Visible = false;
-        //            pcbCarregar.SendToBack();
-        //            this.Cursor = System.Windows.Forms.Cursors.Default;
-        //        });
-        //    }
-        //}
-
         void AlinharGrid()
         {
             dataGridProprietario.Columns[0].Width = 100;

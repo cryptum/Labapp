@@ -31,13 +31,6 @@ namespace Negocio
                 var pdfDocument = new PdfDocument(wPdf);
                 var document = new Document(pdfDocument, PageSize.A4);
 
-                //while (countAmostra > 0)
-                //{
-                //    //pdfDocument.AddNewPage();
-                //    document.Add(new AreaBreak(AreaBreakType.NEXT_PAGE));
-                //    document = GerarFolha(pdfDocument, Analise, Amostra);
-                //    countAmostra = countAmostra - 4;
-                //}
                 document = GerarFolha(pdfDocument, Analise, Amostra);
 
                 document.Close();

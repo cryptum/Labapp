@@ -23,43 +23,43 @@ namespace LabAPP.Visual
             
         }
 
-        void PopularGrid()
-        {
-            txt_NumeroLaudo.Text = "NUMERO LAUDO";
-            txt_Municipio.Text = "MUNICIPIO";
-            txt_CpfCnpj.Text = "CPF";
-            txt_Anotacao.Text = "ANOTAÇÃO";
-            cbx_Convenio.Text = "CONVENIO";
-            cbx_Cultura.Text = "CULTURA";
-            cbx_Fazenda.Text = "FAZENDA";
-            cbx_NomeCliente.Text = "CLIENTE";
-            cbx_TipoAnalise.Text = "TIPO ANALISE";
+        //void PopularGrid()
+        //{
+        //    txt_NumeroLaudo.Text = "NUMERO LAUDO";
+        //    txt_Municipio.Text = "MUNICIPIO";
+        //    txt_CpfCnpj.Text = "CPF";
+        //    txt_Anotacao.Text = "ANOTAÇÃO";
+        //    cbx_Convenio.Text = "CONVENIO";
+        //    cbx_Cultura.Text = "CULTURA";
+        //    cbx_Fazenda.Text = "FAZENDA";
+        //    cbx_NomeCliente.Text = "CLIENTE";
+        //    cbx_TipoAnalise.Text = "TIPO ANALISE";
             
-            AdicionarNaGridLinhas();
-            AdicionarNaGridAmostra(
-                new AmostraEntidade(
-                    "Numero 1", "Nome 1", "1","1","1","1","1","1","1","1","1","1",
-                    "1","1","1","1","1","1","1","1","1","1","1"
-                    ));
-            AdicionarNaGridLinhas();
-            AdicionarNaGridAmostra(
-                new AmostraEntidade(
-                    "Numero 2", "Nome 2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2",
-                    "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2"
-                    ));
-            AdicionarNaGridLinhas();
-            AdicionarNaGridAmostra(
-                new AmostraEntidade(
-                    "Numero 3", "Nome 3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3",
-                    "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3"
-                    ));
-            //AdicionarNaGridLinhas();
-            //AdicionarNaGridAmostra(
-            //    new AmostraEntidade(
-            //        "Numero 4", "Nome 4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4",
-            //        "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4"
-            //        ));
-        }
+        //    AdicionarNaGridLinhas();
+        //    AdicionarNaGridAmostra(
+        //        new AmostraEntidade(
+        //            "Numero 1", "Nome 1", "1","1","1","1","1","1","1","1","1","1",
+        //            "1","1","1","1","1","1","1","1","1","1","1"
+        //            ));
+        //    AdicionarNaGridLinhas();
+        //    AdicionarNaGridAmostra(
+        //        new AmostraEntidade(
+        //            "Numero 2", "Nome 2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2",
+        //            "2", "2", "2", "2", "2", "2", "2", "2", "2", "2", "2"
+        //            ));
+        //    AdicionarNaGridLinhas();
+        //    AdicionarNaGridAmostra(
+        //        new AmostraEntidade(
+        //            "Numero 3", "Nome 3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3",
+        //            "3", "3", "3", "3", "3", "3", "3", "3", "3", "3", "3"
+        //            ));
+        //    //AdicionarNaGridLinhas();
+        //    //AdicionarNaGridAmostra(
+        //    //    new AmostraEntidade(
+        //    //        "Numero 4", "Nome 4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4",
+        //    //        "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4"
+        //    //        ));
+        //}
 
         void AdicionarNaGridLinhas()
         {
@@ -360,8 +360,6 @@ namespace LabAPP.Visual
             }
 
             AdicionarNaGridAmostra(new AmostraEntidade("Número", "Nome", "pH Água", "Diluição", "Fósforo", "Potássio", "Cálcio", "Alumínio", "Magnésio", "Acidez Potêncial", "Zinco", "Cobre", "Ferro", "Manganes", "Argila I.", "Argila F.", "Areia I.", "Areia F.", "Silte I.", "Silte F.", "Boro", "Enxofre", "Materia Organica"));
-            PopularGrid();
-            PopularGrid();
         }
 
         private void btn_Sair_Click(object sender, EventArgs e)

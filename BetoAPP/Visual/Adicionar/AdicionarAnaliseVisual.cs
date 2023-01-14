@@ -68,11 +68,6 @@ namespace LabAPP.Visual
             if (txtTitulo.Text == "Adicionar Amostras")
             {
                 var analise = new AnaliseNegocio().ObterUmPorCodigo(GlobalIdAnalise);
-
-                //Nome_Amostra_2.Text = analise.NomeAmostra2;
-                //Nome_Amostra_3.Text = analise.NomeAmostra3;
-                //Nome_Amostra_1.Text = analise.NomeAmostra1;
-                //Nome_Amostra_4.Text = analise.NomeAmostra4;
             }
 
         }
@@ -127,129 +122,6 @@ namespace LabAPP.Visual
             }
 
             new RelatorioNegocio().Gerar(analiseSalva, listaAmostra);
-            //try
-            //{
-            //    switch (txtTitulo.Text)
-            //    {
-            //        case "Criar Análise":
-
-            //            var idAnaliseSalva = new AnaliseNegocio().Salvar(
-            //            txt_NumeroLaudo.Text.Trim(),
-            //            this.GlobalIdProprietario,
-            //            cbx_Fazenda.Text,
-            //            cbx_TipoAnalise.Text,
-            //            cbx_Cultura.Text,
-            //            cbx_Solicitacao.Text,
-            //            Nome_Amostra_1.Text,
-            //            Numero_Amostra_1.Text,
-            //            Nome_Amostra_2.Text,
-            //            Numero_Amostra_2.Text,
-            //            Nome_Amostra_3.Text,
-            //            Numero_Amostra_3.Text,
-            //            Nome_Amostra_4.Text,
-            //            Numero_Amostra_4.Text);
-
-            //            MessageBox.Show("Salvo!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-            //            break;
-
-            //        case "Adicionar Amostras":
-
-            //            AnaliseEntidade analiseSalva = new AnaliseNegocio().ObterUmPorCodigo(GlobalIdAnalise);
-
-            //            AnaliseEntidade analiseComNomesDeAmostras = analiseSalva;
-            //            analiseComNomesDeAmostras.NomeAmostra1 = Nome_Amostra_1.Text;
-            //            analiseComNomesDeAmostras.NumeroAmostra1 = Numero_Amostra_1.Text;
-            //            analiseComNomesDeAmostras.NomeAmostra2 = Nome_Amostra_2.Text;
-            //            analiseComNomesDeAmostras.NumeroAmostra2 = Numero_Amostra_2.Text;
-            //            analiseComNomesDeAmostras.NomeAmostra3 = Nome_Amostra_3.Text;
-            //            analiseComNomesDeAmostras.NumeroAmostra3 = Numero_Amostra_3.Text;
-            //            analiseComNomesDeAmostras.NomeAmostra4 = Nome_Amostra_4.Text;
-            //            analiseComNomesDeAmostras.NumeroAmostra4 = Numero_Amostra_4.Text;
-            //            analiseComNomesDeAmostras.Finalizada = true;
-
-            //            new AnaliseNegocio().EditarNomesDasAmostras(analiseComNomesDeAmostras);
-
-            //            List<AmostraEntidade> AmostraSalva = new List<AmostraEntidade>();
-
-            //            for (int i = 0; i < 4; i++)
-            //            {
-            //                AmostraEntidade amostra = new();
-
-            //                amostra = PreencherAmostra(
-            //                        Convert.ToDouble(dataGridBasica.Rows[i].Cells[2].Value),
-            //                        Convert.ToDouble(dataGridBasica.Rows[i].Cells[3].Value),
-            //                        Convert.ToDouble(dataGridBasica.Rows[i].Cells[4].Value),
-            //                        Convert.ToDouble(dataGridBasica.Rows[i].Cells[5].Value),
-            //                        Convert.ToDouble(dataGridBasica.Rows[i].Cells[6].Value),
-            //                        Convert.ToDouble(dataGridBasica.Rows[i].Cells[7].Value),
-            //                        Convert.ToDouble(dataGridBasica.Rows[i].Cells[8].Value),
-
-
-            //                        Convert.ToDouble(dataGridCompleta.Rows[i].Cells[2].Value),
-            //                        Convert.ToDouble(dataGridCompleta.Rows[i].Cells[3].Value),
-            //                        Convert.ToDouble(dataGridCompleta.Rows[i].Cells[4].Value),
-            //                        Convert.ToDouble(dataGridCompleta.Rows[i].Cells[5].Value),
-
-
-            //                        Convert.ToDouble(dataGridFisica.Rows[i].Cells[2].Value),
-            //                        Convert.ToDouble(dataGridFisica.Rows[i].Cells[3].Value),
-            //                        Convert.ToDouble(dataGridFisica.Rows[i].Cells[4].Value),
-            //                        Convert.ToDouble(dataGridFisica.Rows[i].Cells[5].Value),
-            //                        Convert.ToDouble(dataGridFisica.Rows[i].Cells[6].Value),
-            //                        Convert.ToDouble(dataGridFisica.Rows[i].Cells[7].Value),
-
-
-            //                        Convert.ToDouble(dataGridOpcional.Rows[i].Cells[2].Value),
-            //                        Convert.ToDouble(dataGridOpcional.Rows[i].Cells[3].Value),
-            //                        Convert.ToDouble(dataGridOpcional.Rows[i].Cells[4].Value)
-
-            //                        );
-            //                amostra.Analises = analiseSalva;
-
-
-
-
-
-            //                switch (i)
-            //                {
-            //                    case 0:
-            //                        {
-            //                            amostra.NomeAmostra = Nome_Amostra_1.Text; break;
-            //                        }
-            //                    case 1:
-            //                        {
-            //                            amostra.NomeAmostra = Nome_Amostra_2.Text; break;
-            //                        }
-            //                    case 2:
-            //                        {
-            //                            amostra.NomeAmostra = Nome_Amostra_3.Text; break;
-            //                        }
-            //                    case 3:
-            //                        {
-            //                            amostra.NomeAmostra = Nome_Amostra_4.Text; break;
-            //                        }
-            //                    default:
-            //                        break;
-            //                }
-
-            //                new AmostraNegocio().Salvar(amostra, analiseComNomesDeAmostras.IdAnalise);
-            //                AmostraSalva.Add(amostra);
-            //            }
-
-            //            var result = new GerarPDF().Gerar(analiseSalva, AmostraSalva);
-            //            MessageBox.Show(result, "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //            break;
-            //        default:
-            //            break;
-            //    }
-
-            //    this.Dispose();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.ToString(), "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //}
         }
 
         void AdicionarNaGridLinhas()
@@ -260,7 +132,6 @@ namespace LabAPP.Visual
 
         void AdicionarNaGridAmostra(AmostraEntidade amostra)
         {
-
             dataGridView1.Rows[0].Cells[contadorDeLinhas].Value = amostra.NumeroAmostra;
             dataGridView1.Rows[1].Cells[contadorDeLinhas].Value = amostra.NomeAmostra;
             dataGridView1.Rows[2].Cells[contadorDeLinhas].Value = amostra.Ph_Agua;
@@ -349,61 +220,7 @@ namespace LabAPP.Visual
             )
         {
             AmostraEntidade amostra = new AmostraEntidade();
-            //amostra.Basica = true;
-            //amostra.pH = new MotorDeCalculo().ProcessarPH(pH).ToString();
-            //amostra.P = new MotorDeCalculo().ProcessarFosforo(P).ToString();
-
-            //double k = new MotorDeCalculo().ProcessarPotassio(K);
-            //amostra.K = k.ToString();
-
-            //double ca = new MotorDeCalculo().ProcessarCalcio(Ca);
-            //amostra.Ca = ca.ToString();
-
-            //double mg = new MotorDeCalculo().ProcessarMagnesio(Mg);
-            //amostra.Mg = mg.ToString();
-
-            //double al = new MotorDeCalculo().ProcessarAluminio(Al);
-            //amostra.Al = al.ToString();
-
-            //double alh = new MotorDeCalculo().ProcessarAcidoPotencial(AlH);
-            //amostra.AlH = alh.ToString();
-
-            //double sb = Math.Round(k + Ca + mg, 2);
-            //amostra.SB = sb.ToString();
-
-            //double ti = Math.Round(al + sb, 2);
-            //amostra.ti = ti.ToString();
-
-            //double T = Math.Round(alh + sb, 2);
-            //amostra.T = T.ToString();
-
-            //amostra.V = Math.Round(((100 * sb) / T), 2).ToString();
-            //amostra.m = Math.Round(((100 * al) / ti), 2).ToString();
-
-
-            //amostra.Zn = Zn == 0 ? "N/S" : new MotorDeCalculo().ProcessarZinco(Zn).ToString();
-            //amostra.Cu = Cu == 0 ? "N/S" : new MotorDeCalculo().ProcessarCobre(Cu).ToString();
-            //amostra.Fe = Cu == 0 ? "N/S" : new MotorDeCalculo().ProcessarFerro(Fe).ToString();
-            //amostra.Mn = Mn == 0 ? "N/S" : new MotorDeCalculo().ProcessarManganes(Mn).ToString();
-
-            //amostra.Completa = Zn == 0 && Cu == 0 && Fe == 0 && Mn == 0 ? false : true;
-
-
-            //amostra.Argila = ArgilaInicial == 0 ? "N/S" : new MotorDeCalculo().ProcessarArgila(ArgilaInicial, ArgilaFinal).ToString();
-            //amostra.Areia = AreiaInicial == 0 ? "N/S" : new MotorDeCalculo().ProcessarAreia(AreiaInicial, AreiaFinal).ToString();
-            //amostra.Silte = SilteInicial == 0 ? "N/S" : new MotorDeCalculo().ProcessarSilte(SilteInicial, SilteFinal).ToString();
-
-            //amostra.Fisica = ArgilaInicial == 0 && ArgilaFinal == 0 && AreiaInicial == 0 && AreiaFinal == 0 && SilteInicial == 0;
-
-            //amostra.S = S == 0 ? "N/S" : new MotorDeCalculo().ProcessarEnxofre(S).ToString();
-            //amostra.B = B == 0 ? "N/S" : new MotorDeCalculo().ProcessarBoro(B).ToString();
-            //amostra.MO = MO == 0 ? "N/S" : new MotorDeCalculo().ProcessarMateriaOrganica(MO).ToString();
-
-            //amostra.Opcional = S == 0 && B == 0 && MO == 0 ? false : true;
-
-
-            //amostra.TonHa = Math.Round(((0.6 * T - sb) / 10), 2).ToString();
-
+            
             return amostra;
         }
 

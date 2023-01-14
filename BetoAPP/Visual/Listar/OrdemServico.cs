@@ -98,44 +98,6 @@ namespace LabAPP.Visual
 
                 ListaDataOrdem.Add(dataOrdem);
             }
-
-            ////   MOCK
-            //OrdemServicoDTO ordem = new();
-            //ordem.Numero = "123";
-            //ordem.Cliente = "Danilo Vieira Bernardes";
-            //ordem.CNPJ = "123123123";
-            //ordem.Endereco = "Rua jose rodrigues sampaio";
-            //ordem.Contato = "Do brabo";
-            //ordem.Fone = "34992144278";
-            //ordem.Email = "danilovbvip@hotmail.com";
-            //ordem.NumeroOrdemDeCompra = "123123123123";
-
-            //ordem.ValorTotalDaPrestacao = "12dolar";
-            //ordem.EntreguePor = "leandro matias baldo";
-            //ordem.DataEntrada = "00/00/0000";
-            //ordem.HoraEntrada = "00:00";
-            //ordem.DataResultado = "11/11/1111";
-            //ordem.HoraResultado = "11:11";
-            //ordem.ReponsavelRecebimento = "Responsavel giovanna";
-
-            //List<DataGridOrdemServicoDTO> ListaDataOrdem = new List<DataGridOrdemServicoDTO>();
-            ////percorre o DataGridView
-            //for (int i = 0; i < 3; i++)
-            //{
-            //    DataGridOrdemServicoDTO dataOrdem = new DataGridOrdemServicoDTO();
-
-            //    dataOrdem.NAmostra = "12";
-            //    dataOrdem.IdCliente = "123";
-            //    dataOrdem.TipoDeAmostra = "1234";
-            //    dataOrdem.AnalideSolicitadas = "1235";
-            //    dataOrdem.ValorDoPreparo = "1234";
-            //    dataOrdem.ValorDaAnalise = "123";
-            //    dataOrdem.ValorTotal = "12";
-
-            //    ListaDataOrdem.Add(dataOrdem);
-            //}
-
-            //   service
             MessageBox.Show(Gerar(ordem, ListaDataOrdem), "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 

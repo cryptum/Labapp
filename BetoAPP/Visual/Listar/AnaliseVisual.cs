@@ -217,7 +217,6 @@ namespace LabAPP.Visual
 
                         var analise = new AnaliseNegocio().ObterUmPorCodigo(idSelecionada);
                         var amostra = new AmostraNegocio().ObterAmostrarPorIdAnalise(idSelecionada);
-                        //new GerarPDF().Gerar(analise, amostra);
 
                         SetLoading(false);
                     });

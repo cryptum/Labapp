@@ -34,14 +34,11 @@ namespace LabAPP.Visual.PaginaUnica
         private void btn_Quadriculado_Click(object sender, EventArgs e)
         {
             var caminho = new GerarQuardriculado().Gerar();
-            //new GerarQuardriculado().AbreVisualizadorPadrao(caminho);
-            //using (var pd = new System.Drawing.Printing.PrintDocument())
-            //{
-            //    pd.PrinterSettings.PrinterName = impressoraComboBox.SelectedItem.ToString();
-            //    pd.PrinterSettings.
-            //    pd.PrintPage += Pd_PrintPage;
-            //    pd.Print();
-            //}
+        }
+
+        private void PrincipalUnicoVisual_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -33,6 +33,7 @@ namespace LabAPP.Visual
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txt_Numero = new System.Windows.Forms.TextBox();
@@ -153,6 +154,16 @@ namespace LabAPP.Visual
             this.groupBox2.Size = new System.Drawing.Size(571, 100);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Khaki;
+            this.label3.Location = new System.Drawing.Point(403, 2);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(268, 15);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Aviso: Nenhuma informação nessa página é salva";
             // 
             // label1
             // 
@@ -716,6 +727,7 @@ namespace LabAPP.Visual
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1112, 611);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox16);
             this.Controls.Add(this.groupBox19);
@@ -803,6 +815,7 @@ namespace LabAPP.Visual
             this.groupBox26.ResumeLayout(false);
             this.groupBox26.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -872,5 +885,6 @@ namespace LabAPP.Visual
         private System.Windows.Forms.TextBox txt_ResponsavelRecebimento;
         private System.Windows.Forms.TextBox txt_Numero;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
     }
 }

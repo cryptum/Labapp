@@ -1,4 +1,4 @@
-﻿namespace Repositorio.Config
+﻿ namespace Repositorio.Config
 {
     public enum Environments
     {
@@ -7,8 +7,6 @@
         preisser,
         betoInMemory,
         preisserInMemory,
-        paginaUnica,
-        paginaUnicaInMemory,
     }
 
     public class Env
@@ -17,7 +15,7 @@
         {
             get
             {
-                return Environments.betoInMemory;
+                return Environments.local;
             }
         }
     }

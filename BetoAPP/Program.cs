@@ -25,7 +25,7 @@ namespace LabAPP
             switch (env.Select)
             {
                 case Environments.local:
-                    Application.Run(new LoginVisualPreisser(Environments.local));
+                    Application.Run(new LoginVisualBeto(Environments.local));
                     break;
 
                 case Environments.beto:
@@ -42,14 +42,6 @@ namespace LabAPP
 
                 case Environments.preisserInMemory:
                     Application.Run(new LoginVisualPreisser(Environments.preisserInMemory));
-                    break;
-
-                case Environments.paginaUnica:
-                    Application.Run(new PrincipalUnicoVisual());
-                    break;
-
-                case Environments.paginaUnicaInMemory:
-                    Application.Run(new PrincipalUnicoVisual());
                     break;
 
                 default:

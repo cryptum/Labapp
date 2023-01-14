@@ -17,8 +17,8 @@ namespace LabAPP
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            btn_LabApp.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, btn_LabApp.Width, btn_LabApp.Height, 5, 5));
-            btn_PaginaUnica.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, btn_PaginaUnica.Width, btn_PaginaUnica.Height, 5, 5));
+            btn_LabApp.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, btn_LabApp.Width, btn_LabApp.Height, 20, 20));
+            btn_PaginaUnica.Region = System.Drawing.Region.FromHrgn(Util.Util.CreateRoundRectRgn(0, 0, btn_PaginaUnica.Width, btn_PaginaUnica.Height, 20, 20));
             GlobalEnv = env;
         }
 
